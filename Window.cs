@@ -1,13 +1,13 @@
-using System.Windows.Forms;
 using System;
+using System.Windows.Forms;
 
-public class Window : Form
+public class Window
 {
-    public void FormLayout()
+    public static Window form = new Window();
+    [STAThread]
+    static void Main(string[] args)
     {
-        this.Name = "Window";
-        this.Text = "Window";
-        this.Size = new System.Drawing.Size(500, 500);
-        this.StartPosition = FormStartPosition.CenterScreen;
+        form.FormLayout();
+        Application.Run(form);
     }
 }

@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 public class Program
 {
-    public static Window form = new Window();
+    public static Program form = new Window();
     [STAThread]
     static void Main(string[] args)
     {
-        form.FormLayout();
+        form.FormLayout();;
         Application.Run(form);
     }
 }
