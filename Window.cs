@@ -1,13 +1,20 @@
-using System;
 using System.Windows.Forms;
+using System;
 
-public class Window
+public class FormWindow : Form
 {
-    public static Window form = new Window();
-    [STAThread]
-    static void Main(string[] args)
-    {
-        form.FormLayout();
-        Application.Run(form);
-    }
+	protected UIBackendInterface uibinterface;
+
+	public void formLayout(string window_name)
+	{
+		this.Name = this.Text = window_name;
+		this.Size = new System.Drawing.Size(1000, 500);
+	}
+
+
+	public FormWindow()
+	{
+		formLayout("base window");
+		this.StartPosition = FormStartPosition.CenterScreen;
+	}
 }

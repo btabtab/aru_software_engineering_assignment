@@ -1,0 +1,11 @@
+C:\UNI_DOCS\UNICODE\aru_software_engineering_assignment\obj\Debug\net4.7.2\aru_software_engineering_assignment.csproj.AssemblyReference.cache
+C:\UNI_DOCS\UNICODE\aru_software_engineering_assignment\obj\Debug\net4.7.2\aru_software_engineering_assignment.csproj.SuggestedBindingRedirects.cache
+C:\UNI_DOCS\UNICODE\aru_software_engineering_assignment\obj\Debug\net4.7.2\aru_software_engineering_assignment.GeneratedMSBuildEditorConfig.editorconfig
+C:\UNI_DOCS\UNICODE\aru_software_engineering_assignment\obj\Debug\net4.7.2\aru_software_engineering_assignment.AssemblyInfoInputs.cache
+C:\UNI_DOCS\UNICODE\aru_software_engineering_assignment\obj\Debug\net4.7.2\aru_software_engineering_assignment.AssemblyInfo.cs
+C:\UNI_DOCS\UNICODE\aru_software_engineering_assignment\obj\Debug\net4.7.2\aru_software_engineering_assignment.csproj.CoreCompileInputs.cache
+C:\UNI_DOCS\UNICODE\aru_software_engineering_assignment\bin\Debug\net4.7.2\aru_software_engineering_assignment.exe.config
+C:\UNI_DOCS\UNICODE\aru_software_engineering_assignment\bin\Debug\net4.7.2\aru_software_engineering_assignment.exe
+C:\UNI_DOCS\UNICODE\aru_software_engineering_assignment\bin\Debug\net4.7.2\aru_software_engineering_assignment.pdb
+C:\UNI_DOCS\UNICODE\aru_software_engineering_assignment\obj\Debug\net4.7.2\aru_software_engineering_assignment.exe
+C:\UNI_DOCS\UNICODE\aru_software_engineering_assignment\obj\Debug\net4.7.2\aru_software_engineering_assignment.pdb
