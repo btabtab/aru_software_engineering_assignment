@@ -13,6 +13,18 @@ public class UIBackendInterface
 		database = n_database;
 	}
 
+	public int getMatchingUsernameID(string user_input)
+	{
+		for(int i = 0; i != database.getNumberOfAccounts(); i++)
+		{
+			if(database.grabAccountName(i).Equals(user_input))
+			{
+				return i;
+			}
+		}
+		return -1;
+
+	}
 	public bool isUserNameCorrect(string user_input)
 	{
 		for(int i = 0; i != database.getNumberOfAccounts(); i++)
@@ -24,16 +36,8 @@ public class UIBackendInterface
 		}
 		return false;
 	}
-	public bool isPasswordCorrect(string user_input, int username_ID)
+	public bool isPasswordCorrect(string password_input, int username_ID)
 	{
-		for(int i = 0; i != database.getNumberOfAccounts(); i++)
-		{
-			if(database.grabAccountName(i).Equals(user_input))
-			{
-				return true;
-			}
-		}
-		return false;
+		return database.grabAccountName(username_ID).Equals(password_input);
 	}
-
 }
