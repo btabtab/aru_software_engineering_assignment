@@ -1,7 +1,7 @@
 ﻿
 namespace aru_software_eng_UI
 {
-    partial class CreateAccountButton
+    partial class LoginPage
     {
         /// <summary>
         /// Required designer variable.
@@ -64,7 +64,7 @@ namespace aru_software_eng_UI
             this.CreateAccountBTN.UseVisualStyleBackColor = true;
             this.CreateAccountBTN.Click += new System.EventHandler(this.CreateAccountBTN_Click);
             // 
-            // CreateAccountButton
+            // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -72,8 +72,9 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.CreateAccountBTN);
             this.Controls.Add(this.RelationshipManagerBTN);
             this.Controls.Add(this.IdeaGenBTN);
-            this.Name = "CreateAccountButton";
-            this.Text = "Form1";
+            this.Name = "LoginPage";
+            this.Text = "LoginPage";
+            this.Load += new System.EventHandler(this.LoginPage_Load);
             this.ResumeLayout(false);
 
         }

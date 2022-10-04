@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace aru_software_eng_UI
 {
-    public partial class CreateAccountButton : Form
+    public partial class LoginPage : Form
     {
-        public CreateAccountButton()
+        public LoginPage()
         {
             InitializeComponent();
+        }
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
         }
 
         private void IdeaGenBTN_Click(object sender, EventArgs e)
