@@ -5,4 +5,11 @@ I am a RM and I want to login so I can view ideas
 I am a RM and I want to view ideas so I can make reccomendations to my customers
 I am a RM and I want to filter ideas so I can meet my customers recomendations 
 I am a RM and I want to see recommened ideas clearly so I can better inform my clients
-END OF FILE
+The Idea generator should be able to register with my details so that I can create an account
+I want the Idea generator to be able to  login so that the account can be accessed
+As a relationship manager, I should be able login to sign in to my account.
+As a relationship manager, I should be able to  login so that I can access my account
+As a relationship manager, I should be able to filter based on various criteria such as Risk, Cost etc so that I can selectively produce outcomes.
+The Idea generator page should be able to generate, edit and delete Ideas accordingly 
+The relationship manager should be able to search for a specific product or product type and show the investment ideas to which it is related.
+As a Relationship manager the relationship manager should be able to  browses ideas, can view the related products and identify suitable clients.
