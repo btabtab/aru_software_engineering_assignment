@@ -5,83 +5,80 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace ConsoleApp1
+namespace Sorts
 {
-    class Program
-    {
-        static int[] Merge_sorting_algorithm(int [] Array,int LeftPointer,int RightPointer)
-        {
-            if(LeftPointer == RightPointer)
-            {
-                return Array;
-            }
-            if(LeftPointer + 1 == RightPointer)
-            {
-                if((int)Array[RightPointer] < (int)Array[LeftPointer])
-                {
-                    int swapping_parameter = (int)Array[RightPointer];
-                    Array[RightPointer] = (int)Array[LeftPointer];
-                    Array[LeftPointer] = swapping_parameter;
-                }
-                return Array;
-            }
-            int MiddlePointer = (LeftPointer + RightPointer) / 2;
-            int NewLeftPointer = LeftPointer, NewRightPointer = MiddlePointer;
-            int[] NewArray = new int[30];
-            int[] NewArrayLeft = new int[30];
-            int[] NewArrayRight = new int[30];
-            NewArrayLeft = Merge_sorting_algorithm(Array, LeftPointer, MiddlePointer);
-            NewArrayRight = Merge_sorting_algorithm(Array, MiddlePointer + 1, RightPointer);
-            for(int Counter = LeftPointer;Counter <= RightPointer; ++Counter)
-            {
-                if(NewLeftPointer > MiddlePointer)
-                {
-                    NewArray[Counter] = (int)NewArrayRight[NewRightPointer];
-                    NewRightPointer++;
-                }
-                else if (NewRightPointer > RightPointer)
-                {
-                    NewArray[Counter] = (int)NewArrayLeft[NewLeftPointer];
-                    NewLeftPointer++;
-                }
-                else
-                {
-                    if (Array[NewRightPointer] < Array[NewLeftPointer])
-                    {
-                        NewArray[Counter] = (int)NewArrayRight[NewRightPointer];
-                        NewRightPointer++;
-                    }
-                    else
-                    {
-                        NewArray[Counter] = (int)NewArrayLeft[NewLeftPointer];
-                        NewLeftPointer++;
-                    }
-                }
-            }
-            for (int Counter = 0; Counter <= (RightPointer - LeftPointer); ++Counter)
-            {
-                Array[LeftPointer + Counter] = NewArray[Counter];
-            }
-            return Array;
-        }
-        static void Main(string[] args)
-        {
-            int[] TestArray = new int[30];
-            Random rand = new Random();
-            for(int Counter = 1;Counter <= 20; ++Counter)
-            {
-                TestArray[Counter] = rand.Next() % 100;
-                Console.Write(TestArray[Counter]);
-                Console.Write(" ");
-            }
-            Console.WriteLine();
-            int [] SortedTestArray = Program.Merge_sorting_algorithm(TestArray, 1, 20);
-            for (int Counter = 1; Counter <= 20; ++Counter)
-            {
-                Console.Write(SortedTestArray[Counter]);
-                Console.Write(" ");
-            }
-            Console.ReadKey();
-        }
-    }
+	static int[] mergeSortingAlgorithm(int [] array,int left_pointer,int right_pointer)
+	{
+		if(left_pointer == right_pointer)
+		{
+			return array;
+		}
+		if(left_pointer + 1 == right_pointer)
+		{
+			if((int)array[right_pointer] < (int)array[left_pointer])
+			{
+				int swapping_parameter = (int)array[right_pointer];
+				array[right_pointer] = (int)array[left_pointer];
+				array[left_pointer] = swapping_parameter;
+			}
+			return array;
+		}
+		int middle_pointer = (left_pointer + right_pointer) / 2;
+		int new_left_pointer = left_pointer, new_right_pointer = middle_pointer;
+		int[] new_array = new int[30];
+		int[] new_array_left = new int[30];
+		int[] new_array_right = new int[30];
+		new_array_left = Merge_sorting_algorithm(array, left_pointer, middle_pointer);
+		new_array_right = Merge_sorting_algorithm(array, middle_pointer + 1, right_pointer);
+		for(int counter = left_pointer; counter <= right_pointer; ++counter)
+		{
+			if(new_left_pointer > middle_pointer)
+			{
+				new_array[counter] = (int)new_array_right[new_right_pointer];
+				new_right_pointer++;
+			}
+			else if (new_right_pointer > right_pointer)
+			{
+				new_array[counter] = (int)new_array_left[new_left_pointer];
+				new_left_pointer++;
+			}
+			else
+			{
+				if (array[new_right_pointer] < array[new_left_pointer])
+				{
+					new_array[counter] = (int)new_array_right[new_right_pointer];
+					new_right_pointer++;
+				}
+				else
+				{
+					new_array[counter] = (int)new_array_left[new_left_pointer];
+					new_left_pointer++;
+				}
+			}
+		}
+		for (int counter = 0; counter <= (right_pointer - left_pointer); ++counter)
+		{
+			array[left_pointer + counter] = new_array[counter];
+		}
+		return array;
+	}
+	static void mergeSortTest()
+	{
+		int[] test_array = new int[30];
+		Random rand = new Random();
+		for(int counter = 1; counter <= 20; ++counter)
+		{
+			test_array[counter] = rand.Next() % 100;
+			Console.Write(test_array[counter]);
+			Console.Write(" ");
+		}
+		Console.WriteLine();
+		int [] sorted_test_array = Program.Merge_sorting_algorithm(test_array, 1, 20);
+		for (int counter = 1; counter <= 20; ++counter)
+		{
+			Console.Write(sorted_test_array[counter]);
+			Console.Write(" ");
+		}
+		Console.ReadKey();
+	}
 }
