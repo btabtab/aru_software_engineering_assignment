@@ -1,4 +1,5 @@
-﻿using System;
+﻿using aru_software_eng_UI;
+using System;
 using System.Windows.Forms;
 
 /*The only class functions that you are allowed to run in
@@ -12,7 +13,6 @@ public class Program
 	{
 		DummyDataBaseSystem	database = new DummyDataBaseSystem();
 		UIBackendInterface uib_interface = new UIBackendInterface(database);
-		FormWindow main_menu = new MainMenu(uib_interface);
-		Application.Run(main_menu);
+		Application.Run(new LoginPage());
 	}
 }
