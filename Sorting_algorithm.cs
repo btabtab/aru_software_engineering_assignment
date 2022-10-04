@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sorts
 {
-	static int[] mergeSortingAlgorithm(int [] array,int left_pointer,int right_pointer)
+	static int[] mergeSortingAlgorithm(int [] array, int left_pointer, int right_pointer)
 	{
 		if(left_pointer == right_pointer)
 		{
@@ -73,7 +73,7 @@ namespace Sorts
 			Console.Write(" ");
 		}
 		Console.WriteLine();
-		int [] sorted_test_array = Program.Merge_sorting_algorithm(test_array, 1, 20);
+		int [] sorted_test_array = mergeSortingAlgorithm(test_array, 1, 20);
 		for (int counter = 1; counter <= 20; ++counter)
 		{
 			Console.Write(sorted_test_array[counter]);
