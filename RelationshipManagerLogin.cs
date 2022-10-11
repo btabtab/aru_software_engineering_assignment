@@ -16,5 +16,25 @@ namespace aru_software_eng_UI
         {
             InitializeComponent();
         }
+
+        private void RelationshipManagerLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RMlogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RM_login_backbutton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
