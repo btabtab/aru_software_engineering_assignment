@@ -223,12 +223,11 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.LinkLabel RulesText;
         private System.Windows.Forms.Label LoginLabel;
         private System.Windows.Forms.TextBox EmailGetter;
-        private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.TextBox PasswordGetter1;
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Label AgainPasswordLabel;
         private System.Windows.Forms.TextBox PasswordGetter2;
         private System.Windows.Forms.Button GoBackButton;
-        private System.Windows.Forms.Button RM_backButton;
+        private System.Windows.Forms.Label EmailLabel;
     }
 }
