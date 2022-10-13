@@ -107,7 +107,6 @@ namespace aru_software_eng_UI
             this.LoginLabel.Size = new System.Drawing.Size(106, 34);
             this.LoginLabel.TabIndex = 5;
             this.LoginLabel.Text = "Username:";
-            this.LoginLabel.Click += new System.EventHandler(this.LoginLabel_Click);
             // 
             // EmailGetter
             // 
@@ -163,7 +162,6 @@ namespace aru_software_eng_UI
             this.PasswordGetter2.Name = "PasswordGetter2";
             this.PasswordGetter2.Size = new System.Drawing.Size(266, 38);
             this.PasswordGetter2.TabIndex = 11;
-            this.PasswordGetter2.TextChanged += new System.EventHandler(this.PasswordGetter2_TextChanged);
             // 
             // GoBackButton
             // 
