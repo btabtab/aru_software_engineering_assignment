@@ -43,7 +43,6 @@ namespace aru_software_eng_UI
             this.AgainPasswordLabel = new System.Windows.Forms.Label();
             this.PasswordGetter2 = new System.Windows.Forms.TextBox();
             this.GoBackButton = new System.Windows.Forms.Button();
-            this.RM_backButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SignUpButton
@@ -175,23 +174,11 @@ namespace aru_software_eng_UI
             this.GoBackButton.UseVisualStyleBackColor = true;
             this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
             // 
-            // RM_backButton
-            // 
-            this.RM_backButton.Image = ((System.Drawing.Image)(resources.GetObject("RM_backButton.Image")));
-            this.RM_backButton.Location = new System.Drawing.Point(15, 15);
-            this.RM_backButton.Margin = new System.Windows.Forms.Padding(6);
-            this.RM_backButton.Name = "RM_backButton";
-            this.RM_backButton.Size = new System.Drawing.Size(124, 60);
-            this.RM_backButton.TabIndex = 13;
-            this.RM_backButton.UseVisualStyleBackColor = true;
-            this.RM_backButton.Click += new System.EventHandler(this.RM_backButton_Click);
-            // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1668, 887);
-            this.Controls.Add(this.RM_backButton);
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.PasswordGetter2);
             this.Controls.Add(this.AgainPasswordLabel);
