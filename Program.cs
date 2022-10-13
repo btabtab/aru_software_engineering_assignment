@@ -11,8 +11,6 @@ public class Program
 	[STAThread]
 	static void Main(string[] args)
 	{
-		DummyDataBaseSystem	database = new DummyDataBaseSystem();
-		UIBackendInterface uib_interface = new UIBackendInterface(database);
 		Application.Run(new LoginPage());
 	}
 }

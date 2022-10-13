@@ -28,6 +28,8 @@ namespace aru_software_eng_UI
         private void RelationshipManagerBTN_Click(object sender, EventArgs e)
         {
             this.Hide();
+            RelationshipManagerLogin rm_window = new RelationshipManagerLogin(this);
+            rm_window.Show();
         }
 
         private void CreateAccountBTN_Click(object sender, EventArgs e)
@@ -38,7 +40,7 @@ namespace aru_software_eng_UI
         private void DatabaseDisplay_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new DatabaseWindow().Show();
+            DatabaseWindow database_window = new DatabaseWindow();
         }
     }
 }
