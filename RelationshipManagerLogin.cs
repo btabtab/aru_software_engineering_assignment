@@ -12,14 +12,11 @@ namespace aru_software_eng_UI
 {
     public partial class RelationshipManagerLogin : Form
     {
-        public RelationshipManagerLogin()
+        FormManager manager;
+        public RelationshipManagerLogin(Form n_previous_window)
         {
             InitializeComponent();
-        }
-
-        private void RelationshipManagerLogin_Load(object sender, EventArgs e)
-        {
-
+            manager = new FormManager(n_previous_window, this);
         }
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
@@ -34,7 +31,6 @@ namespace aru_software_eng_UI
 
         private void RM_login_backbutton_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -44,7 +40,14 @@ namespace aru_software_eng_UI
 
         private void RM_login_manager_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            RelationshipManagerLogin rm_window = new RelationshipManagerLogin(this);
+            rm_window.Show();
+        }
 
+        private void RM_backButton_Click(object sender, EventArgs e)
+        {
+            manager.back();
         }
     }
 }
