@@ -32,6 +32,7 @@ namespace aru_software_eng_UI
             this.IdeaGenBTN = new System.Windows.Forms.Button();
             this.RelationshipManagerBTN = new System.Windows.Forms.Button();
             this.CreateAccountBTN = new System.Windows.Forms.Button();
+            this.DatabaseDisplay = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // IdeaGenBTN
@@ -64,11 +65,22 @@ namespace aru_software_eng_UI
             this.CreateAccountBTN.UseVisualStyleBackColor = true;
             this.CreateAccountBTN.Click += new System.EventHandler(this.CreateAccountBTN_Click);
             // 
+            // DatabaseDisplay
+            // 
+            this.DatabaseDisplay.Location = new System.Drawing.Point(620, 409);
+            this.DatabaseDisplay.Name = "DatabaseDisplay";
+            this.DatabaseDisplay.Size = new System.Drawing.Size(168, 29);
+            this.DatabaseDisplay.TabIndex = 3;
+            this.DatabaseDisplay.Text = "Show database test";
+            this.DatabaseDisplay.UseVisualStyleBackColor = true;
+            this.DatabaseDisplay.Click += new System.EventHandler(this.DatabaseDisplay_Click);
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DatabaseDisplay);
             this.Controls.Add(this.CreateAccountBTN);
             this.Controls.Add(this.RelationshipManagerBTN);
             this.Controls.Add(this.IdeaGenBTN);
@@ -84,6 +96,7 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Button IdeaGenBTN;
         private System.Windows.Forms.Button RelationshipManagerBTN;
         private System.Windows.Forms.Button CreateAccountBTN;
+        private System.Windows.Forms.Button DatabaseDisplay;
     }
 }
 
