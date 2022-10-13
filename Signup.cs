@@ -12,9 +12,12 @@ namespace aru_software_eng_UI
 {
     public partial class Signup : Form
     {
-        public Signup()
+
+        FormManager manager;
+        public Signup(Form n_previous_window)
         {
             InitializeComponent();
+            manager = new FormManager(n_previous_window, this);
         }
 
         private void PasswordLabel_Click(object sender, EventArgs e)
@@ -38,15 +41,10 @@ namespace aru_software_eng_UI
         {
 
         }
-
-        private void LoginLabel_Click(object sender, EventArgs e)
+        
+        private void RM_backButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void PasswordGetter2_TextChanged(object sender, EventArgs e)
-        {
-
+            manager.back();
         }
     }
 }

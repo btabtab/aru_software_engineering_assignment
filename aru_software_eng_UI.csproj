@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="DummyDatabaseSystem.cs" />
     <Compile Include="DummyFunctions.cs" />
+    <Compile Include="FormManager.cs" />
     <Compile Include="IdeaGeneratorLoginLabel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,17 +96,16 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
-    <Compile Include="StatusErrorControls.cs" />
     <Compile Include="UserDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserDatabaseDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Window.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <EmbeddedResource Include="DatabaseWindow.resx">
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManager.resx">
+      <DependentUpon>FormManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IdeaGeneratorLoginLabel.resx">
       <DependentUpon>IdeaGeneratorLoginLabel.cs</DependentUpon>

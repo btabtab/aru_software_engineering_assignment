@@ -33,33 +33,42 @@ namespace aru_software_eng_UI
             this.RelationshipManagerBTN = new System.Windows.Forms.Button();
             this.CreateAccountBTN = new System.Windows.Forms.Button();
             this.DatabaseDisplay = new System.Windows.Forms.Button();
+            this.LoginTitleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // IdeaGenBTN
             // 
+            this.IdeaGenBTN.BackColor = System.Drawing.SystemColors.Highlight;
+            this.IdeaGenBTN.Font = new System.Drawing.Font("Agency FB", 28F, System.Drawing.FontStyle.Bold);
+            this.IdeaGenBTN.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.IdeaGenBTN.Location = new System.Drawing.Point(12, 205);
             this.IdeaGenBTN.Name = "IdeaGenBTN";
-            this.IdeaGenBTN.Size = new System.Drawing.Size(298, 97);
+            this.IdeaGenBTN.Size = new System.Drawing.Size(376, 98);
             this.IdeaGenBTN.TabIndex = 0;
             this.IdeaGenBTN.Text = "Idea Generator";
-            this.IdeaGenBTN.UseVisualStyleBackColor = true;
+            this.IdeaGenBTN.UseVisualStyleBackColor = false;
             this.IdeaGenBTN.Click += new System.EventHandler(this.IdeaGenBTN_Click);
             // 
             // RelationshipManagerBTN
             // 
-            this.RelationshipManagerBTN.Location = new System.Drawing.Point(490, 205);
+            this.RelationshipManagerBTN.BackColor = System.Drawing.SystemColors.Highlight;
+            this.RelationshipManagerBTN.Font = new System.Drawing.Font("Agency FB", 28F, System.Drawing.FontStyle.Bold);
+            this.RelationshipManagerBTN.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RelationshipManagerBTN.Location = new System.Drawing.Point(412, 205);
             this.RelationshipManagerBTN.Name = "RelationshipManagerBTN";
-            this.RelationshipManagerBTN.Size = new System.Drawing.Size(298, 97);
+            this.RelationshipManagerBTN.Size = new System.Drawing.Size(376, 98);
             this.RelationshipManagerBTN.TabIndex = 1;
             this.RelationshipManagerBTN.Text = "Relationship Manager";
-            this.RelationshipManagerBTN.UseVisualStyleBackColor = true;
+            this.RelationshipManagerBTN.UseVisualStyleBackColor = false;
             this.RelationshipManagerBTN.Click += new System.EventHandler(this.RelationshipManagerBTN_Click);
             // 
             // CreateAccountBTN
             // 
-            this.CreateAccountBTN.Location = new System.Drawing.Point(316, 273);
+            this.CreateAccountBTN.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.CreateAccountBTN.Font = new System.Drawing.Font("Agency FB", 16F, System.Drawing.FontStyle.Bold);
+            this.CreateAccountBTN.Location = new System.Drawing.Point(316, 309);
             this.CreateAccountBTN.Name = "CreateAccountBTN";
-            this.CreateAccountBTN.Size = new System.Drawing.Size(168, 29);
+            this.CreateAccountBTN.Size = new System.Drawing.Size(172, 40);
             this.CreateAccountBTN.TabIndex = 2;
             this.CreateAccountBTN.Text = "Create an Account";
             this.CreateAccountBTN.UseVisualStyleBackColor = true;
@@ -75,11 +84,22 @@ namespace aru_software_eng_UI
             this.DatabaseDisplay.UseVisualStyleBackColor = true;
             this.DatabaseDisplay.Click += new System.EventHandler(this.DatabaseDisplay_Click);
             // 
+            // LoginTitleLabel
+            // 
+            this.LoginTitleLabel.AutoSize = true;
+            this.LoginTitleLabel.Font = new System.Drawing.Font("Agency FB", 50F, System.Drawing.FontStyle.Bold);
+            this.LoginTitleLabel.Location = new System.Drawing.Point(12, 9);
+            this.LoginTitleLabel.Name = "LoginTitleLabel";
+            this.LoginTitleLabel.Size = new System.Drawing.Size(151, 80);
+            this.LoginTitleLabel.TabIndex = 4;
+            this.LoginTitleLabel.Text = "Login";
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LoginTitleLabel);
             this.Controls.Add(this.DatabaseDisplay);
             this.Controls.Add(this.CreateAccountBTN);
             this.Controls.Add(this.RelationshipManagerBTN);
@@ -88,6 +108,7 @@ namespace aru_software_eng_UI
             this.Text = "LoginPage";
             this.Load += new System.EventHandler(this.LoginPage_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -97,6 +118,7 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Button RelationshipManagerBTN;
         private System.Windows.Forms.Button CreateAccountBTN;
         private System.Windows.Forms.Button DatabaseDisplay;
+        private System.Windows.Forms.Label LoginTitleLabel;
     }
 }
 
