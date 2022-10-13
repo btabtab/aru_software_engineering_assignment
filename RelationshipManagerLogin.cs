@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace aru_software_eng_UI
 {
-    public partial class RelationshipManagerLogin : Form
+    public partial class RelationshipManagerLogin : ExpandedForm
     {
-        Form previous_window;
         public RelationshipManagerLogin(Form n_previous_window)
         {
             InitializeComponent();
-            previous_window = n_previous_window;
-        }
-
-        private void RelationshipManagerLogin_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)

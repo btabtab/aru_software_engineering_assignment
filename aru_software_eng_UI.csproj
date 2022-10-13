@@ -69,6 +69,9 @@
     </Compile>
     <Compile Include="DummyDatabaseSystem.cs" />
     <Compile Include="DummyFunctions.cs" />
+    <Compile Include="ExpandedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="IdeaGeneratorLoginLabel.cs">
       <SubType>Form</SubType>
     </Compile>

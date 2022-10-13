@@ -132,7 +132,6 @@ namespace aru_software_eng_UI
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "RelationshipManagerLogin";
             this.Text = "RelationshipManagerLogin";
-            this.Load += new System.EventHandler(this.RelationshipManagerLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
