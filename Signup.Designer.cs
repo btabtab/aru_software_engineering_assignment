@@ -74,9 +74,9 @@ namespace aru_software_eng_UI
             // 
             // LoginGetter
             // 
-            this.LoginGetter.Location = new System.Drawing.Point(294, 144);
+            this.LoginGetter.Location = new System.Drawing.Point(344, 144);
             this.LoginGetter.Name = "LoginGetter";
-            this.LoginGetter.Size = new System.Drawing.Size(316, 20);
+            this.LoginGetter.Size = new System.Drawing.Size(266, 20);
             this.LoginGetter.TabIndex = 3;
             // 
             // RulesText
@@ -94,15 +94,15 @@ namespace aru_software_eng_UI
             this.LoginLabel.AutoSize = true;
             this.LoginLabel.Location = new System.Drawing.Point(225, 144);
             this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(63, 13);
+            this.LoginLabel.Size = new System.Drawing.Size(58, 13);
             this.LoginLabel.TabIndex = 5;
-            this.LoginLabel.Text = "Type Login:";
+            this.LoginLabel.Text = "Username:";
             // 
             // EmailGetter
             // 
-            this.EmailGetter.Location = new System.Drawing.Point(293, 185);
+            this.EmailGetter.Location = new System.Drawing.Point(344, 185);
             this.EmailGetter.Name = "EmailGetter";
-            this.EmailGetter.Size = new System.Drawing.Size(317, 20);
+            this.EmailGetter.Size = new System.Drawing.Size(266, 20);
             this.EmailGetter.TabIndex = 6;
             // 
             // EmailLabel
@@ -110,15 +110,15 @@ namespace aru_software_eng_UI
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Location = new System.Drawing.Point(225, 188);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(62, 13);
+            this.EmailLabel.Size = new System.Drawing.Size(35, 13);
             this.EmailLabel.TabIndex = 7;
-            this.EmailLabel.Text = "Type Email:";
+            this.EmailLabel.Text = "Email:";
             // 
             // PasswordGetter1
             // 
-            this.PasswordGetter1.Location = new System.Drawing.Point(314, 225);
+            this.PasswordGetter1.Location = new System.Drawing.Point(344, 225);
             this.PasswordGetter1.Name = "PasswordGetter1";
-            this.PasswordGetter1.Size = new System.Drawing.Size(296, 20);
+            this.PasswordGetter1.Size = new System.Drawing.Size(266, 20);
             this.PasswordGetter1.TabIndex = 8;
             // 
             // PasswordLabel
@@ -126,9 +126,9 @@ namespace aru_software_eng_UI
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Location = new System.Drawing.Point(225, 228);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(83, 13);
+            this.PasswordLabel.Size = new System.Drawing.Size(56, 13);
             this.PasswordLabel.TabIndex = 9;
-            this.PasswordLabel.Text = "Type Password:";
+            this.PasswordLabel.Text = "Password:";
             this.PasswordLabel.Click += new System.EventHandler(this.PasswordLabel_Click);
             // 
             // AgainPasswordLabel
@@ -166,6 +166,7 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.SignUpButton);
             this.Name = "Signup";
             this.Text = "Signup";
+            this.Load += new System.EventHandler(this.Signup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

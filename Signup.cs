@@ -21,5 +21,10 @@ namespace aru_software_eng_UI
         {
 
         }
+
+        private void Signup_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
