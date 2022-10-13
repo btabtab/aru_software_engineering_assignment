@@ -39,7 +39,7 @@ namespace aru_software_eng_UI
         {
 
         }
-
+        
         private void RM_backButton_Click(object sender, EventArgs e)
         {
             manager.back();
