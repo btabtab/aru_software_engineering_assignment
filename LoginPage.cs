@@ -38,7 +38,7 @@ namespace aru_software_eng_UI
         private void DatabaseDisplay_Click(object sender, EventArgs e)
         {
             this.Hide();
-            
+            new DatabaseWindow().Show();
         }
     }
 }
