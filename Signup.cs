@@ -29,6 +29,8 @@ namespace aru_software_eng_UI
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
+            String usernameString = LoginGetter.Container.ToString();
+            Console.WriteLine(usernameString);
 
         }
 
