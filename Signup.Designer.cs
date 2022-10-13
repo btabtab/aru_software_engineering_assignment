@@ -46,20 +46,22 @@ namespace aru_software_eng_UI
             // 
             // SignUpButton
             // 
+            this.SignUpButton.BackColor = System.Drawing.SystemColors.Highlight;
             this.SignUpButton.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignUpButton.Location = new System.Drawing.Point(361, 345);
+            this.SignUpButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SignUpButton.Location = new System.Drawing.Point(386, 344);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(106, 44);
             this.SignUpButton.TabIndex = 0;
             this.SignUpButton.Text = "Sign Up";
-            this.SignUpButton.UseVisualStyleBackColor = true;
+            this.SignUpButton.UseVisualStyleBackColor = false;
             this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
             // 
             // SignUpLabel
             // 
             this.SignUpLabel.AutoSize = true;
             this.SignUpLabel.Font = new System.Drawing.Font("Agency FB", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignUpLabel.Location = new System.Drawing.Point(187, 21);
+            this.SignUpLabel.Location = new System.Drawing.Point(238, 9);
             this.SignUpLabel.Name = "SignUpLabel";
             this.SignUpLabel.Size = new System.Drawing.Size(451, 80);
             this.SignUpLabel.TabIndex = 1;
@@ -68,7 +70,7 @@ namespace aru_software_eng_UI
             // RulesCheckBox
             // 
             this.RulesCheckBox.AutoSize = true;
-            this.RulesCheckBox.Location = new System.Drawing.Point(228, 316);
+            this.RulesCheckBox.Location = new System.Drawing.Point(320, 315);
             this.RulesCheckBox.Name = "RulesCheckBox";
             this.RulesCheckBox.Size = new System.Drawing.Size(15, 14);
             this.RulesCheckBox.TabIndex = 2;
@@ -76,59 +78,66 @@ namespace aru_software_eng_UI
             // 
             // LoginGetter
             // 
-            this.LoginGetter.Location = new System.Drawing.Point(344, 144);
+            this.LoginGetter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.LoginGetter.Location = new System.Drawing.Point(344, 129);
             this.LoginGetter.Name = "LoginGetter";
-            this.LoginGetter.Size = new System.Drawing.Size(266, 20);
+            this.LoginGetter.Size = new System.Drawing.Size(266, 38);
             this.LoginGetter.TabIndex = 3;
             // 
             // RulesText
             // 
             this.RulesText.AutoSize = true;
-            this.RulesText.Location = new System.Drawing.Point(249, 316);
+            this.RulesText.Location = new System.Drawing.Point(341, 316);
             this.RulesText.Name = "RulesText";
-            this.RulesText.Size = new System.Drawing.Size(312, 13);
+            this.RulesText.Size = new System.Drawing.Size(243, 13);
             this.RulesText.TabIndex = 4;
             this.RulesText.TabStop = true;
-            this.RulesText.Text = "I\'m accepting that I read and confirmed rules and privacy policies";
+            this.RulesText.Text = "I confirm I have read the rules and privacy policies";
             // 
             // LoginLabel
             // 
             this.LoginLabel.AutoSize = true;
-            this.LoginLabel.Location = new System.Drawing.Point(225, 144);
+            this.LoginLabel.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold);
+            this.LoginLabel.Location = new System.Drawing.Point(222, 130);
             this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(58, 13);
+            this.LoginLabel.Size = new System.Drawing.Size(106, 34);
             this.LoginLabel.TabIndex = 5;
             this.LoginLabel.Text = "Username:";
+            this.LoginLabel.Click += new System.EventHandler(this.LoginLabel_Click);
             // 
             // EmailGetter
             // 
-            this.EmailGetter.Location = new System.Drawing.Point(344, 185);
+            this.EmailGetter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailGetter.Location = new System.Drawing.Point(344, 173);
             this.EmailGetter.Name = "EmailGetter";
-            this.EmailGetter.Size = new System.Drawing.Size(266, 20);
+            this.EmailGetter.Size = new System.Drawing.Size(266, 38);
             this.EmailGetter.TabIndex = 6;
             // 
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(225, 188);
+            this.EmailLabel.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold);
+            this.EmailLabel.Location = new System.Drawing.Point(264, 177);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(35, 13);
+            this.EmailLabel.Size = new System.Drawing.Size(64, 34);
             this.EmailLabel.TabIndex = 7;
             this.EmailLabel.Text = "Email:";
             // 
             // PasswordGetter1
             // 
-            this.PasswordGetter1.Location = new System.Drawing.Point(344, 225);
+            this.PasswordGetter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordGetter1.Location = new System.Drawing.Point(344, 217);
             this.PasswordGetter1.Name = "PasswordGetter1";
-            this.PasswordGetter1.Size = new System.Drawing.Size(266, 20);
+            this.PasswordGetter1.Size = new System.Drawing.Size(266, 38);
             this.PasswordGetter1.TabIndex = 8;
             // 
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(225, 228);
+            this.PasswordLabel.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold);
+            this.PasswordLabel.Location = new System.Drawing.Point(222, 221);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(56, 13);
+            this.PasswordLabel.Size = new System.Drawing.Size(106, 34);
             this.PasswordLabel.TabIndex = 9;
             this.PasswordLabel.Text = "Password:";
             this.PasswordLabel.Click += new System.EventHandler(this.PasswordLabel_Click);
@@ -136,24 +145,27 @@ namespace aru_software_eng_UI
             // AgainPasswordLabel
             // 
             this.AgainPasswordLabel.AutoSize = true;
-            this.AgainPasswordLabel.Location = new System.Drawing.Point(225, 261);
+            this.AgainPasswordLabel.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold);
+            this.AgainPasswordLabel.Location = new System.Drawing.Point(170, 266);
             this.AgainPasswordLabel.Name = "AgainPasswordLabel";
-            this.AgainPasswordLabel.Size = new System.Drawing.Size(113, 13);
+            this.AgainPasswordLabel.Size = new System.Drawing.Size(168, 34);
             this.AgainPasswordLabel.TabIndex = 10;
-            this.AgainPasswordLabel.Text = "Type Password Again:";
+            this.AgainPasswordLabel.Text = "Repeat password:";
             // 
             // PasswordGetter2
             // 
-            this.PasswordGetter2.Location = new System.Drawing.Point(344, 258);
+            this.PasswordGetter2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordGetter2.Location = new System.Drawing.Point(344, 265);
             this.PasswordGetter2.Name = "PasswordGetter2";
-            this.PasswordGetter2.Size = new System.Drawing.Size(266, 20);
+            this.PasswordGetter2.Size = new System.Drawing.Size(266, 38);
             this.PasswordGetter2.TabIndex = 11;
+            this.PasswordGetter2.TextChanged += new System.EventHandler(this.PasswordGetter2_TextChanged);
             // 
             // GoBackButton
             // 
             this.GoBackButton.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoBackButton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.GoBackButton.Location = new System.Drawing.Point(386, 404);
+            this.GoBackButton.Location = new System.Drawing.Point(408, 394);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(58, 28);
             this.GoBackButton.TabIndex = 12;

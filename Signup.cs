@@ -36,5 +36,15 @@ namespace aru_software_eng_UI
         {
 
         }
+
+        private void LoginLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordGetter2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
