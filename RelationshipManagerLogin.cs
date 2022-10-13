@@ -36,5 +36,15 @@ namespace aru_software_eng_UI
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RM_login_manager_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
