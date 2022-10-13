@@ -12,6 +12,7 @@ namespace aru_software_eng_UI
 {
     public partial class LoginPage : Form
     {
+        Form next_window;
         public LoginPage()
         {
             InitializeComponent();
@@ -22,25 +23,21 @@ namespace aru_software_eng_UI
 
         private void IdeaGenBTN_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            next_window = new IdeaGeneratorLoginLabel(this);
         }
 
         private void RelationshipManagerBTN_Click(object sender, EventArgs e)
         {
-            this.Hide();
             RelationshipManagerLogin rm_window = new RelationshipManagerLogin(this);
-            rm_window.Show();
         }
 
         private void CreateAccountBTN_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            next_window = new Signup(this);
         }
-
         private void DatabaseDisplay_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DatabaseWindow database_window = new DatabaseWindow();
+            next_window = new DatabaseWindow(this);
         }
     }
 }
