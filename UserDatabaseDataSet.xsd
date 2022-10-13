@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UserDatabaseDataSet" targetNamespace="http://tempuri.org/UserDatabaseDataSet.xsd" xmlns:mstns="http://tempuri.org/UserDatabaseDataSet.xsd" xmlns="http://tempuri.org/UserDatabaseDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Setting" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Setting (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.aru_software_eng_UI.Properties.Settings.GlobalReference.Default.Setting" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UserDatabaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="UserDatabaseDataSet" msprop:Generator_UserDSName="UserDatabaseDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UserLoginData" msprop:Generator_TableClassName="UserLoginDataDataTable" msprop:Generator_TableVarName="tableUserLoginData" msprop:Generator_TablePropName="UserLoginData" msprop:Generator_RowDeletingName="UserLoginDataRowDeleting" msprop:Generator_RowChangingName="UserLoginDataRowChanging" msprop:Generator_RowEvHandlerName="UserLoginDataRowChangeEventHandler" msprop:Generator_RowDeletedName="UserLoginDataRowDeleted" msprop:Generator_UserTableName="UserLoginData" msprop:Generator_RowChangedName="UserLoginDataRowChanged" msprop:Generator_RowEvArgName="UserLoginDataRowChangeEvent" msprop:Generator_RowClassName="UserLoginDataRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:string" />
+              <xs:element name="Username" msprop:Generator_ColumnVarNameInTable="columnUsername" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_UserColumnName="Username" type="xs:string" minOccurs="0" />
+              <xs:element name="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_UserColumnName="Password" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="UserID" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UserLoginData" />
+      <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
