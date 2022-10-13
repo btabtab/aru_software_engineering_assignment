@@ -41,6 +41,7 @@ namespace aru_software_eng_UI
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.AgainPasswordLabel = new System.Windows.Forms.Label();
             this.PasswordGetter2 = new System.Windows.Forms.TextBox();
+            this.GoBackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SignUpButton
@@ -52,6 +53,7 @@ namespace aru_software_eng_UI
             this.SignUpButton.TabIndex = 0;
             this.SignUpButton.Text = "Sign Up";
             this.SignUpButton.UseVisualStyleBackColor = true;
+            this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
             // 
             // SignUpLabel
             // 
@@ -147,11 +149,24 @@ namespace aru_software_eng_UI
             this.PasswordGetter2.Size = new System.Drawing.Size(266, 20);
             this.PasswordGetter2.TabIndex = 11;
             // 
+            // GoBackButton
+            // 
+            this.GoBackButton.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoBackButton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.GoBackButton.Location = new System.Drawing.Point(386, 404);
+            this.GoBackButton.Name = "GoBackButton";
+            this.GoBackButton.Size = new System.Drawing.Size(58, 28);
+            this.GoBackButton.TabIndex = 12;
+            this.GoBackButton.Text = "Go back";
+            this.GoBackButton.UseVisualStyleBackColor = true;
+            this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
+            // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.PasswordGetter2);
             this.Controls.Add(this.AgainPasswordLabel);
             this.Controls.Add(this.PasswordLabel);
@@ -186,5 +201,6 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Label AgainPasswordLabel;
         private System.Windows.Forms.TextBox PasswordGetter2;
+        private System.Windows.Forms.Button GoBackButton;
     }
 }
