@@ -96,6 +96,9 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserDatabaseDataSet.cs">
+      <DependentUpon>UserDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UserDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
