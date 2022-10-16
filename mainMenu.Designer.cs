@@ -1,7 +1,7 @@
 ﻿
 namespace aru_software_eng_UI
 {
-    partial class LoginPage
+    partial class mainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -66,7 +66,7 @@ namespace aru_software_eng_UI
             // 
             this.CreateAccountBTN.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.CreateAccountBTN.Font = new System.Drawing.Font("Agency FB", 16F, System.Drawing.FontStyle.Bold);
-            this.CreateAccountBTN.Location = new System.Drawing.Point(316, 309);
+            this.CreateAccountBTN.Location = new System.Drawing.Point(310, 337);
             this.CreateAccountBTN.Name = "CreateAccountBTN";
             this.CreateAccountBTN.Size = new System.Drawing.Size(172, 40);
             this.CreateAccountBTN.TabIndex = 2;
@@ -94,7 +94,7 @@ namespace aru_software_eng_UI
             this.LoginTitleLabel.TabIndex = 4;
             this.LoginTitleLabel.Text = "Login";
             // 
-            // LoginPage
+            // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,7 +104,7 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.CreateAccountBTN);
             this.Controls.Add(this.RelationshipManagerBTN);
             this.Controls.Add(this.IdeaGenBTN);
-            this.Name = "LoginPage";
+            this.Name = "mainMenu";
             this.Text = "LoginPage";
             this.Load += new System.EventHandler(this.LoginPage_Load);
             this.ResumeLayout(false);
