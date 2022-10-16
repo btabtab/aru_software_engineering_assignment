@@ -65,7 +65,6 @@ namespace aru_software_eng_UI
             Boolean emailContain = email.Contains("@"); //Checks if the text entered into the email entry point contains the correct symbol - L
             if (emailContain == true) //If the email contains the correct symbol - L
             {
-                errorOutputLabel.Text = "Email is valid";
                 wrongEmailSymbol.Text = ""; //remove the cross next to the email repeat box - L
                 emailCorrect = true;
             }
@@ -80,7 +79,7 @@ namespace aru_software_eng_UI
 
             if (passwordCorrect == true & emailCorrect == true)
             { //if all aspects of the form are correct, run the code below - L
-                errorOutputLabel.Text = ""; //clear the error label - L
+                errorOutputLabel.Text = "SUCSESS"; //clear the error label - L
 
             }
 
