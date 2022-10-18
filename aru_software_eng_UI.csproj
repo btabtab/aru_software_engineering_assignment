@@ -61,13 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackendController.cs" />
+    <Compile Include="DatabaseHandler.cs" />
     <Compile Include="DatabaseWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DatabaseWindow.Designer.cs">
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="DummyDatabaseSystem.cs" />
     <Compile Include="DummyFunctions.cs" />
     <Compile Include="FormManager.cs" />
     <Compile Include="IdeaGeneratorLoginLabel.cs">
