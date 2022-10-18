@@ -60,13 +60,12 @@ namespace aru_software_eng_UI
             }
             //EMAIL CODE
 
-            if (emailCorrect == true && passwordCorrect == true && usernameCorrect == true)
-            { //if all aspects of the form are correct, run the code below - L
-                errorOutputLabel.Text = "SUCSESS"; //clear the error label - L
+            if (emailCorrect == true && passwordCorrect == true) //if all aspects of the form are correct, run the code below - L
+            { 
                 return true;
 
             }
-
+ 
             return false;
             
         }
