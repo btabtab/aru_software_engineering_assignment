@@ -14,24 +14,8 @@ namespace aru_software_eng_UI
     {
 
         FormManager manager;
-        public Signup(Form n_previous_window)
-        {
-            InitializeComponent();
-            manager = new FormManager(n_previous_window, this);
-        }
 
-        private void PasswordLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Signup_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SignUpButton_Click(object sender, EventArgs e)
-        {
+        private Boolean credentialChecker() {
             //sets some variabels equal to each input from the sign up page - L
             String username = LoginGetter.Text;
             String password1 = PasswordGetter1.Text;
@@ -76,12 +60,43 @@ namespace aru_software_eng_UI
             }
             //EMAIL CODE
 
-
-            if (passwordCorrect == true & emailCorrect == true)
+            if (emailCorrect == true && passwordCorrect == true && usernameCorrect == true)
             { //if all aspects of the form are correct, run the code below - L
                 errorOutputLabel.Text = "SUCSESS"; //clear the error label - L
+                return true;
 
             }
+
+            return false;
+            
+        }
+
+        public Signup(Form n_previous_window)
+        {
+            InitializeComponent();
+            manager = new FormManager(n_previous_window, this);
+        }
+
+        private void PasswordLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Signup_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SignUpButton_Click(object sender, EventArgs e)
+        {
+
+            if (credentialChecker() == true) {
+                errorOutputLabel.Text = "SUCSESS - MOVE FORWARD"; //clear the error label - L
+
+            }
+
+
+
 
 
 
