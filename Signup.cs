@@ -27,7 +27,7 @@ namespace aru_software_eng_UI
                 wrongPassSymbol2.Text = "X"; //Add a cross next to the password repeat box - L
                 return false;
             }
-            else //If the passwords do match, do the following code - L
+            else if (password1.Length > 6) //If the passwords do match, do the following code - L
             {
                 errorOutputLabel.Text = ""; //clear the error label - L
                 wrongPassSymbol1.Text = ""; //remove the cross next to the password box - L
@@ -35,7 +35,15 @@ namespace aru_software_eng_UI
                 return true;
 
             }
+            else 
+            {
+                errorOutputLabel.Text = "minimum password length of 7 characters"; //Tell the user their password is wrong - L
+                wrongPassSymbol1.Text = "X"; //Add a cross next to the password box - L
+                wrongPassSymbol2.Text = "X"; //Add a cross next to the password repeat box - L
+                return false;
+            }
         }
+
 
         private Boolean emailChecker()
         {
@@ -57,14 +65,16 @@ namespace aru_software_eng_UI
         private Boolean usernameChecker()
         {
             String username = LoginGetter.Text;
-            if (username.Length > 2) //If the email contains the correct symbol - L
+            if (username.Length > 2) //If the username is long enough - L
             {
+                usernameWrongSymbol.Text = ""; //clears the cross
                 return true;
             }
 
-            else //If the email does not contain the correct symbol - L
+            else //If the email username is too short - L
             {
                 errorOutputLabel.Text = "username must be atleast 3 characters long"; //Tells the user their email is invalid - replaces wrong password text as the email is first on the data entry list - L
+                usernameWrongSymbol.Text = "X";
                 return false;
             }
         }
