@@ -15,59 +15,68 @@ namespace aru_software_eng_UI
 
         FormManager manager;
 
-        private Boolean credentialChecker() {
-            //sets some variabels equal to each input from the sign up page - L
-            String username = LoginGetter.Text;
+        private Boolean passwordChecker() 
+        {
             String password1 = PasswordGetter1.Text;
             String password2 = PasswordGetter2.Text;
-            String email = EmailGetter.Text;
-            bool passwordCorrect = false;
-            bool emailCorrect = false;
-            bool usernameCorrect = false;
-
-
-            
-            //PASSWORD CODE
             bool passNotMatch = Convert.ToBoolean(string.Compare(password1, password2)); //Compares if the passwords match - L
             if (passNotMatch == true) //If the passwords do not match, do the following code - L
             {
                 errorOutputLabel.Text = "passwords do not match"; //Tell the user their password is wrong - L
                 wrongPassSymbol1.Text = "X"; //Add a cross next to the password box - L
                 wrongPassSymbol2.Text = "X"; //Add a cross next to the password repeat box - L
+                return false;
             }
             else //If the passwords do match, do the following code - L
             {
                 errorOutputLabel.Text = ""; //clear the error label - L
                 wrongPassSymbol1.Text = ""; //remove the cross next to the password box - L
                 wrongPassSymbol2.Text = ""; //remove the cross next to the password repeat box - L
-                passwordCorrect = true;
+                return true;
+
             }
-            //PASSWORD CODE
+        }
 
-
-            //EMAIL CODE
+        private Boolean emailChecker()
+        {
+            String email = EmailGetter.Text;
             Boolean emailContain = email.Contains("@"); //Checks if the text entered into the email entry point contains the correct symbol - L
             if (emailContain == true) //If the email contains the correct symbol - L
             {
                 wrongEmailSymbol.Text = ""; //remove the cross next to the email repeat box - L
-                emailCorrect = true;
+                return true;
             }
-
             else //If the email does not contain the correct symbol - L
             {
                 errorOutputLabel.Text = "Email is not valid"; //Tells the user their email is invalid - replaces wrong password text as the email is first on the data entry list - L
                 wrongEmailSymbol.Text = "X"; //Add a cross next to the email repeat box - L
+                return false;
             }
-            //EMAIL CODE
+        }
 
-            if (emailCorrect == true && passwordCorrect == true) //if all aspects of the form are correct, run the code below - L
+        private Boolean usernameChecker()
+        {
+            String username = LoginGetter.Text;
+            if (username.Length > 2) //If the email contains the correct symbol - L
+            {
+                return true;
+            }
+
+            else //If the email does not contain the correct symbol - L
+            {
+                errorOutputLabel.Text = "username must be atleast 3 characters long"; //Tells the user their email is invalid - replaces wrong password text as the email is first on the data entry list - L
+                return false;
+            }
+        }
+
+        private Boolean credentialChecker() {
+           
+
+            if (emailChecker() && passwordChecker() && usernameChecker()) //if all aspects of the form are correct, run the code below - L
             { 
                 return true;
-
             }
- 
             return false;
-            
         }
 
         public Signup(Form n_previous_window)
@@ -93,14 +102,7 @@ namespace aru_software_eng_UI
             if (credentialChecker()) //if methoud output is true, run the following code - L
             {
                 errorOutputLabel.Text = "SUCSESS - MOVE FORWARD"; //clear the error label - L
-
             }
-
-
-
-
-
-
         }
 
 
