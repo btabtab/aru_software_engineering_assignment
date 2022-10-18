@@ -19,8 +19,8 @@ namespace aru_software_eng_UI
         {
             String password1 = PasswordGetter1.Text;
             String password2 = PasswordGetter2.Text;
-            bool passNotMatch = Convert.ToBoolean(string.Compare(password1, password2)); //Compares if the passwords match - L
-            if (passNotMatch == true) //If the passwords do not match, do the following code - L
+            bool pass_not_match = Convert.ToBoolean(string.Compare(password1, password2)); //Compares if the passwords match - L
+            if (pass_not_match == true) //If the passwords do not match, do the following code - L
             {
                 errorOutputLabel.Text = "passwords do not match"; //Tell the user their password is wrong - L
                 wrongPassSymbol1.Text = "X"; //Add a cross next to the password box - L
@@ -48,8 +48,8 @@ namespace aru_software_eng_UI
         private Boolean emailChecker()
         {
             String email = EmailGetter.Text;
-            Boolean emailContain = email.Contains("@"); //Checks if the text entered into the email entry point contains the correct symbol - L
-            if (emailContain == true) //If the email contains the correct symbol - L
+            Boolean email_contain = email.Contains("@"); //Checks if the text entered into the email entry point contains the correct symbol - L
+            if (email_contain == true) //If the email contains the correct symbol - L
             {
                 wrongEmailSymbol.Text = ""; //remove the cross next to the email repeat box - L
                 return true;
@@ -79,10 +79,19 @@ namespace aru_software_eng_UI
             }
         }
 
+        private Boolean checkboxChecker() 
+        {
+            if (!RulesCheckBox.Checked)
+            {
+                errorOutputLabel.Text = "please check the rules box";
+            }
+            return RulesCheckBox.Checked;
+        }
+
         private Boolean credentialChecker() {
            
 
-            if (emailChecker() && passwordChecker() && usernameChecker()) //if all aspects of the form are correct, run the code below - L
+            if (emailChecker() && passwordChecker() && usernameChecker() && checkboxChecker()) //if all aspects of the form are correct, run the code below - L
             { 
                 return true;
             }
@@ -143,6 +152,11 @@ private void GoBackButton_Click(object sender, EventArgs e)
         }
 
         private void PasswordGetter1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RulesCheckBox_CheckedChanged(object sender, EventArgs e)
         {
 
         }

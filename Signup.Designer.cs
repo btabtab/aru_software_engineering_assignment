@@ -49,6 +49,7 @@ namespace aru_software_eng_UI
             this.wrongEmailSymbol = new System.Windows.Forms.Label();
             this.wrongUserSymbol = new System.Windows.Forms.Label();
             this.errorOutputLabel = new System.Windows.Forms.Label();
+            this.usernameWrongSymbol = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SignUpButton
@@ -85,15 +86,16 @@ namespace aru_software_eng_UI
             this.RulesCheckBox.Size = new System.Drawing.Size(15, 14);
             this.RulesCheckBox.TabIndex = 2;
             this.RulesCheckBox.UseVisualStyleBackColor = true;
+            this.RulesCheckBox.CheckedChanged += new System.EventHandler(this.RulesCheckBox_CheckedChanged);
             // 
             // LoginGetter
             // 
             this.LoginGetter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.LoginGetter.Location = new System.Drawing.Point(445, 115);
+            this.LoginGetter.Location = new System.Drawing.Point(454, 115);
             this.LoginGetter.Margin = new System.Windows.Forms.Padding(2);
             this.LoginGetter.MaxLength = 20;
             this.LoginGetter.Name = "LoginGetter";
-            this.LoginGetter.Size = new System.Drawing.Size(224, 38);
+            this.LoginGetter.Size = new System.Drawing.Size(215, 38);
             this.LoginGetter.TabIndex = 3;
             // 
             // RulesText
@@ -272,11 +274,22 @@ namespace aru_software_eng_UI
             this.errorOutputLabel.Size = new System.Drawing.Size(0, 31);
             this.errorOutputLabel.TabIndex = 16;
             // 
+            // usernameWrongSymbol
+            // 
+            this.usernameWrongSymbol.AutoSize = true;
+            this.usernameWrongSymbol.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold);
+            this.usernameWrongSymbol.ForeColor = System.Drawing.Color.Red;
+            this.usernameWrongSymbol.Location = new System.Drawing.Point(674, 118);
+            this.usernameWrongSymbol.Name = "usernameWrongSymbol";
+            this.usernameWrongSymbol.Size = new System.Drawing.Size(0, 34);
+            this.usernameWrongSymbol.TabIndex = 21;
+            // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.usernameWrongSymbol);
             this.Controls.Add(this.wrongUserSymbol);
             this.Controls.Add(this.wrongEmailSymbol);
             this.Controls.Add(this.wrongPassSymbol2);
@@ -327,5 +340,6 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label wrongEmailSymbol;
         private System.Windows.Forms.Label wrongUserSymbol;
         private System.Windows.Forms.Label errorOutputLabel;
+        private System.Windows.Forms.Label usernameWrongSymbol;
     }
 }
