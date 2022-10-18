@@ -26,7 +26,7 @@ namespace aru_software_eng_UI
             bool usernameCorrect = false;
 
 
-
+            
             //PASSWORD CODE
             bool passNotMatch = Convert.ToBoolean(string.Compare(password1, password2)); //Compares if the passwords match - L
             if (passNotMatch == true) //If the passwords do not match, do the following code - L
@@ -90,7 +90,9 @@ namespace aru_software_eng_UI
         private void SignUpButton_Click(object sender, EventArgs e)
         {
 
-            if (credentialChecker() == true) {
+
+            if (credentialChecker()) //if methoud output is true, run the following code - L
+            {
                 errorOutputLabel.Text = "SUCSESS - MOVE FORWARD"; //clear the error label - L
 
             }
