@@ -1,7 +1,7 @@
 ﻿
 namespace aru_software_eng_UI
 {
-    partial class mainMenu
+    partial class StartMenu
     {
         /// <summary>
         /// Required designer variable.

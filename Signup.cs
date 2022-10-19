@@ -16,6 +16,11 @@ namespace aru_software_eng_UI
         FormManager manager;
         BackendController backend_controller;
         public Signup(Form n_previous_window, BackendController n_backend_controller)
+        {
+            InitializeComponent();
+            manager = new FormManager(n_previous_window, this);
+            backend_controller = n_backend_controller;
+        }
 
         private Boolean passwordChecker() 
         {
@@ -100,13 +105,6 @@ namespace aru_software_eng_UI
             return false;
         }
 
-        public Signup(Form n_previous_window)
-        {
-            InitializeComponent();
-            manager = new FormManager(n_previous_window, this);
-            backend_controller = n_backend_controller;
-        }
-
         private void PasswordLabel_Click(object sender, EventArgs e)
         {
 
@@ -129,9 +127,9 @@ namespace aru_software_eng_UI
 
 
 
-private void GoBackButton_Click(object sender, EventArgs e)
+        private void GoBackButton_Click(object sender, EventArgs e)
         {
-
+            manager.back();
         }
         
         private void RM_backButton_Click(object sender, EventArgs e)
