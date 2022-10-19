@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace aru_software_eng_UI
 {
-    public partial class LoginPage : Form
+    public partial class mainMenu : Form
     {
         Form next_window;
         BackendController backend_controller;
