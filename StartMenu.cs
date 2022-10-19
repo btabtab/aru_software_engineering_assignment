@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace aru_software_eng_UI
 {
-    public partial class mainMenu : Form
+    public partial class StartMenu : Form
     {
         Form next_window;
         BackendController backend_controller;
-        public LoginPage(BackendController n_backend_controller)
+        public StartMenu(BackendController n_backend_controller)
         {
             InitializeComponent();
             backend_controller = n_backend_controller;
