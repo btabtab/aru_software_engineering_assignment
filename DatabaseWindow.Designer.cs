@@ -41,10 +41,15 @@ namespace aru_software_eng_UI
             this.dataBaseDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataBaseDataSet1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            =======
+            this.AddLoginButton = new System.Windows.Forms.Button();
+            this.DeleteLastLoginButton = new System.Windows.Forms.Button();
+            >>>>>>>
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.KillwindowButton = new System.Windows.Forms.Button();
+            this.display_label = new System.Windows.Forms.Label();
+            this.generated_user_entry_display = new System.Windows.Forms.Label();
+            this.login_generator_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userLoginDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userDatabaseDataSetBindingSource)).BeginInit();
@@ -117,26 +122,27 @@ namespace aru_software_eng_UI
             this.textBox1.Size = new System.Drawing.Size(438, 31);
             this.textBox1.TabIndex = 1;
             // 
-            // button1
+            // AddLoginButton
             // 
-            this.button1.Location = new System.Drawing.Point(560, 23);
-            this.button1.Margin = new System.Windows.Forms.Padding(6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 88);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add new login";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.AddLoginButton.Location = new System.Drawing.Point(560, 23);
+            this.AddLoginButton.Margin = new System.Windows.Forms.Padding(6);
+            this.AddLoginButton.Name = "AddLoginButton";
+            this.AddLoginButton.Size = new System.Drawing.Size(196, 88);
+            this.AddLoginButton.TabIndex = 2;
+            this.AddLoginButton.Text = "Add new login";
+            this.AddLoginButton.UseVisualStyleBackColor = true;
+            this.AddLoginButton.Click += new System.EventHandler(this.AddLoginButton_Click);
             // 
-            // button2
+            // DeleteLastLoginButton
             // 
-            this.button2.Location = new System.Drawing.Point(768, 123);
-            this.button2.Margin = new System.Windows.Forms.Padding(6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(442, 38);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Delete last login";
-            this.button2.UseVisualStyleBackColor = true;
+            this.DeleteLastLoginButton.Location = new System.Drawing.Point(768, 123);
+            this.DeleteLastLoginButton.Margin = new System.Windows.Forms.Padding(6);
+            this.DeleteLastLoginButton.Name = "DeleteLastLoginButton";
+            this.DeleteLastLoginButton.Size = new System.Drawing.Size(442, 38);
+            this.DeleteLastLoginButton.TabIndex = 4;
+            this.DeleteLastLoginButton.Text = "Delete last login";
+            this.DeleteLastLoginButton.UseVisualStyleBackColor = true;
+            this.DeleteLastLoginButton.Click += new System.EventHandler(this.DeleteLastLoginButton_Click);
             // 
             // textBox2
             // 
@@ -146,28 +152,60 @@ namespace aru_software_eng_UI
             this.textBox2.Size = new System.Drawing.Size(438, 31);
             this.textBox2.TabIndex = 3;
             // 
-            // button3
+            // KillwindowButton
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkRed;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(15, 15);
-            this.button3.Margin = new System.Windows.Forms.Padding(6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 88);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Kill window";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.KillwindowButton.BackColor = System.Drawing.Color.DarkRed;
+            this.KillwindowButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.KillwindowButton.Location = new System.Drawing.Point(15, 15);
+            this.KillwindowButton.Margin = new System.Windows.Forms.Padding(6);
+            this.KillwindowButton.Name = "KillwindowButton";
+            this.KillwindowButton.Size = new System.Drawing.Size(112, 88);
+            this.KillwindowButton.TabIndex = 5;
+            this.KillwindowButton.Text = "Kill window";
+            this.KillwindowButton.UseVisualStyleBackColor = false;
+            this.KillwindowButton.Click += new System.EventHandler(this.KillwindowButton_Click);
+            // 
+            // display_label
+            // 
+            this.display_label.AutoSize = true;
+            this.display_label.Location = new System.Drawing.Point(763, 213);
+            this.display_label.Name = "display_label";
+            this.display_label.Size = new System.Drawing.Size(220, 25);
+            this.display_label.TabIndex = 7;
+            this.display_label.Text = "Generated User Entry";
+            // 
+            // generated_user_entry_display
+            // 
+            this.generated_user_entry_display.AutoSize = true;
+            this.generated_user_entry_display.Location = new System.Drawing.Point(763, 268);
+            this.generated_user_entry_display.Name = "generated_user_entry_display";
+            this.generated_user_entry_display.Size = new System.Drawing.Size(222, 25);
+            this.generated_user_entry_display.TabIndex = 8;
+            this.generated_user_entry_display.Text = "no data generated yet";
+            // 
+            // login_generator_btn
+            // 
+            this.login_generator_btn.Location = new System.Drawing.Point(558, 213);
+            this.login_generator_btn.Margin = new System.Windows.Forms.Padding(6);
+            this.login_generator_btn.Name = "login_generator_btn";
+            this.login_generator_btn.Size = new System.Drawing.Size(196, 80);
+            this.login_generator_btn.TabIndex = 9;
+            this.login_generator_btn.Text = "Generate new login";
+            this.login_generator_btn.UseVisualStyleBackColor = true;
+            this.login_generator_btn.Click += new System.EventHandler(this.login_generator_btn_Click);
             // 
             // DatabaseWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1968, 887);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.login_generator_btn);
+            this.Controls.Add(this.generated_user_entry_display);
+            this.Controls.Add(this.display_label);
+            this.Controls.Add(this.KillwindowButton);
+            this.Controls.Add(this.DeleteLastLoginButton);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AddLoginButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -198,9 +236,12 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource userLoginDataBindingSource;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AddLoginButton;
+        private System.Windows.Forms.Button DeleteLastLoginButton;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button KillwindowButton;
+        private System.Windows.Forms.Label display_label;
+        private System.Windows.Forms.Label generated_user_entry_display;
+        private System.Windows.Forms.Button login_generator_btn;
     }
 }

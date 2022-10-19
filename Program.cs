@@ -8,9 +8,8 @@ instance created here.*/
 
 public class Program
 {
-	[STAThread]
 	static void Main(string[] args)
 	{
-		Application.Run(new mainMenu());
+		Application.Run(new LoginPage(new BackendController(new DatabaseHandler(new UserDatabaseDataSet()))));
 	}
 }

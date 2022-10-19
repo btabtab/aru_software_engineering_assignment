@@ -8,7 +8,7 @@ An example:
 > [ **access specifier** ] [ **type** ] this**I**s**AF**unction**N**ame**E**xample(*parameters*)
 
 Variable names / instances of objects:
-> 1. In **lowercase**.
+> 1. In **lowercase**. Unless it is "ID", then it is allowed to be in caps.
 > 2. any **spaces are represented with** the **underscore** character "_"
 
 Class and Namespaces:
