@@ -41,8 +41,10 @@ namespace aru_software_eng_UI
             this.dataBaseDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataBaseDataSet1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
+            =======
             this.AddLoginButton = new System.Windows.Forms.Button();
             this.DeleteLastLoginButton = new System.Windows.Forms.Button();
+            >>>>>>>
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.KillwindowButton = new System.Windows.Forms.Button();
             this.display_label = new System.Windows.Forms.Label();
