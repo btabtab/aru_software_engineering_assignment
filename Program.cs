@@ -8,10 +8,8 @@ instance created here.*/
 
 public class Program
 {
-	//[STAThread]
-	BackendController bck_controller = new BackendController(new DatabaseHandler(new UserDatabaseDataSet()));
 	static void Main(string[] args)
 	{
-		Application.Run(new LoginPage());
+		Application.Run(new LoginPage(new BackendController(new DatabaseHandler(new UserDatabaseDataSet()))));
 	}
 }

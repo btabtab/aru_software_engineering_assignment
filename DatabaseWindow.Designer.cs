@@ -45,6 +45,9 @@ namespace aru_software_eng_UI
             this.DeleteLastLoginButton = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.KillwindowButton = new System.Windows.Forms.Button();
+            this.display_label = new System.Windows.Forms.Label();
+            this.generated_user_entry_display = new System.Windows.Forms.Label();
+            this.login_generator_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userLoginDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userDatabaseDataSetBindingSource)).BeginInit();
@@ -160,11 +163,43 @@ namespace aru_software_eng_UI
             this.KillwindowButton.UseVisualStyleBackColor = false;
             this.KillwindowButton.Click += new System.EventHandler(this.KillwindowButton_Click);
             // 
+            // display_label
+            // 
+            this.display_label.AutoSize = true;
+            this.display_label.Location = new System.Drawing.Point(763, 213);
+            this.display_label.Name = "display_label";
+            this.display_label.Size = new System.Drawing.Size(220, 25);
+            this.display_label.TabIndex = 7;
+            this.display_label.Text = "Generated User Entry";
+            // 
+            // generated_user_entry_display
+            // 
+            this.generated_user_entry_display.AutoSize = true;
+            this.generated_user_entry_display.Location = new System.Drawing.Point(763, 268);
+            this.generated_user_entry_display.Name = "generated_user_entry_display";
+            this.generated_user_entry_display.Size = new System.Drawing.Size(222, 25);
+            this.generated_user_entry_display.TabIndex = 8;
+            this.generated_user_entry_display.Text = "no data generated yet";
+            // 
+            // login_generator_btn
+            // 
+            this.login_generator_btn.Location = new System.Drawing.Point(558, 213);
+            this.login_generator_btn.Margin = new System.Windows.Forms.Padding(6);
+            this.login_generator_btn.Name = "login_generator_btn";
+            this.login_generator_btn.Size = new System.Drawing.Size(196, 80);
+            this.login_generator_btn.TabIndex = 9;
+            this.login_generator_btn.Text = "Generate new login";
+            this.login_generator_btn.UseVisualStyleBackColor = true;
+            this.login_generator_btn.Click += new System.EventHandler(this.login_generator_btn_Click);
+            // 
             // DatabaseWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1968, 887);
+            this.Controls.Add(this.login_generator_btn);
+            this.Controls.Add(this.generated_user_entry_display);
+            this.Controls.Add(this.display_label);
             this.Controls.Add(this.KillwindowButton);
             this.Controls.Add(this.DeleteLastLoginButton);
             this.Controls.Add(this.textBox2);
@@ -203,5 +238,8 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Button DeleteLastLoginButton;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button KillwindowButton;
+        private System.Windows.Forms.Label display_label;
+        private System.Windows.Forms.Label generated_user_entry_display;
+        private System.Windows.Forms.Button login_generator_btn;
     }
 }
