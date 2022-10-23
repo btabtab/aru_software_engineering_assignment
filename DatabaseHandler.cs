@@ -13,6 +13,18 @@ namespace aru_software_eng_UI
 	*/
 	public class DataBaseLoginEntry
 	{
+		public DataBaseLoginEntry()
+        {
+        }
+		public DataBaseLoginEntry(int n_ID, string n_username, string n_password, string n_email, bool n_is_relationship_manager)
+		{
+			ID = n_ID;
+			username = n_username;
+			password = n_password;
+			email = n_email;
+			is_relationship_manager = n_is_relationship_manager;
+		}
+
 		public int ID;
 		public string username;
 		public string password;
@@ -72,7 +84,7 @@ namespace aru_software_eng_UI
 			dummy_entry.email = username_search + "@email.net";
 			return dummy_entry;
 		}
-		public void setRowXofLogin(int row_num)
+		public void addNewLogin(DataBaseLoginEntry n_database_login_entry)
 		{
 			//does nothing, yet.
 		}

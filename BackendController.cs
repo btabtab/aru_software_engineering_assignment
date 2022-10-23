@@ -28,10 +28,14 @@ namespace aru_software_eng_UI
         {
 			return database_handler.searchForEntryBasedOnEmail(search);
         }
-
 		public DataBaseLoginEntry loginSearchUsername(string search)
         {
 			return database_handler.searchForEntryBasedOnUsername(search);
+        }
+		//this writes a new login into the database. -J
+		public void writeDatabaseEntry(DataBaseLoginEntry n_database_login_entry)
+        {
+			database_handler.addNewLogin(n_database_login_entry);
         }
 	}
 }

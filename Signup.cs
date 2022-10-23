@@ -77,7 +77,6 @@ namespace aru_software_eng_UI
                 usernameWrongSymbol.Text = ""; //clears the cross
                 return true;
             }
-
             else //If the email username is too short - L
             {
                 errorOutputLabel.Text = "username must be atleast 3 characters long"; //Tells the user their email is invalid - replaces wrong password text as the email is first on the data entry list - L
