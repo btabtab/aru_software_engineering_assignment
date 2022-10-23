@@ -99,7 +99,13 @@ namespace aru_software_eng_UI
            
 
             if (emailChecker() && passwordChecker() && usernameChecker() && checkboxChecker()) //if all aspects of the form are correct, run the code below - L
-            { 
+            {
+                String username = LoginGetter.Text; //Gets username the user entered - L
+                String email = EmailGetter.Text; //Gets the email the user entered - L
+                if (backend_controller.loginSearchEmail(email).email != email && backend_controller.loginSearchUsername(username).username != username) //searches the database to see if the account and username already exist - L - L
+                {
+                    
+                }
                 return true;
             }
             return false;
@@ -158,6 +164,11 @@ namespace aru_software_eng_UI
         }
 
         private void RulesCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginGetter_TextChanged(object sender, EventArgs e)
         {
 
         }

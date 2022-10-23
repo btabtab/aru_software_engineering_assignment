@@ -97,6 +97,7 @@ namespace aru_software_eng_UI
             this.LoginGetter.Name = "LoginGetter";
             this.LoginGetter.Size = new System.Drawing.Size(215, 38);
             this.LoginGetter.TabIndex = 3;
+            this.LoginGetter.TextChanged += new System.EventHandler(this.LoginGetter_TextChanged);
             // 
             // RulesText
             // 
