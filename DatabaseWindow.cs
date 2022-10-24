@@ -41,13 +41,16 @@ namespace aru_software_eng_UI
         private void login_generator_btn_Click(object sender, EventArgs e)
         {
             DataBaseLoginEntry r_entry = backend_controller.randomEntry();
+            
+            //figures out the character to display if the account is a relationship manager account.
             char is_rm = 'N';
-            if(r_entry.is_relationship_manager) { is_rm = 'Y'; }
+            if(r_entry.getIsRelationshipManager()) { is_rm = ('Y'); }
+
             generated_user_entry_display.Text = "result:\n" +
-                "ID: " + r_entry.ID + "\n" +
-                "Username: " + r_entry.username + "\n" +
-                "Email: " + r_entry.email + "\n" +
-                "Password: " + r_entry.password + "\n" +
+                "ID: " + r_entry.getID() + "\n" +
+                "Username: " + r_entry.getUsername() + "\n" +
+                "Email: " + r_entry.getEmail() + "\n" +
+                "Password: " + r_entry.getPassword() + "\n" +
                 "Is RM manager: [" + is_rm + "]";
         }
 

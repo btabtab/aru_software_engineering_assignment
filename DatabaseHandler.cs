@@ -25,11 +25,25 @@ namespace aru_software_eng_UI
 			is_relationship_manager = n_is_relationship_manager;
 		}
 
-		public int ID;
-		public string username;
-		public string password;
-		public string email;
-		public bool is_relationship_manager;
+		int ID;
+		string username;
+		string password;
+		string email;
+		bool is_relationship_manager;
+
+		//These are the getters and setters to the login entry. -John 24/10/2022
+		public int getID()						{return ID;}
+		public string getUsername()				{return username;}
+		public string getPassword()				{return password;}
+		public string getEmail()				{return email;}
+		public bool getIsRelationshipManager()	{return is_relationship_manager;}
+
+		public void setID(int n_ID)												{ID = n_ID; }
+		public void setUsername(string n_username)								{username = n_username; }
+		public void setPassword(string n_password)								{password = n_password; }
+		public void setEmail(string n_email)									{email = n_email; }
+		public void setIsRelationshipManager(bool n_is_relationship_manager)	{is_relationship_manager = n_is_relationship_manager; }
+
 	}
 	public class DatabaseHandler
 	{
@@ -50,40 +64,41 @@ namespace aru_software_eng_UI
 		*/
 		public DataBaseLoginEntry getRowXofLoginData(int row_num)
 		{
-			dummy_entry.ID = row_num;
-			dummy_entry.username = "username_" + row_num;
-			dummy_entry.password = "password";
-			dummy_entry.email = "email_" + row_num + "@mail.net";
+			dummy_entry.setID(row_num);
+			dummy_entry.setUsername("username_" + row_num);
+			dummy_entry.setPassword("password");
+			dummy_entry.setEmail("email_" + row_num + "@mail.net");
 			//if the row_num is a multiple of 2 the dummy account will be an RM.
-			dummy_entry.is_relationship_manager = ((row_num % 2) == 0);
+			dummy_entry.setIsRelationshipManager((row_num % 2) == 0);
 			return dummy_entry;
 		}
 		public DataBaseLoginEntry generateRandomLoginInfo()
 		{
 			int random_num = new Random().Next(256);
 			DataBaseLoginEntry ret = new DataBaseLoginEntry();
-			ret.ID = random_num;
-			ret.username = "username_" + random_num;
-			ret.password = "password";
-			ret.email = "email_" + random_num + "@mail.net";
+			ret.setID(random_num);
+			ret.setUsername("username_" + random_num);
+			ret.setPassword("password");
+			ret.setEmail("email_" + random_num + "@mail.net");
 			//if the row_num is a multiple of 2 the dummy account will be an RM.
-			ret.is_relationship_manager = ((random_num % 2) == 0);
+			ret.setIsRelationshipManager((random_num % 2) == 0);
 			return ret;
 		}
 		public DataBaseLoginEntry searchForEntryBasedOnUsername(string username_search)
 		{
 			dummy_entry = generateRandomLoginInfo();
-			dummy_entry.username = username_search;
+			dummy_entry.setUsername(username_search);
 			return dummy_entry;
 		}
 		//This will return a made up entry with the email based on the searched username and the same username.
 		public DataBaseLoginEntry searchForEntryBasedOnEmail(string username_search)
 		{
 			dummy_entry = generateRandomLoginInfo();
-			dummy_entry.username = username_search;
-			dummy_entry.email = username_search + "@email.net";
+			dummy_entry.setUsername(username_search);
+			dummy_entry.setEmail(username_search + "@email.net");
 			return dummy_entry;
 		}
+
 		public void addNewLogin(DataBaseLoginEntry n_database_login_entry)
 		{
 			//does nothing, yet.

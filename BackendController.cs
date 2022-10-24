@@ -14,11 +14,6 @@ namespace aru_software_eng_UI
 			database_handler = n_dtbase_hndlr;
 		}
 
-		public DatabaseHandler getDatabaseHandler()
-        {
-			return database_handler;
-        }
-
 		public DataBaseLoginEntry randomEntry()
         {
 			return database_handler.generateRandomLoginInfo();
