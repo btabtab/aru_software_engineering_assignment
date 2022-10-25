@@ -120,6 +120,9 @@
     <EmbeddedResource Include="IdeaGeneratorLoginLabel.resx">
       <DependentUpon>IdeaGeneratorLoginLabel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IdeaSubmitterForm.resx">
+      <DependentUpon>IdeaSubmitterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartMenu.resx">
       <DependentUpon>StartMenu.cs</DependentUpon>
     </EmbeddedResource>
