@@ -90,6 +90,12 @@
     <Compile Include="RelationshipManagerLogin.Designer.cs">
       <DependentUpon>RelationshipManagerLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="RelationshipManagerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelationshipManagerView.Designer.cs">
+      <DependentUpon>RelationshipManagerView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </Compile>
     <EmbeddedResource Include="RelationshipManagerLogin.resx">
       <DependentUpon>RelationshipManagerLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelationshipManagerView.resx">
+      <DependentUpon>RelationshipManagerView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
