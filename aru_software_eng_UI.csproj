@@ -33,7 +33,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>H:\My Documents\Development\Year_2\Software\FINAL_ARU\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -69,6 +69,12 @@
     </Compile>
     <Compile Include="DummyDatabaseSystem.cs" />
     <Compile Include="DummyFunctions.cs" />
+    <Compile Include="Idea_Submitter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Idea_Submitter.Designer.cs">
+      <DependentUpon>Idea_Submitter.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManager.cs" />
     <Compile Include="IdeaGeneratorLoginLabel.cs">
       <SubType>Form</SubType>
@@ -106,6 +112,9 @@
     </Compile>
     <EmbeddedResource Include="DatabaseWindow.resx">
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Idea_Submitter.resx">
+      <DependentUpon>Idea_Submitter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManager.resx">
       <DependentUpon>FormManager.cs</DependentUpon>

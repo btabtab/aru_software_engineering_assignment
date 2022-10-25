@@ -30,103 +30,95 @@ namespace aru_software_eng_UI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IdeaGeneratorLoginLabel));
-            this.IG_Back_Button = new System.Windows.Forms.Button();
-            this.IG_Password_TextBox = new System.Windows.Forms.TextBox();
-            this.IG_Login_TextBox = new System.Windows.Forms.TextBox();
-            this.IG_Password_Label = new System.Windows.Forms.Label();
-            this.IG_Login_Label = new System.Windows.Forms.Label();
-            this.IG_Text = new System.Windows.Forms.Label();
-            this.IG_Login_Button = new System.Windows.Forms.Button();
+            this.IG_back_button = new System.Windows.Forms.Button();
+            this.IG_password_textbox = new System.Windows.Forms.TextBox();
+            this.IG_login_textbox = new System.Windows.Forms.TextBox();
+            this.IG_password_label = new System.Windows.Forms.Label();
+            this.IG_login_label = new System.Windows.Forms.Label();
+            this.IG_login_button = new System.Windows.Forms.Button();
+            this.IG_text = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // IG_Back_Button
+            // IG_back_button
             // 
-            this.IG_Back_Button.Image = ((System.Drawing.Image)(resources.GetObject("IG_Back_Button.Image")));
-            this.IG_Back_Button.Location = new System.Drawing.Point(1404, 23);
-            this.IG_Back_Button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.IG_Back_Button.Name = "IG_Back_Button";
-            this.IG_Back_Button.Size = new System.Drawing.Size(256, 123);
-            this.IG_Back_Button.TabIndex = 15;
-            this.IG_Back_Button.UseVisualStyleBackColor = true;
-            this.IG_Back_Button.Click += new System.EventHandler(this.IG_Back_Button_Click);
+            this.IG_back_button.Image = ((System.Drawing.Image)(resources.GetObject("IG_back_button.Image")));
+            this.IG_back_button.Location = new System.Drawing.Point(702, 12);
+            this.IG_back_button.Name = "IG_back_button";
+            this.IG_back_button.Size = new System.Drawing.Size(128, 64);
+            this.IG_back_button.TabIndex = 15;
+            this.IG_back_button.UseVisualStyleBackColor = true;
+            this.IG_back_button.Click += new System.EventHandler(this.IG_Back_Button_Click);
             // 
-            // IG_Password_TextBox
+            // IG_password_textbox
             // 
-            this.IG_Password_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IG_Password_TextBox.Location = new System.Drawing.Point(588, 483);
-            this.IG_Password_TextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.IG_Password_TextBox.Name = "IG_Password_TextBox";
-            this.IG_Password_TextBox.Size = new System.Drawing.Size(1000, 98);
-            this.IG_Password_TextBox.TabIndex = 14;
+            this.IG_password_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IG_password_textbox.Location = new System.Drawing.Point(294, 251);
+            this.IG_password_textbox.Name = "IG_password_textbox";
+            this.IG_password_textbox.Size = new System.Drawing.Size(502, 53);
+            this.IG_password_textbox.TabIndex = 14;
             // 
-            // IG_Login_TextBox
+            // IG_login_textbox
             // 
-            this.IG_Login_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IG_Login_TextBox.Location = new System.Drawing.Point(588, 329);
-            this.IG_Login_TextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.IG_Login_TextBox.Name = "IG_Login_TextBox";
-            this.IG_Login_TextBox.Size = new System.Drawing.Size(1000, 98);
-            this.IG_Login_TextBox.TabIndex = 13;
+            this.IG_login_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IG_login_textbox.Location = new System.Drawing.Point(294, 171);
+            this.IG_login_textbox.Name = "IG_login_textbox";
+            this.IG_login_textbox.Size = new System.Drawing.Size(502, 53);
+            this.IG_login_textbox.TabIndex = 13;
             // 
-            // IG_Password_Label
+            // IG_password_label
             // 
-            this.IG_Password_Label.AutoSize = true;
-            this.IG_Password_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IG_Password_Label.Location = new System.Drawing.Point(24, 481);
-            this.IG_Password_Label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.IG_Password_Label.Name = "IG_Password_Label";
-            this.IG_Password_Label.Size = new System.Drawing.Size(420, 91);
-            this.IG_Password_Label.TabIndex = 12;
-            this.IG_Password_Label.Text = "Password:";
+            this.IG_password_label.AutoSize = true;
+            this.IG_password_label.Font = new System.Drawing.Font("Agency FB", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IG_password_label.Location = new System.Drawing.Point(12, 250);
+            this.IG_password_label.Name = "IG_password_label";
+            this.IG_password_label.Size = new System.Drawing.Size(163, 50);
+            this.IG_password_label.TabIndex = 12;
+            this.IG_password_label.Text = "Password:";
             // 
-            // IG_Login_Label
+            // IG_login_label
             // 
-            this.IG_Login_Label.AutoSize = true;
-            this.IG_Login_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IG_Login_Label.Location = new System.Drawing.Point(20, 335);
-            this.IG_Login_Label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.IG_Login_Label.Name = "IG_Login_Label";
-            this.IG_Login_Label.Size = new System.Drawing.Size(260, 91);
-            this.IG_Login_Label.TabIndex = 11;
-            this.IG_Login_Label.Text = "Login:";
+            this.IG_login_label.AutoSize = true;
+            this.IG_login_label.Font = new System.Drawing.Font("Agency FB", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IG_login_label.Location = new System.Drawing.Point(10, 174);
+            this.IG_login_label.Name = "IG_login_label";
+            this.IG_login_label.Size = new System.Drawing.Size(98, 50);
+            this.IG_login_label.TabIndex = 11;
+            this.IG_login_label.Text = "Login:";
             // 
-            // IG_Text
+            // IG_login_button
             // 
-            this.IG_Text.AutoSize = true;
-            this.IG_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IG_Text.Location = new System.Drawing.Point(0, 0);
-            this.IG_Text.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.IG_Text.Name = "IG_Text";
-            this.IG_Text.Size = new System.Drawing.Size(983, 153);
-            this.IG_Text.TabIndex = 10;
-            this.IG_Text.Text = "Idea Generator";
+            this.IG_login_button.BackColor = System.Drawing.SystemColors.Highlight;
+            this.IG_login_button.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IG_login_button.ForeColor = System.Drawing.SystemColors.Control;
+            this.IG_login_button.Location = new System.Drawing.Point(21, 349);
+            this.IG_login_button.Name = "IG_login_button";
+            this.IG_login_button.Size = new System.Drawing.Size(775, 86);
+            this.IG_login_button.TabIndex = 9;
+            this.IG_login_button.Text = "Login";
+            this.IG_login_button.UseVisualStyleBackColor = false;
             // 
-            // IG_Login_Button
+            // IG_text
             // 
-            this.IG_Login_Button.BackColor = System.Drawing.SystemColors.Highlight;
-            this.IG_Login_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IG_Login_Button.ForeColor = System.Drawing.SystemColors.Control;
-            this.IG_Login_Button.Location = new System.Drawing.Point(42, 671);
-            this.IG_Login_Button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.IG_Login_Button.Name = "IG_Login_Button";
-            this.IG_Login_Button.Size = new System.Drawing.Size(1550, 165);
-            this.IG_Login_Button.TabIndex = 9;
-            this.IG_Login_Button.Text = "Login";
-            this.IG_Login_Button.UseVisualStyleBackColor = false;
+            this.IG_text.AutoSize = true;
+            this.IG_text.Font = new System.Drawing.Font("Agency FB", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IG_text.Location = new System.Drawing.Point(0, 0);
+            this.IG_text.Name = "IG_text";
+            this.IG_text.Size = new System.Drawing.Size(379, 80);
+            this.IG_text.TabIndex = 10;
+            this.IG_text.Text = "Idea Generator";
             // 
             // IdeaGeneratorLoginLabel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1668, 887);
-            this.Controls.Add(this.IG_Back_Button);
-            this.Controls.Add(this.IG_Password_TextBox);
-            this.Controls.Add(this.IG_Login_TextBox);
-            this.Controls.Add(this.IG_Password_Label);
-            this.Controls.Add(this.IG_Login_Label);
-            this.Controls.Add(this.IG_Text);
-            this.Controls.Add(this.IG_Login_Button);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.IG_back_button);
+            this.Controls.Add(this.IG_password_textbox);
+            this.Controls.Add(this.IG_login_textbox);
+            this.Controls.Add(this.IG_password_label);
+            this.Controls.Add(this.IG_login_label);
+            this.Controls.Add(this.IG_text);
+            this.Controls.Add(this.IG_login_button);
             this.Name = "IdeaGeneratorLoginLabel";
             this.Text = "IdeaGeneratorLoginLabel";
             this.ResumeLayout(false);
@@ -136,12 +128,12 @@ namespace aru_software_eng_UI
 
         #endregion
 
-        private System.Windows.Forms.Button IG_Back_Button;
-        private System.Windows.Forms.TextBox IG_Password_TextBox;
-        private System.Windows.Forms.TextBox IG_Login_TextBox;
-        private System.Windows.Forms.Label IG_Password_Label;
-        private System.Windows.Forms.Label IG_Login_Label;
-        private System.Windows.Forms.Label IG_Text;
-        private System.Windows.Forms.Button IG_Login_Button;
+        private System.Windows.Forms.Button IG_back_button;
+        private System.Windows.Forms.TextBox IG_password_textbox;
+        private System.Windows.Forms.TextBox IG_login_textbox;
+        private System.Windows.Forms.Label IG_password_label;
+        private System.Windows.Forms.Label IG_login_label;
+        private System.Windows.Forms.Button IG_login_button;
+        private System.Windows.Forms.Label IG_text;
     }
 }
