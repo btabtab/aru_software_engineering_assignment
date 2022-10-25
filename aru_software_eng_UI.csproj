@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -63,12 +63,14 @@
   <ItemGroup>
     <Compile Include="BackendController.cs" />
     <Compile Include="DatabaseHandler.cs" />
+    <Compile Include="DatabaseLoginEntry.cs" />
     <Compile Include="DatabaseWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DatabaseWindow.Designer.cs">
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseWrapper.cs" />
     <Compile Include="DummyFunctions.cs" />
     <Compile Include="FormManager.cs" />
     <Compile Include="IdeaGeneratorLoginLabel.cs">
@@ -96,14 +98,6 @@
     </Compile>
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserDatabaseDataSet.cs">
-      <DependentUpon>UserDatabaseDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="UserDatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DatabaseWindow.resx">
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
@@ -141,17 +135,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="UserDatabaseDataSet.xsc">
-      <DependentUpon>UserDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="UserDatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>UserDatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UserDatabaseDataSet.xss">
-      <DependentUpon>UserDatabaseDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -167,6 +150,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CoreDataBase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CoreDataBase_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CoreDataBase.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

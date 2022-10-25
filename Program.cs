@@ -10,6 +10,6 @@ public class Program
 {
 	static void Main(string[] args)
 	{
-		Application.Run(new StartMenu(new BackendController(new DatabaseHandler(new UserDatabaseDataSet()))));
+		Application.Run(new StartMenu(new BackendController(DatabaseHandler.getDatabaseHandlerInstance())));
 	}
 }
