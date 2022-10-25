@@ -70,6 +70,17 @@
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="DummyFunctions.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RelationshipManagerViewerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelationshipManagerViewerUI.Designer.cs">
+      <DependentUpon>RelationshipManagerViewerUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManager.cs" />
     <Compile Include="IdeaGeneratorLoginLabel.cs">
       <SubType>Form</SubType>
@@ -114,18 +125,17 @@
     <EmbeddedResource Include="IdeaGeneratorLoginLabel.resx">
       <DependentUpon>IdeaGeneratorLoginLabel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RelationshipManagerViewerUI.resx">
+      <DependentUpon>RelationshipManagerViewerUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartMenu.resx">
       <DependentUpon>StartMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="RelationshipManagerLogin.resx">
       <DependentUpon>RelationshipManagerLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +177,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="black_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="black_circle_new.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
