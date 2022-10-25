@@ -50,6 +50,7 @@ namespace aru_software_eng_UI
             this.wrongUserSymbol = new System.Windows.Forms.Label();
             this.errorOutputLabel = new System.Windows.Forms.Label();
             this.usernameWrongSymbol = new System.Windows.Forms.Label();
+            this.IsRMCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // SignUpButton
@@ -285,11 +286,22 @@ namespace aru_software_eng_UI
             this.usernameWrongSymbol.Size = new System.Drawing.Size(0, 34);
             this.usernameWrongSymbol.TabIndex = 21;
             // 
+            // IsRMCheckBox
+            // 
+            this.IsRMCheckBox.AutoSize = true;
+            this.IsRMCheckBox.Location = new System.Drawing.Point(313, 301);
+            this.IsRMCheckBox.Name = "IsRMCheckBox";
+            this.IsRMCheckBox.Size = new System.Drawing.Size(177, 17);
+            this.IsRMCheckBox.TabIndex = 22;
+            this.IsRMCheckBox.Text = " Are you Relationship Manager?";
+            this.IsRMCheckBox.UseVisualStyleBackColor = true;
+            // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.IsRMCheckBox);
             this.Controls.Add(this.usernameWrongSymbol);
             this.Controls.Add(this.wrongUserSymbol);
             this.Controls.Add(this.wrongEmailSymbol);
@@ -342,5 +354,6 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label wrongUserSymbol;
         private System.Windows.Forms.Label errorOutputLabel;
         private System.Windows.Forms.Label usernameWrongSymbol;
+        private System.Windows.Forms.CheckBox IsRMCheckBox;
     }
 }
