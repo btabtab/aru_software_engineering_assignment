@@ -52,7 +52,19 @@ namespace aru_software_eng_UI
                 "Email: " + r_entry.getEmail() + "\n" +
                 "Password: " + r_entry.getPassword() + "\n" +
                 "Is RM manager: [" + is_rm + "]";
+
         }
 
+        private void DatabaseWindow_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'coreDataBaseDataSet.LoginEntries' table. You can move, or remove it, as needed.
+            this.loginEntriesTableAdapter.Fill(this.coreDataBaseDataSet.LoginEntries);
+        }
+
+        private void login_search_btn_Click(object sender, EventArgs e)
+        {
+            DataBaseLoginEntry output = backend_controller.loginSearchUsername(search_bar.Text);
+            login_output_data_lbl.Text = "Username: " + output.getUsername() + " email:" + output.getEmail();
+        }
     }
 }
