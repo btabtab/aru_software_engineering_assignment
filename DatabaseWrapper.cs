@@ -117,7 +117,7 @@ namespace aru_software_eng_UI
 																searchDatabaseForString("Username", login_table, "Username=", username),
 																searchDatabaseForString("Password", login_table, "Username=", username),
 																searchDatabaseForString("Email",	login_table, "Username=", username),
-																searchDatabaseForString("Is_RelationshipManager", login_table, "Email=", email) == "y"
+																searchDatabaseForString("Is_RelationshipManager", login_table, "Email=", username) == "y"
 																);
 			return ret;
         }
