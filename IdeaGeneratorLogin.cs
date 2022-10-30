@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace aru_software_eng_UI
 {
-    public partial class IdeaGeneratorLoginLabel : Form
+    public partial class IdeaGeneratorLogin : Form
     {
         Form next_window;
         FormManager manager;
         BackendController backend_controller;
-        public IdeaGeneratorLoginLabel(Form n_previous_window, BackendController n_backend_controller)
+        public IdeaGeneratorLogin(Form n_previous_window, BackendController n_backend_controller)
         {
             InitializeComponent();
             manager = new FormManager(n_previous_window, this);

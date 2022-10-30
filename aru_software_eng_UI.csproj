@@ -77,11 +77,17 @@
       <DependentUpon>Idea_Submitter.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManager.cs" />
-    <Compile Include="IdeaGeneratorLoginLabel.cs">
+    <Compile Include="IdeaGeneratorLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IdeaGeneratorLoginLabel.Designer.cs">
-      <DependentUpon>IdeaGeneratorLoginLabel.cs</DependentUpon>
+    <Compile Include="IdeaGeneratorLogin.Designer.cs">
+      <DependentUpon>IdeaGeneratorLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IdeaSubmitterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdeaSubmitterForm.Designer.cs">
+      <DependentUpon>IdeaSubmitterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StartMenu.cs">
       <SubType>Form</SubType>
@@ -126,8 +132,11 @@
     <EmbeddedResource Include="FormManager.resx">
       <DependentUpon>FormManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IdeaGeneratorLoginLabel.resx">
-      <DependentUpon>IdeaGeneratorLoginLabel.cs</DependentUpon>
+    <EmbeddedResource Include="IdeaGeneratorLogin.resx">
+      <DependentUpon>IdeaGeneratorLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdeaSubmitterForm.resx">
+      <DependentUpon>IdeaSubmitterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartMenu.resx">
       <DependentUpon>StartMenu.cs</DependentUpon>
