@@ -25,7 +25,7 @@ namespace aru_software_eng_UI
 
         private void IdeaGenBTN_Click(object sender, EventArgs e)
         {
-            next_window = new IdeaGeneratorLoginLabel(this, backend_controller);
+            next_window = new IdeaGeneratorLogin(this, backend_controller);
         }
 
         private void RelationshipManagerBTN_Click(object sender, EventArgs e)
