@@ -32,5 +32,11 @@ namespace aru_software_eng_UI
         {
 			database_handler.addNewLogin(n_database_login_entry);
         }
+
+		public DataBaseLoginEntry getLoginDetails (string username, string password)
+        {
+
+			return database_handler.searchForEntryBasedOnLogin(username, password); 
+		}
 	}
 }

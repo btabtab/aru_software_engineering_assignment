@@ -96,6 +96,7 @@ namespace aru_software_eng_UI
             this.IG_login_button.TabIndex = 9;
             this.IG_login_button.Text = "Login";
             this.IG_login_button.UseVisualStyleBackColor = false;
+            this.IG_login_button.Click += new System.EventHandler(this.IG_login_button_Click);
             // 
             // IG_text
             // 
