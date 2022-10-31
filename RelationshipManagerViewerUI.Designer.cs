@@ -96,7 +96,7 @@ namespace aru_software_eng_UI
             // 
             this.divide_line.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.divide_line.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.divide_line.Location = new System.Drawing.Point(757, -3);
+            this.divide_line.Location = new System.Drawing.Point(757, -5);
             this.divide_line.Minimum = 100;
             this.divide_line.Name = "divide_line";
             this.divide_line.Size = new System.Drawing.Size(3, 731);
@@ -169,6 +169,7 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.title_label);
             this.Name = "RelationshipManagerViewerUI";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.RelationshipManagerViewerUI_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
