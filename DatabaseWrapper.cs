@@ -105,11 +105,6 @@ namespace aru_software_eng_UI
 			connection_to_database.Open();
 			return ret;
         }
-		private void addNewRow(string target_table, string[] entries, int entry_count)
-		{
-		}
-
-
 		public DataBaseLoginEntry getLoginEntryFromUsername(string username)
         {
 			string login_table = "LoginEntries";
@@ -133,5 +128,88 @@ namespace aru_software_eng_UI
 			return ret;
 		}
 
+
+		/*For the following functions I will need to implement a set of fixes,
+		 *comments and documentation as well as refactoring due to the code
+		 *being a bit messy.
+		 *
+		 *	-JE oct-30.0
+		 */
+
+		/*compiles the set of values / columns into a string for the SQL query.
+		 *if it is compiling a set of values into a string then "is_value_table" needs to be true.
+		 *
+		 *	-JE oct-30.0
+		 */
+		private string compileListIntoFormattedString(List<string> target, bool mark_with_apostrophe)
+        {
+			string ret = "";
+			for (int i = 0; i != (target.Count - 1); i++)
+			{
+				//probably a smarter way to deal with this, future John can figure that out.
+				if(mark_with_apostrophe)
+                {
+					ret += "'" + (target.ElementAt(i) + "', ");
+				}
+				else
+                {
+					ret += (target.ElementAt(i) + ", ");
+				}
+			}
+			if (mark_with_apostrophe)
+            {
+				ret += "'" + (target.ElementAt(target.Count - 1) + "'");
+			}
+			else
+			{ 
+				ret += (target.ElementAt(target.Count - 1));
+			}
+			return ret;
+        }
+		//inserts a new entry into a table based around columns and values. -JE oct-30.0
+		private void insertNewEntryIntoDatabase(string target_table, List<string> columns_list, List<string> values_list)
+        {
+			string column_string = compileListIntoFormattedString(columns_list, false), values_string = compileListIntoFormattedString(values_list, true);
+
+			// "INSERT INTO table_name VALUES (value1, value2, value3, ...); "
+
+			string query_string = "INSERT INTO " + target_table + " (" + column_string + ") VALUES (" + values_string+ ");";
+			Console.WriteLine(query_string);
+			SqlCommand oCmd = runSQLQuery(query_string);
+
+			SqlDataReader oReader = oCmd.ExecuteReader();
+
+			connection_to_database.Close();
+
+		}
+		//converts bool from LoginEntryClass to string for the table input. -JE oct-30.0
+		string rmStatusToString(bool is_rm_manager)
+        {
+			string ret = "0";
+
+			if(is_rm_manager)
+            {
+				ret = "1";
+            }
+			return ret;
+		}
+		//writes the entry into the logindatabase -JE oct-30.0
+		public void writeNewLoginDataEntry(DataBaseLoginEntry n_entry)
+		{
+			List<String> columns = new List<string>(), values = new List<string>();
+
+			columns.Add("Username");
+			columns.Add("Email");
+			columns.Add("Password");
+			columns.Add("Is_RelationshipManager");
+
+			values.Add(n_entry.getUsername());
+			values.Add(n_entry.getEmail());
+			values.Add(n_entry.getPassword());
+			values.Add(rmStatusToString(n_entry.getIsRelationshipManager()));
+
+
+			insertNewEntryIntoDatabase("LoginEntries", columns, values);
+		}
 	}
 }

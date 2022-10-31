@@ -56,7 +56,7 @@ namespace aru_software_eng_UI
 
 		public void addNewLogin(DataBaseLoginEntry n_database_login_entry)
 		{
-			//does nothing, yet.
+			database_wrapper.writeNewLoginDataEntry(n_database_login_entry);
 		}
 	}
 }
