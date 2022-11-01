@@ -46,7 +46,7 @@ namespace LoggerSystems
 
         }
 
-        public void logClosedWindow(String account)
+        public void logClosedWindow(String account, string windowName)
         {
 
             writer.WriteLine("Closed " + windowName + " by " + username);
@@ -59,6 +59,6 @@ namespace LoggerSystems
             writer.Close();
         }
 
-
+         
     }
 }
