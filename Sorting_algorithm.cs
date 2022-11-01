@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Sorts
+namespace aru_software_eng_UI
 {
 	static int[] mergeSortingAlgorithm(int [] array, int left_pointer, int right_pointer)
 	{

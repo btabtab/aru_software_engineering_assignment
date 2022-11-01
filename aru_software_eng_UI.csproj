@@ -33,7 +33,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>H:\My Documents\Development\buildOU\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -75,9 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RelationshipManagerViewerUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="RelationshipManagerViewerUI.cs" />
     <Compile Include="RelationshipManagerViewerUI.Designer.cs">
       <DependentUpon>RelationshipManagerViewerUI.cs</DependentUpon>
     </Compile>
