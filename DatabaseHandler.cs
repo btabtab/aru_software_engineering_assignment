@@ -58,5 +58,13 @@ namespace aru_software_eng_UI
 		{
 			database_wrapper.writeNewLoginDataEntry(n_database_login_entry);
 		}
+		public void deleteLoginRowX(int target_row)
+        {
+			database_wrapper.deleteRowX("LoginEntries", target_row);
+        }
+		public int getRowCount(string table)
+        {
+			return database_wrapper.getRowCount(table);
+        }
 	}
 }

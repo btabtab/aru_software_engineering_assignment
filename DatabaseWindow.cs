@@ -42,7 +42,7 @@ namespace aru_software_eng_UI
 
 		private void DeleteLastLoginButton_Click(object sender, EventArgs e)
 		{
-
+			backend_controller.removeRowFromLoginTable(0);
 		}
 
 		private void login_generator_btn_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace aru_software_eng_UI
 				"Username: " + r_entry.getUsername() + "\n" +
 				"Email: " + r_entry.getEmail() + "\n" +
 				"Password: " + r_entry.getPassword() + "\n" +
-				"Is RM manager: [" + is_rm + "]";
+				"Is RM manager: [ " + is_rm + " ]";
 
 			//UPDATE naming for r_entry.
 			backend_controller.writeDatabaseEntry(r_entry);

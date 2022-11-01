@@ -103,7 +103,12 @@ namespace aru_software_eng_UI
         {
 			SqlCommand ret = new SqlCommand(query, connection_to_database);
 			connection_to_database.Open();
+			connection_to_database.BeginTransaction().Commit();
 			return ret;
+        }
+		private void closeConnection()
+        {
+			connection_to_database.Close();
         }
 		public DataBaseLoginEntry getLoginEntryFromUsername(string username)
         {
@@ -210,6 +215,34 @@ namespace aru_software_eng_UI
 
 
 			insertNewEntryIntoDatabase("LoginEntries", columns, values);
+		}
+		
+		//gets the amount of rows in the database. -JE oct-31.0
+		public int getRowCount(string target_table)
+        {
+			//SELECT COUNT(*) FROM tablename
+			SqlCommand oCmd = runSQLQuery("SELECT COUNT(*) FROM " + target_table);
+			int ret = (int)(Int32)oCmd.ExecuteScalar();
+			closeConnection();
+			return ret;
+        }
+		//deletes the targeted row. -JE oct-31.0
+		public void deleteRowX(string target_table, int row_num)
+        {
+			if(getRowCount(target_table) < row_num)
+            {
+				row_num = getRowCount(target_table);
+            }
+			// DELETE FROM table WHERE column = 'value';
+
+			string query_string = "DELETE FROM " + target_table + " WHERE ID=" + row_num;
+			Console.WriteLine(query_string);
+			SqlCommand oCmd = runSQLQuery(query_string);
+
+			SqlDataReader oReader = oCmd.ExecuteReader();
+
+			connection_to_database.Close();
+
 		}
 	}
 }
