@@ -23,7 +23,7 @@ namespace aru_software_eng_UI
 
         private void IdeaGenBTN_Click(object sender, EventArgs e)
         {
-            next_window = new IdeaGeneratorLoginLabel(this);
+            next_window = new IdeaGeneratorLogin(this);
         }
 
         private void RelationshipManagerBTN_Click(object sender, EventArgs e)
