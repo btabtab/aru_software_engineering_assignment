@@ -53,15 +53,6 @@ namespace aru_software_eng_UI
 			return database_wrapper.getLoginEntryFromEmail(email_search);
 		}
 
-		public DataBaseLoginEntry searchForEntryBasedOnLogin(string login_entry, string password)
-        {
-			dummy_entry = searchForEntryBasedOnEmail(login_entry);
-			dummy_entry.setPassword(password);
-			return dummy_entry;
-
-
-		}
-
 		public void addNewLogin(DataBaseLoginEntry n_database_login_entry)
 		{
 			database_wrapper.writeNewLoginDataEntry(n_database_login_entry);

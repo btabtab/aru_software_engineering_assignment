@@ -67,10 +67,5 @@ namespace aru_software_eng_UI
         {
 			database_handler.deleteLoginRowX(database_handler.getHighestID("LoginEntries"));
         }
-		public DataBaseLoginEntry getLoginDetails (string username, string password)
-        {
-
-			return database_handler.searchForEntryBasedOnLogin(username, password); 
-		}
 	}
 }
