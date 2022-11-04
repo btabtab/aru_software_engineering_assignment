@@ -16,6 +16,11 @@ namespace aru_software_eng_UI
         FormManager manager;
         BackendController backend_controller;
         public Signup(Form n_previous_window, BackendController n_backend_controller)
+        {
+            InitializeComponent();
+            manager = new FormManager(n_previous_window, this);
+            backend_controller = n_backend_controller;
+        }
 
         private Boolean passwordChecker() 
         {
@@ -72,7 +77,6 @@ namespace aru_software_eng_UI
                 usernameWrongSymbol.Text = ""; //clears the cross
                 return true;
             }
-
             else //If the email username is too short - L
             {
                 errorOutputLabel.Text = "username must be atleast 3 characters long"; //Tells the user their email is invalid - replaces wrong password text as the email is first on the data entry list - L
@@ -94,17 +98,16 @@ namespace aru_software_eng_UI
            
 
             if (emailChecker() && passwordChecker() && usernameChecker() && checkboxChecker()) //if all aspects of the form are correct, run the code below - L
-            { 
+            {
+                String username = LoginGetter.Text; //Gets username the user entered - L
+                String email = EmailGetter.Text; //Gets the email the user entered - L
+                if (backend_controller.loginSearchEmail(email).getEmail() != email && backend_controller.loginSearchUsername(username).getUsername() != username) //searches the database to see if the account and username already exist - L - L
+                {
+                    backend_controller.writeDatabaseEntry(new DataBaseLoginEntry(username, "password", email, true)); //Creates a new database entry with all the correct credentials in - L
+                }
                 return true;
             }
             return false;
-        }
-
-        public Signup(Form n_previous_window)
-        {
-            InitializeComponent();
-            manager = new FormManager(n_previous_window, this);
-            backend_controller = n_backend_controller;
         }
 
         private void PasswordLabel_Click(object sender, EventArgs e)
@@ -129,9 +132,9 @@ namespace aru_software_eng_UI
 
 
 
-private void GoBackButton_Click(object sender, EventArgs e)
+        private void GoBackButton_Click(object sender, EventArgs e)
         {
-
+            manager.back();
         }
         
         private void RM_backButton_Click(object sender, EventArgs e)
@@ -160,6 +163,11 @@ private void GoBackButton_Click(object sender, EventArgs e)
         }
 
         private void RulesCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginGetter_TextChanged(object sender, EventArgs e)
         {
 
         }
