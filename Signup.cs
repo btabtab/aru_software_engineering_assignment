@@ -101,7 +101,7 @@ namespace aru_software_eng_UI
             {
                 String username = LoginGetter.Text; //Gets username the user entered - L
                 String email = EmailGetter.Text; //Gets the email the user entered - L
-                if (backend_controller.loginSearchEmail(email).email != email && backend_controller.loginSearchUsername(username).username != username) //searches the database to see if the account and username already exist - L - L
+                if (backend_controller.loginSearchEmail(email).getEmail() != email && backend_controller.loginSearchUsername(username).getUsername() != username) //searches the database to see if the account and username already exist - L - L
                 {
                     backend_controller.writeDatabaseEntry(new DataBaseLoginEntry(0001, username, "password", email, true)); //Creates a new database entry with all the correct credentials in - L
                 }
