@@ -53,14 +53,19 @@ namespace aru_software_eng_UI
 			database_handler.addNewLogin(n_database_login_entry);
         }
 
-		public void removeRowFromLoginTable(int target_row)
+		public void deleteUserFromLoginTable(string username)
         {
-			database_handler.deleteLoginRowX(target_row);
+			database_handler.deleteLoginRowX(database_handler.searchForEntryBasedOnUsername(username).getID());
         }
 
 		public int getLoginTableRowCount()
         {
 			return database_handler.getRowCount("LoginEntries");
+        }
+
+		public void deleteHighestLoginID()
+        {
+			database_handler.deleteLoginRowX(database_handler.getHighestID("LoginEntries"));
         }
 	}
 }

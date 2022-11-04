@@ -25,10 +25,16 @@ namespace aru_software_eng_UI
 			backend_controller = BackendController.getInstance();
 		}
 
+		void updateTable()
+		{
+			this.loginEntriesTableAdapter.Fill(this.coreDataBaseDataSet.LoginEntries);
+		}
+
 		private void KillwindowButton_Click(object sender, EventArgs e)
 		{
 			manager.back();
 		}
+
 		private void AddLoginButton_Click(object sender, EventArgs e)
 		{
 			backend_controller.writeDatabaseEntry(new DataBaseLoginEntry(
@@ -38,11 +44,13 @@ namespace aru_software_eng_UI
 																			is_rm_manager_chckbx.Checked
 																			)
 													);
+			updateTable();
 		}
 
 		private void DeleteLastLoginButton_Click(object sender, EventArgs e)
 		{
-			backend_controller.removeRowFromLoginTable(0);
+			backend_controller.deleteHighestLoginID();
+			updateTable();
 		}
 
 		private void login_generator_btn_Click(object sender, EventArgs e)
@@ -50,30 +58,35 @@ namespace aru_software_eng_UI
 			DataBaseLoginEntry r_entry = backend_controller.randomEntry();
 			
 			//figures out the character to display if the account is a relationship manager account.
-			char is_rm = 'N';
-			if(r_entry.getIsRelationshipManager()) { is_rm = ('Y'); }
 
-			generated_user_entry_display.Text = "result:\n" +
-				"ID: " + r_entry.getID() + "\n" +
-				"Username: " + r_entry.getUsername() + "\n" +
-				"Email: " + r_entry.getEmail() + "\n" +
-				"Password: " + r_entry.getPassword() + "\n" +
-				"Is RM manager: [ " + is_rm + " ]";
+			generated_user_entry_display.Text = r_entry.getAsLabelString();
 
 			//UPDATE naming for r_entry.
 			backend_controller.writeDatabaseEntry(r_entry);
+			updateTable();
 		}
 
 		private void DatabaseWindow_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'coreDataBaseDataSet.LoginEntries' table. You can move, or remove it, as needed.
-			this.loginEntriesTableAdapter.Fill(this.coreDataBaseDataSet.LoginEntries);
+			updateTable();
+		}
+
+		private void delete_user_btn_Click(object sender, EventArgs e)
+        {
+			backend_controller.deleteUserFromLoginTable(username_delete_search_txtbox.Text);
+
+			updateTable();
 		}
 
 		private void login_search_btn_Click(object sender, EventArgs e)
 		{
-			DataBaseLoginEntry output = backend_controller.loginSearchUsername(search_bar.Text);
-			login_output_data_lbl.Text = "Username: " + output.getUsername() + " email:" + output.getEmail();
+			login_output_data_lbl.Text = backend_controller.loginSearchUsername(search_bar.Text).getAsLabelString();
+		}
+
+		private void email_search_btn_Click(object sender, EventArgs e)
+        {
+			login_output_data_lbl.Text = backend_controller.loginSearchEmail(email_search_textbx.Text).getAsLabelString();
+
 		}
 	}
 }

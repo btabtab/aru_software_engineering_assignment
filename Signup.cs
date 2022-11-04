@@ -24,8 +24,8 @@ namespace aru_software_eng_UI
 
         private Boolean passwordChecker() 
         {
-            String password1 = PasswordGetter1.Text;
-            String password2 = PasswordGetter2.Text;
+            string password1 = PasswordGetter1.Text;
+            string password2 = PasswordGetter2.Text;
             bool pass_not_match = Convert.ToBoolean(string.Compare(password1, password2)); //Compares if the passwords match - L
             if (pass_not_match == true) //If the passwords do not match, do the following code - L
             {
@@ -54,7 +54,7 @@ namespace aru_software_eng_UI
 
         private Boolean emailChecker()
         {
-            String email = EmailGetter.Text;
+            string email = EmailGetter.Text;
             Boolean email_contain = email.Contains("@"); //Checks if the text entered into the email entry point contains the correct symbol - L
             if (email_contain == true) //If the email contains the correct symbol - L
             {
@@ -71,7 +71,7 @@ namespace aru_software_eng_UI
 
         private Boolean usernameChecker()
         {
-            String username = LoginGetter.Text;
+            string username = LoginGetter.Text;
             if (username.Length > 2) //If the username is long enough - L
             {
                 usernameWrongSymbol.Text = ""; //clears the cross
@@ -99,8 +99,8 @@ namespace aru_software_eng_UI
 
             if (emailChecker() && passwordChecker() && usernameChecker() && checkboxChecker()) //if all aspects of the form are correct, run the code below - L
             {
-                String username = LoginGetter.Text; //Gets username the user entered - L
-                String email = EmailGetter.Text; //Gets the email the user entered - L
+                string username = LoginGetter.Text; //Gets username the user entered - L
+                string email = EmailGetter.Text; //Gets the email the user entered - L
                 if (backend_controller.loginSearchEmail(email).getEmail() != email && backend_controller.loginSearchUsername(username).getUsername() != username) //searches the database to see if the account and username already exist - L - L
                 {
                     backend_controller.writeDatabaseEntry(new DataBaseLoginEntry(username, "password", email, true)); //Creates a new database entry with all the correct credentials in - L

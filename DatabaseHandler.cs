@@ -45,13 +45,12 @@ namespace aru_software_eng_UI
 		}
 		public DataBaseLoginEntry searchForEntryBasedOnUsername(string username_search)
 		{
-			DataBaseLoginEntry ret = database_wrapper.getLoginEntryFromUsername(username_search);
-			return ret;
+			return database_wrapper.getLoginEntryFromUsername(username_search);
 		}
 		//This will return a made up entry with the email based on the searched username and the same username.
-		public DataBaseLoginEntry searchForEntryBasedOnEmail(string username_search)
+		public DataBaseLoginEntry searchForEntryBasedOnEmail(string email_search)
 		{
-			return new DataBaseLoginEntry();
+			return database_wrapper.getLoginEntryFromEmail(email_search);
 		}
 
 		public void addNewLogin(DataBaseLoginEntry n_database_login_entry)
@@ -65,6 +64,10 @@ namespace aru_software_eng_UI
 		public int getRowCount(string table)
         {
 			return database_wrapper.getRowCount(table);
+        }
+		public int getHighestID(string target_table)
+        {
+			return database_wrapper.getHighestIDNumber(target_table);
         }
 	}
 }

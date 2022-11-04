@@ -18,7 +18,7 @@ namespace aru_software_eng_UI
 		public DataBaseLoginEntry()
 		{
 		}
-		private DataBaseLoginEntry(int n_ID, string n_username, string n_password, string n_email, bool n_is_relationship_manager)
+		public DataBaseLoginEntry(int n_ID, string n_username, string n_password, string n_email, bool n_is_relationship_manager)
 		{
 			ID = n_ID;
 			username = n_username;
@@ -48,5 +48,16 @@ namespace aru_software_eng_UI
 		public void setEmail(string n_email) { email = n_email; }
 		public void setIsRelationshipManager(bool n_is_relationship_manager) { is_relationship_manager = n_is_relationship_manager; }
 
+		//for simplicity sake.
+		public string getAsLabelString()
+        {
+			return (
+				"ID: " + this.ID + "\n" +
+				"Username: " + this.username + "\n" +
+				"Email: " + this.email + "\n" +
+				"Password: " + this.password + "\n" +
+				"Is RM manager: [ " + this.is_relationship_manager + " ]"
+				);
+        }
 	}
 }
