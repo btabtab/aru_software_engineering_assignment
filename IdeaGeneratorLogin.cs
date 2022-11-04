@@ -36,7 +36,6 @@ namespace aru_software_eng_UI
         {
             manager.back();
         }
-
         private void IG_login_button_Click(object sender, EventArgs e)
         {
             // Get username  

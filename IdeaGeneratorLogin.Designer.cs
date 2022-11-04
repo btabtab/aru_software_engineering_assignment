@@ -1,7 +1,7 @@
 ﻿
 namespace aru_software_eng_UI
 {
-    partial class IdeaGeneratorLoginLabel
+    partial class IdeaGeneratorLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace aru_software_eng_UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IdeaGeneratorLoginLabel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IdeaGeneratorLogin));
             this.IG_back_button = new System.Windows.Forms.Button();
             this.IG_password_textbox = new System.Windows.Forms.TextBox();
             this.IG_login_textbox = new System.Windows.Forms.TextBox();
