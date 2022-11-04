@@ -36,7 +36,6 @@ namespace aru_software_eng_UI
         {
             manager.back();
         }
-
         private void IG_login_button_Click(object sender, EventArgs e)
         {
             // Get username  
@@ -47,7 +46,7 @@ namespace aru_software_eng_UI
            if ((loginEntry.getEmail() == username || loginEntry.getUsername() == username) && loginEntry.getPassword() == password)
             {
                 // redirect to Idea Submitter page
-                // next_window = new IdeaSubmitter(this, backend_controller);
+                //next_window = new Idea_Submitter(this, backend_controller);
             }
         }
     }
