@@ -51,5 +51,10 @@ namespace aru_software_eng_UI
         {
             manager.back();
         }
+
+        private void RelationshipManagerLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
