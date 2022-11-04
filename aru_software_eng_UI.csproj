@@ -33,7 +33,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>H:\My Documents\Development\Year_2\Software\FINAL_ARU\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -77,12 +77,24 @@
     </Compile>
     <Compile Include="DatabaseWrapper.cs" />
     <Compile Include="DummyFunctions.cs" />
-    <Compile Include="FormManager.cs" />
-    <Compile Include="IdeaGeneratorLoginLabel.cs">
+    <Compile Include="Idea_Submitter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IdeaGeneratorLoginLabel.Designer.cs">
-      <DependentUpon>IdeaGeneratorLoginLabel.cs</DependentUpon>
+    <Compile Include="Idea_Submitter.Designer.cs">
+      <DependentUpon>Idea_Submitter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManager.cs" />
+    <Compile Include="IdeaGeneratorLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdeaGeneratorLogin.Designer.cs">
+      <DependentUpon>IdeaGeneratorLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IdeaSubmitterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdeaSubmitterForm.Designer.cs">
+      <DependentUpon>IdeaSubmitterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StartMenu.cs">
       <SubType>Form</SubType>
@@ -98,6 +110,12 @@
     <Compile Include="RelationshipManagerLogin.Designer.cs">
       <DependentUpon>RelationshipManagerLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="RelationshipManagerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelationshipManagerView.Designer.cs">
+      <DependentUpon>RelationshipManagerView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,11 +125,17 @@
     <EmbeddedResource Include="DatabaseWindow.resx">
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Idea_Submitter.resx">
+      <DependentUpon>Idea_Submitter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormManager.resx">
       <DependentUpon>FormManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IdeaGeneratorLoginLabel.resx">
-      <DependentUpon>IdeaGeneratorLoginLabel.cs</DependentUpon>
+    <EmbeddedResource Include="IdeaGeneratorLogin.resx">
+      <DependentUpon>IdeaGeneratorLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdeaSubmitterForm.resx">
+      <DependentUpon>IdeaSubmitterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartMenu.resx">
       <DependentUpon>StartMenu.cs</DependentUpon>
@@ -127,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="RelationshipManagerLogin.resx">
       <DependentUpon>RelationshipManagerLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelationshipManagerView.resx">
+      <DependentUpon>RelationshipManagerView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
