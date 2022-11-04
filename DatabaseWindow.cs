@@ -18,11 +18,11 @@ namespace aru_software_eng_UI
 	{
 		FormManager manager;
 		BackendController backend_controller;
-		public DatabaseWindow(Form n_previous_window, BackendController n_backend_controller)
+		public DatabaseWindow(Form n_previous_window)
 		{
 			InitializeComponent();
 			manager = new FormManager(n_previous_window, this);
-			backend_controller = n_backend_controller;
+			backend_controller = BackendController.getInstance();
 		}
 
 		private void KillwindowButton_Click(object sender, EventArgs e)

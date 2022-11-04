@@ -25,7 +25,7 @@ namespace aru_software_eng_UI
 		}
 
 		static DatabaseHandler singleton_instance;
-		static public DatabaseHandler getDatabaseHandlerInstance()
+		static public DatabaseHandler getInstance()
         {
 			if(singleton_instance == null)
             {

@@ -9,9 +9,21 @@ namespace aru_software_eng_UI
 	public class BackendController
 	{
 		DatabaseHandler database_handler;
-		public BackendController(DatabaseHandler n_dtbase_hndlr)
+
+		private BackendController()
 		{
-			database_handler = n_dtbase_hndlr;
+			database_handler = DatabaseHandler.getInstance();
+		}
+
+		static BackendController singleton_instance;
+		static public BackendController getInstance()
+		{
+			if (singleton_instance == null)
+			{
+				singleton_instance = new BackendController();
+			}
+			return singleton_instance;
+
 		}
 
 		public DataBaseLoginEntry randomEntry()
