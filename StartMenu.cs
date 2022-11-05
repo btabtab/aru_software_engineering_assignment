@@ -14,10 +14,10 @@ namespace aru_software_eng_UI
     {
         Form next_window;
         BackendController backend_controller;
-        public StartMenu(BackendController n_backend_controller)
+        public StartMenu()
         {
             InitializeComponent();
-            backend_controller = n_backend_controller;
+            //backend_controller = n_backend_controller;
         }
         private void LoginPage_Load(object sender, EventArgs e)
         {

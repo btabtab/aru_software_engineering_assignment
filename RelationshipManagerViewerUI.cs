@@ -10,6 +10,109 @@ using System.Windows.Forms;
 
 namespace aru_software_eng_UI
 {
+
+	class FancyDisplayBubble
+	{
+		Button button; //Creates a button object for tracking purposes, named button - L
+		int risk; //Risk number for tracking purposes - L
+
+		public FancyDisplayBubble(Button n_button, int n_risk) //Constructor, creates a new bubble with a button and risk attribute - L
+		{
+			button = n_button; //Creates new button attribute for bubble - L
+			risk = n_risk; //Creates a risk attribute for the bubble - L
+		}
+
+		public Button getButton() //Encapuslation command to get the buttons reference hidden in fancyDisplayButton - L    
+		{
+			return button; //
+		}
+
+		public int getRisk()
+		{
+			return risk;
+		}
+	};
+	//will write more later. -JE NOV 1.0
+	class FancyDisplayBubbleTracker
+	{
+		public static FancyDisplayBubbleTracker instance;
+		List<FancyDisplayBubble> bubbles;
+		//Singleton design pattern esque stuff <3
+		private FancyDisplayBubbleTracker()
+		{
+			bubbles = new List<FancyDisplayBubble>();
+		}
+		public static FancyDisplayBubbleTracker getBubbleTracker()
+		{
+			if (instance == null)
+			{
+				instance = new FancyDisplayBubbleTracker();
+			}
+			return instance;
+		}
+
+		FancyDisplayBubble getBubble(int index)
+		{
+			return bubbles.ElementAt(index);
+		}
+		void addBubble(Button n_button, int risk_factor)
+		{
+			bubbles.Add(new FancyDisplayBubble(n_button, risk_factor));
+		}
+
+		FancyDisplayBubble getLastBubble()
+		{
+			return getBubble(bubbles.Count - 1);
+		}
+
+		int getBubbleCount()
+		{
+			return bubbles.Count;
+		}
+		public static FancyDisplayBubble instanceGetBubble(int index)
+		{
+			return getBubbleTracker().getBubble(index);
+		}
+
+		public static void instanceAddBubble(Button n_button, int risk_factor)
+		{
+			getBubbleTracker().addBubble(n_button, risk_factor);
+		}
+
+		public static FancyDisplayBubble instanceGetLastBubble()
+		{
+			return getBubbleTracker().getBubble(instance.getBubbleCount() - 1);
+		}
+
+		void deleteButton(object sender, EventArgs e)
+		{
+			Button target = (Button)sender;
+			target.Dispose();
+		}
+
+		public void deleteBubble(int index)
+		{
+			if (getBubbleCount() == 0) { Console.WriteLine("No bubbles left."); return; }
+			if (index < 0) { index = 0; }
+			if (getBubbleCount() <= index) { index = getBubbleCount() - 1; }
+
+			bubbles.RemoveAt(index);
+		}
+
+		public static void instanceDeleteBubble(int index)
+		{
+			getBubbleTracker().deleteBubble(index);
+		}
+		public static void deleteAllBubbles(Form current_form)
+		{
+			while(getBubbleTracker().getBubbleCount() != 0)
+			{
+				current_form.Controls.Remove(instance.getLastBubble().getButton());
+				instance.deleteBubble(getBubbleTracker().getBubbleCount());
+			}
+		}
+	};
+
 	public partial class RelationshipManagerViewerUI : Form
 	{
 		FormManager manager;
@@ -88,81 +191,6 @@ namespace aru_software_eng_UI
 			return ret; //return the position of the bubble - L
 		}
 
-		class FancyDisplayBubble
-	{
-		Button button; //Creates a button object for tracking purposes, named button - L
-		int risk; //Risk number for tracking purposes - L
-
-		public FancyDisplayBubble(Button n_button, int n_risk) //Constructor, creates a new bubble with a button and risk attribute - L
-		{
-			button = n_button; //Creates new button attribute for bubble - L
-			risk = n_risk; //Creates a risk attribute for the bubble - L
-		}
-
-		public Button getButton() //Encapuslation command to get the buttons reference hidden in fancyDisplayButton - L    
-        {
-			return button; //
-        }
-
-		public int getRisk()
-        {
-			return risk;
-        }
-	};
-	//will write more later. -JE NOV 1.0
-	class FancyDisplayBubbleTracker
-	{
-		public static FancyDisplayBubbleTracker instance;
-		List<FancyDisplayBubble> bubbles;
-		//Singleton design pattern esque stuff <3
-		private FancyDisplayBubbleTracker()
-		{
-			bubbles = new List<FancyDisplayBubble>();
-		}
-		public static FancyDisplayBubbleTracker getBubbleTracker()
-		{
-			if (instance == null)
-			{
-				instance = new FancyDisplayBubbleTracker();
-			}
-			return instance;
-		}
-
-		FancyDisplayBubble getBubble(int index)
-		{
-			return bubbles.ElementAt(index);
-		}
-		void addBubble(Button n_button, int risk_factor)
-		{
-			bubbles.Add(new FancyDisplayBubble(n_button,risk_factor));
-		}
-
-		FancyDisplayBubble getLastBubble()
-		{
-			return getBubble(bubbles.Count - 1);
-		}
-
-		int getBubbleCount()
-        {
-			return bubbles.Count;
-        }
-		public static FancyDisplayBubble instanceGetBubble(int index)
-		{
-			return getBubbleTracker().getBubble(index);
-		}
-
-		public static void instanceAddBubble(Button n_button, int risk_factor)
-		{
-			getBubbleTracker().addBubble(n_button, risk_factor);
-		}
-
-		public static FancyDisplayBubble instanceGetLastBubble()
-		{
-			return getBubbleTracker().getBubble(instance.getBubbleCount() - 1);
-		}
-	};
-
-
 		private void multipleButtonMaker() 
 		{
 			
@@ -211,14 +239,11 @@ namespace aru_software_eng_UI
 		//If the left button is pressed, reload the current buttons to display the "next page" - L
         private void page_left_button_Click(object sender, EventArgs e)
         {
-			if (page_number > 1)
+			if (1 < page_number)
 			{
 				page_number -= 1;
-			}
-
-			else 
-			{
-				page_number = 1;
+				FancyDisplayBubbleTracker.deleteAllBubbles(this);
+				InitializeComponent();
 			}
 			page_number_label.Text = page_number.ToString(); //Display the page number to the user - L
 		}
@@ -230,6 +255,9 @@ namespace aru_software_eng_UI
 			if (page_number < (database_cost_array.Length - 1) / 5 + 1)
 			{
 				page_number += 1;
+        
+				FancyDisplayBubbleTracker.deleteAllBubbles(this);
+				InitializeComponent();
 			}
 
 			else 
