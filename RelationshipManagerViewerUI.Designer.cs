@@ -42,6 +42,7 @@ namespace aru_software_eng_UI
             this.debugShow = new System.Windows.Forms.Label();
             this.page_right_button = new System.Windows.Forms.Button();
             this.page_left_button = new System.Windows.Forms.Button();
+            this.page_number_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // title_label
@@ -167,7 +168,7 @@ namespace aru_software_eng_UI
             // 
             // page_right_button
             // 
-            this.page_right_button.Location = new System.Drawing.Point(685, 526);
+            this.page_right_button.Location = new System.Drawing.Point(897, 526);
             this.page_right_button.Name = "page_right_button";
             this.page_right_button.Size = new System.Drawing.Size(75, 23);
             this.page_right_button.TabIndex = 13;
@@ -177,7 +178,7 @@ namespace aru_software_eng_UI
             // 
             // page_left_button
             // 
-            this.page_left_button.Location = new System.Drawing.Point(1, 526);
+            this.page_left_button.Location = new System.Drawing.Point(766, 526);
             this.page_left_button.Name = "page_left_button";
             this.page_left_button.Size = new System.Drawing.Size(75, 23);
             this.page_left_button.TabIndex = 14;
@@ -185,11 +186,22 @@ namespace aru_software_eng_UI
             this.page_left_button.UseVisualStyleBackColor = true;
             this.page_left_button.Click += new System.EventHandler(this.page_left_button_Click);
             // 
+            // page_number_label
+            // 
+            this.page_number_label.AutoSize = true;
+            this.page_number_label.Location = new System.Drawing.Point(863, 531);
+            this.page_number_label.Name = "page_number_label";
+            this.page_number_label.Size = new System.Drawing.Size(13, 13);
+            this.page_number_label.TabIndex = 15;
+            this.page_number_label.Text = "1";
+            this.page_number_label.Click += new System.EventHandler(this.page_number_label_Click);
+            // 
             // RelationshipManagerViewerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.page_number_label);
             this.Controls.Add(this.page_left_button);
             this.Controls.Add(this.page_right_button);
             this.Controls.Add(this.debugShow);
@@ -226,5 +238,6 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label debugShow;
         private System.Windows.Forms.Button page_right_button;
         private System.Windows.Forms.Button page_left_button;
+        private System.Windows.Forms.Label page_number_label;
     }
 }
