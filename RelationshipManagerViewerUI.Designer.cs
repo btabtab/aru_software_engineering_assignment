@@ -159,7 +159,7 @@ namespace aru_software_eng_UI
             // debugShow
             // 
             this.debugShow.AutoSize = true;
-            this.debugShow.Location = new System.Drawing.Point(778, 502);
+            this.debugShow.Location = new System.Drawing.Point(838, 494);
             this.debugShow.Name = "debugShow";
             this.debugShow.Size = new System.Drawing.Size(67, 13);
             this.debugShow.TabIndex = 12;

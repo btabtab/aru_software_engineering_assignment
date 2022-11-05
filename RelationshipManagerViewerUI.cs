@@ -10,8 +10,26 @@ using System.Windows.Forms;
 
 namespace aru_software_eng_UI
 {
+	public partial class RelationshipManagerViewerUI : Form
+	{
+		FormManager manager;
+		BackendController backend_controller;
+		private int slot_counter = 0;
+		private int page_number = 1;
 
-	class FancyDisplayBubble
+		//Temporary variable names, just for ease of understaning, will be imported from db - L
+		string[] database_string_array = new string[] { "Bonds", "Bonds", "Shares", "Art", "Real estate", "Share", "Share", "Stock", "Bonds", "Art", "Random" };
+		float[] database_cost_array = new float[] { 1500, 1500, 1500, 1500, 1500, 1500, 1000, 2000, 9000, 5000, 200 };
+		float[] database_risk_array = new float[] { 2, 2, 2, 2, 2, 2, 7, 8, 9, 10, 11 };
+		//Temporary variable names, just for ease of understaning, will be imported from db - L
+
+		//Temporary variable names, just for ease of understaning, will be imported from RM filter page - L
+		float imported_cost = 1500;
+		float imported_risk = 2;
+		//Temporary variable names, just for ease of understaning, will be imported from RM filter page - L
+
+
+		class FancyDisplayBubble
 	{
 		Button button; //Creates a button object for tracking purposes, named button - L
 		int risk; //Risk number for tracking purposes - L
@@ -113,28 +131,14 @@ namespace aru_software_eng_UI
 		}
 	};
 
-	public partial class RelationshipManagerViewerUI : Form
-	{
-		FormManager manager;
-		BackendController backend_controller;
-		private int slot_counter = 0;
-		private int page_number = 1;
-
-		//Temporary variable names, just for ease of understaning, will be imported from db - L
-		string[] database_string_array = new string[] { "Bonds", "Bonds", "Shares", "Art", "Real estate", "Share", "Share", "Stock", "Bonds", "Art", "Random" };
-		float[] database_cost_array = new float[] { 1500, 1500, 1500, 1500, 1500, 1500, 1000, 2000, 9000, 5000, 200 };
-		float[] database_risk_array = new float[] { 2, 2, 2, 2, 2, 2, 7, 8, 9, 10, 11 };
-		//Temporary variable names, just for ease of understaning, will be imported from db - L
-
-		int end_of_range = 5;
-		int start_of_range = 1;
+	
 
 		public RelationshipManagerViewerUI(Form n_previous_window, BackendController n_backend_controller)
 		{
 			InitializeComponent();
 			manager = new FormManager(n_previous_window, this);
 			backend_controller = n_backend_controller;
-			multipleButtonMaker();
+			multipleButtonMaker(1);
 
 		}
 
@@ -191,22 +195,15 @@ namespace aru_software_eng_UI
 			return ret; //return the position of the bubble - L
 		}
 
-		private void multipleButtonMaker() 
+		private void multipleButtonMaker(int start_of_range) 
 		{
-			
-			//Temporary variable names, just for ease of understaning, will be imported from RM filter page - L
-			float imported_cost = 1500;
-			float imported_risk = 2;
-			//Temporary variable names, just for ease of understaning, will be imported from RM filter page - L
 
-			end_of_range = page_number * 5;
-			start_of_range = end_of_range - 4;
-			IEnumerable<int> results_to_display_selector = Enumerable.Range(start_of_range, end_of_range); //For I in range - L
-
-			foreach (int i in results_to_display_selector)
+			int end_of_range = start_of_range + 5;
+			for (int i = start_of_range; i < end_of_range; i++)
 			{
-				createButton(mathsSutability(imported_cost, database_cost_array[i - 1], imported_risk, database_risk_array[i - 1]), database_string_array[i-1] + "\nRisk: " + database_risk_array[i-1].ToString() + "\n£" + database_cost_array[i-1].ToString());
+				createButton(mathsSutability(imported_cost, database_cost_array[i - 1], imported_risk, database_risk_array[i - 1]), database_string_array[i - 1] + "\nRisk: " + database_risk_array[i - 1].ToString() + "\n£" + database_cost_array[i - 1].ToString());
 			}
+
 		}
 
 
@@ -242,30 +239,28 @@ namespace aru_software_eng_UI
 			if (1 < page_number)
 			{
 				page_number -= 1;
+				page_number_label.Text = page_number.ToString(); //Display the page number to the user - L
 				FancyDisplayBubbleTracker.deleteAllBubbles(this);
-				InitializeComponent();
+				//multipleButtonMaker();
 			}
-			page_number_label.Text = page_number.ToString(); //Display the page number to the user - L
+			
 		}
 
 		//If the right button is pressed, reload the current buttons to display the "next page" - L
 		private void page_right_button_Click(object sender, EventArgs e)
         {
 
-			if (page_number < (database_cost_array.Length - 1) / 5 + 1)
+			if (page_number < (database_cost_array.Length - 1) / 5 + 1) //If page number less than max amount it possibly can be - L
 			{
 				page_number += 1;
-        
+				page_number_label.Text = page_number.ToString();
 				FancyDisplayBubbleTracker.deleteAllBubbles(this);
-				InitializeComponent();
+				//multipleButtonMaker();
 			}
-
-			else 
-			{
-				page_number = (database_cost_array.Length - 1) / 5 + 1; //max amount of pages possible as 5 bubbles per page can be displayed, rounded up - L
-			}
-			page_number_label.Text = page_number.ToString(); //Display the page number to the user - L
 		}
+
+
+
 
         private void page_number_label_Click(object sender, EventArgs e)
         {
