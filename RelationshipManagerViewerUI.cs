@@ -35,6 +35,7 @@ namespace aru_software_eng_UI
 		int risk; //Risk number for tracking purposes - L
 		int cost;
 		int ID;
+
 			public FancyDisplayBubble(Button n_button, int n_risk, int n_cost, int n_ID) //Constructor, creates a new bubble with a button and risk attribute - L
 			{
 				button = n_button; //Creates new button attribute for bubble - L
@@ -256,7 +257,7 @@ namespace aru_software_eng_UI
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Location = button_pos; //Sets the location of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Size = new Size(size_of_button*2, size_of_button*2); //Sets the size of button to the default size - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Font = new Font("Agency FB", size_of_button/3, FontStyle.Bold); //Sets the buttons font and text size, makes the font fit the button no matter the size - L
-			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().risk_factor = risk_to_input;
+			FancyDisplayBubbleTracker.instanceGetLastBubble().risk_factor = risk_to_input;
 
 
 		}
