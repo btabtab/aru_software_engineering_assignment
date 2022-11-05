@@ -117,10 +117,17 @@ namespace aru_software_eng_UI
 	{
 		FormManager manager;
 		BackendController backend_controller;
-		private bool large_slot_taken = false;
-		private int meduim_slot_counter = 0;
+		private int slot_counter = 0;
 		private int page_number = 1;
-		private int max_page_number = 2;
+
+		//Temporary variable names, just for ease of understaning, will be imported from db - L
+		string[] database_string_array = new string[] { "Bonds", "Bonds", "Shares", "Art", "Real estate", "Share", "Share", "Stock", "Bonds", "Art", "Random" };
+		float[] database_cost_array = new float[] { 1500, 1500, 1500, 1500, 1500, 1500, 1000, 2000, 9000, 5000, 200 };
+		float[] database_risk_array = new float[] { 2, 2, 2, 2, 2, 2, 7, 8, 9, 10, 11 };
+		//Temporary variable names, just for ease of understaning, will be imported from db - L
+
+		int end_of_range = 5;
+		int start_of_range = 1;
 
 		public RelationshipManagerViewerUI(Form n_previous_window, BackendController n_backend_controller)
 		{
@@ -148,78 +155,57 @@ namespace aru_software_eng_UI
 			return (int)Math.Round(suitability_algorithm_outcome); //Make the float an int - L
 		}
 
+		//Place the bubbles in the appropriate place, based roughly off their size - L
 		private Point positionCalculator(int size)
 		{
 			Point ret = new Point();
-			//Put best-matched bubble in the center of the screen - L
-			if (size > 66 && large_slot_taken == false)
-			{
-				ret.X = 379 - (size / 2);
-				ret.Y = 300 - (size / 2);
-				large_slot_taken = true;
-			}
-
-			//Put the next 4 best-matched bubbles in the middle of the screen around the main bubble - L
-			else if (size > 33)
-			{
-
-				switch (meduim_slot_counter)
+				switch (slot_counter)
 				{
-					case 0:
-						ret.X = 179 - (size / 2);
-						ret.Y = 500 - (size / 2);
-						break;
-					case 1:
-						ret.X = 579 - (size / 2);
-						ret.Y = 100 - (size / 2);
-						break;
-					case 2:
-						ret.X = 179 - (size / 2);
-						ret.Y = 100 - (size / 2);
-						break;
-					case 3:
-						ret.X = 579 - (size / 2);
-						ret.Y = 500 - (size / 2);
-						break;
+				case 0:
+					ret.X = 350 - (size / 2);
+					ret.Y = 235 - (size / 2);
+					break;
+				case 1:
+					ret.X = 150 - (size / 2);
+					ret.Y = 435 - (size / 2);
+					break;
+				case 2:
+					ret.X = 550 - (size / 2);
+					ret.Y = 35 - (size / 2);
+					break;
+				case 3:
+					ret.X = 150 - (size / 2);
+					ret.Y = 35 - (size / 2);
+					break;
+				case 4:
+					ret.X = 550 - (size / 2);
+					ret.Y = 453 - (size / 2);
+					break;
 
-					default:
-						break;
-				}
-				meduim_slot_counter++;
+				default:
+					break;
+
+
 			}
-
-			return ret;
+			slot_counter++; //Incriment the slot counter so we know how many bubbles are on the page - L
+			return ret; //return the position of the bubble - L
 		}
 
 		private void multipleButtonMaker() 
 		{
+			
 			//Temporary variable names, just for ease of understaning, will be imported from RM filter page - L
-			float imported_cost = 1480;
-			float imported_risk = 3;
+			float imported_cost = 1500;
+			float imported_risk = 2;
 			//Temporary variable names, just for ease of understaning, will be imported from RM filter page - L
 
-
-			//Temporary variable names, just for ease of understaning, will be imported from db - L
-			int suitable_results = 10; //This will be changed based on the amount of suitable entries from db - L
-			string[] database_string_array = new string[] {"Bonds", "Bonds", "Shares", "Art", "Real estate", "Share", "Share", "Stock", "Bonds", "Art" };
-			float[] database_cost_array = new float[] {1500, 1700, 1900, 689, 670, 340, 1000, 2000, 9000, 5000 };
-			float[] database_risk_array = new float[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-			float cost = 1500; 
-			float risk = 4;
-			//Temporary variable names, just for ease of understaning, will be imported from db - L
-
-
-			int end_of_range = 5;
-			int start_of_range = 1;
-
+			end_of_range = page_number * 5;
+			start_of_range = end_of_range - 4;
 			IEnumerable<int> results_to_display_selector = Enumerable.Range(start_of_range, end_of_range); //For I in range - L
 
 			foreach (int i in results_to_display_selector)
 			{
-				cost = database_cost_array[i-1];
-				risk = database_risk_array[i-1];
-				createButton(mathsSutability(imported_cost, cost, imported_risk, risk), database_string_array[i] + "\nRisk: " + database_risk_array[i].ToString() + "\n£" + database_cost_array[i].ToString());
+				createButton(mathsSutability(imported_cost, database_cost_array[i - 1], imported_risk, database_risk_array[i - 1]), database_string_array[i-1] + "\nRisk: " + database_risk_array[i-1].ToString() + "\n£" + database_cost_array[i-1].ToString());
 			}
 		}
 
@@ -233,17 +219,21 @@ namespace aru_software_eng_UI
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Text = title_of_button; //Sets the text of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Location = button_pos; //Sets the location of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Size = new Size(size_of_button*2, size_of_button*2); //Sets the size of button to the default size - L
-			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Font = new Font("Agency FB", size_of_button/3, FontStyle.Bold); //Sets the buttons font and text size - L
+			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Font = new Font("Agency FB", size_of_button/3, FontStyle.Bold); //Sets the buttons font and text size, makes the font fit the button no matter the size - L
 		}
 
-		private void RelationshipManagerViewerUI_Load(object sender, EventArgs e)
-		{
-		}
 
-        private void debugShow_Click(object sender, EventArgs e)
-        {
 
-        }
+
+
+
+
+
+
+
+
+
+
 
 
 		//If the left button is pressed, reload the current buttons to display the "next page" - L
@@ -255,19 +245,39 @@ namespace aru_software_eng_UI
 				FancyDisplayBubbleTracker.deleteAllBubbles(this);
 				InitializeComponent();
 			}
-			debugShow.Text = page_number.ToString();
+			page_number_label.Text = page_number.ToString(); //Display the page number to the user - L
 		}
 
 		//If the right button is pressed, reload the current buttons to display the "next page" - L
 		private void page_right_button_Click(object sender, EventArgs e)
         {
-			if (page_number < max_page_number)
+
+			if (page_number < (database_cost_array.Length - 1) / 5 + 1)
 			{
 				page_number += 1;
+        
 				FancyDisplayBubbleTracker.deleteAllBubbles(this);
 				InitializeComponent();
 			}
-			debugShow.Text = page_number.ToString();
+
+			else 
+			{
+				page_number = (database_cost_array.Length - 1) / 5 + 1; //max amount of pages possible as 5 bubbles per page can be displayed, rounded up - L
+			}
+			page_number_label.Text = page_number.ToString(); //Display the page number to the user - L
+		}
+
+        private void page_number_label_Click(object sender, EventArgs e)
+        {
+
         }
+
+		private void RelationshipManagerViewerUI_Load(object sender, EventArgs e)
+		{
+		}
+
+		private void debugShow_Click(object sender, EventArgs e)
+		{
+		}
 	}
 }
