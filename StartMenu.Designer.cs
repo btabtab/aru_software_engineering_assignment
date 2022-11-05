@@ -34,6 +34,7 @@ namespace aru_software_eng_UI
             this.CreateAccountBTN = new System.Windows.Forms.Button();
             this.DatabaseDisplay = new System.Windows.Forms.Button();
             this.LoginTitleLabel = new System.Windows.Forms.Label();
+            this.showRMTEST = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // IdeaGenBTN
@@ -94,17 +95,28 @@ namespace aru_software_eng_UI
             this.LoginTitleLabel.TabIndex = 4;
             this.LoginTitleLabel.Text = "Login";
             // 
-            // mainMenu
+            // showRMTEST
+            // 
+            this.showRMTEST.Location = new System.Drawing.Point(12, 409);
+            this.showRMTEST.Name = "showRMTEST";
+            this.showRMTEST.Size = new System.Drawing.Size(168, 29);
+            this.showRMTEST.TabIndex = 5;
+            this.showRMTEST.Text = "Show RM view test";
+            this.showRMTEST.UseVisualStyleBackColor = true;
+            this.showRMTEST.Click += new System.EventHandler(this.showRMTEST_Click);
+            // 
+            // StartMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.showRMTEST);
             this.Controls.Add(this.LoginTitleLabel);
             this.Controls.Add(this.DatabaseDisplay);
             this.Controls.Add(this.CreateAccountBTN);
             this.Controls.Add(this.RelationshipManagerBTN);
             this.Controls.Add(this.IdeaGenBTN);
-            this.Name = "mainMenu";
+            this.Name = "StartMenu";
             this.Text = "LoginPage";
             this.Load += new System.EventHandler(this.LoginPage_Load);
             this.ResumeLayout(false);
@@ -119,6 +131,7 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Button CreateAccountBTN;
         private System.Windows.Forms.Button DatabaseDisplay;
         private System.Windows.Forms.Label LoginTitleLabel;
+        private System.Windows.Forms.Button showRMTEST;
     }
 }
 

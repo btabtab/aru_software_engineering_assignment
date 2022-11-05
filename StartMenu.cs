@@ -15,7 +15,7 @@ namespace aru_software_eng_UI
         Form next_window;
         public StartMenu()
         {
-            InitializeComponent();
+            InitializeComponent()
         }
         private void LoginPage_Load(object sender, EventArgs e)
         {
@@ -38,6 +38,11 @@ namespace aru_software_eng_UI
         private void DatabaseDisplay_Click(object sender, EventArgs e)
         {
             next_window = new DatabaseWindow(this);
+        }
+
+        private void showRMTEST_Click(object sender, EventArgs e)
+        {
+            next_window = new RelationshipManagerViewerUI(this, backend_controller); 
         }
     }
 }
