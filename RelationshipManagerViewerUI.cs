@@ -138,7 +138,7 @@ namespace aru_software_eng_UI
 			InitializeComponent();
 			manager = new FormManager(n_previous_window, this);
 			backend_controller = n_backend_controller;
-			multipleButtonMaker(1);
+			multipleButtonMaker(page_number);
 
 		}
 
@@ -197,8 +197,16 @@ namespace aru_software_eng_UI
 
 		private void multipleButtonMaker(int start_of_range) 
 		{
-
+			int max_possible_page = 3;
 			int end_of_range = start_of_range + 5;
+
+			if (page_number == max_possible_page) //If the user is trying to populate the final page... - L
+			{
+				end_of_range = database_cost_array.Length + 1; //Make it display the appropriate amount of bubbles so you don't have an out of bounds issue - L
+			
+			}
+
+			
 			for (int i = start_of_range; i < end_of_range; i++)
 			{
 				createButton(mathsSutability(imported_cost, database_cost_array[i - 1], imported_risk, database_risk_array[i - 1]), database_string_array[i - 1] + "\nRisk: " + database_risk_array[i - 1].ToString() + "\n£" + database_cost_array[i - 1].ToString());
@@ -241,7 +249,8 @@ namespace aru_software_eng_UI
 				page_number -= 1;
 				page_number_label.Text = page_number.ToString(); //Display the page number to the user - L
 				FancyDisplayBubbleTracker.deleteAllBubbles(this);
-				//multipleButtonMaker();
+				slot_counter = 0;
+				multipleButtonMaker(1 + (page_number - 1) * 5);
 			}
 			
 		}
@@ -255,7 +264,8 @@ namespace aru_software_eng_UI
 				page_number += 1;
 				page_number_label.Text = page_number.ToString();
 				FancyDisplayBubbleTracker.deleteAllBubbles(this);
-				//multipleButtonMaker();
+				slot_counter = 0;
+				multipleButtonMaker(1+(page_number-1) * 5);
 			}
 		}
 
