@@ -9,9 +9,20 @@ namespace aru_software_eng_UI
 	public class BackendController
 	{
 		DatabaseHandler database_handler;
+
 		private BackendController()
 		{
-			//database_handler = DatabaseHandler.;
+			database_handler = DatabaseHandler.getInstance();
+		}
+
+		static BackendController singleton_instance;
+		static public BackendController getInstance()
+		{
+			if (singleton_instance == null)
+			{
+				singleton_instance = new BackendController();
+			}
+			return singleton_instance;
 		}
 		static BackendController singleton_instance;
 		static public BackendController getInstance()
@@ -24,9 +35,17 @@ namespace aru_software_eng_UI
 
 		}
 		public DataBaseLoginEntry randomEntry()
-        {
-			return database_handler.generateRandomLoginInfo();
-        }
+		{
+			int random_num = new Random().Next(256);
+			DataBaseLoginEntry ret = new DataBaseLoginEntry();
+			ret.setID(random_num);
+			ret.setUsername("username_" + random_num);
+			ret.setPassword("password");
+			ret.setEmail("email_" + random_num + "@mail.net");
+			//if the row_num is a multiple of 2 the dummy account will be an RM.
+			ret.setIsRelationshipManager((random_num % 2) == 0);
+			return ret;
+		}
 
 		public DataBaseLoginEntry loginSearchEmail(string search)
         {
@@ -43,16 +62,17 @@ namespace aru_software_eng_UI
         }
 		public void deleteUserFromLoginTable(string username)
         {
-			//database_handler.deleteLoginRowX(database_handler.searchForEntryBasedOnUsername(username).getID());
+			database_handler.deleteLoginRowX(database_handler.searchForEntryBasedOnUsername(username).getID());
         }
+
 		public int getLoginTableRowCount()
         {
-			return 0;
-			//return database_handler.getRowCount("LoginEntries");
+			return database_handler.getRowCount("LoginEntries");
         }
+
 		public void deleteHighestLoginID()
         {
-			//database_handler.deleteLoginRowX(database_handler.getHighestID("LoginEntries"));
+			database_handler.deleteLoginRowX(database_handler.getHighestID("LoginEntries"));
         }
 	}
 }

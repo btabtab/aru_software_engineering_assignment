@@ -14,11 +14,11 @@ namespace aru_software_eng_UI
     {
         FormManager manager;
         BackendController backend_controller;
-        public RelationshipManagerLogin(Form n_previous_window, BackendController n_backend_controller)
+        public RelationshipManagerLogin(Form n_previous_window)
         {
             InitializeComponent();
             manager = new FormManager(n_previous_window, this);
-            backend_controller = n_backend_controller;
+            backend_controller = BackendController.getInstance();
         }
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace aru_software_eng_UI
         private void RM_login_manager_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RelationshipManagerLogin rm_window = new RelationshipManagerLogin(this, backend_controller);
+            RelationshipManagerLogin rm_window = new RelationshipManagerLogin(this);
             rm_window.Show();
         }
 
