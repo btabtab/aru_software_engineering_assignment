@@ -33,23 +33,51 @@ namespace aru_software_eng_UI
 	{
 		Button button; //Creates a button object for tracking purposes, named button - L
 		int risk; //Risk number for tracking purposes - L
+		int cost;
+		int ID;
+			public FancyDisplayBubble(Button n_button, int n_risk, int n_cost, int n_ID) //Constructor, creates a new bubble with a button and risk attribute - L
+			{
+				button = n_button; //Creates new button attribute for bubble - L
+				risk = n_risk; //Creates a risk attribute for the bubble - L
+				cost = n_cost;
+				ID = n_ID;
+				button.Click += new EventHandler(showButtonInfo); //When button is clicked, run the "showButtonInfo" function - L
+			}
 
-		public FancyDisplayBubble(Button n_button, int n_risk) //Constructor, creates a new bubble with a button and risk attribute - L
-		{
-			button = n_button; //Creates new button attribute for bubble - L
-			risk = n_risk; //Creates a risk attribute for the bubble - L
-		}
+			void showButtonInfo(object sender, EventArgs e)
+			{
+				Button target = (Button)sender;
+
+			}
+
+
+
+
+
+
+
 
 		public Button getButton() //Encapuslation command to get the buttons reference hidden in fancyDisplayButton - L    
 		{
-			return button; //
+			return button; 
 		}
 
 		public int getRisk()
 		{
 			return risk;
 		}
-	};
+
+		public int getCost()
+		{
+			return cost;
+		}
+
+		public int getID()
+		{
+			return ID;
+		}
+
+		};
 	//will write more later. -JE NOV 1.0
 	class FancyDisplayBubbleTracker
 	{
@@ -73,9 +101,9 @@ namespace aru_software_eng_UI
 		{
 			return bubbles.ElementAt(index);
 		}
-		void addBubble(Button n_button, int risk_factor)
+		void addBubble(Button n_button, int risk_factor, int cost_factor, int ID)
 		{
-			bubbles.Add(new FancyDisplayBubble(n_button, risk_factor));
+			bubbles.Add(new FancyDisplayBubble(n_button, risk_factor, cost_factor, ID));
 		}
 
 		FancyDisplayBubble getLastBubble()
@@ -92,9 +120,9 @@ namespace aru_software_eng_UI
 			return getBubbleTracker().getBubble(index);
 		}
 
-		public static void instanceAddBubble(Button n_button, int risk_factor)
+		public static void instanceAddBubble(Button n_button, int risk_factor, int cost_factor, int ID)
 		{
-			getBubbleTracker().addBubble(n_button, risk_factor);
+			getBubbleTracker().addBubble(n_button, risk_factor, cost_factor, ID);
 		}
 
 		public static FancyDisplayBubble instanceGetLastBubble()
@@ -131,7 +159,11 @@ namespace aru_software_eng_UI
 		}
 	};
 
-	
+
+
+
+
+
 
 		public RelationshipManagerViewerUI(Form n_previous_window, BackendController n_backend_controller)
 		{
@@ -207,39 +239,27 @@ namespace aru_software_eng_UI
 			}
 
 			
-			for (int i = start_of_range; i < end_of_range; i++)
+			for (int i = start_of_range; i < end_of_range; i++) //Generate the appropriate amount of bubbles based of previously determined paramneters - L
 			{
-				createButton(mathsSutability(imported_cost, database_cost_array[i - 1], imported_risk, database_risk_array[i - 1]), database_string_array[i - 1] + "\nRisk: " + database_risk_array[i - 1].ToString() + "\n£" + database_cost_array[i - 1].ToString());
+				createButton(mathsSutability(imported_cost, database_cost_array[i - 1], imported_risk, database_risk_array[i - 1]), database_risk_array[i-1], database_cost_array[i - 1], database_string_array[i - 1] + "\nRisk: " + database_risk_array[i - 1].ToString() + "\n£" + database_cost_array[i - 1].ToString());
 			}
 
 		}
 
-
-		private void createButton(int size_of_button, string title_of_button)
+		private void createButton(int size_of_button, float risk_to_input, float cost_to_input, string title_of_button)
 		{
 			Point button_pos = positionCalculator(size_of_button); //Creates a Point variable to hold the size of the button - L
 			
-			FancyDisplayBubbleTracker.instanceAddBubble(new Button(), /*this value will be the risk of the button but it will be left as 0 for now -JE*/0); //Creates a new instance of a button - L
+			FancyDisplayBubbleTracker.instanceAddBubble(new Button(), 0, 4000, 1); //Creates a new instance of a button - L
 			this.Controls.Add(FancyDisplayBubbleTracker.instanceGetLastBubble().getButton()); //Add controlls to the recently created button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Text = title_of_button; //Sets the text of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Location = button_pos; //Sets the location of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Size = new Size(size_of_button*2, size_of_button*2); //Sets the size of button to the default size - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Font = new Font("Agency FB", size_of_button/3, FontStyle.Bold); //Sets the buttons font and text size, makes the font fit the button no matter the size - L
+			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().risk_factor = risk_to_input;
+
+
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 		//If the left button is pressed, reload the current buttons to display the "next page" - L
         private void page_left_button_Click(object sender, EventArgs e)
@@ -268,9 +288,6 @@ namespace aru_software_eng_UI
 				multipleButtonMaker(1+(page_number-1) * 5);
 			}
 		}
-
-
-
 
         private void page_number_label_Click(object sender, EventArgs e)
         {
