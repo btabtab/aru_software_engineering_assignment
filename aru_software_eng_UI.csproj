@@ -98,6 +98,7 @@
     <Compile Include="IdeaSubmitterForm.Designer.cs">
       <DependentUpon>IdeaSubmitterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvestmentIdea.cs" />
     <Compile Include="StartMenu.cs">
       <SubType>Form</SubType>
     </Compile>
