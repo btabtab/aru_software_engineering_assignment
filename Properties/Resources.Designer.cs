@@ -59,15 +59,5 @@ namespace aru_software_eng_UI.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap black_circle_new {
-            get {
-                object obj = ResourceManager.GetObject("black_circle_new", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

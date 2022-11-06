@@ -17,6 +17,7 @@ namespace aru_software_eng_UI
 		BackendController backend_controller;
 		private int slot_counter = 0;
 		private int page_number = 1;
+		int EDIT_ME = 0;
 
 		//Temporary variable names, just for ease of understaning, will be imported from db - L
 		string[] database_string_array = new string[] { "Bonds", "Bonds", "Shares", "Art", "Real estate", "Share", "Share", "Stock", "Bonds", "Art", "Random" };
@@ -35,7 +36,6 @@ namespace aru_software_eng_UI
 			manager = new FormManager(n_previous_window, this);
 			backend_controller = BackendController.getInstance();
 			multipleButtonMaker(page_number);
-
 		}
 
 		private void cost_label_Click(object sender, EventArgs e)
@@ -114,15 +114,23 @@ namespace aru_software_eng_UI
 		{
 			Point button_pos = positionCalculator(size_of_button); //Creates a Point variable to hold the size of the button - L
 			
-			FancyDisplayBubbleTracker.instanceAddBubble(new Button(), 0, 4000, 1); //Creates a new instance of a button - L
+			FancyDisplayBubbleTracker.instanceAddBubble(new Button(), 3, 14000, 1, "Bond", "This bond is blah blah blah", 5); //Creates a new instance of a button - L
 			this.Controls.Add(FancyDisplayBubbleTracker.instanceGetLastBubble().getButton()); //Add controlls to the recently created button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Text = title_of_button; //Sets the text of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Location = button_pos; //Sets the location of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Size = new Size(size_of_button*2, size_of_button*2); //Sets the size of button to the default size - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Font = new Font("Agency FB", size_of_button/3, FontStyle.Bold); //Sets the buttons font and text size, makes the font fit the button no matter the size - L
-			//FancyDisplayBubbleTracker.instanceGetLastBubble().;
+			writeToSideBit(0);
+		}
 
-
+		//Gets information 
+		private void writeToSideBit(int button_index) 
+		{
+			title_label.Text = FancyDisplayBubbleTracker.instanceGetBubble(button_index).getInvestmentType();
+			description_label.Text = FancyDisplayBubbleTracker.instanceGetBubble(button_index).getDescription();
+			risk_label.Text = "Risk level " + FancyDisplayBubbleTracker.instanceGetBubble(button_index).getRisk().ToString();
+			cost_label.Text = "£" + FancyDisplayBubbleTracker.instanceGetBubble(button_index).getCost().ToString();
+			rating_label.Text = "Level " + FancyDisplayBubbleTracker.instanceGetBubble(button_index).getRating().ToString() + " requried";
 		}
 
 		//If the left button is pressed, reload the current buttons to display the "next page" - L

@@ -32,9 +32,10 @@ namespace aru_software_eng_UI
 		{
 			return bubbles.ElementAt(index);
 		}
-		void addBubble(Button n_button, int risk_factor, int cost_factor, int ID)
+		
+		void addBubble(Button n_button, int risk_factor, int cost_factor, int ID, string investment_type, string description, int RM_rating)
 		{
-			bubbles.Add(new FancyDisplayBubble(n_button, risk_factor, cost_factor, ID));
+			bubbles.Add(new FancyDisplayBubble(n_button, risk_factor, cost_factor, ID, investment_type, description, RM_rating));
 		}
 
 		FancyDisplayBubble getLastBubble()
@@ -51,9 +52,9 @@ namespace aru_software_eng_UI
 			return getBubbleTracker().getBubble(index);
 		}
 
-		public static void instanceAddBubble(Button n_button, int risk_factor, int cost_factor, int ID)
+		public static void instanceAddBubble(Button n_button, int risk_factor, int cost_factor, int ID, string investment_type, string description, int RM_rating)
 		{
-			getBubbleTracker().addBubble(n_button, risk_factor, cost_factor, ID);
+			getBubbleTracker().addBubble(n_button, risk_factor, cost_factor, ID, investment_type, description, RM_rating);
 		}
 
 		public static FancyDisplayBubble instanceGetLastBubble()
@@ -72,7 +73,6 @@ namespace aru_software_eng_UI
 			if (getBubbleCount() == 0) { Console.WriteLine("No bubbles left."); return; }
 			if (index < 0) { index = 0; }
 			if (getBubbleCount() <= index) { index = getBubbleCount() - 1; }
-
 			bubbles.RemoveAt(index);
 		}
 
