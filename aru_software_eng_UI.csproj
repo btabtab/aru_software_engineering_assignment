@@ -84,14 +84,13 @@
     </Compile>
     <Compile Include="Idea_Submitter.Designer.cs">
       <DependentUpon>Idea_Submitter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RelationshipManagerViewerUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="RelationshipManagerViewerUI.cs" />
     <Compile Include="RelationshipManagerViewerUI.Designer.cs">
       <DependentUpon>RelationshipManagerViewerUI.cs</DependentUpon>
     </Compile>

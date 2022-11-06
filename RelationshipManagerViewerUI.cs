@@ -10,46 +10,27 @@ using System.Windows.Forms;
 
 namespace aru_software_eng_UI
 {
-	public partial class RelationshipManagerViewerUI : Form
-	{
-		FormManager manager;
-		BackendController backend_controller;
-		private int slot_counter = 0;
-		private int page_number = 1;
-
-		//Temporary variable names, just for ease of understaning, will be imported from db - L
-		string[] database_string_array = new string[] { "Bonds", "Bonds", "Shares", "Art", "Real estate", "Share", "Share", "Stock", "Bonds", "Art", "Random" };
-		float[] database_cost_array = new float[] { 1500, 1500, 1500, 1500, 1500, 1500, 1000, 2000, 9000, 5000, 200 };
-		float[] database_risk_array = new float[] { 2, 2, 2, 2, 2, 2, 7, 8, 9, 10, 11 };
-		//Temporary variable names, just for ease of understaning, will be imported from db - L
-
-		//Temporary variable names, just for ease of understaning, will be imported from RM filter page - L
-		float imported_cost = 1500;
-		float imported_risk = 2;
-		//Temporary variable names, just for ease of understaning, will be imported from RM filter page - L
-
-
-		class FancyDisplayBubble
+	class FancyDisplayBubble
 	{
 		Button button; //Creates a button object for tracking purposes, named button - L
 		int risk; //Risk number for tracking purposes - L
 		int cost;
 		int ID;
 
-			public FancyDisplayBubble(Button n_button, int n_risk, int n_cost, int n_ID) //Constructor, creates a new bubble with a button and risk attribute - L
-			{
-				button = n_button; //Creates new button attribute for bubble - L
-				risk = n_risk; //Creates a risk attribute for the bubble - L
-				cost = n_cost;
-				ID = n_ID;
-				button.Click += new EventHandler(showButtonInfo); //When button is clicked, run the "showButtonInfo" function - L
-			}
+		public FancyDisplayBubble(Button n_button, int n_risk, int n_cost, int n_ID) //Constructor, creates a new bubble with a button and risk attribute - L
+		{
+			button = n_button; //Creates new button attribute for bubble - L
+			risk = n_risk; //Creates a risk attribute for the bubble - L
+			cost = n_cost;
+			ID = n_ID;
+			button.Click += new EventHandler(showButtonInfo); //When button is clicked, run the "showButtonInfo" function - L
+		}
 
-			void showButtonInfo(object sender, EventArgs e)
-			{
-				Button target = (Button)sender;
+		void showButtonInfo(object sender, EventArgs e)
+		{
+			Button target = (Button)sender;
 
-			}
+		}
 
 
 
@@ -60,7 +41,7 @@ namespace aru_software_eng_UI
 
 		public Button getButton() //Encapuslation command to get the buttons reference hidden in fancyDisplayButton - L    
 		{
-			return button; 
+			return button;
 		}
 
 		public int getRisk()
@@ -78,7 +59,7 @@ namespace aru_software_eng_UI
 			return ID;
 		}
 
-		};
+	};
 	//will write more later. -JE NOV 1.0
 	class FancyDisplayBubbleTracker
 	{
@@ -152,7 +133,7 @@ namespace aru_software_eng_UI
 		}
 		public static void deleteAllBubbles(Form current_form)
 		{
-			while(getBubbleTracker().getBubbleCount() != 0)
+			while (getBubbleTracker().getBubbleCount() != 0)
 			{
 				current_form.Controls.Remove(instance.getLastBubble().getButton());
 				instance.deleteBubble(getBubbleTracker().getBubbleCount());
@@ -160,17 +141,29 @@ namespace aru_software_eng_UI
 		}
 	};
 
+	public partial class RelationshipManagerViewerUI : Form
+	{
+		FormManager manager;
+		BackendController backend_controller;
+		private int slot_counter = 0;
+		private int page_number = 1;
 
+		//Temporary variable names, just for ease of understaning, will be imported from db - L
+		string[] database_string_array = new string[] { "Bonds", "Bonds", "Shares", "Art", "Real estate", "Share", "Share", "Stock", "Bonds", "Art", "Random" };
+		float[] database_cost_array = new float[] { 1500, 1500, 1500, 1500, 1500, 1500, 1000, 2000, 9000, 5000, 200 };
+		float[] database_risk_array = new float[] { 2, 2, 2, 2, 2, 2, 7, 8, 9, 10, 11 };
+		//Temporary variable names, just for ease of understaning, will be imported from db - L
 
+		//Temporary variable names, just for ease of understaning, will be imported from RM filter page - L
+		float imported_cost = 1500;
+		float imported_risk = 2;
+		//Temporary variable names, just for ease of understaning, will be imported from RM filter page - L
 
-
-
-
-		public RelationshipManagerViewerUI(Form n_previous_window, BackendController n_backend_controller)
+		public RelationshipManagerViewerUI(Form n_previous_window)
 		{
 			InitializeComponent();
 			manager = new FormManager(n_previous_window, this);
-			backend_controller = n_backend_controller;
+			backend_controller = BackendController.getInstance();
 			multipleButtonMaker(page_number);
 
 		}
@@ -257,7 +250,7 @@ namespace aru_software_eng_UI
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Location = button_pos; //Sets the location of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Size = new Size(size_of_button*2, size_of_button*2); //Sets the size of button to the default size - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Font = new Font("Agency FB", size_of_button/3, FontStyle.Bold); //Sets the buttons font and text size, makes the font fit the button no matter the size - L
-			FancyDisplayBubbleTracker.instanceGetLastBubble().risk_factor = risk_to_input;
+			//FancyDisplayBubbleTracker.instanceGetLastBubble().;
 
 
 		}
