@@ -79,6 +79,8 @@
     </Compile>
     <Compile Include="DatabaseWrapper.cs" />
     <Compile Include="DummyFunctions.cs" />
+    <Compile Include="FancyDisplayBubble.cs" />
+    <Compile Include="FancyDisplayBubbleTracker.cs" />
     <Compile Include="Idea_Submitter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,7 +92,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RelationshipManagerViewerUI.cs" />
+    <Compile Include="RelationshipManagerViewerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RelationshipManagerViewerUI.Designer.cs">
       <DependentUpon>RelationshipManagerViewerUI.cs</DependentUpon>
     </Compile>
@@ -213,10 +217,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>CoreDataBase.mdf</DependentUpon>
     </Content>
-    <None Include="black_circle.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="black_circle_new.png" />
+    <None Include="black_circle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
