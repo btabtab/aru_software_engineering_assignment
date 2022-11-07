@@ -13,7 +13,9 @@ using System.Runtime.InteropServices;
 
 namespace aru_software_eng_UI
 {
-
+	/*TODO:
+	 * Update controls on the interface
+	 */
 	public partial class DatabaseWindow : Form
 	{
 		FormManager manager;
