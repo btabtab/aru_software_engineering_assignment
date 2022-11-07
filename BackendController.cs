@@ -24,16 +24,7 @@ namespace aru_software_eng_UI
 			}
 			return singleton_instance;
 		}
-		static BackendController singleton_instance;
-		static public BackendController getInstance()
-		{
-			if (singleton_instance == null)
-			{
-				singleton_instance = new BackendController();
-			}
-			return singleton_instance;
 
-		}
 		public DataBaseLoginEntry randomEntry()
 		{
 			int random_num = new Random().Next(256);

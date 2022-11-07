@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace aru_software_eng_UI
 {
+
 	public partial class RelationshipManagerViewerUI : Form
 	{
 		FormManager manager;
 		BackendController backend_controller;
 		private int slot_counter = 0;
 		private int page_number = 1;
+		int EDIT_ME = 0;
 
 		//Temporary variable names, just for ease of understaning, will be imported from db - L
 		string[] database_string_array = new string[] { "Bonds", "Bonds", "Shares", "Art", "Real estate", "Share", "Share", "Stock", "Bonds", "Art", "Random" };
@@ -28,151 +30,12 @@ namespace aru_software_eng_UI
 		float imported_risk = 2;
 		//Temporary variable names, just for ease of understaning, will be imported from RM filter page - L
 
-
-		class FancyDisplayBubble
-	{
-		Button button; //Creates a button object for tracking purposes, named button - L
-		int risk; //Risk number for tracking purposes - L
-		int cost;
-		int ID;
-
-			public FancyDisplayBubble(Button n_button, int n_risk, int n_cost, int n_ID) //Constructor, creates a new bubble with a button and risk attribute - L
-			{
-				button = n_button; //Creates new button attribute for bubble - L
-				risk = n_risk; //Creates a risk attribute for the bubble - L
-				cost = n_cost;
-				ID = n_ID;
-				button.Click += new EventHandler(showButtonInfo); //When button is clicked, run the "showButtonInfo" function - L
-			}
-
-			void showButtonInfo(object sender, EventArgs e)
-			{
-				Button target = (Button)sender;
-
-			}
-
-
-
-
-
-
-
-
-		public Button getButton() //Encapuslation command to get the buttons reference hidden in fancyDisplayButton - L    
-		{
-			return button; 
-		}
-
-		public int getRisk()
-		{
-			return risk;
-		}
-
-		public int getCost()
-		{
-			return cost;
-		}
-
-		public int getID()
-		{
-			return ID;
-		}
-
-		};
-	//will write more later. -JE NOV 1.0
-	class FancyDisplayBubbleTracker
-	{
-		public static FancyDisplayBubbleTracker instance;
-		List<FancyDisplayBubble> bubbles;
-		//Singleton design pattern esque stuff <3
-		private FancyDisplayBubbleTracker()
-		{
-			bubbles = new List<FancyDisplayBubble>();
-		}
-		public static FancyDisplayBubbleTracker getBubbleTracker()
-		{
-			if (instance == null)
-			{
-				instance = new FancyDisplayBubbleTracker();
-			}
-			return instance;
-		}
-
-		FancyDisplayBubble getBubble(int index)
-		{
-			return bubbles.ElementAt(index);
-		}
-		void addBubble(Button n_button, int risk_factor, int cost_factor, int ID)
-		{
-			bubbles.Add(new FancyDisplayBubble(n_button, risk_factor, cost_factor, ID));
-		}
-
-		FancyDisplayBubble getLastBubble()
-		{
-			return getBubble(bubbles.Count - 1);
-		}
-
-		int getBubbleCount()
-		{
-			return bubbles.Count;
-		}
-		public static FancyDisplayBubble instanceGetBubble(int index)
-		{
-			return getBubbleTracker().getBubble(index);
-		}
-
-		public static void instanceAddBubble(Button n_button, int risk_factor, int cost_factor, int ID)
-		{
-			getBubbleTracker().addBubble(n_button, risk_factor, cost_factor, ID);
-		}
-
-		public static FancyDisplayBubble instanceGetLastBubble()
-		{
-			return getBubbleTracker().getBubble(instance.getBubbleCount() - 1);
-		}
-
-		void deleteButton(object sender, EventArgs e)
-		{
-			Button target = (Button)sender;
-			target.Dispose();
-		}
-
-		public void deleteBubble(int index)
-		{
-			if (getBubbleCount() == 0) { Console.WriteLine("No bubbles left."); return; }
-			if (index < 0) { index = 0; }
-			if (getBubbleCount() <= index) { index = getBubbleCount() - 1; }
-
-			bubbles.RemoveAt(index);
-		}
-
-		public static void instanceDeleteBubble(int index)
-		{
-			getBubbleTracker().deleteBubble(index);
-		}
-		public static void deleteAllBubbles(Form current_form)
-		{
-			while(getBubbleTracker().getBubbleCount() != 0)
-			{
-				current_form.Controls.Remove(instance.getLastBubble().getButton());
-				instance.deleteBubble(getBubbleTracker().getBubbleCount());
-			}
-		}
-	};
-
-
-
-
-
-
-
-		public RelationshipManagerViewerUI(Form n_previous_window, BackendController n_backend_controller)
+		public RelationshipManagerViewerUI(Form n_previous_window)
 		{
 			InitializeComponent();
 			manager = new FormManager(n_previous_window, this);
-			backend_controller = n_backend_controller;
+			backend_controller = BackendController.getInstance();
 			multipleButtonMaker(page_number);
-
 		}
 
 		private void cost_label_Click(object sender, EventArgs e)
@@ -251,15 +114,23 @@ namespace aru_software_eng_UI
 		{
 			Point button_pos = positionCalculator(size_of_button); //Creates a Point variable to hold the size of the button - L
 			
-			FancyDisplayBubbleTracker.instanceAddBubble(new Button(), 0, 4000, 1); //Creates a new instance of a button - L
+			FancyDisplayBubbleTracker.instanceAddBubble(new Button(), 3, 14000, 1, "Bond", "This bond is blah blah blah", 5); //Creates a new instance of a button - L
 			this.Controls.Add(FancyDisplayBubbleTracker.instanceGetLastBubble().getButton()); //Add controlls to the recently created button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Text = title_of_button; //Sets the text of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Location = button_pos; //Sets the location of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Size = new Size(size_of_button*2, size_of_button*2); //Sets the size of button to the default size - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Font = new Font("Agency FB", size_of_button/3, FontStyle.Bold); //Sets the buttons font and text size, makes the font fit the button no matter the size - L
-			FancyDisplayBubbleTracker.instanceGetLastBubble().risk_factor = risk_to_input;
+			writeToSideBit(0);
+		}
 
-
+		//Gets information 
+		private void writeToSideBit(int button_index) 
+		{
+			title_label.Text = FancyDisplayBubbleTracker.instanceGetBubble(button_index).getInvestmentType();
+			description_label.Text = FancyDisplayBubbleTracker.instanceGetBubble(button_index).getDescription();
+			risk_label.Text = "Risk level " + FancyDisplayBubbleTracker.instanceGetBubble(button_index).getRisk().ToString();
+			cost_label.Text = "£" + FancyDisplayBubbleTracker.instanceGetBubble(button_index).getCost().ToString();
+			rating_label.Text = "Level " + FancyDisplayBubbleTracker.instanceGetBubble(button_index).getRating().ToString() + " requried";
 		}
 
 		//If the left button is pressed, reload the current buttons to display the "next page" - L

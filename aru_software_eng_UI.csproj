@@ -84,11 +84,14 @@
     </Compile>
     <Compile Include="DatabaseWrapper.cs" />
     <Compile Include="DummyFunctions.cs" />
+    <Compile Include="FancyDisplayBubble.cs" />
+    <Compile Include="FancyDisplayBubbleTracker.cs" />
     <Compile Include="Idea_Submitter.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Idea_Submitter.Designer.cs">
       <DependentUpon>Idea_Submitter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -223,17 +226,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CoreDataBase.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="CoreDataBase_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>CoreDataBase.mdf</DependentUpon>
-    </Content>
     <None Include="black_circle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="black_circle_new.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
