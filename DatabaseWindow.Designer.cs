@@ -71,9 +71,39 @@ namespace aru_software_eng_UI
             this.label1 = new System.Windows.Forms.Label();
             this.login_generator = new System.Windows.Forms.TabPage();
             this.search = new System.Windows.Forms.TabPage();
-            this.deletion = new System.Windows.Forms.TabPage();
             this.email_search_btn = new System.Windows.Forms.Button();
             this.email_search_textbx = new System.Windows.Forms.TextBox();
+            this.deletion = new System.Windows.Forms.TabPage();
+            this.DatabaseTabs = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.coreDataBaseDataSet1 = new aru_software_eng_UI.CoreDataBaseDataSet1();
+            this.investmentIdeaTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.investmentIdeaTableTableAdapter = new aru_software_eng_UI.CoreDataBaseDataSet1TableAdapters.InvestmentIdeaTableTableAdapter();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RiskLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginEntriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coreDataBaseDataSet)).BeginInit();
@@ -87,6 +117,16 @@ namespace aru_software_eng_UI
             this.login_generator.SuspendLayout();
             this.search.SuspendLayout();
             this.deletion.SuspendLayout();
+            this.DatabaseTabs.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabControl2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.coreDataBaseDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.investmentIdeaTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -244,7 +284,7 @@ namespace aru_software_eng_UI
             this.search_bar.Location = new System.Drawing.Point(219, 24);
             this.search_bar.Margin = new System.Windows.Forms.Padding(6);
             this.search_bar.Name = "search_bar";
-            this.search_bar.Size = new System.Drawing.Size(438, 31);
+            this.search_bar.Size = new System.Drawing.Size(242, 31);
             this.search_bar.TabIndex = 11;
             // 
             // login_output_data_lbl
@@ -308,7 +348,7 @@ namespace aru_software_eng_UI
             this.username_delete_search_txtbox.Location = new System.Drawing.Point(214, 64);
             this.username_delete_search_txtbox.Margin = new System.Windows.Forms.Padding(6);
             this.username_delete_search_txtbox.Name = "username_delete_search_txtbox";
-            this.username_delete_search_txtbox.Size = new System.Drawing.Size(438, 31);
+            this.username_delete_search_txtbox.Size = new System.Drawing.Size(242, 31);
             this.username_delete_search_txtbox.TabIndex = 16;
             // 
             // LoginEntryViewer
@@ -322,11 +362,11 @@ namespace aru_software_eng_UI
             this.passwordDataGridViewTextBoxColumn,
             this.isRelationshipManagerDataGridViewTextBoxColumn1});
             this.LoginEntryViewer.DataSource = this.loginEntriesBindingSource;
-            this.LoginEntryViewer.Location = new System.Drawing.Point(778, 151);
+            this.LoginEntryViewer.Location = new System.Drawing.Point(570, 45);
             this.LoginEntryViewer.Name = "LoginEntryViewer";
             this.LoginEntryViewer.RowHeadersWidth = 82;
             this.LoginEntryViewer.RowTemplate.Height = 33;
-            this.LoginEntryViewer.Size = new System.Drawing.Size(1086, 505);
+            this.LoginEntryViewer.Size = new System.Drawing.Size(1155, 669);
             this.LoginEntryViewer.TabIndex = 17;
             // 
             // iDDataGridViewTextBoxColumn1
@@ -376,11 +416,11 @@ namespace aru_software_eng_UI
             this.ControlTabs.Controls.Add(this.login_generator);
             this.ControlTabs.Controls.Add(this.search);
             this.ControlTabs.Controls.Add(this.deletion);
-            this.ControlTabs.Location = new System.Drawing.Point(15, 112);
+            this.ControlTabs.Location = new System.Drawing.Point(6, 6);
             this.ControlTabs.Name = "ControlTabs";
             this.ControlTabs.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ControlTabs.SelectedIndex = 0;
-            this.ControlTabs.Size = new System.Drawing.Size(757, 544);
+            this.ControlTabs.Size = new System.Drawing.Size(566, 544);
             this.ControlTabs.TabIndex = 18;
             // 
             // login_controls
@@ -396,7 +436,7 @@ namespace aru_software_eng_UI
             this.login_controls.Location = new System.Drawing.Point(8, 39);
             this.login_controls.Name = "login_controls";
             this.login_controls.Padding = new System.Windows.Forms.Padding(3);
-            this.login_controls.Size = new System.Drawing.Size(741, 497);
+            this.login_controls.Size = new System.Drawing.Size(550, 497);
             this.login_controls.TabIndex = 0;
             this.login_controls.Text = "Login control";
             this.login_controls.UseVisualStyleBackColor = true;
@@ -436,7 +476,7 @@ namespace aru_software_eng_UI
             this.login_generator.Location = new System.Drawing.Point(8, 39);
             this.login_generator.Name = "login_generator";
             this.login_generator.Padding = new System.Windows.Forms.Padding(3);
-            this.login_generator.Size = new System.Drawing.Size(741, 497);
+            this.login_generator.Size = new System.Drawing.Size(550, 497);
             this.login_generator.TabIndex = 1;
             this.login_generator.Text = "Login generator";
             this.login_generator.UseVisualStyleBackColor = true;
@@ -450,22 +490,10 @@ namespace aru_software_eng_UI
             this.search.Controls.Add(this.login_output_data_lbl);
             this.search.Location = new System.Drawing.Point(8, 39);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(741, 497);
+            this.search.Size = new System.Drawing.Size(550, 497);
             this.search.TabIndex = 2;
             this.search.Text = "Searches";
             this.search.UseVisualStyleBackColor = true;
-            // 
-            // deletion
-            // 
-            this.deletion.Controls.Add(this.DeleteLastLoginButton);
-            this.deletion.Controls.Add(this.delete_user_btn);
-            this.deletion.Controls.Add(this.username_delete_search_txtbox);
-            this.deletion.Location = new System.Drawing.Point(8, 39);
-            this.deletion.Name = "deletion";
-            this.deletion.Size = new System.Drawing.Size(741, 497);
-            this.deletion.TabIndex = 3;
-            this.deletion.Text = "Deletion";
-            this.deletion.UseVisualStyleBackColor = true;
             // 
             // email_search_btn
             // 
@@ -483,16 +511,315 @@ namespace aru_software_eng_UI
             this.email_search_textbx.Location = new System.Drawing.Point(219, 67);
             this.email_search_textbx.Margin = new System.Windows.Forms.Padding(6);
             this.email_search_textbx.Name = "email_search_textbx";
-            this.email_search_textbx.Size = new System.Drawing.Size(438, 31);
+            this.email_search_textbx.Size = new System.Drawing.Size(242, 31);
             this.email_search_textbx.TabIndex = 14;
+            // 
+            // deletion
+            // 
+            this.deletion.Controls.Add(this.DeleteLastLoginButton);
+            this.deletion.Controls.Add(this.delete_user_btn);
+            this.deletion.Controls.Add(this.username_delete_search_txtbox);
+            this.deletion.Location = new System.Drawing.Point(8, 39);
+            this.deletion.Name = "deletion";
+            this.deletion.Size = new System.Drawing.Size(550, 497);
+            this.deletion.TabIndex = 3;
+            this.deletion.Text = "Deletion";
+            this.deletion.UseVisualStyleBackColor = true;
+            // 
+            // DatabaseTabs
+            // 
+            this.DatabaseTabs.Controls.Add(this.tabPage1);
+            this.DatabaseTabs.Controls.Add(this.tabPage2);
+            this.DatabaseTabs.Location = new System.Drawing.Point(154, 15);
+            this.DatabaseTabs.Name = "DatabaseTabs";
+            this.DatabaseTabs.SelectedIndex = 0;
+            this.DatabaseTabs.Size = new System.Drawing.Size(1747, 789);
+            this.DatabaseTabs.TabIndex = 19;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.LoginEntryViewer);
+            this.tabPage1.Controls.Add(this.ControlTabs);
+            this.tabPage1.Location = new System.Drawing.Point(8, 39);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1731, 742);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Login Database";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.tabControl2);
+            this.tabPage2.Location = new System.Drawing.Point(8, 39);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1731, 742);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Idea Database";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.UserID,
+            this.Date,
+            this.RiskLevel,
+            this.Name,
+            this.Description,
+            this.Cost});
+            this.dataGridView2.DataSource = this.investmentIdeaTableBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(570, 45);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 82;
+            this.dataGridView2.RowTemplate.Height = 33;
+            this.dataGridView2.Size = new System.Drawing.Size(1155, 669);
+            this.dataGridView2.TabIndex = 20;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage5);
+            this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Location = new System.Drawing.Point(6, 6);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(566, 544);
+            this.tabControl2.TabIndex = 20;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(8, 39);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(550, 497);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "New Idea";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.button2);
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.label8);
+            this.tabPage4.Location = new System.Drawing.Point(8, 39);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(550, 497);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Login generator";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(9, 22);
+            this.button2.Margin = new System.Windows.Forms.Padding(6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(438, 31);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Generate new login";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(220, 25);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Generated User Entry";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 84);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(222, 25);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "no data generated yet";
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.button3);
+            this.tabPage5.Controls.Add(this.textBox4);
+            this.tabPage5.Controls.Add(this.button4);
+            this.tabPage5.Controls.Add(this.textBox5);
+            this.tabPage5.Controls.Add(this.label9);
+            this.tabPage5.Location = new System.Drawing.Point(8, 39);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(550, 497);
+            this.tabPage5.TabIndex = 2;
+            this.tabPage5.Text = "Searches";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(6, 67);
+            this.button3.Margin = new System.Windows.Forms.Padding(6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(201, 31);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "search email";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(219, 67);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(6);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(242, 31);
+            this.textBox4.TabIndex = 14;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(6, 24);
+            this.button4.Margin = new System.Windows.Forms.Padding(6);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(201, 31);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "search username";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(219, 24);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(6);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(242, 31);
+            this.textBox5.TabIndex = 11;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 295);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(122, 25);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Login Data:";
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.button5);
+            this.tabPage6.Controls.Add(this.button6);
+            this.tabPage6.Controls.Add(this.textBox6);
+            this.tabPage6.Location = new System.Drawing.Point(8, 39);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(550, 497);
+            this.tabPage6.TabIndex = 3;
+            this.tabPage6.Text = "Deletion";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(6, 6);
+            this.button5.Margin = new System.Windows.Forms.Padding(6);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(196, 41);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Delete last login";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(6, 59);
+            this.button6.Margin = new System.Windows.Forms.Padding(6);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(196, 41);
+            this.button6.TabIndex = 15;
+            this.button6.Text = "Delete user:";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(214, 64);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(6);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(242, 31);
+            this.textBox6.TabIndex = 16;
+            // 
+            // coreDataBaseDataSet1
+            // 
+            this.coreDataBaseDataSet1.DataSetName = "CoreDataBaseDataSet1";
+            this.coreDataBaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // investmentIdeaTableBindingSource
+            // 
+            this.investmentIdeaTableBindingSource.DataMember = "InvestmentIdeaTable";
+            this.investmentIdeaTableBindingSource.DataSource = this.coreDataBaseDataSet1;
+            // 
+            // investmentIdeaTableTableAdapter
+            // 
+            this.investmentIdeaTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // UserID
+            // 
+            this.UserID.DataPropertyName = "UserID";
+            this.UserID.HeaderText = "UserID";
+            this.UserID.MinimumWidth = 10;
+            this.UserID.Name = "UserID";
+            this.UserID.Width = 200;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Date";
+            this.Date.MinimumWidth = 10;
+            this.Date.Name = "Date";
+            this.Date.Width = 200;
+            // 
+            // RiskLevel
+            // 
+            this.RiskLevel.DataPropertyName = "RiskLevel";
+            this.RiskLevel.HeaderText = "RiskLevel";
+            this.RiskLevel.MinimumWidth = 10;
+            this.RiskLevel.Name = "RiskLevel";
+            this.RiskLevel.Width = 200;
+            // 
+            // Name
+            // 
+            this.Name.DataPropertyName = "Name";
+            this.Name.HeaderText = "Name";
+            this.Name.MinimumWidth = 10;
+            this.Name.Name = "Name";
+            this.Name.Width = 200;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Description";
+            this.Description.MinimumWidth = 10;
+            this.Description.Name = "Description";
+            this.Description.Width = 200;
+            // 
+            // Cost
+            // 
+            this.Cost.DataPropertyName = "Cost";
+            this.Cost.HeaderText = "Cost";
+            this.Cost.MinimumWidth = 10;
+            this.Cost.Name = "Cost";
+            this.Cost.Width = 200;
             // 
             // DatabaseWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1968, 887);
-            this.Controls.Add(this.ControlTabs);
-            this.Controls.Add(this.LoginEntryViewer);
+            this.Controls.Add(this.DatabaseTabs);
             this.Controls.Add(this.KillwindowButton);
             this.Name = "DatabaseWindow";
             this.Text = "DatabaseWindow";
@@ -514,6 +841,19 @@ namespace aru_software_eng_UI
             this.search.PerformLayout();
             this.deletion.ResumeLayout(false);
             this.deletion.PerformLayout();
+            this.DatabaseTabs.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.coreDataBaseDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.investmentIdeaTableBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -564,5 +904,35 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.TabPage deletion;
         private System.Windows.Forms.Button email_search_btn;
         private System.Windows.Forms.TextBox email_search_textbx;
+        private System.Windows.Forms.TabControl DatabaseTabs;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private CoreDataBaseDataSet1 coreDataBaseDataSet1;
+        private System.Windows.Forms.BindingSource investmentIdeaTableBindingSource;
+        private CoreDataBaseDataSet1TableAdapters.InvestmentIdeaTableTableAdapter investmentIdeaTableTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RiskLevel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
     }
 }
