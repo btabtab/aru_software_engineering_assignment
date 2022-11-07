@@ -29,30 +29,32 @@ namespace aru_software_eng_UI
 
 		DateTime date;
 		string name, description;
-		int ID, risk_level;
+		int ID, user_ID, risk_level;
 		float cost;
 
-		DateTime getDate()	{ return date;		 }
-		string getName()	{ return name;		 }
-		int getID()			{ return ID;		 }
-		int getRiskLevel()	{ return risk_level; }
-		float getCost()		{ return cost;		 }
+		DateTime getDate()	{ return date;			}
+		string getName()	{ return name;			}
+		int getID()			{ return ID;			}
+		int getUserID()		{ return user_ID;		}
+		int getRiskLevel()	{ return risk_level;	}
+		float getCost()		{ return cost;			}
 
 		void setDate(DateTime n_date)		{ date			= n_date;		}
 		void setName(string n_name)			{ name			= n_name;		}
 		void setID(int n_ID)				{ ID			= n_ID;			}
+		void setUserID(int n_user_ID)		{ user_ID		= n_user_ID;	}
 		void setRiskLevel(int n_risk_level) { risk_level	= n_risk_level;	}
 		void setCost(float n_cost)			{ cost			= n_cost;		}
 
 		public string getAsLabelString()
 		{
 			return (
-				": " + ID +
-				"\n: " + name +
-				"\n: " + description +
-				"\n: " + risk_level +
-				"\n: " + cost +
-				"\n: " + date.ToString()
+				"ID: " + ID +
+				"\nName: " + name +
+				"\nDescription: " + description +
+				"\nRisk level: " + risk_level +
+				"\n:Cost: " + cost +
+				"\n:Date: " + date.ToString()
 				);
 		}
 	}

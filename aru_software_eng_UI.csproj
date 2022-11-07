@@ -69,6 +69,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CoreDataBaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreDataBaseDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="DatabaseLoginEntry.cs" />
     <Compile Include="DatabaseWindow.cs">
@@ -183,6 +188,17 @@
     </None>
     <None Include="CoreDataBaseDataSet.xss">
       <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CoreDataBaseDataSet1.xsc">
+      <DependentUpon>CoreDataBaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CoreDataBaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CoreDataBaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CoreDataBaseDataSet1.xss">
+      <DependentUpon>CoreDataBaseDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

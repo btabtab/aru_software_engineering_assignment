@@ -13,7 +13,9 @@ using System.Runtime.InteropServices;
 
 namespace aru_software_eng_UI
 {
-
+	/*TODO:
+	 * Update controls on the interface
+	 */
 	public partial class DatabaseWindow : Form
 	{
 		FormManager manager;
@@ -68,7 +70,9 @@ namespace aru_software_eng_UI
 
 		private void DatabaseWindow_Load(object sender, EventArgs e)
 		{
-			updateTable();
+            // TODO: This line of code loads data into the 'coreDataBaseDataSet1.InvestmentIdeaTable' table. You can move, or remove it, as needed.
+            this.investmentIdeaTableTableAdapter.Fill(this.coreDataBaseDataSet1.InvestmentIdeaTable);
+            updateTable();
 		}
 
 		private void delete_user_btn_Click(object sender, EventArgs e)

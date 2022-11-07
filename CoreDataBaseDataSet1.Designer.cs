@@ -20,6 +20,11 @@ namespace aru_software_eng_UI {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
+    [global::System.Xml.Serialization.XmlRootAttribute("CoreDataBaseDataSet1")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
+    public partial class CoreDataBaseDataSet1 : global::System.Data.DataSet {
+        
+        private InvestmentIdeaTableDataTable tableInvestmentIdeaTable;
     [global::System.Xml.Serialization.XmlRootAttribute("CoreDataBaseDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class CoreDataBaseDataSet : global::System.Data.DataSet {
@@ -30,6 +35,7 @@ namespace aru_software_eng_UI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public CoreDataBaseDataSet1() {
         public CoreDataBaseDataSet() {
             this.BeginInit();
             this.InitClass();
@@ -41,6 +47,7 @@ namespace aru_software_eng_UI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected CoreDataBaseDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) :
         protected CoreDataBaseDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
@@ -54,6 +61,8 @@ namespace aru_software_eng_UI {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                if ((ds.Tables["InvestmentIdeaTable"] != null)) {
+                    base.Tables.Add(new InvestmentIdeaTableDataTable(ds.Tables["InvestmentIdeaTable"]));
                 if ((ds.Tables["LoginEntries"] != null)) {
                     base.Tables.Add(new LoginEntriesDataTable(ds.Tables["LoginEntries"]));
                 }
@@ -79,6 +88,9 @@ namespace aru_software_eng_UI {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public InvestmentIdeaTableDataTable InvestmentIdeaTable {
+            get {
+                return this.tableInvestmentIdeaTable;
         public LoginEntriesDataTable LoginEntries {
             get {
                 return this.tableLoginEntries;
@@ -127,6 +139,7 @@ namespace aru_software_eng_UI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
+            CoreDataBaseDataSet1 cln = ((CoreDataBaseDataSet1)(base.Clone()));
             CoreDataBaseDataSet cln = ((CoreDataBaseDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
@@ -152,6 +165,8 @@ namespace aru_software_eng_UI {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
+                if ((ds.Tables["InvestmentIdeaTable"] != null)) {
+                    base.Tables.Add(new InvestmentIdeaTableDataTable(ds.Tables["InvestmentIdeaTable"]));
                 if ((ds.Tables["LoginEntries"] != null)) {
                     base.Tables.Add(new LoginEntriesDataTable(ds.Tables["LoginEntries"]));
                 }
@@ -188,6 +203,10 @@ namespace aru_software_eng_UI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
+            this.tableInvestmentIdeaTable = ((InvestmentIdeaTableDataTable)(base.Tables["InvestmentIdeaTable"]));
+            if ((initTable == true)) {
+                if ((this.tableInvestmentIdeaTable != null)) {
+                    this.tableInvestmentIdeaTable.InitVars();
             this.tableLoginEntries = ((LoginEntriesDataTable)(base.Tables["LoginEntries"]));
             if ((initTable == true)) {
                 if ((this.tableLoginEntries != null)) {
@@ -199,6 +218,13 @@ namespace aru_software_eng_UI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
+            this.DataSetName = "CoreDataBaseDataSet1";
+            this.Prefix = "";
+            this.Namespace = "http://tempuri.org/CoreDataBaseDataSet1.xsd";
+            this.EnforceConstraints = true;
+            this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tableInvestmentIdeaTable = new InvestmentIdeaTableDataTable();
+            base.Tables.Add(this.tableInvestmentIdeaTable);
             this.DataSetName = "CoreDataBaseDataSet";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/CoreDataBaseDataSet.xsd";
@@ -210,6 +236,7 @@ namespace aru_software_eng_UI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeInvestmentIdeaTable() {
         private bool ShouldSerializeLoginEntries() {
             return false;
         }
@@ -225,6 +252,7 @@ namespace aru_software_eng_UI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+            CoreDataBaseDataSet1 ds = new CoreDataBaseDataSet1();
             CoreDataBaseDataSet ds = new CoreDataBaseDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
@@ -270,6 +298,7 @@ namespace aru_software_eng_UI {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void InvestmentIdeaTableRowChangeEventHandler(object sender, InvestmentIdeaTableRowChangeEvent e);
         public delegate void LoginEntriesRowChangeEventHandler(object sender, LoginEntriesRowChangeEvent e);
         
         /// <summary>
@@ -277,6 +306,26 @@ namespace aru_software_eng_UI {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class InvestmentIdeaTableDataTable : global::System.Data.TypedTableBase<InvestmentIdeaTableRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnUserID;
+            
+            private global::System.Data.DataColumn columnDate;
+            
+            private global::System.Data.DataColumn columnRiskLevel;
+            
+            private global::System.Data.DataColumn columnName;
+            
+            private global::System.Data.DataColumn columnDescription;
+            
+            private global::System.Data.DataColumn columnCost;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InvestmentIdeaTableDataTable() {
+                this.TableName = "InvestmentIdeaTable";
         public partial class LoginEntriesDataTable : global::System.Data.TypedTableBase<LoginEntriesRow> {
             
             private global::System.Data.DataColumn columnID;
@@ -300,6 +349,7 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal InvestmentIdeaTableDataTable(global::System.Data.DataTable table) {
             internal LoginEntriesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
@@ -317,6 +367,7 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected InvestmentIdeaTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
             protected LoginEntriesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
@@ -332,6 +383,25 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UserIDColumn {
+                get {
+                    return this.columnUserID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DateColumn {
+                get {
+                    return this.columnDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RiskLevelColumn {
+                get {
+                    return this.columnRiskLevel;
             public global::System.Data.DataColumn UsernameColumn {
                 get {
                     return this.columnUsername;
@@ -340,6 +410,9 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
             public global::System.Data.DataColumn EmailColumn {
                 get {
                     return this.columnEmail;
@@ -348,6 +421,9 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DescriptionColumn {
+                get {
+                    return this.columnDescription;
             public global::System.Data.DataColumn PasswordColumn {
                 get {
                     return this.columnPassword;
@@ -356,6 +432,9 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CostColumn {
+                get {
+                    return this.columnCost;
             public global::System.Data.DataColumn Is_RelationshipManagerColumn {
                 get {
                     return this.columnIs_RelationshipManager;
@@ -373,6 +452,9 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InvestmentIdeaTableRow this[int index] {
+                get {
+                    return ((InvestmentIdeaTableRow)(this.Rows[index]));
             public LoginEntriesRow this[int index] {
                 get {
                     return ((LoginEntriesRow)(this.Rows[index]));
@@ -380,6 +462,20 @@ namespace aru_software_eng_UI {
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event InvestmentIdeaTableRowChangeEventHandler InvestmentIdeaTableRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event InvestmentIdeaTableRowChangeEventHandler InvestmentIdeaTableRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event InvestmentIdeaTableRowChangeEventHandler InvestmentIdeaTableRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event InvestmentIdeaTableRowChangeEventHandler InvestmentIdeaTableRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddInvestmentIdeaTableRow(InvestmentIdeaTableRow row) {
             public event LoginEntriesRowChangeEventHandler LoginEntriesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -399,6 +495,20 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+
+public InvestmentIdeaTableRow AddInvestmentIdeaTableRow(int ID, int UserID, System.DateTime Date, int RiskLevel, string Name, string Description, int Cost) {
+                InvestmentIdeaTableRow rowInvestmentIdeaTableRow = ((InvestmentIdeaTableRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID,
+                        UserID,
+                        Date,
+                        RiskLevel,
+                        Name,
+                        Description,
+                        Cost};
+                rowInvestmentIdeaTableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowInvestmentIdeaTableRow);
+                return rowInvestmentIdeaTableRow;
             public LoginEntriesRow AddLoginEntriesRow(string Username, string Email, string Password, int Is_RelationshipManager) {
                 LoginEntriesRow rowLoginEntriesRow = ((LoginEntriesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -414,6 +524,8 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InvestmentIdeaTableRow FindByID(int ID) {
+                return ((InvestmentIdeaTableRow)(this.Rows.Find(new object[] {
             public LoginEntriesRow FindByID(int ID) {
                 return ((LoginEntriesRow)(this.Rows.Find(new object[] {
                             ID})));
@@ -422,6 +534,7 @@ namespace aru_software_eng_UI {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
+                InvestmentIdeaTableDataTable cln = ((InvestmentIdeaTableDataTable)(base.Clone()));
                 LoginEntriesDataTable cln = ((LoginEntriesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
@@ -430,6 +543,7 @@ namespace aru_software_eng_UI {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
+                return new InvestmentIdeaTableDataTable();
                 return new LoginEntriesDataTable();
             }
             
@@ -437,6 +551,12 @@ namespace aru_software_eng_UI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
+                this.columnUserID = base.Columns["UserID"];
+                this.columnDate = base.Columns["Date"];
+                this.columnRiskLevel = base.Columns["RiskLevel"];
+                this.columnName = base.Columns["Name"];
+                this.columnDescription = base.Columns["Description"];
+                this.columnCost = base.Columns["Cost"];
                 this.columnUsername = base.Columns["Username"];
                 this.columnEmail = base.Columns["Email"];
                 this.columnPassword = base.Columns["Password"];
@@ -448,6 +568,30 @@ namespace aru_software_eng_UI {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
+                this.columnUserID = new global::System.Data.DataColumn("UserID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserID);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
+                this.columnRiskLevel = new global::System.Data.DataColumn("RiskLevel", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRiskLevel);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
+                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription);
+                this.columnCost = new global::System.Data.DataColumn("Cost", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCost);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
+                this.columnUserID.AllowDBNull = false;
+                this.columnDate.AllowDBNull = false;
+                this.columnRiskLevel.AllowDBNull = false;
+                this.columnName.AllowDBNull = false;
+                this.columnName.MaxLength = 50;
+                this.columnDescription.AllowDBNull = false;
+                this.columnDescription.MaxLength = 2147483647;
+                this.columnCost.AllowDBNull = false;
                 this.columnUsername = new global::System.Data.DataColumn("Username", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUsername);
                 this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
@@ -475,6 +619,8 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InvestmentIdeaTableRow NewInvestmentIdeaTableRow() {
+                return ((InvestmentIdeaTableRow)(this.NewRow()));
             public LoginEntriesRow NewLoginEntriesRow() {
                 return ((LoginEntriesRow)(this.NewRow()));
             }
@@ -482,12 +628,14 @@ namespace aru_software_eng_UI {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new InvestmentIdeaTableRow(builder);
                 return new LoginEntriesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
+                return typeof(InvestmentIdeaTableRow);
                 return typeof(LoginEntriesRow);
             }
             
@@ -495,6 +643,8 @@ namespace aru_software_eng_UI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
+                if ((this.InvestmentIdeaTableRowChanged != null)) {
+                    this.InvestmentIdeaTableRowChanged(this, new InvestmentIdeaTableRowChangeEvent(((InvestmentIdeaTableRow)(e.Row)), e.Action));
                 if ((this.LoginEntriesRowChanged != null)) {
                     this.LoginEntriesRowChanged(this, new LoginEntriesRowChangeEvent(((LoginEntriesRow)(e.Row)), e.Action));
                 }
@@ -504,6 +654,8 @@ namespace aru_software_eng_UI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
+                if ((this.InvestmentIdeaTableRowChanging != null)) {
+                    this.InvestmentIdeaTableRowChanging(this, new InvestmentIdeaTableRowChangeEvent(((InvestmentIdeaTableRow)(e.Row)), e.Action));
                 if ((this.LoginEntriesRowChanging != null)) {
                     this.LoginEntriesRowChanging(this, new LoginEntriesRowChangeEvent(((LoginEntriesRow)(e.Row)), e.Action));
                 }
@@ -513,6 +665,9 @@ namespace aru_software_eng_UI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
+                if ((this.InvestmentIdeaTableRowDeleted != null)) {
+                    this.InvestmentIdeaTableRowDeleted(this, new InvestmentIdeaTableRowChangeEvent(((InvestmentIdeaTableRow)(e.Row)), e.Action));
+
                 if ((this.LoginEntriesRowDeleted != null)) {
                     this.LoginEntriesRowDeleted(this, new LoginEntriesRowChangeEvent(((LoginEntriesRow)(e.Row)), e.Action));
                 }
@@ -522,6 +677,8 @@ namespace aru_software_eng_UI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
+                if ((this.InvestmentIdeaTableRowDeleting != null)) {
+                    this.InvestmentIdeaTableRowDeleting(this, new InvestmentIdeaTableRowChangeEvent(((InvestmentIdeaTableRow)(e.Row)), e.Action));
                 if ((this.LoginEntriesRowDeleting != null)) {
                     this.LoginEntriesRowDeleting(this, new LoginEntriesRowChangeEvent(((LoginEntriesRow)(e.Row)), e.Action));
                 }
@@ -529,6 +686,7 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveInvestmentIdeaTableRow(InvestmentIdeaTableRow row) {
             public void RemoveLoginEntriesRow(LoginEntriesRow row) {
                 this.Rows.Remove(row);
             }
@@ -538,6 +696,7 @@ namespace aru_software_eng_UI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                CoreDataBaseDataSet1 ds = new CoreDataBaseDataSet1();
                 CoreDataBaseDataSet ds = new CoreDataBaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
@@ -556,6 +715,7 @@ namespace aru_software_eng_UI {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "InvestmentIdeaTableDataTable";
                 attribute2.FixedValue = "LoginEntriesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
@@ -600,6 +760,15 @@ namespace aru_software_eng_UI {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class InvestmentIdeaTableRow : global::System.Data.DataRow {
+            
+            private InvestmentIdeaTableDataTable tableInvestmentIdeaTable;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal InvestmentIdeaTableRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableInvestmentIdeaTable = ((InvestmentIdeaTableDataTable)(this.Table));
         public partial class LoginEntriesRow : global::System.Data.DataRow {
             
             private LoginEntriesDataTable tableLoginEntries;
@@ -615,6 +784,32 @@ namespace aru_software_eng_UI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int ID {
                 get {
+                    return ((int)(this[this.tableInvestmentIdeaTable.IDColumn]));
+                }
+                set {
+                    this[this.tableInvestmentIdeaTable.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int UserID {
+                get {
+                    return ((int)(this[this.tableInvestmentIdeaTable.UserIDColumn]));
+                }
+                set {
+                    this[this.tableInvestmentIdeaTable.UserIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime Date {
+                get {
+                    return ((global::System.DateTime)(this[this.tableInvestmentIdeaTable.DateColumn]));
+                }
+                set {
+                    this[this.tableInvestmentIdeaTable.DateColumn] = value;
                     return ((int)(this[this.tableLoginEntries.IDColumn]));
                 }
                 set {
@@ -624,6 +819,12 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int RiskLevel {
+                get {
+                    return ((int)(this[this.tableInvestmentIdeaTable.RiskLevelColumn]));
+                }
+                set {
+                    this[this.tableInvestmentIdeaTable.RiskLevelColumn] = value;
             public string Username {
                 get {
                     return ((string)(this[this.tableLoginEntries.UsernameColumn]));
@@ -635,6 +836,12 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Name {
+                get {
+                    return ((string)(this[this.tableInvestmentIdeaTable.NameColumn]));
+                }
+                set {
+                    this[this.tableInvestmentIdeaTable.NameColumn] = value;
             public string Email {
                 get {
                     return ((string)(this[this.tableLoginEntries.EmailColumn]));
@@ -646,6 +853,12 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Description {
+                get {
+                    return ((string)(this[this.tableInvestmentIdeaTable.DescriptionColumn]));
+                }
+                set {
+                    this[this.tableInvestmentIdeaTable.DescriptionColumn] = value;
             public string Password {
                 get {
                     return ((string)(this[this.tableLoginEntries.PasswordColumn]));
@@ -657,6 +870,12 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Cost {
+                get {
+                    return ((int)(this[this.tableInvestmentIdeaTable.CostColumn]));
+                }
+                set {
+                    this[this.tableInvestmentIdeaTable.CostColumn] = value;
             public int Is_RelationshipManager {
                 get {
                     return ((int)(this[this.tableLoginEntries.Is_RelationshipManagerColumn]));
@@ -671,6 +890,9 @@ namespace aru_software_eng_UI {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class InvestmentIdeaTableRowChangeEvent : global::System.EventArgs {
+            
+            private InvestmentIdeaTableRow eventRow;
         public class LoginEntriesRowChangeEvent : global::System.EventArgs {
             
             private LoginEntriesRow eventRow;
@@ -679,6 +901,7 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InvestmentIdeaTableRowChangeEvent(InvestmentIdeaTableRow row, global::System.Data.DataRowAction action) {
             public LoginEntriesRowChangeEvent(LoginEntriesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
@@ -686,6 +909,7 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InvestmentIdeaTableRow Row {
             public LoginEntriesRow Row {
                 get {
                     return this.eventRow;
@@ -702,6 +926,7 @@ namespace aru_software_eng_UI {
         }
     }
 }
+namespace aru_software_eng_UI.CoreDataBaseDataSet1TableAdapters {
 namespace aru_software_eng_UI.CoreDataBaseDataSetTableAdapters {
     
     
@@ -714,6 +939,7 @@ namespace aru_software_eng_UI.CoreDataBaseDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class InvestmentIdeaTableTableAdapter : global::System.ComponentModel.Component {
     public partial class LoginEntriesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -728,6 +954,7 @@ namespace aru_software_eng_UI.CoreDataBaseDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public InvestmentIdeaTableTableAdapter() {
         public LoginEntriesTableAdapter() {
             this.ClearBeforeFill = true;
         }
@@ -825,6 +1052,57 @@ namespace aru_software_eng_UI.CoreDataBaseDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "InvestmentIdeaTable";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("UserID", "UserID");
+            tableMapping.ColumnMappings.Add("Date", "Date");
+            tableMapping.ColumnMappings.Add("RiskLevel", "RiskLevel");
+            tableMapping.ColumnMappings.Add("Name", "Name");
+            tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.ColumnMappings.Add("Cost", "Cost");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[InvestmentIdeaTable] WHERE (([ID] = @Original_ID) AND ([UserID" +
+                "] = @Original_UserID) AND ([Date] = @Original_Date) AND ([RiskLevel] = @Original" +
+                "_RiskLevel) AND ([Name] = @Original_Name) AND ([Cost] = @Original_Cost))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RiskLevel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RiskLevel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[InvestmentIdeaTable] ([ID], [UserID], [Date], [RiskLevel], [Name], [Description], [Cost]) VALUES (@ID, @UserID, @Date, @RiskLevel, @Name, @Description, @Cost);
+SELECT ID, UserID, Date, RiskLevel, Name, Description, Cost FROM InvestmentIdeaTable WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RiskLevel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RiskLevel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[InvestmentIdeaTable] SET [ID] = @ID, [UserID] = @UserID, [Date] = @Date, [RiskLevel] = @RiskLevel, [Name] = @Name, [Description] = @Description, [Cost] = @Cost WHERE (([ID] = @Original_ID) AND ([UserID] = @Original_UserID) AND ([Date] = @Original_Date) AND ([RiskLevel] = @Original_RiskLevel) AND ([Name] = @Original_Name) AND ([Cost] = @Original_Cost));
+SELECT ID, UserID, Date, RiskLevel, Name, Description, Cost FROM InvestmentIdeaTable WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RiskLevel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RiskLevel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RiskLevel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RiskLevel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             tableMapping.DataSetTable = "LoginEntries";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Username", "Username");
@@ -878,6 +1156,8 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID, UserID, Date, RiskLevel, Name, Description, Cost FROM dbo.InvestmentId" +
+                "eaTable";
             this._commandCollection[0].CommandText = "SELECT ID, Username, Email, Password, Is_RelationshipManager FROM dbo.LoginEntrie" +
                 "s";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
@@ -887,6 +1167,7 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(CoreDataBaseDataSet1.InvestmentIdeaTableDataTable dataTable) {
         public virtual int Fill(CoreDataBaseDataSet.LoginEntriesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
@@ -900,6 +1181,9 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual CoreDataBaseDataSet1.InvestmentIdeaTableDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            CoreDataBaseDataSet1.InvestmentIdeaTableDataTable dataTable = new CoreDataBaseDataSet1.InvestmentIdeaTableDataTable();
         public virtual CoreDataBaseDataSet.LoginEntriesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             CoreDataBaseDataSet.LoginEntriesDataTable dataTable = new CoreDataBaseDataSet.LoginEntriesDataTable();
@@ -910,6 +1194,7 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(CoreDataBaseDataSet1.InvestmentIdeaTableDataTable dataTable) {
         public virtual int Update(CoreDataBaseDataSet.LoginEntriesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
@@ -917,6 +1202,8 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(CoreDataBaseDataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "InvestmentIdeaTable");
         public virtual int Update(CoreDataBaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "LoginEntries");
         }
@@ -940,6 +1227,18 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ID, int Original_UserID, System.DateTime Original_Date, int Original_RiskLevel, string Original_Name, int Original_Cost) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_UserID));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Date));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_RiskLevel));
+            if ((Original_Name == null)) {
+                throw new global::System.ArgumentNullException("Original_Name");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Name));
+            }
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Cost));
         public virtual int Delete(int Original_ID, string Original_Username, int Original_Is_RelationshipManager) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Username == null)) {
@@ -969,6 +1268,24 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int ID, int UserID, System.DateTime Date, int RiskLevel, string Name, string Description, int Cost) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(UserID));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Date));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(RiskLevel));
+            if ((Name == null)) {
+                throw new global::System.ArgumentNullException("Name");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Name));
+            }
+            if ((Description == null)) {
+                throw new global::System.ArgumentNullException("Description");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Description));
+            }
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Cost));
         public virtual int Insert(string Username, string Email, string Password, int Is_RelationshipManager) {
             if ((Username == null)) {
                 throw new global::System.ArgumentNullException("Username");
@@ -1009,6 +1326,35 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int ID, int UserID, System.DateTime Date, int RiskLevel, string Name, string Description, int Cost, int Original_ID, int Original_UserID, System.DateTime Original_Date, int Original_RiskLevel, string Original_Name, int Original_Cost) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(UserID));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Date));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(RiskLevel));
+            if ((Name == null)) {
+                throw new global::System.ArgumentNullException("Name");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Name));
+            }
+            if ((Description == null)) {
+                throw new global::System.ArgumentNullException("Description");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Description));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Cost));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_UserID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Date));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_RiskLevel));
+            if ((Original_Name == null)) {
+                throw new global::System.ArgumentNullException("Original_Name");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Name));
+            }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Cost));
         public virtual int Update(string Username, string Email, string Password, int Is_RelationshipManager, int Original_ID, string Original_Username, int Original_Is_RelationshipManager, int ID) {
             if ((Username == null)) {
                 throw new global::System.ArgumentNullException("Username");
@@ -1058,6 +1404,8 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int UserID, System.DateTime Date, int RiskLevel, string Name, string Description, int Cost, int Original_ID, int Original_UserID, System.DateTime Original_Date, int Original_RiskLevel, string Original_Name, int Original_Cost) {
+            return this.Update(Original_ID, UserID, Date, RiskLevel, Name, Description, Cost, Original_ID, Original_UserID, Original_Date, Original_RiskLevel, Original_Name, Original_Cost);
         public virtual int Update(string Username, string Email, string Password, int Is_RelationshipManager, int Original_ID, string Original_Username, int Original_Is_RelationshipManager) {
             return this.Update(Username, Email, Password, Is_RelationshipManager, Original_ID, Original_Username, Original_Is_RelationshipManager, Original_ID);
         }
@@ -1075,6 +1423,7 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         
         private UpdateOrderOption _updateOrder;
         
+        private InvestmentIdeaTableTableAdapter _investmentIdeaTableTableAdapter;
         private LoginEntriesTableAdapter _loginEntriesTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
@@ -1097,6 +1446,12 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
+        public InvestmentIdeaTableTableAdapter InvestmentIdeaTableTableAdapter {
+            get {
+                return this._investmentIdeaTableTableAdapter;
+            }
+            set {
+                this._investmentIdeaTableTableAdapter = value;
         public LoginEntriesTableAdapter LoginEntriesTableAdapter {
             get {
                 return this._loginEntriesTableAdapter;
@@ -1125,6 +1480,9 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._investmentIdeaTableTableAdapter != null) 
+                            && (this._investmentIdeaTableTableAdapter.Connection != null))) {
+                    return this._investmentIdeaTableTableAdapter.Connection;
                 if (((this._loginEntriesTableAdapter != null) 
                             && (this._loginEntriesTableAdapter.Connection != null))) {
                     return this._loginEntriesTableAdapter.Connection;
@@ -1142,6 +1500,7 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._investmentIdeaTableTableAdapter != null)) {
                 if ((this._loginEntriesTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -1154,6 +1513,14 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private int UpdateUpdatedRows(CoreDataBaseDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+            int result = 0;
+            if ((this._investmentIdeaTableTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.InvestmentIdeaTable.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._investmentIdeaTableTableAdapter.Update(updatedRows));
         private int UpdateUpdatedRows(CoreDataBaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._loginEntriesTableAdapter != null)) {
@@ -1173,6 +1540,13 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private int UpdateInsertedRows(CoreDataBaseDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+            int result = 0;
+            if ((this._investmentIdeaTableTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.InvestmentIdeaTable.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._investmentIdeaTableTableAdapter.Update(addedRows));
         private int UpdateInsertedRows(CoreDataBaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._loginEntriesTableAdapter != null)) {
@@ -1191,6 +1565,13 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private int UpdateDeletedRows(CoreDataBaseDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+            int result = 0;
+            if ((this._investmentIdeaTableTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.InvestmentIdeaTable.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._investmentIdeaTableTableAdapter.Update(deletedRows));
         private int UpdateDeletedRows(CoreDataBaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._loginEntriesTableAdapter != null)) {
@@ -1233,6 +1614,7 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public virtual int UpdateAll(CoreDataBaseDataSet1 dataSet) {
         public virtual int UpdateAll(CoreDataBaseDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
@@ -1240,6 +1622,8 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
+            if (((this._investmentIdeaTableTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._investmentIdeaTableTableAdapter.Connection) == false))) {
             if (((this._loginEntriesTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._loginEntriesTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -1277,6 +1661,13 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._investmentIdeaTableTableAdapter != null)) {
+                    revertConnections.Add(this._investmentIdeaTableTableAdapter, this._investmentIdeaTableTableAdapter.Connection);
+                    this._investmentIdeaTableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._investmentIdeaTableTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._investmentIdeaTableTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._investmentIdeaTableTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._investmentIdeaTableTableAdapter.Adapter);
                 if ((this._loginEntriesTableAdapter != null)) {
                     revertConnections.Add(this._loginEntriesTableAdapter, this._loginEntriesTableAdapter.Connection);
                     this._loginEntriesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -1344,6 +1735,9 @@ SELECT ID, Username, Email, Password, Is_RelationshipManager FROM LoginEntries W
                 if (workConnOpened) {
                     workConnection.Close();
                 }
+                if ((this._investmentIdeaTableTableAdapter != null)) {
+                    this._investmentIdeaTableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._investmentIdeaTableTableAdapter]));
+                    this._investmentIdeaTableTableAdapter.Transaction = null;
                 if ((this._loginEntriesTableAdapter != null)) {
                     this._loginEntriesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._loginEntriesTableAdapter]));
                     this._loginEntriesTableAdapter.Transaction = null;
