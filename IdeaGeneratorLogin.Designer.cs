@@ -15,7 +15,7 @@ namespace aru_software_eng_UI
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
+            { 
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -29,25 +29,13 @@ namespace aru_software_eng_UI
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD:IdeaGeneratorLogin.Designer.cs
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IdeaGeneratorLogin));
-            this.IG_Back_Button = new System.Windows.Forms.Button();
-            this.IG_Password_TextBox = new System.Windows.Forms.TextBox();
-            this.IG_Login_TextBox = new System.Windows.Forms.TextBox();
-            this.IG_Password_Label = new System.Windows.Forms.Label();
-            this.IG_Login_Label = new System.Windows.Forms.Label();
-            this.IG_Text = new System.Windows.Forms.Label();
-            this.IG_Login_Button = new System.Windows.Forms.Button();
-=======
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IdeaGeneratorLoginLabel));
             this.IG_back_button = new System.Windows.Forms.Button();
             this.IG_password_textbox = new System.Windows.Forms.TextBox();
             this.IG_login_textbox = new System.Windows.Forms.TextBox();
             this.IG_password_label = new System.Windows.Forms.Label();
             this.IG_login_label = new System.Windows.Forms.Label();
             this.IG_login_button = new System.Windows.Forms.Button();
-            this.IG_text = new System.Windows.Forms.Label();
->>>>>>> main:IdeaGeneratorLoginLabel.Designer.cs
             this.SuspendLayout();
             // 
             // IG_back_button
