@@ -6,30 +6,23 @@ using System.Threading.Tasks;
 
 namespace aru_software_eng_UI
 {
-	/*
-	 * This is a class that will carry the content of each entry.
-	 * This way it can be a return type wich will simplify
-	 * the process massively.
-	*/
-	
-	public class DatabaseHandler
+    public class LoginDatabaseHandler : DatabaseHandler
 	{
-		DatabaseWrapper database_wrapper;
-		
-		/* This is a blank entry that can be grabbed for testing sake
+        /* This is a blank entry that can be grabbed for testing sake
 		while the database controller is being worked on. */
-		
-		private DatabaseHandler()
+
+        private LoginDatabaseHandler()
 		{
 			database_wrapper = DatabaseWrapper.getDatabaseWrapperInstance();
+			database_name = "LoginEntries";
 		}
 
-		static DatabaseHandler singleton_instance;
-		static public DatabaseHandler getInstance()
-        {
-			if(singleton_instance == null)
-            {
-				singleton_instance = new DatabaseHandler();
+		static LoginDatabaseHandler singleton_instance;
+		new static public LoginDatabaseHandler getInstance()
+		{
+			if (singleton_instance == null)
+			{
+				singleton_instance = new LoginDatabaseHandler();
 			}
 			return singleton_instance;
 
@@ -57,17 +50,5 @@ namespace aru_software_eng_UI
 		{
 			database_wrapper.writeNewLoginDataEntry(n_database_login_entry);
 		}
-		public void deleteLoginRowX(int target_row)
-        {
-			database_wrapper.deleteRowX("LoginEntries", target_row);
-        }
-		public int getRowCount(string table)
-        {
-			return database_wrapper.getRowCount(table);
-        }
-		public int getHighestID(string target_table)
-        {
-			return database_wrapper.getHighestIDNumber(target_table);
-        }
 	}
 }

@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -48,7 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -62,19 +64,44 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackendController.cs" />
+    <Compile Include="CoreDataBaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CoreDataBaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreDataBaseDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseHandler.cs" />
+    <Compile Include="DatabaseLoginEntry.cs" />
     <Compile Include="DatabaseWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DatabaseWindow.Designer.cs">
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseWrapper.cs" />
     <Compile Include="DummyFunctions.cs" />
+    <Compile Include="FancyDisplayBubble.cs" />
+    <Compile Include="FancyDisplayBubbleTracker.cs" />
     <Compile Include="Idea_Submitter.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Idea_Submitter.Designer.cs">
       <DependentUpon>Idea_Submitter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RelationshipManagerViewerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelationshipManagerViewerUI.Designer.cs">
+      <DependentUpon>RelationshipManagerViewerUI.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManager.cs" />
     <Compile Include="IdeaGeneratorLogin.cs">
@@ -89,6 +116,7 @@
     <Compile Include="IdeaSubmitterForm.Designer.cs">
       <DependentUpon>IdeaSubmitterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvestmentIdea.cs" />
     <Compile Include="StartMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,14 +143,6 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserDatabaseDataSet.cs">
-      <DependentUpon>UserDatabaseDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="UserDatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDatabaseDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="DatabaseWindow.resx">
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,18 +158,17 @@
     <EmbeddedResource Include="IdeaSubmitterForm.resx">
       <DependentUpon>IdeaSubmitterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RelationshipManagerViewerUI.resx">
+      <DependentUpon>RelationshipManagerViewerUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartMenu.resx">
       <DependentUpon>StartMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="RelationshipManagerLogin.resx">
       <DependentUpon>RelationshipManagerLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +178,28 @@
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CoreDataBaseDataSet.xsc">
+      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CoreDataBaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CoreDataBaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CoreDataBaseDataSet.xss">
+      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CoreDataBaseDataSet1.xsc">
+      <DependentUpon>CoreDataBaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CoreDataBaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CoreDataBaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CoreDataBaseDataSet1.xss">
+      <DependentUpon>CoreDataBaseDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -168,17 +209,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="UserDatabaseDataSet.xsc">
-      <DependentUpon>UserDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="UserDatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>UserDatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UserDatabaseDataSet.xss">
-      <DependentUpon>UserDatabaseDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -194,6 +224,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="black_circle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
