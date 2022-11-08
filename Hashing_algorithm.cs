@@ -38,7 +38,7 @@ namespace Hashing
 		return checking(result);
     }
 
-	static int[] multiplication(int[] first,int second)
+	static int[] multiplication(int[] first,int second) 
 	{
 		int[] result = new int[first[0] + 10];
 		for (int i = 1;i <= first[0]; ++i)
