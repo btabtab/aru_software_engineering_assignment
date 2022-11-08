@@ -12,13 +12,14 @@ namespace aru_software_eng_UI
 {
     public partial class IdeaGeneratorLogin : Form
     {
+        Form next_window;
         FormManager manager;
         BackendController backend_controller;
-        public IdeaGeneratorLogin(Form n_previous_window, BackendController n_backend_controller)
+        public IdeaGeneratorLogin(Form n_previous_window)
         {
             InitializeComponent();
             manager = new FormManager(n_previous_window, this);
-            backend_controller = n_backend_controller;
+            backend_controller = BackendController.getInstance();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,6 +35,19 @@ namespace aru_software_eng_UI
         private void IG_Back_Button_Click(object sender, EventArgs e)
         {
             manager.back();
+        }
+        private void IG_login_button_Click(object sender, EventArgs e)
+        {
+            // Get username  
+            string username = IG_login_textbox.Text;
+            // Get password
+            string password = IG_password_textbox.Text;
+            DataBaseLoginEntry loginEntry = backend_controller.loginSearchUsername(username);
+           if ((loginEntry.getEmail() == username || loginEntry.getUsername() == username) && loginEntry.getPassword() == password)
+            {
+                // redirect to Idea Submitter page
+                //next_window = new Idea_Submitter(this, backend_controller);
+            }
         }
     }
 }

@@ -36,6 +36,7 @@ namespace aru_software_eng_UI
             this.IG_password_label = new System.Windows.Forms.Label();
             this.IG_login_label = new System.Windows.Forms.Label();
             this.IG_login_button = new System.Windows.Forms.Button();
+            this.IG_text = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // IG_back_button
@@ -95,6 +96,7 @@ namespace aru_software_eng_UI
             this.IG_login_button.TabIndex = 9;
             this.IG_login_button.Text = "Login";
             this.IG_login_button.UseVisualStyleBackColor = false;
+            this.IG_login_button.Click += new System.EventHandler(this.IG_login_button_Click);
             // 
             // IG_text
             // 
