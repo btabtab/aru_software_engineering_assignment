@@ -63,9 +63,9 @@ namespace Hashing
 		primePow = checking(primePow);
 
 		for (int i = 0;i < password.Length; ++i)
-        {
+        	{
 			newPassword[i + 1] = password[i];
-        }
+        	}
 		newPassword = checking(newPassword);
 
 		int[] encryptedPassword = new int[1000];
@@ -73,12 +73,12 @@ namespace Hashing
 
 		//Starting encryption
 		for(int i = 1;i <= newPassword[0]; ++i)
-        {
+        	{
 			//Encrypting every symbol
 			encryptedPassword = checking(bigAddition(encryptedPassword, multiplication(primePow,newPassword[i])));
 			//Preparing for next symbol
 			primePow = checking(multiplication(primePow,prime));
-        }
+        	}
 		return encryptedPassword; 
 	}
 }
