@@ -23,7 +23,6 @@ namespace aru_software_eng_UI
 				singleton_instance = new BackendController();
 			}
 			return singleton_instance;
-
 		}
 
 		public DataBaseLoginEntry randomEntry()
@@ -52,7 +51,6 @@ namespace aru_software_eng_UI
         {
 			database_handler.addNewLogin(n_database_login_entry);
         }
-
 		public void deleteUserFromLoginTable(string username)
         {
 			database_handler.deleteLoginRowX(database_handler.searchForEntryBasedOnUsername(username).getID());

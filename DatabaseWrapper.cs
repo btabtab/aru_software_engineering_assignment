@@ -206,12 +206,12 @@ namespace aru_software_eng_UI
         }
 		//inserts a new entry into a table based around columns and values. -JE oct-30.0
 		private void insertNewEntryIntoDatabase(string target_table, List<string> columns_list, List<string> values_list)
-        {
+		{
 			string column_string = compileListIntoFormattedString(columns_list, false), values_string = compileListIntoFormattedString(values_list, true);
 
 			// "INSERT INTO table_name VALUES (value1, value2, value3, ...); "
+			string query_string = "INSERT INTO " + target_table + " (" + column_string + ") VALUES (" + values_string + ");";
 
-			string query_string = "INSERT INTO " + target_table + " (" + column_string + ") VALUES (" + values_string+ ");";
 			Console.WriteLine(query_string);
 			SqlCommand oCmd = runSQLQuery(query_string);
 
@@ -234,6 +234,12 @@ namespace aru_software_eng_UI
 		public void writeNewLoginDataEntry(DataBaseLoginEntry n_entry)
 		{
 			List<string> columns = new List<string>(), values = new List<string>();
+
+			//if (getRowCount("LoginEntries") < 1)
+			{
+				columns.Add("ID");
+				values.Add("" + (getHighestIDNumber("LoginEntries")+1));
+			}
 
 			columns.Add("Username");
 			columns.Add("Email");
@@ -261,7 +267,6 @@ namespace aru_software_eng_UI
 		//deletes the targeted row. -JE oct-31.0
 		public void deleteRowX(string target_table, int row_num)
         {
-			if(getHighestIDNumber(target_table) < row_num)
             {
 				row_num = getHighestIDNumber(target_table);
             }
@@ -275,11 +280,15 @@ namespace aru_software_eng_UI
 			connection_to_database.Close();
 
 		}
-		public int getHighestIDNumber(string target_table)
+		public Int32 getHighestIDNumber(string target_table)
 		{
+			if(getRowCount(target_table) == 0)
+            {
+				return 0;
+            }
 			//SELECT COUNT(*) FROM tablename
 			SqlCommand oCmd = runSQLQuery("SELECT MAX(ID) FROM " + target_table);
-			int ret = (int)(Int32)oCmd.ExecuteScalar();
+			int ret = (int)(Int32)oCmd.ExecuteScalar().GetHashCode();
 			closeConnection();
 			Console.Out.WriteLine("::: " + ret + " ::: @ >>> !");
 			return ret;

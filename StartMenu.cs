@@ -39,5 +39,10 @@ namespace aru_software_eng_UI
         {
             next_window = new DatabaseWindow(this);
         }
+
+        private void showRMTEST_Click(object sender, EventArgs e)
+        {
+            next_window = new RelationshipManagerViewerUI(this); 
+        }
     }
 }

@@ -64,10 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackendController.cs" />
-    <Compile Include="CoreDataBaseDataSet.Designer.cs">
+    <Compile Include="CoreDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
+      <DependentUpon>CoreDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="DatabaseLoginEntry.cs" />
@@ -79,11 +79,24 @@
     </Compile>
     <Compile Include="DatabaseWrapper.cs" />
     <Compile Include="DummyFunctions.cs" />
+    <Compile Include="FancyDisplayBubble.cs" />
+    <Compile Include="FancyDisplayBubbleTracker.cs" />
     <Compile Include="Idea_Submitter.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Idea_Submitter.Designer.cs">
       <DependentUpon>Idea_Submitter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RelationshipManagerViewerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelationshipManagerViewerUI.Designer.cs">
+      <DependentUpon>RelationshipManagerViewerUI.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManager.cs" />
     <Compile Include="IdeaGeneratorLogin.cs">
@@ -98,6 +111,7 @@
     <Compile Include="IdeaSubmitterForm.Designer.cs">
       <DependentUpon>IdeaSubmitterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvestmentIdea.cs" />
     <Compile Include="StartMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,18 +153,17 @@
     <EmbeddedResource Include="IdeaSubmitterForm.resx">
       <DependentUpon>IdeaSubmitterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RelationshipManagerViewerUI.resx">
+      <DependentUpon>RelationshipManagerViewerUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartMenu.resx">
       <DependentUpon>StartMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="RelationshipManagerLogin.resx">
       <DependentUpon>RelationshipManagerLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,16 +173,16 @@
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="CoreDataBaseDataSet.xsc">
-      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
+    <None Include="CoreDataSet.xsc">
+      <DependentUpon>CoreDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CoreDataBaseDataSet.xsd">
+    <None Include="CoreDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CoreDataBaseDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>CoreDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CoreDataBaseDataSet.xss">
-      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
+    <None Include="CoreDataSet.xss">
+      <DependentUpon>CoreDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -197,12 +210,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CoreDataBase.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="black_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CoreDatabase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="CoreDataBase_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>CoreDataBase.mdf</DependentUpon>
+    <Content Include="CoreDatabase_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CoreDatabase.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
