@@ -64,15 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackendController.cs" />
-    <Compile Include="CoreDataBaseDataSet.Designer.cs">
+    <Compile Include="CoreDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CoreDataBaseDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CoreDataBaseDataSet1.xsd</DependentUpon>
+      <DependentUpon>CoreDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="DatabaseLoginEntry.cs" />
@@ -178,27 +173,16 @@
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="CoreDataBaseDataSet.xsc">
-      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
+    <None Include="CoreDataSet.xsc">
+      <DependentUpon>CoreDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CoreDataBaseDataSet.xsd">
+    <None Include="CoreDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CoreDataBaseDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>CoreDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CoreDataBaseDataSet.xss">
-      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CoreDataBaseDataSet1.xsc">
-      <DependentUpon>CoreDataBaseDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="CoreDataBaseDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CoreDataBaseDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CoreDataBaseDataSet1.xss">
-      <DependentUpon>CoreDataBaseDataSet1.xsd</DependentUpon>
+    <None Include="CoreDataSet.xss">
+      <DependentUpon>CoreDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -227,6 +211,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="black_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CoreDatabase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CoreDatabase_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CoreDatabase.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
