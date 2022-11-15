@@ -16,7 +16,6 @@ namespace aru_software_eng_UI
 		BackendController backend_controller;
 		private int slot_counter = 0;
 		private int page_number = 1;
-		int EDIT_ME = 0;
 
 		//Temporary variable names, just for ease of understaning, will be imported from db - L
 		string[] database_string_array = new string[] { "Bonds", "Bonds", "Shares", "Art", "Real estate", "Share", "Share", "Stock", "Bonds", "Art", "Random" };
