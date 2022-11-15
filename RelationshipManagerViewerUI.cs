@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace aru_software_eng_UI
 {
-
 	public partial class RelationshipManagerViewerUI : Form
 	{
 		FormManager manager;
@@ -123,7 +122,7 @@ namespace aru_software_eng_UI
 			writeToSideBit(0);
 		}
 
-		//Gets information 
+		//Gets information from whatever bubble is clicked, and displays it on the right hand side - L
 		private void writeToSideBit(int button_index) 
 		{
 			title_label.Text = FancyDisplayBubbleTracker.instanceGetBubble(button_index).getInvestmentType();
@@ -133,18 +132,22 @@ namespace aru_software_eng_UI
 			rating_label.Text = "Level " + FancyDisplayBubbleTracker.instanceGetBubble(button_index).getRating().ToString() + " requried";
 		}
 
+		private void updatePage() 
+		{
+			page_number_label.Text = page_number.ToString(); //Display the page number to the user - L
+			FancyDisplayBubbleTracker.deleteAllBubbles(this); //Deletes all the buttons present on the screen. This allows for new ones to be loaded on the next page - L
+			slot_counter = 0; //resets the slot counter to allow for properly displayed buttons on the next page - L
+			multipleButtonMaker(1 + (page_number - 1) * 5); //This dictates what buttons are to be loaded based on the page number - L
+		}
+
 		//If the left button is pressed, reload the current buttons to display the "next page" - L
         private void page_left_button_Click(object sender, EventArgs e)
         {
 			if (1 < page_number)
 			{
-				page_number -= 1;
-				page_number_label.Text = page_number.ToString(); //Display the page number to the user - L
-				FancyDisplayBubbleTracker.deleteAllBubbles(this);
-				slot_counter = 0;
-				multipleButtonMaker(1 + (page_number - 1) * 5);
+				page_number -= 1; //reduces the page number by a value of 1 - L
+				updatePage();
 			}
-			
 		}
 
 		//If the right button is pressed, reload the current buttons to display the "next page" - L
@@ -153,11 +156,8 @@ namespace aru_software_eng_UI
 
 			if (page_number < (database_cost_array.Length - 1) / 5 + 1) //If page number less than max amount it possibly can be - L
 			{
-				page_number += 1;
-				page_number_label.Text = page_number.ToString();
-				FancyDisplayBubbleTracker.deleteAllBubbles(this);
-				slot_counter = 0;
-				multipleButtonMaker(1+(page_number-1) * 5);
+				page_number += 1; //Increases the page number by a value of 1 - L
+				updatePage();
 			}
 		}
 
