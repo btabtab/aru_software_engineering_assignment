@@ -40,8 +40,8 @@ namespace aru_software_eng_UI
             this.IS_expiry_date = new System.Windows.Forms.DateTimePicker();
             this.IS_cancel_button = new System.Windows.Forms.Button();
             this.IS_newIdeaLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.IS_description_label = new System.Windows.Forms.Label();
+            this.IS_description_textbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // IS_save_button
@@ -57,6 +57,7 @@ namespace aru_software_eng_UI
             this.IS_save_button.TabIndex = 0;
             this.IS_save_button.Text = "Save ";
             this.IS_save_button.UseVisualStyleBackColor = false;
+            this.IS_save_button.Click += new System.EventHandler(this.IS_save_button_Click);
             // 
             // IS_expirydate_label
             // 
@@ -172,34 +173,34 @@ namespace aru_software_eng_UI
             this.IS_newIdeaLabel.TabIndex = 25;
             this.IS_newIdeaLabel.Text = "New Idea";
             // 
-            // label1
+            // IS_description_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 288);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 39);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Description";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.IS_description_label.AutoSize = true;
+            this.IS_description_label.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IS_description_label.Location = new System.Drawing.Point(11, 288);
+            this.IS_description_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.IS_description_label.Name = "IS_description_label";
+            this.IS_description_label.Size = new System.Drawing.Size(134, 39);
+            this.IS_description_label.TabIndex = 26;
+            this.IS_description_label.Text = "Description";
+            this.IS_description_label.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // IS_description_textbox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(207, 288);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(289, 39);
-            this.textBox1.TabIndex = 27;
+            this.IS_description_textbox.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IS_description_textbox.Location = new System.Drawing.Point(207, 288);
+            this.IS_description_textbox.Margin = new System.Windows.Forms.Padding(2);
+            this.IS_description_textbox.Name = "IS_description_textbox";
+            this.IS_description_textbox.Size = new System.Drawing.Size(289, 39);
+            this.IS_description_textbox.TabIndex = 27;
             // 
             // CreateNewIdeaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 439);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.IS_description_textbox);
+            this.Controls.Add(this.IS_description_label);
             this.Controls.Add(this.IS_newIdeaLabel);
             this.Controls.Add(this.IS_cancel_button);
             this.Controls.Add(this.IS_risk_label);
@@ -232,7 +233,7 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.DateTimePicker IS_expiry_date;
         private System.Windows.Forms.Button IS_cancel_button;
         private System.Windows.Forms.Label IS_newIdeaLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label IS_description_label;
+        private System.Windows.Forms.TextBox IS_description_textbox;
     }
 }
