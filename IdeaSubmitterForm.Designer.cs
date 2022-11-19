@@ -72,6 +72,7 @@ namespace aru_software_eng_UI
             this.New_Idea_Button.TabIndex = 17;
             this.New_Idea_Button.Text = "New Idea";
             this.New_Idea_Button.UseVisualStyleBackColor = false;
+            this.New_Idea_Button.Click += new System.EventHandler(this.New_Idea_Button_Click);
             // 
             // Delete_Idea_Button
             // 
@@ -93,6 +94,7 @@ namespace aru_software_eng_UI
             this.IS_Back_Button.Size = new System.Drawing.Size(128, 64);
             this.IS_Back_Button.TabIndex = 19;
             this.IS_Back_Button.UseVisualStyleBackColor = true;
+            this.IS_Back_Button.Click += new System.EventHandler(this.IS_Back_Button_Click);
             // 
             // Idea_Submitter_Table
             // 
