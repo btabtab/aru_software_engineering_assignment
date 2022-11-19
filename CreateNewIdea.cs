@@ -64,5 +64,10 @@ namespace aru_software_eng_UI
         {
             manager.back();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
