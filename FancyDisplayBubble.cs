@@ -13,64 +13,35 @@ namespace aru_software_eng_UI
 	class FancyDisplayBubble
 	{
 		Button button; //Creates a button object for tracking purposes, named button - L
-		int risk; //Risk number for display purposes - L
-		int cost; //Cost for display purposes - L
-		int ID; //ID for tracking puproses - L
-		string investment_type; //Name for display purposes - L
-		string description;
-		int RM_rating;
+		InvestmentIdea investment_idea; //This is the investment_idea that will be displayed.
 
 		//Constructor, creates a new bubble with a button and risk attribute - L
-		public FancyDisplayBubble(Button n_button, int n_risk, int n_cost, int n_ID, string n_investment_type, string n_description, int n_RM_rating) 
+		public FancyDisplayBubble(Button n_button, InvestmentIdea n_investment_idea, EventHandler function)
 		{
-			button = n_button; 
-			risk = n_risk; 
-			cost = n_cost;
-			ID = n_ID;
-			investment_type = n_investment_type;
-			description = n_description;
-			RM_rating = n_RM_rating;
+			button = n_button;
+			investment_idea = n_investment_idea;
 
-			button.Click += new EventHandler(showButtonInfo); //When button is clicked, run the "showButtonInfo" function - L
+			button.Click += new EventHandler(function); //When button is clicked, run the "showButtonInfo" function - L
 		}
 
-		void showButtonInfo(object sender, EventArgs e)
-		{
-			Button target = (Button)sender;
-			
-		}
+		bool clicked;
+		public bool isClicked()
+        {
+			clicked = !clicked;
+			return clicked;
+        }
+		public void resetClickFlag()
+        {
+			clicked = false;
+        }
 		//Encapuslation commands to get the bubbles information - L  
 		public Button getButton()   
 		{
 			return button;
 		}
-
-		public int getRisk()
-		{
-			return risk;
-		}
-
-		public int getCost()
-		{
-			return cost;
-		}
-
-		public int getID()
-		{
-			return ID;
-		}
-		public string getInvestmentType()
-		{
-			return investment_type;
-		}
-		public string getDescription()
-		{
-			return description;
-		}
-		public int getRating()
-		{
-			return RM_rating;
-		}
-
+		public InvestmentIdea getInvestmentIdea()
+        {
+			return investment_idea;
+        }
 	};
 }

@@ -11,10 +11,9 @@ namespace aru_software_eng_UI
         /* This is a blank entry that can be grabbed for testing sake
 		while the database controller is being worked on. */
 
-        private LoginDatabaseHandler()
+        private LoginDatabaseHandler() : base()
 		{
 			database_wrapper = DatabaseWrapper.getDatabaseWrapperInstance();
-			database_name = "LoginEntries";
 		}
 
 		static LoginDatabaseHandler singleton_instance;
@@ -27,28 +26,73 @@ namespace aru_software_eng_UI
 			return singleton_instance;
 
 		}
-		/*
-		 * (as of now)
-		 * This will return a login entry that
-		 * will contain made up info based on the rown num.
-		*/
-		public DataBaseLoginEntry getRowXofLoginData(int row_num)
-		{
-			return new DataBaseLoginEntry();
-		}
-		public DataBaseLoginEntry searchForEntryBasedOnUsername(string username_search)
-		{
-			return database_wrapper.getLoginEntryFromUsername(username_search);
-		}
-		//This will return a made up entry with the email based on the searched username and the same username.
-		public DataBaseLoginEntry searchForEntryBasedOnEmail(string email_search)
-		{
-			return database_wrapper.getLoginEntryFromEmail(email_search);
-		}
-
 		public void addNewLogin(DataBaseLoginEntry n_database_login_entry)
 		{
-			database_wrapper.writeNewLoginDataEntry(n_database_login_entry);
+			writeNewLoginDataEntry(n_database_login_entry);
+		}
+		string rmStatusToString(bool is_rm_manager)
+        {
+			string ret = "0";
+
+			if(is_rm_manager)
+            {
+				ret = "1";
+            }
+			return ret;
+		}
+		//writes the entry into the logindatabase -JE oct-30.0
+		public void writeNewLoginDataEntry(DataBaseLoginEntry n_entry)
+		{
+			List<string> columns = new List<string>(), values = new List<string>();
+
+			columns.Add("ID");
+			values.Add("" + (database_wrapper.getHighestIDNumber(DatabaseWrapper.LoginEntries)+1));
+
+			columns.Add("Username");
+			columns.Add("Email");
+			columns.Add("Password");
+			columns.Add("Is_RelationshipManager");
+
+			values.Add(n_entry.getUsername());
+			values.Add(n_entry.getEmail());
+			values.Add(n_entry.getPassword());
+			values.Add(rmStatusToString(n_entry.getIsRelationshipManager()));
+
+
+			database_wrapper.insertNewEntryIntoDatabase(DatabaseWrapper.LoginEntries, columns, values);
+		}
+		public DataBaseLoginEntry getLoginEntryFromUsername(string username)
+		{
+			DataBaseLoginEntry ret = new DataBaseLoginEntry(
+																database_wrapper.searchDataBaseForInt(	"ID", 						DatabaseWrapper.LoginEntries, "Username=", username),
+																database_wrapper.searchDatabaseForString("Username", 				DatabaseWrapper.LoginEntries, "Username=", username),
+																database_wrapper.searchDatabaseForString("Password", 				DatabaseWrapper.LoginEntries, "Username=", username),
+																database_wrapper.searchDatabaseForString("Email", 					DatabaseWrapper.LoginEntries, "Username=", username),
+																database_wrapper.searchDatabaseForBool(	"Is_RelationshipManager", 	DatabaseWrapper.LoginEntries, "Username=", username)
+																);
+			return ret;
+		}
+		public DataBaseLoginEntry getLoginEntryFromEmail(string email)
+		{
+			DataBaseLoginEntry ret = new DataBaseLoginEntry(
+																database_wrapper.searchDataBaseForInt(	"ID", 						DatabaseWrapper.LoginEntries, "Email=", email),
+																database_wrapper.searchDatabaseForString("Username", 				DatabaseWrapper.LoginEntries, "Email=", email),
+																database_wrapper.searchDatabaseForString("Password", 				DatabaseWrapper.LoginEntries, "Email=", email),
+																database_wrapper.searchDatabaseForString("Email", 					DatabaseWrapper.LoginEntries, "Email=", email),
+																database_wrapper.searchDatabaseForBool(	"Is_RelationshipManager", 	DatabaseWrapper.LoginEntries, "Email=", email)
+																);
+			return ret;
+		}
+		public DataBaseLoginEntry getLoginEntryFromID(int ID)
+        {
+			DataBaseLoginEntry ret = new DataBaseLoginEntry(
+															database_wrapper.searchDataBaseForInt("ID",								DatabaseWrapper.LoginEntries, "ID=", ID.ToString()),
+															database_wrapper.searchDatabaseForString("Username",					DatabaseWrapper.LoginEntries, "ID=", ID.ToString()),
+															database_wrapper.searchDatabaseForString("Password",					DatabaseWrapper.LoginEntries, "ID=", ID.ToString()),
+															database_wrapper.searchDatabaseForString("Email",						DatabaseWrapper.LoginEntries, "ID=", ID.ToString()),
+															database_wrapper.searchDatabaseForBool("Is_RelationshipManager",		DatabaseWrapper.LoginEntries, "ID=", ID.ToString())
+															);
+			return ret;
 		}
 	}
 }
