@@ -87,6 +87,8 @@
     <Compile Include="Idea_Submitter.Designer.cs">
       <DependentUpon>Idea_Submitter.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvestmentIdeaDatabaseHandler.cs" />
+    <Compile Include="LoginDatabaseHandler.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
