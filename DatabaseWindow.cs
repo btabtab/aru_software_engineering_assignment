@@ -39,7 +39,7 @@ namespace aru_software_eng_UI
 
 		private void AddLoginButton_Click(object sender, EventArgs e)
 		{
-			backend_controller.writeDatabaseEntry(new DataBaseLoginEntry(
+			backend_controller.writeLoginDatabaseEntry(new DataBaseLoginEntry(
 																			username_entrybx.Text,
 																			password_entrybx.Text,
 																			email_entrybx.Text,
@@ -64,7 +64,7 @@ namespace aru_software_eng_UI
 			generated_user_entry_display.Text = r_entry.getAsLabelString();
 
 			//UPDATE naming for r_entry.
-			backend_controller.writeDatabaseEntry(r_entry);
+			backend_controller.writeLoginDatabaseEntry(r_entry);
 			updateTable();
 		}
 
@@ -96,5 +96,18 @@ namespace aru_software_eng_UI
 			login_output_data_lbl.Text = backend_controller.loginSearchEmail(email_search_textbx.Text).getAsLabelString();
 
 		}
-    }
+
+        private void login_master_button_Click(object sender, EventArgs e)
+        {
+			backend_controller.writeLoginDatabaseEntry(backend_controller.randomEntry());
+			
+			updateTable();
+
+			login_master_button.Text = backend_controller.getHighestUserIDEntry().getAsLabelString();
+
+			backend_controller.deleteHighestLoginID();
+
+			updateTable();
+		}
+	}
 }
