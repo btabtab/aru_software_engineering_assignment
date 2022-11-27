@@ -157,6 +157,7 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.Idea_Submitter_label);
             this.Name = "IdeaSubmitterForm";
             this.Text = "IdeaSubmitterForm";
+            this.Load += new System.EventHandler(this.IdeaSubmitterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Idea_Submitter_Table)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

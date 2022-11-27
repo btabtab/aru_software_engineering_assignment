@@ -48,5 +48,10 @@ namespace aru_software_eng_UI
             int rowIndex = Idea_Submitter_Table.CurrentCell.RowIndex;
             Idea_Submitter_Table.Rows.RemoveAt(rowIndex);
         }
+
+        private void IdeaSubmitterForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

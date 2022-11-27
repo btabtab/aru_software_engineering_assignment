@@ -43,6 +43,7 @@ namespace aru_software_eng_UI
             this.IS_industry_textbox = new System.Windows.Forms.TextBox();
             this.IS_rmrating_label = new System.Windows.Forms.Label();
             this.IS_rmrating_combobox = new System.Windows.Forms.ComboBox();
+            this.IS_back_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // IS_save_button
@@ -210,11 +211,25 @@ namespace aru_software_eng_UI
             this.IS_rmrating_combobox.Size = new System.Drawing.Size(300, 40);
             this.IS_rmrating_combobox.TabIndex = 29;
             // 
+            // IS_back_button
+            // 
+            this.IS_back_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IS_back_button.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.IS_back_button.Location = new System.Drawing.Point(226, 452);
+            this.IS_back_button.Margin = new System.Windows.Forms.Padding(2);
+            this.IS_back_button.Name = "IS_back_button";
+            this.IS_back_button.Size = new System.Drawing.Size(82, 28);
+            this.IS_back_button.TabIndex = 31;
+            this.IS_back_button.Text = "Cancel";
+            this.IS_back_button.UseVisualStyleBackColor = true;
+            this.IS_back_button.Click += new System.EventHandler(this.IS_back_button_Click_2);
+            // 
             // CreateNewIdeaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 491);
+            this.Controls.Add(this.IS_back_button);
             this.Controls.Add(this.IS_rmrating_label);
             this.Controls.Add(this.IS_rmrating_combobox);
             this.Controls.Add(this.IS_industry_textbox);
@@ -253,5 +268,6 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.TextBox IS_industry_textbox;
         private System.Windows.Forms.Label IS_rmrating_label;
         private System.Windows.Forms.ComboBox IS_rmrating_combobox;
+        private System.Windows.Forms.Button IS_back_button;
     }
 }
