@@ -24,12 +24,29 @@ namespace aru_software_eng_UI
 
         private void New_Idea_Button_Click(object sender, EventArgs e)
         {
-            next_window = new CreateNewIdeaForm(this, backend_controller);
+            CreateNewIdeaForm newIdeaForm = new CreateNewIdeaForm(this);
+            newIdeaForm.Show();
         }
 
         private void IS_Back_Button_Click(object sender, EventArgs e)
         {
             manager.back();
+        }
+
+        private void Idea_Submitter_Table_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Idea_Submitter_Table_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.Idea_Submitter_Table.Rows[e.RowIndex].Cells["Column1"].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void Delete_Idea_Button_Click(object sender, EventArgs e)
+        {
+            int rowIndex = Idea_Submitter_Table.CurrentCell.RowIndex;
+            Idea_Submitter_Table.Rows.RemoveAt(rowIndex);
         }
     }
 }

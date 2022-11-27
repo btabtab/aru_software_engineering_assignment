@@ -15,14 +15,13 @@ namespace aru_software_eng_UI
 
         Form next_window;
         FormManager manager;
-        BackendController backend_controller;
+        IdeaSubmitterForm submitterForm;
 
-
-        public CreateNewIdeaForm(Form n_previous_window, BackendController n_backend_controller)
+        public CreateNewIdeaForm(IdeaSubmitterForm ideaSubmitter)
         {
             InitializeComponent();
-            manager = new FormManager(n_previous_window, this);
-            backend_controller = n_backend_controller;
+         
+            this.submitterForm = ideaSubmitter;
         }
 
         private void CreateNewIdea_Load(object sender, EventArgs e)
@@ -72,7 +71,7 @@ namespace aru_software_eng_UI
 
         private void IS_save_button_Click(object sender, EventArgs e)
         {
-
+            submitterForm.Idea_Submitter_Table.Rows.Add(IS_industry_textbox.Text, IS_cost_textbox.Text, IS_risk_combobox.SelectedIndex, IS_expiry_date.Value, IS_rmrating_combobox.SelectedIndex, IS_description_textbox.Text);
         }
     }
 }
