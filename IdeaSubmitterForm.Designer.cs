@@ -62,7 +62,7 @@ namespace aru_software_eng_UI
             this.New_Idea_Button.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.New_Idea_Button.Location = new System.Drawing.Point(12, 137);
             this.New_Idea_Button.Name = "New_Idea_Button";
-            this.New_Idea_Button.Size = new System.Drawing.Size(337, 64);
+            this.New_Idea_Button.Size = new System.Drawing.Size(581, 64);
             this.New_Idea_Button.TabIndex = 17;
             this.New_Idea_Button.Text = "New Idea";
             this.New_Idea_Button.UseVisualStyleBackColor = false;
@@ -73,9 +73,9 @@ namespace aru_software_eng_UI
             this.Delete_Idea_Button.BackColor = System.Drawing.SystemColors.Highlight;
             this.Delete_Idea_Button.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Delete_Idea_Button.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Delete_Idea_Button.Location = new System.Drawing.Point(1116, 137);
+            this.Delete_Idea_Button.Location = new System.Drawing.Point(872, 137);
             this.Delete_Idea_Button.Name = "Delete_Idea_Button";
-            this.Delete_Idea_Button.Size = new System.Drawing.Size(337, 64);
+            this.Delete_Idea_Button.Size = new System.Drawing.Size(581, 64);
             this.Delete_Idea_Button.TabIndex = 18;
             this.Delete_Idea_Button.Text = "Delete Idea";
             this.Delete_Idea_Button.UseVisualStyleBackColor = false;
