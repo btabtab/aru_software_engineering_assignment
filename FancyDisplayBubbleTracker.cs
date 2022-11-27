@@ -38,7 +38,7 @@ namespace aru_software_eng_UI
 				{
 					Console.WriteLine("clicked " + i);
 					last_pressed_bubble = i;
-					return i;
+					return i - 1;
 				}
 				bubbles[i].resetClickFlag();
 			}

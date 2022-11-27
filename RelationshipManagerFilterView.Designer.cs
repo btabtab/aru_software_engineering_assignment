@@ -1,7 +1,7 @@
 ﻿
 namespace aru_software_eng_UI
 {
-    partial class RelationshipManagerView
+    partial class RelationshipManagerFilterView
     {
         /// <summary>
         /// Required designer variable.
@@ -52,7 +52,6 @@ namespace aru_software_eng_UI
             this.RiskTrackBar.Name = "RiskTrackBar";
             this.RiskTrackBar.Size = new System.Drawing.Size(301, 45);
             this.RiskTrackBar.TabIndex = 0;
-            this.RiskTrackBar.Scroll += new System.EventHandler(this.RiskTrackBar_Scroll);
             // 
             // RiskLabel
             // 
@@ -79,7 +78,6 @@ namespace aru_software_eng_UI
             this.CostTrackBar.Name = "CostTrackBar";
             this.CostTrackBar.Size = new System.Drawing.Size(301, 45);
             this.CostTrackBar.TabIndex = 3;
-            this.CostTrackBar.Scroll += new System.EventHandler(this.CostTrackBar_Scroll);
             // 
             // ExpiryDateLabel
             // 
@@ -97,7 +95,6 @@ namespace aru_software_eng_UI
             this.ExpireDateTrackBar.Name = "ExpireDateTrackBar";
             this.ExpireDateTrackBar.Size = new System.Drawing.Size(301, 45);
             this.ExpireDateTrackBar.TabIndex = 5;
-            this.ExpireDateTrackBar.Scroll += new System.EventHandler(this.ExpireDateTrackBar_Scroll);
             // 
             // IndustryLabel
             // 
@@ -121,7 +118,6 @@ namespace aru_software_eng_UI
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.SmallIcon;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // TrendingCheckBox
             // 
@@ -132,7 +128,6 @@ namespace aru_software_eng_UI
             this.TrendingCheckBox.TabIndex = 8;
             this.TrendingCheckBox.Text = "Show Only Trending";
             this.TrendingCheckBox.UseVisualStyleBackColor = true;
-            this.TrendingCheckBox.CheckedChanged += new System.EventHandler(this.TrendingCheckBox_CheckedChanged);
             // 
             // SearchButton
             // 
