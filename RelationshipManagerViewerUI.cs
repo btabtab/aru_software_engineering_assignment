@@ -14,29 +14,17 @@ namespace aru_software_eng_UI
 	public partial class RelationshipManagerViewerUI : Form
 	{
 		FormManager manager;
-		BackendController backend_controller;
 		private int slot_counter = 0;
 		private int page_number = 1;
-
-		//Temporary variable names, just for ease of understaning, will be imported from db - L
-		string[] database_string_array = new string[] { "Bonds", "Bonds", "Shares", "Art", "Real estate", "Share", "Share", "Stock", "Bonds", "Art", "Random" };
-		float[] database_cost_array = new float[] { 1500, 1500, 1500, 1500, 1500, 1500, 1000, 2000, 9000, 5000, 200 };
-		float[] database_risk_array = new float[] { 2, 2, 2, 2, 2, 2, 7, 8, 9, 10, 11 };
-		//Temporary variable names, just for ease of understaning, will be imported from db - L
-
-		//Temporary variable names, just for ease of understaning, will be imported from RM filter page - L
-		float imported_cost = 1500;
-		float imported_risk = 2;
-		//Temporary variable names, just for ease of understaning, will be imported from RM filter page - L
-
-		public RelationshipManagerViewerUI(Form n_previous_window)
+		public RelationshipManagerViewerUI(Form n_previous_window, List<InvestmentIdea> n_idea_list)
 		{
 			InitializeComponent();
 			manager = new FormManager(n_previous_window, this);
-			backend_controller = BackendController.getInstance();
+			idea_list = n_idea_list;
 			multipleButtonMaker(page_number);
 			FancyDisplayBubbleTracker.getBubbleTracker().setLabel(DataOutputLabel);
 		}
+		List<InvestmentIdea> idea_list;
 
 		private void cost_label_Click(object sender, EventArgs e)
 		{
@@ -98,25 +86,27 @@ namespace aru_software_eng_UI
 
 			if (page_number == max_possible_page) //If the user is trying to populate the final page... - L
 			{
-				end_of_range = database_cost_array.Length + 1; //Make it display the appropriate amount of bubbles so you don't have an out of bounds issue - L
+				end_of_range = idea_list.Count + 1; //Make it display the appropriate amount of bubbles so you don't have an out of bounds issue - L
 			
 			}
 
 			
 			for (int i = start_of_range; i < end_of_range; i++) //Generate the appropriate amount of bubbles based of previously determined paramneters - L
 			{
-				createButton(mathsSutability(imported_cost, database_cost_array[i - 1], imported_risk, database_risk_array[i - 1]), database_risk_array[i-1], database_cost_array[i - 1], database_string_array[i - 1] + "\nRisk: " + database_risk_array[i - 1].ToString() + "\n£" + database_cost_array[i - 1].ToString());
+				createButton(idea_list[i]);
 			}
 
 		}
 
-		private void createButton(int size_of_button, float risk_to_input, float cost_to_input, string title_of_button)
+		private void createButton(InvestmentIdea idea)
 		{
+			int size_of_button = mathsSutability(1, idea.getCost(), 1, idea.getRiskLevel());
+			
 			Point button_pos = positionCalculator(size_of_button); //Creates a Point variable to hold the size of the button - L
 			
-			FancyDisplayBubbleTracker.instanceAddBubble(new Button(), new InvestmentIdea()); //Creates a new instance of a button - L
+			FancyDisplayBubbleTracker.instanceAddBubble(new Button(), idea); //Creates a new instance of a button - L
 			this.Controls.Add(FancyDisplayBubbleTracker.instanceGetLastBubble().getButton()); //Add controlls to the recently created button - L
-			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Text = title_of_button; //Sets the text of the button - L
+			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Text = idea.getName(); //Sets the text of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Location = button_pos; //Sets the location of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Size = new Size(size_of_button*2, size_of_button*2); //Sets the size of button to the default size - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Font = new Font("Agency FB", size_of_button/3, FontStyle.Bold); //Sets the buttons font and text size, makes the font fit the button no matter the size - L
@@ -146,7 +136,7 @@ namespace aru_software_eng_UI
 		private void page_right_button_Click(object sender, EventArgs e)
         {
 
-			if (page_number < (database_cost_array.Length - 1) / 5 + 1) //If page number less than max amount it possibly can be - L
+			if (page_number < (idea_list.Count - 1) / 5 + 1) //If page number less than max amount it possibly can be - L
 			{
 				page_number += 1;
 				page_number_label.Text = page_number.ToString();

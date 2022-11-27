@@ -42,7 +42,12 @@ namespace aru_software_eng_UI
 
         private void showRMTEST_Click(object sender, EventArgs e)
         {
-            next_window = new RelationshipManagerViewerUI(this); 
+            List<InvestmentIdea> test_list = new List<InvestmentIdea>();
+            for(int i = 0; i != 30; i++)
+            {
+                test_list.Add(new InvestmentIdea(i));
+            }
+            next_window = new RelationshipManagerViewerUI(this, test_list);
         }
     }
 }
