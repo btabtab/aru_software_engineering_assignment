@@ -14,14 +14,18 @@ namespace aru_software_eng_UI
 	{
 		FormManager manager;
 		private int slot_counter = 0; //Keeps track of how many slots are use by buttons, globally - L
-		private int button_base_size = 170; //Allows us to easily change the base size of a button - L
+		private int button_base_size = 175; //Allows us to easily change the base size of a button - L
 		private int button_spacing = 20; //Allows us to easily dicate how far apart buttons are form each other - L
+		private int page_number = 1; //Keeps track of the page number
+		int total_page_count; //Keeps track of the total amount of pages allowed - L
+
 		public RelationshipManagerViewerUI(Form n_previous_window, List<InvestmentIdea> n_idea_list)
 		{
 			InitializeComponent();
 			manager = new FormManager(n_previous_window, this);
 			idea_list = n_idea_list;
 			FancyDisplayBubbleTracker.getBubbleTracker().setLabel(DataOutputLabel);
+			firstTimeRun();
 		}
 		List<InvestmentIdea> idea_list;
 
@@ -34,40 +38,69 @@ namespace aru_software_eng_UI
 		int temp_db_cost = 100;
 		int temp_db_risk = 3;
 
+		int db_amount_of_entries = 17;
 
-		private Point findPosition(int size) 
+
+
+
+		//A function that sets some basic things up, only ran once at the start - L
+		private void firstTimeRun()
 		{
-			Point ret = new Point();
-			switch (slot_counter)
-			{
-				case 0:
-					ret.X = 378 - (size / 2);
-					ret.Y = 276 - (size / 2);
-					break;
-				case 1: //Bottom left
-					ret.X = 378 - (size / 2) - button_base_size - button_spacing;
-					ret.Y = 276 - (size / 2) + button_base_size + button_spacing;
-					break;
-				case 2: //Top right
-					ret.X = 378 - (size / 2) + button_base_size + button_spacing;
-					ret.Y = 276 - (size / 2) - button_base_size - button_spacing;
-					break;
-				case 3://Top Left
-					ret.X = 378 - (size / 2) - button_base_size - button_spacing;
-					ret.Y = 276 - (size / 2) - button_base_size - button_spacing;
-					break;
-				case 4://Bottom Right
-					ret.X = 378 - (size / 2) + button_base_size + button_spacing;
-					ret.Y = 276 - (size / 2) + button_base_size + button_spacing;
-					break;
-
-				default:
-					break;
-			}
-			slot_counter++; //Incriment the slot counter so we know how many bubbles are on the page - L
-			return ret; //return the position of the bubble - L
+			pageLoader();
+			//Finds the maximum number of pages - L
+			total_page_count = ((db_amount_of_entries - 1) / 5) + 1;
 		}
 
+		//A function that clears the page - L
+		private void pageClearer() 
+		{
+			//Display the page number to the user - L
+			page_number_label.Text = page_number.ToString();
+
+			//Deletes all the buttons present on the screen. This allows for new ones to be loaded on the next page - L
+			FancyDisplayBubbleTracker.deleteAllBubbles(this);
+
+			//resets the slot counter to allow for properly displayed buttons on the next page - L
+			slot_counter = 0; 
+		}
+
+		//A function that loads the page - L
+		private void pageLoader()
+		{
+			//For each page, find the appropraite starting value (e.g. if you are on page 3, start with index 11 as 5 bubbles per page) - L
+			for (int i = (1+((page_number-1)*5)); i < (6 + ((page_number - 1) * 5)); i++) 
+			{
+				spawnButton(i);
+			}
+		}
+
+		//A function that finds the appropriate position for a given bubble - L
+		private Point findPosition(int size) 
+		{
+			//Create a new point called ret - L
+			Point ret = new Point();
+
+			//Store all the coordinates in an easy to read list, each line is a new coordinate - L
+			int[] positions = { 320 - (size / 2), 276 - (size / 2), //Middle - L
+			                    320 - (size / 2) - button_base_size - button_spacing, 276 - (size / 2) + button_base_size + button_spacing, //Bottom left - L
+		                        320 - (size / 2) + button_base_size + button_spacing, 276 - (size / 2) + button_base_size + button_spacing, //Top right - L
+								320 - (size / 2) - button_base_size - button_spacing, 276 - (size / 2) - button_base_size - button_spacing, //Top Left - L
+								320 - (size / 2) + button_base_size + button_spacing, 276 - (size / 2) - button_base_size - button_spacing}; //Bottom Right - L
+
+			List<int> position_list = new List<int>(positions);
+
+			//Read the X and accompanying Y coordinate from the list
+			ret.X = position_list[slot_counter];
+			ret.Y = position_list[slot_counter+1];
+
+			//Incriment the slot counter twice so we know how many bubbles are on the page - L
+			//We do this twice so we can get the X and Y pos from the list - L
+			slot_counter++;
+			slot_counter++;
+
+			//return the position of the bubble - L
+			return ret; 
+		}
 
 		//A function that takes the filter results from the previous page and compares them to the inputted results from the database to result in a level of suitability from 0 - 100 - L
 		private int buttonSizeCalcualtor(int min_cost_filter, int max_cost_filter, int min_risk_filter, int max_risk_filter, int db_cost, int db_risk) 
@@ -111,22 +144,27 @@ namespace aru_software_eng_UI
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Font = new Font("Agency FB", size_of_button / 6, FontStyle.Bold);
 		}
 
-
-
-		//If the left button is pressed - L
+		//If the left button is pressed, clear all bubbles and update the page and add the new bubbles - L
         private void page_left_button_Click(object sender, EventArgs e)
         {
-			spawnButton(0);
-			spawnButton(1);
-			spawnButton(2);
-			spawnButton(3);
-			spawnButton(4);
-
+			if (page_number > 1) 
+			{
+				page_number--;
+				pageClearer();
+				pageLoader();
+			}
+			
 		}
 
-		//If the right button is pressed - L
+		//If the left button is pressed, clear all bubbles and update the page and add the new bubbles - L
 		private void page_right_button_Click(object sender, EventArgs e)
         {
+			if (page_number < total_page_count)
+			{
+				page_number++;
+				pageClearer();
+				pageLoader();
+			}
 
 		}
 
@@ -141,7 +179,7 @@ namespace aru_software_eng_UI
 
 
 
-
+		//Ignore the below functions... - L
         private void page_number_label_Click(object sender, EventArgs e)
         {
         }
@@ -154,7 +192,6 @@ namespace aru_software_eng_UI
 		private void cost_label_Click(object sender, EventArgs e)
 		{
 		}
-
         private void divide_line_Click(object sender, EventArgs e)
         {
 

@@ -41,7 +41,7 @@ namespace aru_software_eng_UI
             // 
             this.divide_line.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.divide_line.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.divide_line.Location = new System.Drawing.Point(757, -5);
+            this.divide_line.Location = new System.Drawing.Point(644, -7);
             this.divide_line.Minimum = 100;
             this.divide_line.Name = "divide_line";
             this.divide_line.Size = new System.Drawing.Size(2, 731);
@@ -53,7 +53,7 @@ namespace aru_software_eng_UI
             // debugShow
             // 
             this.debugShow.AutoSize = true;
-            this.debugShow.Location = new System.Drawing.Point(838, 494);
+            this.debugShow.Location = new System.Drawing.Point(769, 490);
             this.debugShow.Name = "debugShow";
             this.debugShow.Size = new System.Drawing.Size(67, 13);
             this.debugShow.TabIndex = 12;
@@ -62,9 +62,10 @@ namespace aru_software_eng_UI
             // 
             // page_right_button
             // 
-            this.page_right_button.Location = new System.Drawing.Point(897, 526);
+            this.page_right_button.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold);
+            this.page_right_button.Location = new System.Drawing.Point(861, 508);
             this.page_right_button.Name = "page_right_button";
-            this.page_right_button.Size = new System.Drawing.Size(75, 23);
+            this.page_right_button.Size = new System.Drawing.Size(89, 39);
             this.page_right_button.TabIndex = 13;
             this.page_right_button.Text = "->";
             this.page_right_button.UseVisualStyleBackColor = true;
@@ -72,9 +73,10 @@ namespace aru_software_eng_UI
             // 
             // page_left_button
             // 
-            this.page_left_button.Location = new System.Drawing.Point(766, 526);
+            this.page_left_button.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold);
+            this.page_left_button.Location = new System.Drawing.Point(653, 508);
             this.page_left_button.Name = "page_left_button";
-            this.page_left_button.Size = new System.Drawing.Size(75, 23);
+            this.page_left_button.Size = new System.Drawing.Size(89, 39);
             this.page_left_button.TabIndex = 14;
             this.page_left_button.Text = "<-";
             this.page_left_button.UseVisualStyleBackColor = true;
@@ -83,9 +85,10 @@ namespace aru_software_eng_UI
             // page_number_label
             // 
             this.page_number_label.AutoSize = true;
-            this.page_number_label.Location = new System.Drawing.Point(863, 531);
+            this.page_number_label.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.page_number_label.Location = new System.Drawing.Point(795, 515);
             this.page_number_label.Name = "page_number_label";
-            this.page_number_label.Size = new System.Drawing.Size(13, 13);
+            this.page_number_label.Size = new System.Drawing.Size(16, 25);
             this.page_number_label.TabIndex = 15;
             this.page_number_label.Text = "1";
             this.page_number_label.Click += new System.EventHandler(this.page_number_label_Click);
@@ -93,10 +96,11 @@ namespace aru_software_eng_UI
             // DataOutputLabel
             // 
             this.DataOutputLabel.AutoSize = true;
-            this.DataOutputLabel.Location = new System.Drawing.Point(766, 7);
+            this.DataOutputLabel.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Bold);
+            this.DataOutputLabel.Location = new System.Drawing.Point(653, 5);
             this.DataOutputLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DataOutputLabel.Name = "DataOutputLabel";
-            this.DataOutputLabel.Size = new System.Drawing.Size(68, 13);
+            this.DataOutputLabel.Size = new System.Drawing.Size(84, 25);
             this.DataOutputLabel.TabIndex = 16;
             this.DataOutputLabel.Text = "Output Label";
             // 
