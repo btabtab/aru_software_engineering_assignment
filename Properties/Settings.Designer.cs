@@ -26,11 +26,11 @@ namespace aru_software_eng_UI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\UserDatabase." +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\CoreDataBase." +
             "mdf;Integrated Security=True;Connect Timeout=30")]
-        public string Setting {
+        public string database_connection_string {
             get {
-                return ((string)(this["Setting"]));
+                return ((string)(this["database_connection_string"]));
             }
         }
     }

@@ -22,6 +22,7 @@ namespace aru_software_eng_UI
             backend_controller = n_backend_controller;
         }
 
+<<<<<<< HEAD
         private void New_Idea_Button_Click(object sender, EventArgs e)
         {
             CreateNewIdeaForm newIdeaForm = new CreateNewIdeaForm(this);
@@ -54,9 +55,19 @@ namespace aru_software_eng_UI
             Idea_Submitter_Table.Rows.RemoveAt(rowIndex);
         }
 
+=======
+>>>>>>> Ig_LoginImplementation
         private void IdeaSubmitterForm_Load(object sender, EventArgs e)
         {
 
         }
+<<<<<<< HEAD
+=======
+
+        private void New_Idea_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> Ig_LoginImplementation
     }
 }

@@ -13,12 +13,13 @@ namespace aru_software_eng_UI
     public partial class RelationshipManagerLogin : Form
     {
         FormManager manager;
+        Form next_window;
         BackendController backend_controller;
-        public RelationshipManagerLogin(Form n_previous_window, BackendController n_backend_controller)
+        public RelationshipManagerLogin(Form n_previous_window)
         {
             InitializeComponent();
             manager = new FormManager(n_previous_window, this);
-            backend_controller = n_backend_controller;
+            backend_controller = BackendController.getInstance();
         }
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
@@ -42,14 +43,26 @@ namespace aru_software_eng_UI
 
         private void RM_login_manager_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RelationshipManagerLogin rm_window = new RelationshipManagerLogin(this, backend_controller);
-            rm_window.Show();
+            // Get username  
+            string username = RM_login_name_entry.Text;
+            // Get password
+            string password = RM_login_password_entry.Text;
+            DataBaseLoginEntry loginEntry = backend_controller.loginSearchUsername(username);
+            if ((loginEntry.getEmail() == username || loginEntry.getUsername() == username) && loginEntry.getPassword() == password)
+            {
+                // redirect to Idea Submitter page
+                //next_window = new RelationshipManagerViewerUI(this, backend_controller);
+            }
         }
 
         private void RM_backButton_Click(object sender, EventArgs e)
         {
             manager.back();
+        }
+
+        private void RelationshipManagerLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
