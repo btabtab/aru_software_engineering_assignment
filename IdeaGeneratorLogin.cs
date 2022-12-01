@@ -13,6 +13,7 @@ namespace aru_software_eng_UI
     public partial class IdeaGeneratorLogin : Form
     {
         FormManager manager;
+        Form next_window;
         BackendController backend_controller;
         public IdeaGeneratorLogin(Form n_previous_window)
         {
