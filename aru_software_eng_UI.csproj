@@ -64,10 +64,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackendController.cs" />
+<<<<<<< HEAD
+    <Compile Include="CreateNewIdea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewIdea.Designer.cs">
+      <DependentUpon>CreateNewIdea.cs</DependentUpon>
+=======
     <Compile Include="CoreDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreDataSet.xsd</DependentUpon>
+>>>>>>> Ig_LoginImplementation
     </Compile>
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="DatabaseLoginEntry.cs" />
@@ -138,6 +146,20 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="UserDatabaseDataSet.cs">
+      <DependentUpon>UserDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CreateNewIdea.resx">
+      <DependentUpon>CreateNewIdea.cs</DependentUpon>
+    </EmbeddedResource>
+=======
+>>>>>>> Ig_LoginImplementation
     <EmbeddedResource Include="DatabaseWindow.resx">
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
     </EmbeddedResource>
