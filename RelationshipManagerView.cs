@@ -12,10 +12,22 @@ namespace aru_software_eng_UI
 {
     public partial class RelationshipManagerView : Form
     {
-        public RelationshipManagerView()
+        FormManager form_manager;
+        public RelationshipManagerView(Form previous_window)
         {
             InitializeComponent();
+            form_manager = new FormManager(previous_window, this);
+            updateSearchButton();
         }
+
+        private void updateSearchButton()
+        {
+            SearchButton.Text = "   Min Risk: " + MinRiskTrackBar.Value.ToString() + "                                      SEARCH                               Min Cost: £" + MinCostTrackBar.Value.ToString() + "\n   Max Risk: " + MaxRiskTrackBar.Value.ToString() + "                                                                                 Max Cost: £" + MaxCostTrackBar.Value.ToString();
+
+
+
+        }
+
 
         private void RelationshipManagerView_Load(object sender, EventArgs e)
         {
@@ -41,7 +53,7 @@ namespace aru_software_eng_UI
 
         private void MinCostLabel_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void MaxCostLabel_Click(object sender, EventArgs e)
@@ -51,22 +63,22 @@ namespace aru_software_eng_UI
 
         private void MinRiskTrackBar_Scroll(object sender, EventArgs e)
         {
-
+            updateSearchButton();
         }
 
         private void MinCostTrackBar_Scroll(object sender, EventArgs e)
         {
-
+            updateSearchButton();
         }
 
         private void MaxRiskTrackBar_Scroll(object sender, EventArgs e)
         {
-
+            updateSearchButton();
         }
 
         private void MaxCostTrackBar_Scroll(object sender, EventArgs e)
         {
-
+            updateSearchButton();
         }
 
         private void ExpireDatePicker_ValueChanged(object sender, EventArgs e)

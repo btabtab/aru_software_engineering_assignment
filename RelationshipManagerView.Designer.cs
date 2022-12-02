@@ -53,7 +53,7 @@ namespace aru_software_eng_UI
             // 
             this.MinRiskLabel.AutoSize = true;
             this.MinRiskLabel.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinRiskLabel.Location = new System.Drawing.Point(12, 155);
+            this.MinRiskLabel.Location = new System.Drawing.Point(12, 153);
             this.MinRiskLabel.Name = "MinRiskLabel";
             this.MinRiskLabel.Size = new System.Drawing.Size(178, 42);
             this.MinRiskLabel.TabIndex = 1;
@@ -63,13 +63,14 @@ namespace aru_software_eng_UI
             // SearchButton
             // 
             this.SearchButton.BackColor = System.Drawing.SystemColors.Highlight;
-            this.SearchButton.Font = new System.Drawing.Font("Agency FB", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold);
             this.SearchButton.ForeColor = System.Drawing.Color.Black;
-            this.SearchButton.Location = new System.Drawing.Point(339, 367);
+            this.SearchButton.Location = new System.Drawing.Point(25, 367);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(173, 82);
+            this.SearchButton.Size = new System.Drawing.Size(797, 82);
             this.SearchButton.TabIndex = 9;
             this.SearchButton.Text = "Search";
+            this.SearchButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
@@ -77,7 +78,7 @@ namespace aru_software_eng_UI
             // 
             this.MaxRiskLabel.AutoSize = true;
             this.MaxRiskLabel.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxRiskLabel.Location = new System.Drawing.Point(434, 155);
+            this.MaxRiskLabel.Location = new System.Drawing.Point(16, 216);
             this.MaxRiskLabel.Name = "MaxRiskLabel";
             this.MaxRiskLabel.Size = new System.Drawing.Size(185, 42);
             this.MaxRiskLabel.TabIndex = 10;
@@ -88,7 +89,7 @@ namespace aru_software_eng_UI
             // 
             this.MinCostLabel.AutoSize = true;
             this.MinCostLabel.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinCostLabel.Location = new System.Drawing.Point(12, 221);
+            this.MinCostLabel.Location = new System.Drawing.Point(430, 150);
             this.MinCostLabel.Name = "MinCostLabel";
             this.MinCostLabel.Size = new System.Drawing.Size(181, 42);
             this.MinCostLabel.TabIndex = 11;
@@ -99,7 +100,7 @@ namespace aru_software_eng_UI
             // 
             this.MaxCostLabel.AutoSize = true;
             this.MaxCostLabel.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxCostLabel.Location = new System.Drawing.Point(431, 221);
+            this.MaxCostLabel.Location = new System.Drawing.Point(431, 214);
             this.MaxCostLabel.Name = "MaxCostLabel";
             this.MaxCostLabel.Size = new System.Drawing.Size(188, 42);
             this.MaxCostLabel.TabIndex = 12;
@@ -108,41 +109,53 @@ namespace aru_software_eng_UI
             // 
             // MinRiskTrackBar
             // 
-            this.MinRiskTrackBar.Location = new System.Drawing.Point(196, 158);
+            this.MinRiskTrackBar.Location = new System.Drawing.Point(196, 156);
+            this.MinRiskTrackBar.Maximum = 5;
+            this.MinRiskTrackBar.Minimum = 1;
             this.MinRiskTrackBar.Name = "MinRiskTrackBar";
             this.MinRiskTrackBar.Size = new System.Drawing.Size(208, 45);
             this.MinRiskTrackBar.TabIndex = 13;
+            this.MinRiskTrackBar.Value = 2;
             this.MinRiskTrackBar.Scroll += new System.EventHandler(this.MinRiskTrackBar_Scroll);
             // 
             // MaxRiskTrackBar
             // 
-            this.MaxRiskTrackBar.Location = new System.Drawing.Point(625, 158);
+            this.MaxRiskTrackBar.Location = new System.Drawing.Point(207, 219);
+            this.MaxRiskTrackBar.Maximum = 5;
+            this.MaxRiskTrackBar.Minimum = 1;
             this.MaxRiskTrackBar.Name = "MaxRiskTrackBar";
             this.MaxRiskTrackBar.Size = new System.Drawing.Size(197, 45);
             this.MaxRiskTrackBar.TabIndex = 14;
+            this.MaxRiskTrackBar.Value = 4;
             this.MaxRiskTrackBar.Scroll += new System.EventHandler(this.MaxRiskTrackBar_Scroll);
             // 
             // MinCostTrackBar
             // 
-            this.MinCostTrackBar.Location = new System.Drawing.Point(196, 221);
+            this.MinCostTrackBar.LargeChange = 5000;
+            this.MinCostTrackBar.Location = new System.Drawing.Point(614, 150);
+            this.MinCostTrackBar.Maximum = 100000;
             this.MinCostTrackBar.Name = "MinCostTrackBar";
             this.MinCostTrackBar.Size = new System.Drawing.Size(208, 45);
             this.MinCostTrackBar.TabIndex = 15;
+            this.MinCostTrackBar.Value = 10000;
             this.MinCostTrackBar.Scroll += new System.EventHandler(this.MinCostTrackBar_Scroll);
             // 
             // MaxCostTrackBar
             // 
-            this.MaxCostTrackBar.Location = new System.Drawing.Point(628, 221);
+            this.MaxCostTrackBar.LargeChange = 5000;
+            this.MaxCostTrackBar.Location = new System.Drawing.Point(628, 214);
+            this.MaxCostTrackBar.Maximum = 100000;
             this.MaxCostTrackBar.Name = "MaxCostTrackBar";
             this.MaxCostTrackBar.Size = new System.Drawing.Size(194, 45);
             this.MaxCostTrackBar.TabIndex = 16;
+            this.MaxCostTrackBar.Value = 10000;
             this.MaxCostTrackBar.Scroll += new System.EventHandler(this.MaxCostTrackBar_Scroll);
             // 
             // IndustryLabel
             // 
             this.IndustryLabel.AutoSize = true;
             this.IndustryLabel.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IndustryLabel.Location = new System.Drawing.Point(76, 296);
+            this.IndustryLabel.Location = new System.Drawing.Point(76, 284);
             this.IndustryLabel.Name = "IndustryLabel";
             this.IndustryLabel.Size = new System.Drawing.Size(114, 42);
             this.IndustryLabel.TabIndex = 17;
@@ -152,7 +165,7 @@ namespace aru_software_eng_UI
             // IndustryInputTextBox
             // 
             this.IndustryInputTextBox.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IndustryInputTextBox.Location = new System.Drawing.Point(196, 300);
+            this.IndustryInputTextBox.Location = new System.Drawing.Point(196, 286);
             this.IndustryInputTextBox.Name = "IndustryInputTextBox";
             this.IndustryInputTextBox.Size = new System.Drawing.Size(208, 40);
             this.IndustryInputTextBox.TabIndex = 18;
@@ -162,7 +175,7 @@ namespace aru_software_eng_UI
             // 
             this.ExpireDateLabel.AutoSize = true;
             this.ExpireDateLabel.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpireDateLabel.Location = new System.Drawing.Point(470, 292);
+            this.ExpireDateLabel.Location = new System.Drawing.Point(462, 278);
             this.ExpireDateLabel.Name = "ExpireDateLabel";
             this.ExpireDateLabel.Size = new System.Drawing.Size(149, 42);
             this.ExpireDateLabel.TabIndex = 19;
@@ -173,7 +186,7 @@ namespace aru_software_eng_UI
             // 
             this.ExpireDatePicker.CalendarFont = new System.Drawing.Font("Calibri", 16.25F, System.Drawing.FontStyle.Bold);
             this.ExpireDatePicker.Font = new System.Drawing.Font("Calibri", 16.25F, System.Drawing.FontStyle.Bold);
-            this.ExpireDatePicker.Location = new System.Drawing.Point(628, 300);
+            this.ExpireDatePicker.Location = new System.Drawing.Point(620, 286);
             this.ExpireDatePicker.Name = "ExpireDatePicker";
             this.ExpireDatePicker.Size = new System.Drawing.Size(202, 34);
             this.ExpireDatePicker.TabIndex = 20;

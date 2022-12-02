@@ -14,6 +14,7 @@ namespace aru_software_eng_UI
     {
         FormManager manager;
         BackendController backend_controller;
+        Form next_window;
         public RelationshipManagerLogin(Form n_previous_window)
         {
             InitializeComponent();
@@ -42,9 +43,7 @@ namespace aru_software_eng_UI
 
         private void RM_login_manager_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RelationshipManagerLogin rm_window = new RelationshipManagerLogin(this);
-            rm_window.Show();
+            next_window = new RelationshipManagerView(this);
         }
 
         private void RM_backButton_Click(object sender, EventArgs e)
