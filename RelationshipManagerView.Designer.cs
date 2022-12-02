@@ -62,13 +62,15 @@ namespace aru_software_eng_UI
             // 
             // SearchButton
             // 
+            this.SearchButton.BackColor = System.Drawing.SystemColors.Highlight;
             this.SearchButton.Font = new System.Drawing.Font("Agency FB", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.ForeColor = System.Drawing.Color.Black;
             this.SearchButton.Location = new System.Drawing.Point(339, 367);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(173, 82);
             this.SearchButton.TabIndex = 9;
             this.SearchButton.Text = "Search";
-            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // MaxRiskLabel
@@ -140,7 +142,7 @@ namespace aru_software_eng_UI
             // 
             this.IndustryLabel.AutoSize = true;
             this.IndustryLabel.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IndustryLabel.Location = new System.Drawing.Point(55, 296);
+            this.IndustryLabel.Location = new System.Drawing.Point(76, 296);
             this.IndustryLabel.Name = "IndustryLabel";
             this.IndustryLabel.Size = new System.Drawing.Size(114, 42);
             this.IndustryLabel.TabIndex = 17;
@@ -150,7 +152,7 @@ namespace aru_software_eng_UI
             // IndustryInputTextBox
             // 
             this.IndustryInputTextBox.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IndustryInputTextBox.Location = new System.Drawing.Point(175, 300);
+            this.IndustryInputTextBox.Location = new System.Drawing.Point(196, 300);
             this.IndustryInputTextBox.Name = "IndustryInputTextBox";
             this.IndustryInputTextBox.Size = new System.Drawing.Size(208, 40);
             this.IndustryInputTextBox.TabIndex = 18;
@@ -160,7 +162,7 @@ namespace aru_software_eng_UI
             // 
             this.ExpireDateLabel.AutoSize = true;
             this.ExpireDateLabel.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpireDateLabel.Location = new System.Drawing.Point(413, 296);
+            this.ExpireDateLabel.Location = new System.Drawing.Point(470, 292);
             this.ExpireDateLabel.Name = "ExpireDateLabel";
             this.ExpireDateLabel.Size = new System.Drawing.Size(149, 42);
             this.ExpireDateLabel.TabIndex = 19;
@@ -171,9 +173,9 @@ namespace aru_software_eng_UI
             // 
             this.ExpireDatePicker.CalendarFont = new System.Drawing.Font("Calibri", 16.25F, System.Drawing.FontStyle.Bold);
             this.ExpireDatePicker.Font = new System.Drawing.Font("Calibri", 16.25F, System.Drawing.FontStyle.Bold);
-            this.ExpireDatePicker.Location = new System.Drawing.Point(601, 300);
+            this.ExpireDatePicker.Location = new System.Drawing.Point(628, 300);
             this.ExpireDatePicker.Name = "ExpireDatePicker";
-            this.ExpireDatePicker.Size = new System.Drawing.Size(200, 34);
+            this.ExpireDatePicker.Size = new System.Drawing.Size(202, 34);
             this.ExpireDatePicker.TabIndex = 20;
             this.ExpireDatePicker.ValueChanged += new System.EventHandler(this.ExpireDatePicker_ValueChanged);
             // 
