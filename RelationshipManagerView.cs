@@ -20,11 +20,10 @@ namespace aru_software_eng_UI
             updateSearchButton();
         }
 
+        //When ran, updates the button to show the correct information - L
         private void updateSearchButton()
         {
             SearchButton.Text = "   Min Risk: " + MinRiskTrackBar.Value.ToString() + "                                      SEARCH                               Min Cost: £" + MinCostTrackBar.Value.ToString() + "\n   Max Risk: " + MaxRiskTrackBar.Value.ToString() + "                                                                                 Max Cost: £" + MaxCostTrackBar.Value.ToString();
-
-
 
         }
 
