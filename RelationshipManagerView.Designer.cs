@@ -161,9 +161,9 @@ namespace aru_software_eng_UI
             this.ExpireDateLabel.Font = new System.Drawing.Font("Agency FB", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExpireDateLabel.Location = new System.Drawing.Point(434, 221);
             this.ExpireDateLabel.Name = "ExpireDateLabel";
-            this.ExpireDateLabel.Size = new System.Drawing.Size(176, 42);
+            this.ExpireDateLabel.Size = new System.Drawing.Size(149, 42);
             this.ExpireDateLabel.TabIndex = 19;
-            this.ExpireDateLabel.Text = "Expirery Date";
+            this.ExpireDateLabel.Text = "Expiry Date";
             this.ExpireDateLabel.Click += new System.EventHandler(this.ExpireDateLabel_Click);
             // 
             // ExpireDatePicker
