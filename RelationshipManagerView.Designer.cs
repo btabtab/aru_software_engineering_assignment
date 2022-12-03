@@ -198,10 +198,9 @@ namespace aru_software_eng_UI
             this.PageTitle.Font = new System.Drawing.Font("Agency FB", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PageTitle.Location = new System.Drawing.Point(12, 9);
             this.PageTitle.Name = "PageTitle";
-            this.PageTitle.Size = new System.Drawing.Size(566, 77);
+            this.PageTitle.Size = new System.Drawing.Size(577, 77);
             this.PageTitle.TabIndex = 21;
-            this.PageTitle.Text = "Enter your requirments";
-            this.PageTitle.Click += new System.EventHandler(this.PageTitle_Click);
+            this.PageTitle.Text = "Enter your requirments:";
             // 
             // RelationshipManagerView
             // 

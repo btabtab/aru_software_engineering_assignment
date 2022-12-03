@@ -99,10 +99,5 @@ namespace aru_software_eng_UI
         {
 
         }
-
-        private void PageTitle_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
