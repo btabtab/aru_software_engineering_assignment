@@ -29,7 +29,6 @@ namespace aru_software_eng_UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,19 +63,9 @@ namespace aru_software_eng_UI
             this.DatabaseTabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.loginEntriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSource = new aru_software_eng_UI.DatabaseDataSource();
             this.login_master_button = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.riskLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.investmentIdeasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button7 = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -94,10 +83,6 @@ namespace aru_software_eng_UI
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.investmentIdeasTableAdapter = new aru_software_eng_UI.DatabaseDataSourceTableAdapters.InvestmentIdeasTableAdapter();
-            this.loginEntriesTableAdapter = new aru_software_eng_UI.DatabaseDataSourceTableAdapters.LoginEntriesTableAdapter();
-            this.fKInvestmentIdeasToTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,16 +96,12 @@ namespace aru_software_eng_UI
             this.DatabaseTabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginEntriesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.investmentIdeasBindingSource)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fKInvestmentIdeasToTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -467,31 +448,18 @@ namespace aru_software_eng_UI
             // 
             // dataGridView3
             // 
-            this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userIDDataGridViewTextBoxColumn1,
             this.Username,
             this.Password,
             this.Email,
             this.Is_RelationshipManager});
-            this.dataGridView3.DataSource = this.loginEntriesBindingSource;
             this.dataGridView3.Location = new System.Drawing.Point(579, 45);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 82;
             this.dataGridView3.RowTemplate.Height = 33;
             this.dataGridView3.Size = new System.Drawing.Size(1134, 497);
             this.dataGridView3.TabIndex = 19;
-            // 
-            // loginEntriesBindingSource
-            // 
-            this.loginEntriesBindingSource.DataMember = "LoginEntries";
-            this.loginEntriesBindingSource.DataSource = this.databaseDataSource;
-            // 
-            // databaseDataSource
-            // 
-            this.databaseDataSource.DataSetName = "DatabaseDataSource";
-            this.databaseDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // login_master_button
             // 
@@ -519,84 +487,13 @@ namespace aru_software_eng_UI
             // 
             // dataGridView2
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn1,
-            this.userIDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.riskLevelDataGridViewTextBoxColumn,
-            this.costDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.investmentIdeasBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(579, 45);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 82;
             this.dataGridView2.RowTemplate.Height = 33;
             this.dataGridView2.Size = new System.Drawing.Size(1146, 505);
             this.dataGridView2.TabIndex = 23;
-            // 
-            // iDDataGridViewTextBoxColumn1
-            // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn1.MinimumWidth = 10;
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
-            this.iDDataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
-            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // riskLevelDataGridViewTextBoxColumn
-            // 
-            this.riskLevelDataGridViewTextBoxColumn.DataPropertyName = "RiskLevel";
-            this.riskLevelDataGridViewTextBoxColumn.HeaderText = "RiskLevel";
-            this.riskLevelDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.riskLevelDataGridViewTextBoxColumn.Name = "riskLevelDataGridViewTextBoxColumn";
-            this.riskLevelDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
-            this.costDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            this.costDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // investmentIdeasBindingSource
-            // 
-            this.investmentIdeasBindingSource.DataMember = "InvestmentIdeas";
-            this.investmentIdeasBindingSource.DataSource = this.databaseDataSource;
             // 
             // button7
             // 
@@ -772,27 +669,6 @@ namespace aru_software_eng_UI
             this.textBox6.Size = new System.Drawing.Size(242, 31);
             this.textBox6.TabIndex = 16;
             // 
-            // investmentIdeasTableAdapter
-            // 
-            this.investmentIdeasTableAdapter.ClearBeforeFill = true;
-            // 
-            // loginEntriesTableAdapter
-            // 
-            this.loginEntriesTableAdapter.ClearBeforeFill = true;
-            // 
-            // fKInvestmentIdeasToTableBindingSource
-            // 
-            this.fKInvestmentIdeasToTableBindingSource.DataMember = "FK_InvestmentIdeas_ToTable";
-            this.fKInvestmentIdeasToTableBindingSource.DataSource = this.loginEntriesBindingSource;
-            // 
-            // userIDDataGridViewTextBoxColumn1
-            // 
-            this.userIDDataGridViewTextBoxColumn1.DataPropertyName = "UserID";
-            this.userIDDataGridViewTextBoxColumn1.HeaderText = "UserID";
-            this.userIDDataGridViewTextBoxColumn1.MinimumWidth = 10;
-            this.userIDDataGridViewTextBoxColumn1.Name = "userIDDataGridViewTextBoxColumn1";
-            this.userIDDataGridViewTextBoxColumn1.Width = 200;
-            // 
             // Username
             // 
             this.Username.DataPropertyName = "Username";
@@ -848,11 +724,8 @@ namespace aru_software_eng_UI
             this.DatabaseTabs.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginEntriesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.investmentIdeasBindingSource)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
@@ -860,7 +733,6 @@ namespace aru_software_eng_UI
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fKInvestmentIdeasToTableBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -920,21 +792,7 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Button login_master_button;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private DatabaseDataSource databaseDataSource;
-        private System.Windows.Forms.BindingSource investmentIdeasBindingSource;
-        private DatabaseDataSourceTableAdapters.InvestmentIdeasTableAdapter investmentIdeasTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn riskLevelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource loginEntriesBindingSource;
-        private DatabaseDataSourceTableAdapters.LoginEntriesTableAdapter loginEntriesTableAdapter;
-        private System.Windows.Forms.BindingSource fKInvestmentIdeasToTableBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;

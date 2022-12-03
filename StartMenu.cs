@@ -45,7 +45,9 @@ namespace aru_software_eng_UI
             List<InvestmentIdea> test_list = new List<InvestmentIdea>();
             for(int i = 0; i != 30; i++)
             {
-                test_list.Add(new InvestmentIdea(i));
+                DataBaseLoginEntry ins = new DataBaseLoginEntry();
+                LoginDatabaseHandler.getInstance().addNewLogin(ins);
+                test_list.Add(new InvestmentIdea(i, ins.getID()));
             }
             next_window = new RelationshipManagerViewerUI(this, test_list);
         }

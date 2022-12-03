@@ -83,7 +83,9 @@ namespace aru_software_eng_UI
         }
 		public void generateRandomInvestmentIdea()
         {
-			investment_idea_handler.writeInvestmentIdea(new InvestmentIdea(2));
+			DataBaseLoginEntry ins = new DataBaseLoginEntry();
+			LoginDatabaseHandler.getInstance().addNewLogin(ins);
+			investment_idea_handler.writeInvestmentIdea(new InvestmentIdea(2, ins.getID()));
         }
 
 	}
