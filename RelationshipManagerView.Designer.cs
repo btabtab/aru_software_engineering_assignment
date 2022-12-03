@@ -148,7 +148,7 @@ namespace aru_software_eng_UI
             this.MaxCostTrackBar.Name = "MaxCostTrackBar";
             this.MaxCostTrackBar.Size = new System.Drawing.Size(194, 45);
             this.MaxCostTrackBar.TabIndex = 16;
-            this.MaxCostTrackBar.Value = 10000;
+            this.MaxCostTrackBar.Value = 75000;
             this.MaxCostTrackBar.Scroll += new System.EventHandler(this.MaxCostTrackBar_Scroll);
             // 
             // IndustryLabel
