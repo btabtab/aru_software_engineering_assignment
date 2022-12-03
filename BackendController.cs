@@ -45,11 +45,11 @@ namespace aru_software_eng_UI
         }
 		public DataBaseLoginEntry loginSearchEmail(string search)
         {
-			return login_handler.getLoginEntryFromUsername(search);
+			return login_handler.getLoginEntryFromEmail(search);
 		}
 		public DataBaseLoginEntry loginSearchUsername(string search)
         {
-			return login_handler.getLoginEntryFromEmail(search);
+			return login_handler.getLoginEntryFromUsername(search);
 		}
 		//this writes a new login into the database. -J
 		public void writeLoginDatabaseEntry(DataBaseLoginEntry n_database_login_entry)
@@ -73,5 +73,18 @@ namespace aru_software_eng_UI
         {
 			login_handler.deleteLoginRowX(login_handler.getHighestID(DatabaseWrapper.LoginEntries));
         }
+		public void writeLoginDatabaseEntry(InvestmentIdea n_investment_idea)
+        {
+			investment_idea_handler.writeInvestmentIdea(n_investment_idea);
+        }
+		public InvestmentIdea getInvestmentIdeaFromID(int i)
+        {
+			return investment_idea_handler.getInvestmentIdeaFromID(i);
+        }
+		public void generateRandomInvestmentIdea()
+        {
+			investment_idea_handler.writeInvestmentIdea(new InvestmentIdea(2));
+        }
+
 	}
 }

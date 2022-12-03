@@ -29,7 +29,10 @@ namespace aru_software_eng_UI
 
 		void updateTable()
 		{
-			this.loginEntriesTableAdapter1.Fill(this.coreDataSet.LoginEntries);
+			loginEntriesTableAdapter.Fill(this.databaseDataSource.LoginEntries);
+			investmentIdeasTableAdapter.Fill(this.databaseDataSource.InvestmentIdeas);
+
+			//this.loginEntriesTableAdapter1.Fill(this.coreDataSet.LoginEntries);
 		}
 
 		private void KillwindowButton_Click(object sender, EventArgs e)
@@ -70,12 +73,16 @@ namespace aru_software_eng_UI
 
 		private void DatabaseWindow_Load(object sender, EventArgs e)
 		{
+            // TODO: This line of code loads data into the 'databaseDataSource.LoginEntries' table. You can move, or remove it, as needed.
+            this.loginEntriesTableAdapter.Fill(this.databaseDataSource.LoginEntries);
+            // TODO: This line of code loads data into the 'databaseDataSource.InvestmentIdeas' table. You can move, or remove it, as needed.
+            this.investmentIdeasTableAdapter.Fill(this.databaseDataSource.InvestmentIdeas);
             // TODO: This line of code loads data into the 'coreDataSet.InvestmentIdeas' table. You can move, or remove it, as needed.
-            this.investmentIdeasTableAdapter.Fill(this.coreDataSet.InvestmentIdeas);
+            //this.investmentIdeasTableAdapter.Fill(this.coreDataSet.InvestmentIdeas);
             // TODO: This line of code loads data into the 'coreDataSet.LoginEntries' table. You can move, or remove it, as needed.
-            this.loginEntriesTableAdapter1.Fill(this.coreDataSet.LoginEntries);
+            //this.loginEntriesTableAdapter1.Fill(this.coreDataSet.LoginEntries);
             // TODO: This line of code loads data into the 'coreDataBaseDataSet1.InvestmentIdeaTable' table. You can move, or remove it, as needed.
-            this.investmentIdeasTableAdapter.Fill(this.coreDataSet.InvestmentIdeas);
+            //this.investmentIdeasTableAdapter.Fill(this.coreDataSet.InvestmentIdeas);
             updateTable();
 		}
 
@@ -109,5 +116,10 @@ namespace aru_software_eng_UI
 
 			updateTable();
 		}
-	}
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+			backend_controller.generateRandomInvestmentIdea();
+        }
+    }
 }

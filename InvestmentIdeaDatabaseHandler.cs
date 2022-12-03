@@ -19,6 +19,46 @@ namespace aru_software_eng_UI
 			current_investment_ideas = new List<InvestmentIdea>();
 		}
 
+		public void writeInvestmentIdea(InvestmentIdea n_idea)
+		{
+			List<string> columns = new List<string>(), values = new List<string>();
+
+
+			columns.Add("ID");
+			columns.Add("UserID");
+			columns.Add("Name");
+			columns.Add("Description");
+			columns.Add("RiskLevel");
+			columns.Add("Cost");
+			columns.Add("Date");
+
+			values.Add((database_wrapper.getHighestIDNumber(DatabaseWrapper.InvestmentIdeas, "ID") + 1).ToString());
+			values.Add(n_idea.getUserID().ToString());
+			values.Add(n_idea.getName());
+			values.Add(n_idea.getDescription());
+			values.Add(n_idea.getRiskLevel().ToString());
+			values.Add(n_idea.getCost().ToString());
+			values.Add(n_idea.getDate().ToString());
+
+			database_wrapper.insertNewEntryIntoDatabase(DatabaseWrapper.InvestmentIdeas, columns, values);
+
+		}
+		public InvestmentIdea getInvestmentIDFromDatabase(int ID)
+		{
+			InvestmentIdea ret = new InvestmentIdea(
+															database_wrapper.searchDatabaseForDateTime("Date", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDatabaseForString("Name", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDatabaseForString("Description", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDataBaseForInt("ID", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDataBaseForInt("UserID", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDataBaseForInt("RiskLevel", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDataBaseForInt("Cost", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDatabaseForString("ProductTag", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDataBaseForInt("AdminLevel", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString())
+															);
+			return ret;
+		}
+
 		static InvestmentIdeaDatabaseHandler singleton_instance;
 		new static public InvestmentIdeaDatabaseHandler getInstance()
 		{
@@ -28,18 +68,27 @@ namespace aru_software_eng_UI
 			}
 			return singleton_instance;
 		}
+
+
 		void loadInvestmentIdeasFromDatabaseToList()
         {
-            //write stuff in here.
+			for (int i = 0; i != getHighestID(DatabaseWrapper.InvestmentIdeas); i++)
+			{
+				current_investment_ideas.Add(getInvestmentIDFromDatabase(i));
+			}
         }
+
+
         public InvestmentIdea getInvestmentIdeaFromID(int ID)
         {
             return current_investment_ideas[ID];
         }
+
 		public List<InvestmentIdea> getFilteredList(Filters filters)
         {
 			return InvestmentIdeaFiltering.getFilterList(current_investment_ideas, filters);
         }
+
 		public List<InvestmentIdea> loadInvestmentIdeaList()
         {
 			return current_investment_ideas;

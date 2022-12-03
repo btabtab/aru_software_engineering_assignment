@@ -64,10 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackendController.cs" />
-    <Compile Include="CoreDataSet.Designer.cs">
+    <Compile Include="DatabaseDataSource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CoreDataSet.xsd</DependentUpon>
+      <DependentUpon>DatabaseDataSource.xsd</DependentUpon>
     </Compile>
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="DatabaseLoginEntry.cs" />
@@ -177,16 +177,16 @@
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="CoreDataSet.xsc">
-      <DependentUpon>CoreDataSet.xsd</DependentUpon>
+    <None Include="DatabaseDataSource.xsc">
+      <DependentUpon>DatabaseDataSource.xsd</DependentUpon>
     </None>
-    <None Include="CoreDataSet.xsd">
+    <None Include="DatabaseDataSource.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CoreDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>DatabaseDataSource.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CoreDataSet.xss">
-      <DependentUpon>CoreDataSet.xsd</DependentUpon>
+    <None Include="DatabaseDataSource.xss">
+      <DependentUpon>DatabaseDataSource.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

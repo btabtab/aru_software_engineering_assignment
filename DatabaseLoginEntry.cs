@@ -52,7 +52,7 @@ namespace aru_software_eng_UI
 		public string getAsLabelString()
         {
 			return (
-				"ID: " + this.ID + "\n" +
+				"UserID: " + this.ID + "\n" +
 				"Username: " + this.username + "\n" +
 				"Email: " + this.email + "\n" +
 				"Password: " + this.password + "\n" +

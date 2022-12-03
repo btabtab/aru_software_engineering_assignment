@@ -20,9 +20,9 @@ namespace aru_software_eng_UI {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("CoreDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DatabaseDataSource")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class CoreDataSet : global::System.Data.DataSet {
+    public partial class DatabaseDataSource : global::System.Data.DataSet {
         
         private InvestmentIdeasDataTable tableInvestmentIdeas;
         
@@ -34,7 +34,7 @@ namespace aru_software_eng_UI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public CoreDataSet() {
+        public DatabaseDataSource() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -45,7 +45,7 @@ namespace aru_software_eng_UI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected CoreDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DatabaseDataSource(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -144,7 +144,7 @@ namespace aru_software_eng_UI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            CoreDataSet cln = ((CoreDataSet)(base.Clone()));
+            DatabaseDataSource cln = ((DatabaseDataSource)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -226,9 +226,9 @@ namespace aru_software_eng_UI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "CoreDataSet";
+            this.DataSetName = "DatabaseDataSource";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/CoreDataSet.xsd";
+            this.Namespace = "http://tempuri.org/DatabaseDataSource.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableInvestmentIdeas = new InvestmentIdeasDataTable();
@@ -236,7 +236,7 @@ namespace aru_software_eng_UI {
             this.tableLoginEntries = new LoginEntriesDataTable();
             base.Tables.Add(this.tableLoginEntries);
             this.relationFK_InvestmentIdeas_ToTable = new global::System.Data.DataRelation("FK_InvestmentIdeas_ToTable", new global::System.Data.DataColumn[] {
-                        this.tableLoginEntries.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableLoginEntries.UserIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableInvestmentIdeas.UserIDColumn}, false);
             this.Relations.Add(this.relationFK_InvestmentIdeas_ToTable);
         }
@@ -264,7 +264,7 @@ namespace aru_software_eng_UI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            CoreDataSet ds = new CoreDataSet();
+            DatabaseDataSource ds = new DatabaseDataSource();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -539,6 +539,8 @@ namespace aru_software_eng_UI {
                 this.columnDescription.AllowDBNull = false;
                 this.columnDescription.MaxLength = 2147483647;
                 this.columnRiskLevel.AllowDBNull = false;
+                this.columnCost.AllowDBNull = false;
+                this.columnDate.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -606,7 +608,7 @@ namespace aru_software_eng_UI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CoreDataSet ds = new CoreDataSet();
+                DatabaseDataSource ds = new DatabaseDataSource();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -672,7 +674,7 @@ namespace aru_software_eng_UI {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class LoginEntriesDataTable : global::System.Data.TypedTableBase<LoginEntriesRow> {
             
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnUserID;
             
             private global::System.Data.DataColumn columnUsername;
             
@@ -717,9 +719,9 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
+            public global::System.Data.DataColumn UserIDColumn {
                 get {
-                    return this.columnID;
+                    return this.columnUserID;
                 }
             }
             
@@ -792,10 +794,10 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LoginEntriesRow AddLoginEntriesRow(int ID, string Username, string Password, string Email, int Is_RelationshipManager) {
+            public LoginEntriesRow AddLoginEntriesRow(int UserID, string Username, string Password, string Email, int Is_RelationshipManager) {
                 LoginEntriesRow rowLoginEntriesRow = ((LoginEntriesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        UserID,
                         Username,
                         Password,
                         Email,
@@ -807,9 +809,9 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LoginEntriesRow FindByID(int ID) {
+            public LoginEntriesRow FindByUserID(int UserID) {
                 return ((LoginEntriesRow)(this.Rows.Find(new object[] {
-                            ID})));
+                            UserID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -829,7 +831,7 @@ namespace aru_software_eng_UI {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
+                this.columnUserID = base.Columns["UserID"];
                 this.columnUsername = base.Columns["Username"];
                 this.columnPassword = base.Columns["Password"];
                 this.columnEmail = base.Columns["Email"];
@@ -839,8 +841,8 @@ namespace aru_software_eng_UI {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
+                this.columnUserID = new global::System.Data.DataColumn("UserID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserID);
                 this.columnUsername = new global::System.Data.DataColumn("Username", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUsername);
                 this.columnPassword = new global::System.Data.DataColumn("Password", typeof(string), null, global::System.Data.MappingType.Element);
@@ -850,9 +852,9 @@ namespace aru_software_eng_UI {
                 this.columnIs_RelationshipManager = new global::System.Data.DataColumn("Is_RelationshipManager", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIs_RelationshipManager);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
+                                this.columnUserID}, true));
+                this.columnUserID.AllowDBNull = false;
+                this.columnUserID.Unique = true;
                 this.columnUsername.AllowDBNull = false;
                 this.columnUsername.MaxLength = 50;
                 this.columnPassword.AllowDBNull = false;
@@ -927,7 +929,7 @@ namespace aru_software_eng_UI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CoreDataSet ds = new CoreDataSet();
+                DatabaseDataSource ds = new DatabaseDataSource();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1059,12 +1061,7 @@ namespace aru_software_eng_UI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public double Cost {
                 get {
-                    try {
-                        return ((double)(this[this.tableInvestmentIdeas.CostColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Cost\' in table \'InvestmentIdeas\' is DBNull.", e);
-                    }
+                    return ((double)(this[this.tableInvestmentIdeas.CostColumn]));
                 }
                 set {
                     this[this.tableInvestmentIdeas.CostColumn] = value;
@@ -1075,12 +1072,7 @@ namespace aru_software_eng_UI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime Date {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableInvestmentIdeas.DateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'InvestmentIdeas\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableInvestmentIdeas.DateColumn]));
                 }
                 set {
                     this[this.tableInvestmentIdeas.DateColumn] = value;
@@ -1096,30 +1088,6 @@ namespace aru_software_eng_UI {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_InvestmentIdeas_ToTable"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCostNull() {
-                return this.IsNull(this.tableInvestmentIdeas.CostColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCostNull() {
-                this[this.tableInvestmentIdeas.CostColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDateNull() {
-                return this.IsNull(this.tableInvestmentIdeas.DateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDateNull() {
-                this[this.tableInvestmentIdeas.DateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1139,12 +1107,12 @@ namespace aru_software_eng_UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ID {
+            public int UserID {
                 get {
-                    return ((int)(this[this.tableLoginEntries.IDColumn]));
+                    return ((int)(this[this.tableLoginEntries.UserIDColumn]));
                 }
                 set {
-                    this[this.tableLoginEntries.IDColumn] = value;
+                    this[this.tableLoginEntries.UserIDColumn] = value;
                 }
             }
             
@@ -1273,7 +1241,7 @@ namespace aru_software_eng_UI {
         }
     }
 }
-namespace aru_software_eng_UI.CoreDataSetTableAdapters {
+namespace aru_software_eng_UI.DatabaseDataSourceTableAdapters {
     
     
     /// <summary>
@@ -1407,14 +1375,14 @@ namespace aru_software_eng_UI.CoreDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[InvestmentIdeas] WHERE (([ID] = @Original_ID) AND ([UserID] = @Original_UserID) AND ([RiskLevel] = @Original_RiskLevel) AND ((@IsNull_Cost = 1 AND [Cost] IS NULL) OR ([Cost] = @Original_Cost)) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[InvestmentIdeas] WHERE (([ID] = @Original_ID) AND ([UserID] = " +
+                "@Original_UserID) AND ([RiskLevel] = @Original_RiskLevel) AND ([Cost] = @Origina" +
+                "l_Cost) AND ([Date] = @Original_Date))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RiskLevel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RiskLevel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -1430,7 +1398,7 @@ SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[InvestmentIdeas] SET [ID] = @ID, [UserID] = @UserID, [Name] = @Name, [Description] = @Description, [RiskLevel] = @RiskLevel, [Cost] = @Cost, [Date] = @Date WHERE (([ID] = @Original_ID) AND ([UserID] = @Original_UserID) AND ([RiskLevel] = @Original_RiskLevel) AND ((@IsNull_Cost = 1 AND [Cost] IS NULL) OR ([Cost] = @Original_Cost)) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[InvestmentIdeas] SET [ID] = @ID, [UserID] = @UserID, [Name] = @Name, [Description] = @Description, [RiskLevel] = @RiskLevel, [Cost] = @Cost, [Date] = @Date WHERE (([ID] = @Original_ID) AND ([UserID] = @Original_UserID) AND ([RiskLevel] = @Original_RiskLevel) AND ([Cost] = @Original_Cost) AND ([Date] = @Original_Date));
 SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1443,9 +1411,7 @@ SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RiskLevel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RiskLevel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -1471,7 +1437,7 @@ SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CoreDataSet.InvestmentIdeasDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSource.InvestmentIdeasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1484,9 +1450,9 @@ SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CoreDataSet.InvestmentIdeasDataTable GetData() {
+        public virtual DatabaseDataSource.InvestmentIdeasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CoreDataSet.InvestmentIdeasDataTable dataTable = new CoreDataSet.InvestmentIdeasDataTable();
+            DatabaseDataSource.InvestmentIdeasDataTable dataTable = new DatabaseDataSource.InvestmentIdeasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1494,14 +1460,14 @@ SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CoreDataSet.InvestmentIdeasDataTable dataTable) {
+        public virtual int Update(DatabaseDataSource.InvestmentIdeasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CoreDataSet dataSet) {
+        public virtual int Update(DatabaseDataSource dataSet) {
             return this.Adapter.Update(dataSet, "InvestmentIdeas");
         }
         
@@ -1524,26 +1490,12 @@ SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, int Original_UserID, int Original_RiskLevel, global::System.Nullable<double> Original_Cost, global::System.Nullable<global::System.DateTime> Original_Date) {
+        public virtual int Delete(int Original_ID, int Original_UserID, int Original_RiskLevel, double Original_Cost, System.DateTime Original_Date) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_UserID));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_RiskLevel));
-            if ((Original_Cost.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((double)(Original_Cost.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_Date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((double)(Original_Cost));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_Date));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1564,7 +1516,7 @@ SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, int UserID, string Name, string Description, int RiskLevel, global::System.Nullable<double> Cost, global::System.Nullable<global::System.DateTime> Date) {
+        public virtual int Insert(int ID, int UserID, string Name, string Description, int RiskLevel, double Cost, System.DateTime Date) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(UserID));
             if ((Name == null)) {
@@ -1580,18 +1532,8 @@ SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Description));
             }
             this.Adapter.InsertCommand.Parameters[4].Value = ((int)(RiskLevel));
-            if ((Cost.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((double)(Cost.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((double)(Cost));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Date));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1612,7 +1554,7 @@ SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID, int UserID, string Name, string Description, int RiskLevel, global::System.Nullable<double> Cost, global::System.Nullable<global::System.DateTime> Date, int Original_ID, int Original_UserID, int Original_RiskLevel, global::System.Nullable<double> Original_Cost, global::System.Nullable<global::System.DateTime> Original_Date) {
+        public virtual int Update(int ID, int UserID, string Name, string Description, int RiskLevel, double Cost, System.DateTime Date, int Original_ID, int Original_UserID, int Original_RiskLevel, double Original_Cost, System.DateTime Original_Date) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(UserID));
             if ((Name == null)) {
@@ -1628,37 +1570,13 @@ SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Description));
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(RiskLevel));
-            if ((Cost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(Cost.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(Cost));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Date));
             this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ID));
             this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_UserID));
             this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_RiskLevel));
-            if ((Original_Cost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(Original_Cost.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_Date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Original_Cost));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_Date));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1679,7 +1597,7 @@ SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int UserID, string Name, string Description, int RiskLevel, global::System.Nullable<double> Cost, global::System.Nullable<global::System.DateTime> Date, int Original_ID, int Original_UserID, int Original_RiskLevel, global::System.Nullable<double> Original_Cost, global::System.Nullable<global::System.DateTime> Original_Date) {
+        public virtual int Update(int UserID, string Name, string Description, int RiskLevel, double Cost, System.DateTime Date, int Original_ID, int Original_UserID, int Original_RiskLevel, double Original_Cost, System.DateTime Original_Date) {
             return this.Update(Original_ID, UserID, Name, Description, RiskLevel, Cost, Date, Original_ID, Original_UserID, Original_RiskLevel, Original_Cost, Original_Date);
         }
     }
@@ -1805,7 +1723,7 @@ SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "LoginEntries";
-            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("UserID", "UserID");
             tableMapping.ColumnMappings.Add("Username", "Username");
             tableMapping.ColumnMappings.Add("Password", "Password");
             tableMapping.ColumnMappings.Add("Email", "Email");
@@ -1813,35 +1731,35 @@ SELECT ID, UserID, Name, Description, RiskLevel, Cost, Date FROM InvestmentIdeas
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[LoginEntries] WHERE (([ID] = @Original_ID) AND ([Username] = @" +
-                "Original_Username) AND ([Password] = @Original_Password) AND ([Is_RelationshipMa" +
-                "nager] = @Original_Is_RelationshipManager))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[LoginEntries] WHERE (([UserID] = @Original_UserID) AND ([Usern" +
+                "ame] = @Original_Username) AND ([Password] = @Original_Password) AND ([Is_Relati" +
+                "onshipManager] = @Original_Is_RelationshipManager))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Is_RelationshipManager", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Is_RelationshipManager", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[LoginEntries] ([ID], [Username], [Password], [Email], [Is_RelationshipManager]) VALUES (@ID, @Username, @Password, @Email, @Is_RelationshipManager);
-SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[LoginEntries] ([UserID], [Username], [Password], [Email], [Is_RelationshipManager]) VALUES (@UserID, @Username, @Password, @Email, @Is_RelationshipManager);
+SELECT UserID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries WHERE (UserID = @UserID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Is_RelationshipManager", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Is_RelationshipManager", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[LoginEntries] SET [ID] = @ID, [Username] = @Username, [Password] = @Password, [Email] = @Email, [Is_RelationshipManager] = @Is_RelationshipManager WHERE (([ID] = @Original_ID) AND ([Username] = @Original_Username) AND ([Password] = @Original_Password) AND ([Is_RelationshipManager] = @Original_Is_RelationshipManager));
-SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[LoginEntries] SET [UserID] = @UserID, [Username] = @Username, [Password] = @Password, [Email] = @Email, [Is_RelationshipManager] = @Is_RelationshipManager WHERE (([UserID] = @Original_UserID) AND ([Username] = @Original_Username) AND ([Password] = @Original_Password) AND ([Is_RelationshipManager] = @Original_Is_RelationshipManager));
+SELECT UserID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries WHERE (UserID = @UserID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Is_RelationshipManager", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Is_RelationshipManager", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Is_RelationshipManager", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Is_RelationshipManager", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1860,8 +1778,8 @@ SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries W
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Username, Password, Email, Is_RelationshipManager FROM dbo.LoginEntrie" +
-                "s";
+            this._commandCollection[0].CommandText = "SELECT UserID, Username, Password, Email, Is_RelationshipManager FROM dbo.LoginEn" +
+                "tries";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1869,7 +1787,7 @@ SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CoreDataSet.LoginEntriesDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSource.LoginEntriesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1882,9 +1800,9 @@ SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CoreDataSet.LoginEntriesDataTable GetData() {
+        public virtual DatabaseDataSource.LoginEntriesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CoreDataSet.LoginEntriesDataTable dataTable = new CoreDataSet.LoginEntriesDataTable();
+            DatabaseDataSource.LoginEntriesDataTable dataTable = new DatabaseDataSource.LoginEntriesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1892,14 +1810,14 @@ SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries W
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CoreDataSet.LoginEntriesDataTable dataTable) {
+        public virtual int Update(DatabaseDataSource.LoginEntriesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CoreDataSet dataSet) {
+        public virtual int Update(DatabaseDataSource dataSet) {
             return this.Adapter.Update(dataSet, "LoginEntries");
         }
         
@@ -1922,8 +1840,8 @@ SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Username, string Original_Password, int Original_Is_RelationshipManager) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+        public virtual int Delete(int Original_UserID, string Original_Username, string Original_Password, int Original_Is_RelationshipManager) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_UserID));
             if ((Original_Username == null)) {
                 throw new global::System.ArgumentNullException("Original_Username");
             }
@@ -1957,8 +1875,8 @@ SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, string Username, string Password, string Email, int Is_RelationshipManager) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
+        public virtual int Insert(int UserID, string Username, string Password, string Email, int Is_RelationshipManager) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(UserID));
             if ((Username == null)) {
                 throw new global::System.ArgumentNullException("Username");
             }
@@ -1998,8 +1916,8 @@ SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID, string Username, string Password, string Email, int Is_RelationshipManager, int Original_ID, string Original_Username, string Original_Password, int Original_Is_RelationshipManager) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
+        public virtual int Update(int UserID, string Username, string Password, string Email, int Is_RelationshipManager, int Original_UserID, string Original_Username, string Original_Password, int Original_Is_RelationshipManager) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(UserID));
             if ((Username == null)) {
                 throw new global::System.ArgumentNullException("Username");
             }
@@ -2019,7 +1937,7 @@ SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries W
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Email));
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Is_RelationshipManager));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_UserID));
             if ((Original_Username == null)) {
                 throw new global::System.ArgumentNullException("Original_Username");
             }
@@ -2053,8 +1971,8 @@ SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Username, string Password, string Email, int Is_RelationshipManager, int Original_ID, string Original_Username, string Original_Password, int Original_Is_RelationshipManager) {
-            return this.Update(Original_ID, Username, Password, Email, Is_RelationshipManager, Original_ID, Original_Username, Original_Password, Original_Is_RelationshipManager);
+        public virtual int Update(string Username, string Password, string Email, int Is_RelationshipManager, int Original_UserID, string Original_Username, string Original_Password, int Original_Is_RelationshipManager) {
+            return this.Update(Original_UserID, Username, Password, Email, Is_RelationshipManager, Original_UserID, Original_Username, Original_Password, Original_Is_RelationshipManager);
         }
     }
     
@@ -2172,7 +2090,7 @@ SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(CoreDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DatabaseDataSource dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._loginEntriesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.LoginEntries.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -2200,7 +2118,7 @@ SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(CoreDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DatabaseDataSource dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._loginEntriesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.LoginEntries.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -2226,7 +2144,7 @@ SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(CoreDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DatabaseDataSource dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._investmentIdeasTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.InvestmentIdeas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -2276,7 +2194,7 @@ SELECT ID, Username, Password, Email, Is_RelationshipManager FROM LoginEntries W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(CoreDataSet dataSet) {
+        public virtual int UpdateAll(DatabaseDataSource dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
