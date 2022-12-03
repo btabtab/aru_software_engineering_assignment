@@ -44,7 +44,7 @@ namespace aru_software_eng_UI
 		}
 
 		//Place the bubbles in the appropriate place, based roughly off their size - L
-		private Point positionCalculator(int size)
+		private Point positionCalculator(int size)//
 		{
 			Point ret = new Point();
 				switch (slot_counter)
