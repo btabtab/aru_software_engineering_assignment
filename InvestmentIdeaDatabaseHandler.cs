@@ -25,7 +25,7 @@ namespace aru_software_eng_UI
 
 
 			columns.Add("ID");
-			columns.Add("UserID");
+			columns.Add("User_ID");
 			columns.Add("Name");
 			columns.Add("Description");
 			columns.Add("RiskLevel");

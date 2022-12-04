@@ -81,6 +81,7 @@ namespace aru_software_eng_UI
 		{
 			return (
 				"ID: " + ID +
+				"\nUserID" + user_ID +
 				"\nName: " + name +
 				"\nDescription: " + description +
 				"\nRisk level: " + risk_level +

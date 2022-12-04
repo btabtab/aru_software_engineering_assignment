@@ -31,7 +31,7 @@ namespace aru_software_eng_UI
 		{
 			int random_num = new Random().Next(256);
 			DataBaseLoginEntry ret = new DataBaseLoginEntry();
-			ret.setID(random_num);
+			ret.setID(getHighestUserIDEntry().getID());
 			ret.setUsername("username_" + random_num);
 			ret.setPassword("password");
 			ret.setEmail("email_" + random_num + "@mail.net");
@@ -83,9 +83,7 @@ namespace aru_software_eng_UI
         }
 		public void generateRandomInvestmentIdea()
         {
-			DataBaseLoginEntry ins = new DataBaseLoginEntry();
-			LoginDatabaseHandler.getInstance().addNewLogin(ins);
-			investment_idea_handler.writeInvestmentIdea(new InvestmentIdea(2, ins.getID()));
+			investment_idea_handler.writeInvestmentIdea(new InvestmentIdea(2, LoginDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.LoginEntries)));
         }
 
 	}
