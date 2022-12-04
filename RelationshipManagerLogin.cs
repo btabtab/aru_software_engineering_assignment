@@ -43,7 +43,7 @@ namespace aru_software_eng_UI
 
         private void RM_login_manager_Click(object sender, EventArgs e)
         {
-            next_window = new RelationshipManagerView(this);
+            next_window = new RelationshipManagerFilterView();
         }
 
         private void RM_backButton_Click(object sender, EventArgs e)
