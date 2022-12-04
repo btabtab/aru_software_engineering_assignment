@@ -16,5 +16,10 @@ namespace aru_software_eng_UI
         {
             InitializeComponent();
         }
+
+        private void New_Idea_Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

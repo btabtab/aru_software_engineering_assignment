@@ -72,6 +72,7 @@ namespace aru_software_eng_UI
             this.New_Idea_Button.TabIndex = 17;
             this.New_Idea_Button.Text = "New Idea";
             this.New_Idea_Button.UseVisualStyleBackColor = false;
+            this.New_Idea_Button.Click += new System.EventHandler(this.New_Idea_Button_Click);
             // 
             // Delete_Idea_Button
             // 

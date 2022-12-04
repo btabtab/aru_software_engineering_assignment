@@ -27,6 +27,9 @@ namespace aru_software_eng_UI
 			return singleton_instance;
 		}
 
+
+
+
 		public DataBaseLoginEntry randomEntry()
 		{
 			int random_num = new Random().Next(256);

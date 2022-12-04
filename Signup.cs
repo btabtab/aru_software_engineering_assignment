@@ -195,5 +195,9 @@ namespace aru_software_eng_UI
         {
 
         }
+
+        private void RulesText_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+        }
     }
 }

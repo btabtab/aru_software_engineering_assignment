@@ -14,6 +14,7 @@ namespace aru_software_eng_UI
     {
         FormManager form_manager;
         DataBaseLoginEntry user_login;
+        BackendController backend_controller;
 
         public FilterWindow(Form previous_window, DataBaseLoginEntry n_user_login)
         {
@@ -33,6 +34,17 @@ namespace aru_software_eng_UI
 
         private void RelationshipManagerView_Load(object sender, EventArgs e)
         {
+        }
+
+        //This function shows a single idea. The RM can select the idea by entering its ID number - L
+        private void singleIdeaDisplay() 
+        {
+            //Convert the inputted numbers into a int - L
+            int ID_to_search = Int32.Parse(manualSearchInput.Text);
+            backend_controller.getInvestmentIDFromDatabase(ID_to_search)
+
+
+
         }
 
        
@@ -97,6 +109,11 @@ namespace aru_software_eng_UI
         }
 
         private void IndustryLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manualSearchInput_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -109,6 +109,7 @@ namespace aru_software_eng_UI
             this.RulesText.TabIndex = 4;
             this.RulesText.TabStop = true;
             this.RulesText.Text = "I confirm I have read the rules and privacy policies";
+            this.RulesText.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RulesText_LinkClicked);
             // 
             // LoginLabel
             // 

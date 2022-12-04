@@ -43,6 +43,8 @@ namespace aru_software_eng_UI
             this.ExpireDateLabel = new System.Windows.Forms.Label();
             this.ExpireDatePicker = new System.Windows.Forms.DateTimePicker();
             this.PageTitle = new System.Windows.Forms.Label();
+            this.manualSearchInput = new System.Windows.Forms.TextBox();
+            this.manualSearchLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MinRiskTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxRiskTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinCostTrackBar)).BeginInit();
@@ -52,11 +54,10 @@ namespace aru_software_eng_UI
             // MinRiskLabel
             // 
             this.MinRiskLabel.AutoSize = true;
-            this.MinRiskLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinRiskLabel.Location = new System.Drawing.Point(24, 294);
-            this.MinRiskLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.MinRiskLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.MinRiskLabel.Location = new System.Drawing.Point(12, 93);
             this.MinRiskLabel.Name = "MinRiskLabel";
-            this.MinRiskLabel.Size = new System.Drawing.Size(486, 79);
+            this.MinRiskLabel.Size = new System.Drawing.Size(176, 29);
             this.MinRiskLabel.TabIndex = 1;
             this.MinRiskLabel.Text = "Minimum Risk";
             this.MinRiskLabel.Click += new System.EventHandler(this.MinRiskLabel_Click);
@@ -66,10 +67,9 @@ namespace aru_software_eng_UI
             this.SearchButton.BackColor = System.Drawing.SystemColors.Highlight;
             this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.SearchButton.ForeColor = System.Drawing.Color.Black;
-            this.SearchButton.Location = new System.Drawing.Point(50, 706);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.SearchButton.Location = new System.Drawing.Point(25, 260);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(1594, 158);
+            this.SearchButton.Size = new System.Drawing.Size(797, 82);
             this.SearchButton.TabIndex = 9;
             this.SearchButton.Text = "Search";
             this.SearchButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -79,11 +79,10 @@ namespace aru_software_eng_UI
             // MaxRiskLabel
             // 
             this.MaxRiskLabel.AutoSize = true;
-            this.MaxRiskLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxRiskLabel.Location = new System.Drawing.Point(32, 415);
-            this.MaxRiskLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.MaxRiskLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.MaxRiskLabel.Location = new System.Drawing.Point(16, 156);
             this.MaxRiskLabel.Name = "MaxRiskLabel";
-            this.MaxRiskLabel.Size = new System.Drawing.Size(505, 79);
+            this.MaxRiskLabel.Size = new System.Drawing.Size(181, 29);
             this.MaxRiskLabel.TabIndex = 10;
             this.MaxRiskLabel.Text = "Maximum Risk";
             this.MaxRiskLabel.Click += new System.EventHandler(this.MaxRiskLabel_Click);
@@ -91,11 +90,10 @@ namespace aru_software_eng_UI
             // MinCostLabel
             // 
             this.MinCostLabel.AutoSize = true;
-            this.MinCostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinCostLabel.Location = new System.Drawing.Point(860, 288);
-            this.MinCostLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.MinCostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.MinCostLabel.Location = new System.Drawing.Point(430, 90);
             this.MinCostLabel.Name = "MinCostLabel";
-            this.MinCostLabel.Size = new System.Drawing.Size(493, 79);
+            this.MinCostLabel.Size = new System.Drawing.Size(178, 29);
             this.MinCostLabel.TabIndex = 11;
             this.MinCostLabel.Text = "Minimum Cost";
             this.MinCostLabel.Click += new System.EventHandler(this.MinCostLabel_Click);
@@ -103,35 +101,32 @@ namespace aru_software_eng_UI
             // MaxCostLabel
             // 
             this.MaxCostLabel.AutoSize = true;
-            this.MaxCostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxCostLabel.Location = new System.Drawing.Point(862, 412);
-            this.MaxCostLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.MaxCostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.MaxCostLabel.Location = new System.Drawing.Point(431, 154);
             this.MaxCostLabel.Name = "MaxCostLabel";
-            this.MaxCostLabel.Size = new System.Drawing.Size(512, 79);
+            this.MaxCostLabel.Size = new System.Drawing.Size(183, 29);
             this.MaxCostLabel.TabIndex = 12;
             this.MaxCostLabel.Text = "Maximum Cost";
             this.MaxCostLabel.Click += new System.EventHandler(this.MaxCostLabel_Click);
             // 
             // MinRiskTrackBar
             // 
-            this.MinRiskTrackBar.Location = new System.Drawing.Point(392, 300);
-            this.MinRiskTrackBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MinRiskTrackBar.Location = new System.Drawing.Point(196, 96);
             this.MinRiskTrackBar.Maximum = 5;
             this.MinRiskTrackBar.Minimum = 1;
             this.MinRiskTrackBar.Name = "MinRiskTrackBar";
-            this.MinRiskTrackBar.Size = new System.Drawing.Size(416, 90);
+            this.MinRiskTrackBar.Size = new System.Drawing.Size(208, 45);
             this.MinRiskTrackBar.TabIndex = 13;
             this.MinRiskTrackBar.Value = 2;
             this.MinRiskTrackBar.Scroll += new System.EventHandler(this.MinRiskTrackBar_Scroll);
             // 
             // MaxRiskTrackBar
             // 
-            this.MaxRiskTrackBar.Location = new System.Drawing.Point(414, 421);
-            this.MaxRiskTrackBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaxRiskTrackBar.Location = new System.Drawing.Point(207, 159);
             this.MaxRiskTrackBar.Maximum = 5;
             this.MaxRiskTrackBar.Minimum = 1;
             this.MaxRiskTrackBar.Name = "MaxRiskTrackBar";
-            this.MaxRiskTrackBar.Size = new System.Drawing.Size(394, 90);
+            this.MaxRiskTrackBar.Size = new System.Drawing.Size(197, 45);
             this.MaxRiskTrackBar.TabIndex = 14;
             this.MaxRiskTrackBar.Value = 4;
             this.MaxRiskTrackBar.Scroll += new System.EventHandler(this.MaxRiskTrackBar_Scroll);
@@ -139,11 +134,10 @@ namespace aru_software_eng_UI
             // MinCostTrackBar
             // 
             this.MinCostTrackBar.LargeChange = 5000;
-            this.MinCostTrackBar.Location = new System.Drawing.Point(1228, 288);
-            this.MinCostTrackBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MinCostTrackBar.Location = new System.Drawing.Point(614, 90);
             this.MinCostTrackBar.Maximum = 100000;
             this.MinCostTrackBar.Name = "MinCostTrackBar";
-            this.MinCostTrackBar.Size = new System.Drawing.Size(416, 90);
+            this.MinCostTrackBar.Size = new System.Drawing.Size(208, 45);
             this.MinCostTrackBar.TabIndex = 15;
             this.MinCostTrackBar.Value = 10000;
             this.MinCostTrackBar.Scroll += new System.EventHandler(this.MinCostTrackBar_Scroll);
@@ -151,11 +145,10 @@ namespace aru_software_eng_UI
             // MaxCostTrackBar
             // 
             this.MaxCostTrackBar.LargeChange = 5000;
-            this.MaxCostTrackBar.Location = new System.Drawing.Point(1256, 412);
-            this.MaxCostTrackBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaxCostTrackBar.Location = new System.Drawing.Point(628, 154);
             this.MaxCostTrackBar.Maximum = 100000;
             this.MaxCostTrackBar.Name = "MaxCostTrackBar";
-            this.MaxCostTrackBar.Size = new System.Drawing.Size(388, 90);
+            this.MaxCostTrackBar.Size = new System.Drawing.Size(194, 45);
             this.MaxCostTrackBar.TabIndex = 16;
             this.MaxCostTrackBar.Value = 75000;
             this.MaxCostTrackBar.Scroll += new System.EventHandler(this.MaxCostTrackBar_Scroll);
@@ -163,11 +156,10 @@ namespace aru_software_eng_UI
             // IndustryLabel
             // 
             this.IndustryLabel.AutoSize = true;
-            this.IndustryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IndustryLabel.Location = new System.Drawing.Point(90, 550);
-            this.IndustryLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.IndustryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.IndustryLabel.Location = new System.Drawing.Point(80, 211);
             this.IndustryLabel.Name = "IndustryLabel";
-            this.IndustryLabel.Size = new System.Drawing.Size(290, 79);
+            this.IndustryLabel.Size = new System.Drawing.Size(104, 29);
             this.IndustryLabel.TabIndex = 17;
             this.IndustryLabel.Text = "Industry";
             this.IndustryLabel.Click += new System.EventHandler(this.IndustryLabel_Click);
@@ -175,21 +167,19 @@ namespace aru_software_eng_UI
             // IndustryInputTextBox
             // 
             this.IndustryInputTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IndustryInputTextBox.Location = new System.Drawing.Point(392, 550);
-            this.IndustryInputTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.IndustryInputTextBox.Location = new System.Drawing.Point(190, 205);
             this.IndustryInputTextBox.Name = "IndustryInputTextBox";
-            this.IndustryInputTextBox.Size = new System.Drawing.Size(412, 69);
+            this.IndustryInputTextBox.Size = new System.Drawing.Size(208, 38);
             this.IndustryInputTextBox.TabIndex = 18;
             this.IndustryInputTextBox.TextChanged += new System.EventHandler(this.IndustryInputTextBox_TextChanged);
             // 
             // ExpireDateLabel
             // 
             this.ExpireDateLabel.AutoSize = true;
-            this.ExpireDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpireDateLabel.Location = new System.Drawing.Point(860, 550);
-            this.ExpireDateLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.ExpireDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.ExpireDateLabel.Location = new System.Drawing.Point(462, 214);
             this.ExpireDateLabel.Name = "ExpireDateLabel";
-            this.ExpireDateLabel.Size = new System.Drawing.Size(407, 79);
+            this.ExpireDateLabel.Size = new System.Drawing.Size(146, 29);
             this.ExpireDateLabel.TabIndex = 19;
             this.ExpireDateLabel.Text = "Expiry Date";
             this.ExpireDateLabel.Click += new System.EventHandler(this.ExpireDateLabel_Click);
@@ -198,10 +188,9 @@ namespace aru_software_eng_UI
             // 
             this.ExpireDatePicker.CalendarFont = new System.Drawing.Font("Calibri", 16.25F, System.Drawing.FontStyle.Bold);
             this.ExpireDatePicker.Font = new System.Drawing.Font("Calibri", 16.25F, System.Drawing.FontStyle.Bold);
-            this.ExpireDatePicker.Location = new System.Drawing.Point(1240, 550);
-            this.ExpireDatePicker.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ExpireDatePicker.Location = new System.Drawing.Point(628, 210);
             this.ExpireDatePicker.Name = "ExpireDatePicker";
-            this.ExpireDatePicker.Size = new System.Drawing.Size(400, 60);
+            this.ExpireDatePicker.Size = new System.Drawing.Size(202, 34);
             this.ExpireDatePicker.TabIndex = 20;
             this.ExpireDatePicker.ValueChanged += new System.EventHandler(this.ExpireDatePicker_ValueChanged);
             // 
@@ -209,18 +198,38 @@ namespace aru_software_eng_UI
             // 
             this.PageTitle.AutoSize = true;
             this.PageTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PageTitle.Location = new System.Drawing.Point(24, 17);
-            this.PageTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.PageTitle.Location = new System.Drawing.Point(12, 9);
             this.PageTitle.Name = "PageTitle";
-            this.PageTitle.Size = new System.Drawing.Size(1420, 147);
+            this.PageTitle.Size = new System.Drawing.Size(725, 73);
             this.PageTitle.TabIndex = 21;
             this.PageTitle.Text = "Enter your requirments:";
             // 
+            // manualSearchInput
+            // 
+            this.manualSearchInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manualSearchInput.Location = new System.Drawing.Point(406, 390);
+            this.manualSearchInput.Name = "manualSearchInput";
+            this.manualSearchInput.Size = new System.Drawing.Size(208, 38);
+            this.manualSearchInput.TabIndex = 22;
+            this.manualSearchInput.TextChanged += new System.EventHandler(this.manualSearchInput_TextChanged);
+            // 
+            // manualSearchLabel
+            // 
+            this.manualSearchLabel.AutoSize = true;
+            this.manualSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.manualSearchLabel.Location = new System.Drawing.Point(40, 396);
+            this.manualSearchLabel.Name = "manualSearchLabel";
+            this.manualSearchLabel.Size = new System.Drawing.Size(343, 29);
+            this.manualSearchLabel.TabIndex = 23;
+            this.manualSearchLabel.Text = "Search for an idea manually:";
+            // 
             // FilterWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1668, 887);
+            this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.manualSearchLabel);
+            this.Controls.Add(this.manualSearchInput);
             this.Controls.Add(this.PageTitle);
             this.Controls.Add(this.ExpireDatePicker);
             this.Controls.Add(this.ExpireDateLabel);
@@ -235,7 +244,6 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.MaxRiskLabel);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.MinRiskLabel);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FilterWindow";
             this.Text = "RM Filter page";
             this.Load += new System.EventHandler(this.RelationshipManagerView_Load);
@@ -263,5 +271,7 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label ExpireDateLabel;
         private System.Windows.Forms.DateTimePicker ExpireDatePicker;
         private System.Windows.Forms.Label PageTitle;
+        private System.Windows.Forms.TextBox manualSearchInput;
+        private System.Windows.Forms.Label manualSearchLabel;
     }
 }

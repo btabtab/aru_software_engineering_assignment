@@ -136,12 +136,6 @@
     <Compile Include="RelationshipManagerLogin.Designer.cs">
       <DependentUpon>RelationshipManagerLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="RelationshipManagerFilterView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RelationshipManagerFilterView.Designer.cs">
-      <DependentUpon>RelationshipManagerFilterView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +144,9 @@
     </Compile>
     <EmbeddedResource Include="DatabaseWindow.resx">
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilterWindow.resx">
+      <DependentUpon>FilterWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Idea_Submitter.resx">
       <DependentUpon>Idea_Submitter.cs</DependentUpon>
@@ -176,9 +173,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RelationshipManagerLogin.resx">
       <DependentUpon>RelationshipManagerLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RelationshipManagerFilterView.resx">
-      <DependentUpon>RelationshipManagerFilterView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
