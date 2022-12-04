@@ -22,7 +22,7 @@ namespace aru_software_eng_UI
         }
 
         //Creates a function that checks if two passwords are the same, returning 'true' is they are - L
-        private Boolean passwordChecker() 
+        private Boolean passwordChecker()
         {
             //Sets the input from the boxes to two different variables so they can easily be addressed further on in the code - L
             string password1 = PasswordGetter1.Text;
@@ -32,7 +32,7 @@ namespace aru_software_eng_UI
             bool pass_not_match = Convert.ToBoolean(string.Compare(password1, password2));
 
             //If the passwords do not match, tell the user and don't let them continue with the sign up process - L
-            if (pass_not_match == true) 
+            if (pass_not_match == true)
             {
                 errorOutputLabel.Text = "passwords do not match"; //Tell the user their password is wrong - L
                 wrongPassSymbol1.Text = "X"; //Add a cross next to the password box - L
@@ -41,7 +41,7 @@ namespace aru_software_eng_UI
             }
 
             //If the passwords do match, format the UI properly - L
-            else if (password1.Length > 6) 
+            else if (password1.Length > 6)
             {
                 errorOutputLabel.Text = ""; //clear the error label - L
                 wrongPassSymbol1.Text = ""; //remove the cross next to the password box - L
@@ -50,7 +50,7 @@ namespace aru_software_eng_UI
             }
 
             //If the passwords do match but they are too short, infrom the user and let them try again - L
-            else 
+            else
             {
                 errorOutputLabel.Text = "minimum password length of 7 characters"; //Tell the user their password is wrong - L
                 wrongPassSymbol1.Text = "X"; //Add a cross next to the password box - L
@@ -66,11 +66,11 @@ namespace aru_software_eng_UI
             string email = EmailGetter.Text;
 
             //Checks if the text entered into the email entry point contains the correct symbol - L
-            Boolean email_contain = email.Contains("@"); 
+            Boolean email_contain = email.Contains("@");
             if (email_contain == true) //If the email contains the correct symbol - L
             {
                 //remove the cross next to the email repeat box - L
-                wrongEmailSymbol.Text = ""; 
+                wrongEmailSymbol.Text = "";
                 return true;
             }
 
@@ -79,7 +79,7 @@ namespace aru_software_eng_UI
             {
                 //Tells the user their email is invalid -
                 //replaces "wrong password" as the email is higher up on the login page - L
-                errorOutputLabel.Text = "Email is not valid"; 
+                errorOutputLabel.Text = "Email is not valid";
                 wrongEmailSymbol.Text = "X"; //Add a cross next to the email repeat box - L
                 return false;
             }
@@ -100,14 +100,14 @@ namespace aru_software_eng_UI
             {
                 //Tells the user their username is invalid
                 //replaces "wrong email" as the username is first on the login page - L
-                errorOutputLabel.Text = "username must be at least 3 characters long"; 
+                errorOutputLabel.Text = "username must be at least 3 characters long";
                 usernameWrongSymbol.Text = "X";
                 return false;
             }
         }
 
         //Only lets the user proceed if the checkbox is checked - L
-        private Boolean checkboxChecker() 
+        private Boolean checkboxChecker()
         {
             if (!RulesCheckBox.Checked)
             {
@@ -121,7 +121,7 @@ namespace aru_software_eng_UI
         private Boolean credentialChecker()
         {
             //if all aspects of the form are correct write the new information to the database - L
-            if (emailChecker() && passwordChecker() && usernameChecker() && checkboxChecker()) 
+            if (emailChecker() && passwordChecker() && usernameChecker() && checkboxChecker())
             {
                 string username = LoginGetter.Text; //Gets username the user entered - L
                 string email = EmailGetter.Text; //Gets the email the user entered - L
@@ -144,7 +144,7 @@ namespace aru_software_eng_UI
 
             //If all the credentials are correct,
             //return the user to the main menu - L
-            if (credentialChecker()) 
+            if (credentialChecker())
             {
                 manager.back();
             }
@@ -155,7 +155,7 @@ namespace aru_software_eng_UI
         {
             manager.back();
         }
-        
+
 
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
