@@ -43,7 +43,7 @@ namespace aru_software_eng_UI
         }
 		public int getHighestID(string target_table)
         {
-			return database_wrapper.getHighestIDNumber(target_table);
+			return database_wrapper.getHighestIDNumber(target_table, "UserID");
         }
 	}
 }

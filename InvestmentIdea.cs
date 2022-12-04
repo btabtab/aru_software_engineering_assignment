@@ -9,11 +9,12 @@ namespace aru_software_eng_UI
 	public class InvestmentIdea
 	{
 		//this generates a random InvestmentIdea for testing sake.
-		public InvestmentIdea(int seed)
+		public InvestmentIdea(int seed, int n_user_ID)
 		{
 			expiry_date = DateTime.Now;
 			Random random = new Random((int)DateTime.Now.Ticks + seed);
 			ID = random.Next(0, 255);
+			user_ID = n_user_ID;
 			int desc_len = random.Next(0, 255);
 			int a = 10;
 			char[] alphabet = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
@@ -28,7 +29,9 @@ namespace aru_software_eng_UI
 				}
 				description = description + alphabet[random.Next(0, 26)];
 			}
+			
 			name = "idea name " + ID;
+			
 			risk_level = ID ^ (random.Next(0, 255));
 			cost = (float)(random.Next(ID, 10000 + ID));
 			product_tag = "type - " + random.Next(0, 255) + " investment";
@@ -36,10 +39,12 @@ namespace aru_software_eng_UI
 
 		}
 		//This is used to contruct an investment idea. - J
-		public InvestmentIdea(DateTime n_date, string n_name, string n_description, int n_ID, int n_risk_level, float n_cost, string n_product_tag, int n_admin_level)
+		public InvestmentIdea(DateTime n_date, string n_name, string n_description, int n_ID, int n_user_ID, int n_risk_level, float n_cost, string n_product_tag, int n_admin_level)
+
         {
 			expiry_date = n_date;
 			ID = n_ID;
+			user_ID = n_user_ID;
 			name = n_name;
 			description = n_description;
 			risk_level = n_risk_level;
@@ -77,6 +82,7 @@ namespace aru_software_eng_UI
 		{
 			return (
 				"ID: " + ID +
+				"\nUserID" + user_ID +
 				"\nName: " + name +
 				"\nDescription: " + description +
 				"\nRisk level: " + risk_level +

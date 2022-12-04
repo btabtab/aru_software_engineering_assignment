@@ -64,10 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackendController.cs" />
-    <Compile Include="CoreDataSet.Designer.cs">
+    <Compile Include="CoreDataBaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CoreDataSet.xsd</DependentUpon>
+      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="DatabaseLoginEntry.cs" />
@@ -95,6 +95,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FilterWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilterWindow.Designer.cs">
+      <DependentUpon>FilterWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="RelationshipManagerViewerUI.cs">
       <SubType>Form</SubType>
@@ -157,6 +163,7 @@
     <EmbeddedResource Include="IdeaSubmitterForm.resx">
       <DependentUpon>IdeaSubmitterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RelationshipManagerView.resx" />
     <EmbeddedResource Include="RelationshipManagerViewerUI.resx">
       <DependentUpon>RelationshipManagerViewerUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,16 +184,16 @@
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="CoreDataSet.xsc">
-      <DependentUpon>CoreDataSet.xsd</DependentUpon>
+    <None Include="CoreDataBaseDataSet.xsc">
+      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CoreDataSet.xsd">
+    <None Include="CoreDataBaseDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CoreDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>CoreDataBaseDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CoreDataSet.xss">
-      <DependentUpon>CoreDataSet.xsd</DependentUpon>
+    <None Include="CoreDataBaseDataSet.xss">
+      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

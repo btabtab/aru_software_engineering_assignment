@@ -45,8 +45,8 @@ namespace aru_software_eng_UI
 		{
 			List<string> columns = new List<string>(), values = new List<string>();
 
-			columns.Add("ID");
-			values.Add("" + (database_wrapper.getHighestIDNumber(DatabaseWrapper.LoginEntries)+1));
+			columns.Add("UserID");
+			values.Add("" + (database_wrapper.getHighestIDNumber(DatabaseWrapper.LoginEntries, "UserID") +1));
 
 			columns.Add("Username");
 			columns.Add("Email");
@@ -64,7 +64,7 @@ namespace aru_software_eng_UI
 		public DataBaseLoginEntry getLoginEntryFromUsername(string username)
 		{
 			DataBaseLoginEntry ret = new DataBaseLoginEntry(
-																database_wrapper.searchDataBaseForInt(	"ID", 						DatabaseWrapper.LoginEntries, "Username=", username),
+																database_wrapper.searchDataBaseForInt(	"UserID", 						DatabaseWrapper.LoginEntries, "Username=", username),
 																database_wrapper.searchDatabaseForString("Username", 				DatabaseWrapper.LoginEntries, "Username=", username),
 																database_wrapper.searchDatabaseForString("Password", 				DatabaseWrapper.LoginEntries, "Username=", username),
 																database_wrapper.searchDatabaseForString("Email", 					DatabaseWrapper.LoginEntries, "Username=", username),
@@ -75,7 +75,7 @@ namespace aru_software_eng_UI
 		public DataBaseLoginEntry getLoginEntryFromEmail(string email)
 		{
 			DataBaseLoginEntry ret = new DataBaseLoginEntry(
-																database_wrapper.searchDataBaseForInt(	"ID", 						DatabaseWrapper.LoginEntries, "Email=", email),
+																database_wrapper.searchDataBaseForInt("UserID", 						DatabaseWrapper.LoginEntries, "Email=", email),
 																database_wrapper.searchDatabaseForString("Username", 				DatabaseWrapper.LoginEntries, "Email=", email),
 																database_wrapper.searchDatabaseForString("Password", 				DatabaseWrapper.LoginEntries, "Email=", email),
 																database_wrapper.searchDatabaseForString("Email", 					DatabaseWrapper.LoginEntries, "Email=", email),
@@ -86,11 +86,11 @@ namespace aru_software_eng_UI
 		public DataBaseLoginEntry getLoginEntryFromID(int ID)
         {
 			DataBaseLoginEntry ret = new DataBaseLoginEntry(
-															database_wrapper.searchDataBaseForInt("ID",								DatabaseWrapper.LoginEntries, "ID=", ID.ToString()),
-															database_wrapper.searchDatabaseForString("Username",					DatabaseWrapper.LoginEntries, "ID=", ID.ToString()),
-															database_wrapper.searchDatabaseForString("Password",					DatabaseWrapper.LoginEntries, "ID=", ID.ToString()),
-															database_wrapper.searchDatabaseForString("Email",						DatabaseWrapper.LoginEntries, "ID=", ID.ToString()),
-															database_wrapper.searchDatabaseForBool("Is_RelationshipManager",		DatabaseWrapper.LoginEntries, "ID=", ID.ToString())
+															database_wrapper.searchDataBaseForInt("UserID",								DatabaseWrapper.LoginEntries, "UserID=", ID.ToString()),
+															database_wrapper.searchDatabaseForString("Username",					DatabaseWrapper.LoginEntries, "UserID=", ID.ToString()),
+															database_wrapper.searchDatabaseForString("Password",					DatabaseWrapper.LoginEntries, "UserID=", ID.ToString()),
+															database_wrapper.searchDatabaseForString("Email",						DatabaseWrapper.LoginEntries, "UserID=", ID.ToString()),
+															database_wrapper.searchDatabaseForBool("Is_RelationshipManager",		DatabaseWrapper.LoginEntries, "UserID=", ID.ToString())
 															);
 			return ret;
 		}
