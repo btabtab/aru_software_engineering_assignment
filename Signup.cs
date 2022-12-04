@@ -100,7 +100,7 @@ namespace aru_software_eng_UI
             {
                 //Tells the user their username is invalid
                 //replaces "wrong email" as the username is first on the login page - L
-                errorOutputLabel.Text = "username must be atleast 3 characters long"; 
+                errorOutputLabel.Text = "username must be at least 3 characters long"; 
                 usernameWrongSymbol.Text = "X";
                 return false;
             }
@@ -127,12 +127,13 @@ namespace aru_software_eng_UI
                 string email = EmailGetter.Text; //Gets the email the user entered - L
 
                 //searches the database to see if the email and username already exist - L 
-                if (backend_controller.loginSearchEmail(email).getEmail() != email && backend_controller.loginSearchUsername(username).getUsername() != username) 
+                if (backend_controller.loginSearchEmail(email).getEmail() != email &&
+                    backend_controller.loginSearchUsername(username).getUsername() != username)
                 {
                     //Creates a new database entry with all the correct credentials in - L
-                    backend_controller.writeLoginDatabaseEntry(new DataBaseLoginEntry(username, PasswordGetter1.Text, email, IsRMCheckBox.Checked)); 
+                    backend_controller.writeLoginDatabaseEntry(new DataBaseLoginEntry(username, PasswordGetter1.Text, email, IsRMCheckBox.Checked));
+                    return true;
                 }
-                return true;
             }
             return false;
         }
