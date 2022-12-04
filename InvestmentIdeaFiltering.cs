@@ -8,7 +8,6 @@ namespace aru_software_eng_UI
 {
     class InvestmentIdeaFiltering
     {
-		
 		static List<InvestmentIdea> getFilteredResultDate(List<InvestmentIdea> current_list, Filters filter)
 		{
 			List<InvestmentIdea> filtered_ideas = new List<InvestmentIdea>();
