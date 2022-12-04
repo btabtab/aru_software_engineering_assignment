@@ -41,7 +41,7 @@ namespace aru_software_eng_UI
         {
             //Convert the inputted numbers into a int - L
             int ID_to_search = Int32.Parse(manualSearchInput.Text);
-            backend_controller.getInvestmentIDFromDatabase(ID_to_search)
+            backend_controller.getInvestmentIdeaFromID(ID_to_search);
 
 
 
