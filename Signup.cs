@@ -130,7 +130,7 @@ namespace aru_software_eng_UI
                 if (backend_controller.loginSearchEmail(email).getEmail() != email && backend_controller.loginSearchUsername(username).getUsername() != username) 
                 {
                     //Creates a new database entry with all the correct credentials in - L
-                    backend_controller.writeLoginDatabaseEntry(new DataBaseLoginEntry(username, PasswordGetter1.Text, email, true)); 
+                    backend_controller.writeLoginDatabaseEntry(new DataBaseLoginEntry(username, PasswordGetter1.Text, email, IsRMCheckBox.Checked)); 
                 }
                 return true;
             }
