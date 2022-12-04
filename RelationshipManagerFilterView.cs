@@ -24,7 +24,7 @@ namespace aru_software_eng_UI
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            new RelationshipManagerViewerUI(this, investment_idea_handler.getFilteredList(new Filters(0, 0, 0, 0, 0, DateTime.Now)));
+            new RelationshipManagerViewerUI(this, investment_idea_handler.getFilteredList(new Filters(0, 0, 0, 0, false, DateTime.Now)));
         }
     }
 }
