@@ -68,8 +68,6 @@ namespace aru_software_eng_UI
 			}
 			return singleton_instance;
 		}
-
-
 		void loadInvestmentIdeasFromDatabaseToList()
         {
 			for (int i = 0; i != getHighestID(DatabaseWrapper.InvestmentIdeas); i++)
@@ -77,18 +75,14 @@ namespace aru_software_eng_UI
 				current_investment_ideas.Add(getInvestmentIDFromDatabase(i));
 			}
         }
-
-
         public InvestmentIdea getInvestmentIdeaFromID(int ID)
         {
             return current_investment_ideas[ID];
         }
-
 		public List<InvestmentIdea> getFilteredList(Filters filters)
         {
 			return InvestmentIdeaFiltering.getFilterList(current_investment_ideas, filters);
         }
-
 		public List<InvestmentIdea> loadInvestmentIdeaList()
         {
 			return current_investment_ideas;

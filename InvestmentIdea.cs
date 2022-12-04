@@ -40,6 +40,7 @@ namespace aru_software_eng_UI
 		}
 		//This is used to contruct an investment idea. - J
 		public InvestmentIdea(DateTime n_date, string n_name, string n_description, int n_ID, int n_user_ID, int n_risk_level, float n_cost, string n_product_tag, int n_admin_level)
+
         {
 			expiry_date = n_date;
 			ID = n_ID;
