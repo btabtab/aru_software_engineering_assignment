@@ -42,10 +42,10 @@ namespace aru_software_eng_UI
             // RMlabel
             // 
             this.RMlabel.AutoSize = true;
-            this.RMlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold);
-            this.RMlabel.Location = new System.Drawing.Point(0, 0);
+            this.RMlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 38F, System.Drawing.FontStyle.Bold);
+            this.RMlabel.Location = new System.Drawing.Point(8, 9);
             this.RMlabel.Name = "RMlabel";
-            this.RMlabel.Size = new System.Drawing.Size(885, 76);
+            this.RMlabel.Size = new System.Drawing.Size(679, 59);
             this.RMlabel.TabIndex = 0;
             this.RMlabel.Text = "Relationship Manager Login";
             this.RMlabel.Click += new System.EventHandler(this.RMlogin_Click);

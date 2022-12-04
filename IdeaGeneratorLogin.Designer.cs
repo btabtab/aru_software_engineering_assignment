@@ -101,14 +101,14 @@ namespace aru_software_eng_UI
             // IG_text
             // 
             this.IG_text.AutoSize = true;
-            this.IG_text.Font = new System.Drawing.Font("Agency FB", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IG_text.Font = new System.Drawing.Font("Agency FB", 50F, System.Drawing.FontStyle.Bold);
             this.IG_text.Location = new System.Drawing.Point(0, 0);
             this.IG_text.Name = "IG_text";
             this.IG_text.Size = new System.Drawing.Size(379, 80);
             this.IG_text.TabIndex = 10;
             this.IG_text.Text = "Idea Generator";
             // 
-            // IdeaGeneratorLoginLabel
+            // IdeaGeneratorLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -120,7 +120,7 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.IG_login_label);
             this.Controls.Add(this.IG_text);
             this.Controls.Add(this.IG_login_button);
-            this.Name = "IdeaGeneratorLoginLabel";
+            this.Name = "IdeaGeneratorLogin";
             this.Text = "IdeaGeneratorLoginLabel";
             this.ResumeLayout(false);
             this.PerformLayout();

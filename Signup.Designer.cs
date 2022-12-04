@@ -56,7 +56,7 @@ namespace aru_software_eng_UI
             this.SignUpButton.BackColor = System.Drawing.SystemColors.Highlight;
             this.SignUpButton.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SignUpButton.Location = new System.Drawing.Point(366, 369);
+            this.SignUpButton.Location = new System.Drawing.Point(393, 369);
             this.SignUpButton.Margin = new System.Windows.Forms.Padding(2);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(106, 44);
@@ -79,7 +79,7 @@ namespace aru_software_eng_UI
             // RulesCheckBox
             // 
             this.RulesCheckBox.AutoSize = true;
-            this.RulesCheckBox.Location = new System.Drawing.Point(297, 349);
+            this.RulesCheckBox.Location = new System.Drawing.Point(316, 348);
             this.RulesCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.RulesCheckBox.Name = "RulesCheckBox";
             this.RulesCheckBox.Size = new System.Drawing.Size(15, 14);
@@ -102,7 +102,7 @@ namespace aru_software_eng_UI
             // 
             this.RulesText.AutoSize = true;
             this.RulesText.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RulesText.Location = new System.Drawing.Point(316, 344);
+            this.RulesText.Location = new System.Drawing.Point(335, 343);
             this.RulesText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RulesText.Name = "RulesText";
             this.RulesText.Size = new System.Drawing.Size(228, 20);
@@ -196,7 +196,7 @@ namespace aru_software_eng_UI
             // 
             this.GoBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoBackButton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.GoBackButton.Location = new System.Drawing.Point(380, 417);
+            this.GoBackButton.Location = new System.Drawing.Point(403, 417);
             this.GoBackButton.Margin = new System.Windows.Forms.Padding(2);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(82, 28);
@@ -268,13 +268,14 @@ namespace aru_software_eng_UI
             // IsRMCheckBox
             // 
             this.IsRMCheckBox.AutoSize = true;
-            this.IsRMCheckBox.Font = new System.Drawing.Font("Agency FB", 14F, System.Drawing.FontStyle.Bold);
+            this.IsRMCheckBox.Font = new System.Drawing.Font("Agency FB", 16F, System.Drawing.FontStyle.Bold);
             this.IsRMCheckBox.Location = new System.Drawing.Point(320, 301);
             this.IsRMCheckBox.Name = "IsRMCheckBox";
-            this.IsRMCheckBox.Size = new System.Drawing.Size(215, 28);
+            this.IsRMCheckBox.Size = new System.Drawing.Size(243, 30);
             this.IsRMCheckBox.TabIndex = 22;
-            this.IsRMCheckBox.Text = " Are you Relationship Manager?";
+            this.IsRMCheckBox.Text = " Relationship Manager Account";
             this.IsRMCheckBox.UseVisualStyleBackColor = true;
+            this.IsRMCheckBox.CheckedChanged += new System.EventHandler(this.IsRMCheckBox_CheckedChanged);
             // 
             // Signup
             // 
