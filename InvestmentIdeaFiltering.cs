@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace aru_software_eng_UI
 {
-    class InvestmentIdeaFiltering
-    {
+
+	/**/
+	class InvestmentIdeaFiltering
+	{
+
+		/**/
 		static List<InvestmentIdea> getFilteredResultDate(List<InvestmentIdea> current_list, Filters filter)
 		{
 			List<InvestmentIdea> filtered_ideas = new List<InvestmentIdea>();
@@ -20,6 +24,8 @@ namespace aru_software_eng_UI
 			}
 			return filtered_ideas;
 		}
+
+		/**/
 		static List<InvestmentIdea> getFilteredResultCost(List<InvestmentIdea> current_list, Filters filter)
 		{
 			List<InvestmentIdea> filtered_ideas = new List<InvestmentIdea>();
@@ -37,11 +43,15 @@ namespace aru_software_eng_UI
 			}
 			return filtered_ideas;
 		}
+
+		/**/
 		static List<InvestmentIdea> getFilteredRisk(List<InvestmentIdea> current_list, Filters filter_for_search)
         {
 			List<InvestmentIdea> filtered_ideas = new List<InvestmentIdea>();
 			return filtered_ideas;
 		}
+
+		/**/
 		static public List<InvestmentIdea> getFilterList(List<InvestmentIdea> current_list, Filters filter_for_search)
 		{
 			return getFilteredResultDate(getFilteredResultCost(getFilteredRisk(current_list, filter_for_search), filter_for_search), filter_for_search);

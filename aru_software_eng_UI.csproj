@@ -194,6 +194,7 @@
     <None Include="CoreDataBaseDataSet.xss">
       <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
     </None>
+    <None Include="DiagramA.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

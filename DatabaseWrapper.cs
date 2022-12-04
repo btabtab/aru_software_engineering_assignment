@@ -22,6 +22,8 @@ namespace aru_software_eng_UI
 	*/
 	public class DatabaseWrapper
 	{
+
+		/**/
 		public const string LoginEntries = "LoginEntries", InvestmentIdeas = "InvestmentIdeas";
 
 		//This provides the connection to the database (big shock I know).
@@ -98,8 +100,10 @@ namespace aru_software_eng_UI
 			}
 			//kills the connection to the database. -JE oct-26.0
 			connection_to_database.Close();
-			return ret; 
+			return ret;
 		}
+
+		/**/
 		public int searchDataBaseForInt(string column_to_search, string target_table, string search_condition, string search_string)
         {
 			int ret = 0;
@@ -125,11 +129,15 @@ namespace aru_software_eng_UI
 			return ret;
 
 		}
+
+		/**/
 		public bool searchDatabaseForBool(string column_to_search, string target_table, string search_condition, string search_string)
 		{
 			//creates a boolean array, and uses ☆ index magic ☆ to return true / false.
 			return (new bool[2] { false, true })[searchDataBaseForInt(column_to_search, target_table, search_condition, search_string)];
 		}
+
+		/**/
 		public DateTime searchDatabaseForDateTime(string column_to_search, string target_table, string search_condition, string search_string)
         {
 			DateTime ret = new DateTime();
@@ -160,7 +168,9 @@ namespace aru_software_eng_UI
 			connection_to_database.Open();
 			connection_to_database.BeginTransaction().Commit();
 			return ret;
-        }
+		}
+
+		/**/
 		private void closeConnection()
         {
 			connection_to_database.Close();
@@ -242,6 +252,8 @@ namespace aru_software_eng_UI
 			connection_to_database.Close();
 
 		}
+
+		/**/
 		public Int32 getHighestIDNumber(string target_table, string ID_column_name)
 		{
 			if (getRowCount(target_table) == 0)

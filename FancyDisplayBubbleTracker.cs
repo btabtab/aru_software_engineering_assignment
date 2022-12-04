@@ -23,13 +23,14 @@ namespace aru_software_eng_UI
 			bubbles = new List<FancyDisplayBubble>();
 			last_pressed_bubble = -1;
 		}
-		/*
-		 John:
-		*/
+
+		/**/
 		public int getLastPressedBubbleID()
         {
 			return last_pressed_bubble;
-        }
+		}
+
+		/**/
 		public int scanForPressedBubble()
 		{
 			for (int i = 0; i != bubbles.Count; i++)
@@ -44,6 +45,8 @@ namespace aru_software_eng_UI
 			}
 			return -1;
 		}
+
+		/**/
 		void showButtonInfo(object sender, EventArgs e)
 		{
 			scanForPressedBubble();
@@ -54,10 +57,14 @@ namespace aru_software_eng_UI
 				target_output_label.Text = bubbles[(FancyDisplayBubbleTracker.getBubbleTracker().getLastPressedBubbleID())].getInvestmentIdea().getAsLabelString();
 			}
 		}
+
+		/**/
 		public void setLabel(Label n_target_output_label)
         {
 			target_output_label = n_target_output_label;
-        }
+		}
+
+		/**/
 		public static FancyDisplayBubbleTracker getBubbleTracker()
 		{
 			if (instance == null)
@@ -67,21 +74,25 @@ namespace aru_software_eng_UI
 			return instance;
 		}
 
+		/**/
 		FancyDisplayBubble getBubble(int index)
 		{
 			return bubbles.ElementAt(index);
 		}
-		
+
+		/**/
 		void addBubble(Button n_button, InvestmentIdea n_investment_idea)
 		{
 			bubbles.Add(new FancyDisplayBubble(n_button, n_investment_idea, showButtonInfo));
 		}
 
+		/**/
 		FancyDisplayBubble getLastBubble()
 		{
 			return getBubble(bubbles.Count - 1);
 		}
 
+		/**/
 		int getBubbleCount()
 		{
 			return bubbles.Count;
@@ -91,22 +102,26 @@ namespace aru_software_eng_UI
 			return getBubbleTracker().getBubble(index);
 		}
 
+		/**/
 		public static void instanceAddBubble(Button n_button, InvestmentIdea n_investment_idea)
 		{
 			getBubbleTracker().addBubble(n_button, n_investment_idea);
 		}
 
+		/**/
 		public static FancyDisplayBubble instanceGetLastBubble()
 		{
 			return getBubbleTracker().getBubble(instance.getBubbleCount() - 1);
 		}
 
+		/**/
 		void deleteButton(object sender, EventArgs e)
 		{
 			Button target = (Button)sender;
 			target.Dispose();
 		}
 
+		/**/
 		public void deleteBubble(int index)
 		{
 			if (getBubbleCount() == 0) { Console.WriteLine("No bubbles left."); return; }
@@ -115,10 +130,13 @@ namespace aru_software_eng_UI
 			bubbles.RemoveAt(index);
 		}
 
+		/**/
 		public static void instanceDeleteBubble(int index)
 		{
 			getBubbleTracker().deleteBubble(index);
 		}
+
+		/**/
 		public static void deleteAllBubbles(Form current_form)
 		{
 			while (getBubbleTracker().getBubbleCount() != 0)

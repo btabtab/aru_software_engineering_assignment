@@ -77,7 +77,8 @@ namespace aru_software_eng_UI
 		public void setCost(float n_cost)					{ cost				= n_cost;			}
 		public void setInvestmentType(string n_product_tag)	{ product_tag		= n_product_tag;	}
 		public void setAdminLevel(int n_admin_level)		{ admin_level = n_admin_level;			}
-
+		
+		/**/
 		public string getAsLabelString()
 		{
 			return (

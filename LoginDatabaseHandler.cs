@@ -16,7 +16,11 @@ namespace aru_software_eng_UI
 			database_wrapper = DatabaseWrapper.getDatabaseWrapperInstance();
 		}
 
+
+		/**/
 		static LoginDatabaseHandler singleton_instance;
+
+		/**/
 		new static public LoginDatabaseHandler getInstance()
 		{
 			if (singleton_instance == null)
@@ -26,10 +30,14 @@ namespace aru_software_eng_UI
 			return singleton_instance;
 
 		}
+
+		/**/
 		public void addNewLogin(DataBaseLoginEntry n_database_login_entry)
 		{
 			writeNewLoginDataEntry(n_database_login_entry);
 		}
+
+		/**/
 		string rmStatusToString(bool is_rm_manager)
         {
 			string ret = "0";
@@ -40,7 +48,8 @@ namespace aru_software_eng_UI
             }
 			return ret;
 		}
-		//writes the entry into the logindatabase -JE oct-30.0
+
+		/**/
 		public void writeNewLoginDataEntry(DataBaseLoginEntry n_entry)
 		{
 			List<string> columns = new List<string>(), values = new List<string>();
@@ -61,6 +70,8 @@ namespace aru_software_eng_UI
 
 			database_wrapper.insertNewEntryIntoDatabase(DatabaseWrapper.LoginEntries, columns, values);
 		}
+
+		/**/
 		public DataBaseLoginEntry getLoginEntryFromUsername(string username)
 		{
 			DataBaseLoginEntry ret = new DataBaseLoginEntry(
@@ -72,6 +83,8 @@ namespace aru_software_eng_UI
 																);
 			return ret;
 		}
+
+		/**/
 		public DataBaseLoginEntry getLoginEntryFromEmail(string email)
 		{
 			DataBaseLoginEntry ret = new DataBaseLoginEntry(
@@ -83,6 +96,8 @@ namespace aru_software_eng_UI
 																);
 			return ret;
 		}
+
+		/**/
 		public DataBaseLoginEntry getLoginEntryFromID(int ID)
         {
 			DataBaseLoginEntry ret = new DataBaseLoginEntry(
