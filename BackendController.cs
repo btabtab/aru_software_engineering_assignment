@@ -70,11 +70,11 @@ namespace aru_software_eng_UI
         }
 		public DataBaseLoginEntry getHighestUserIDEntry()
         {
-			return login_handler.getLoginEntryFromID(login_handler.getHighestID(DatabaseWrapper.LoginEntries));
+			return login_handler.getLoginEntryFromID(login_handler.getHighestID(DatabaseWrapper.LoginEntries, "UserID"));
 		}
 		public void deleteHighestLoginID()
         {
-			login_handler.deleteLoginRowX(login_handler.getHighestID(DatabaseWrapper.LoginEntries));
+			login_handler.deleteLoginRowX(login_handler.getHighestID(DatabaseWrapper.LoginEntries, "UserID"));
         }
 		public void writeLoginDatabaseEntry(InvestmentIdea n_investment_idea)
         {
@@ -86,7 +86,7 @@ namespace aru_software_eng_UI
         }
 		public void generateRandomInvestmentIdea()
         {
-			investment_idea_handler.writeInvestmentIdea(new InvestmentIdea(2, LoginDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.LoginEntries)));
+			investment_idea_handler.writeInvestmentIdea(new InvestmentIdea(2, LoginDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.LoginEntries, "UserID")));
         }
 
 	}
