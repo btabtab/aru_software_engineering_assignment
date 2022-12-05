@@ -19,6 +19,7 @@ namespace aru_software_eng_UI
 		{
 			database_wrapper = DatabaseWrapper.getDatabaseWrapperInstance();
 			current_investment_ideas = new List<InvestmentIdea>();
+			loadInvestmentIdeasFromDatabaseToList();
 		}
 
 		/**/
@@ -104,10 +105,5 @@ namespace aru_software_eng_UI
 			return InvestmentIdeaFiltering.getFilterList(current_investment_ideas, filters);
 		}
 
-		/**/
-		public List<InvestmentIdea> loadInvestmentIdeaList()
-        {
-			return current_investment_ideas;
-        }
 	}
 }
