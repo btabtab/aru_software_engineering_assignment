@@ -1,4 +1,3 @@
-﻿
 namespace aru_software_eng_UI
 {
     partial class RelationshipManagerLogin
@@ -42,6 +41,10 @@ namespace aru_software_eng_UI
             // RMlabel
             // 
             this.RMlabel.AutoSize = true;
+            this.RMlabel.Font = new System.Drawing.Font("Agency FB", 38.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RMlabel.Location = new System.Drawing.Point(8, 9);
+            this.RMlabel.Name = "RMlabel";
+            this.RMlabel.Size = new System.Drawing.Size(507, 62);
             this.RMlabel.Font = new System.Drawing.Font("Agency FB", 50.25F, System.Drawing.FontStyle.Bold);
             this.RMlabel.Location = new System.Drawing.Point(0, 0);
             this.RMlabel.Name = "RMlabel";
@@ -56,7 +59,7 @@ namespace aru_software_eng_UI
             this.RM_backButton.Location = new System.Drawing.Point(694, 12);
             this.RM_backButton.Name = "RM_backButton";
             this.RM_backButton.Size = new System.Drawing.Size(128, 64);
-            this.RM_backButton.TabIndex = 1;
+            this.RM_backButton.TabIndex = 5;
             this.RM_backButton.UseVisualStyleBackColor = true;
             this.RM_backButton.Click += new System.EventHandler(this.RM_backButton_Click);
             // 
@@ -66,29 +69,41 @@ namespace aru_software_eng_UI
             this.RM_login_name_entry.Location = new System.Drawing.Point(294, 171);
             this.RM_login_name_entry.Name = "RM_login_name_entry";
             this.RM_login_name_entry.Size = new System.Drawing.Size(502, 53);
-            this.RM_login_name_entry.TabIndex = 2;
+            this.RM_login_name_entry.TabIndex = 1;
             // 
             // RM_login_password_entry
             // 
             this.RM_login_password_entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.RM_login_password_entry.Location = new System.Drawing.Point(294, 251);
             this.RM_login_password_entry.Name = "RM_login_password_entry";
+            this.RM_login_password_entry.PasswordChar = '*';
             this.RM_login_password_entry.Size = new System.Drawing.Size(502, 53);
-            this.RM_login_password_entry.TabIndex = 3;
+            this.RM_login_password_entry.TabIndex = 2;
             // 
             // RM_login_name_label
             // 
             this.RM_login_name_label.AutoSize = true;
+            this.RM_login_name_label.Font = new System.Drawing.Font("Agency FB", 38.25F, System.Drawing.FontStyle.Bold);
+            this.RM_login_name_label.Location = new System.Drawing.Point(10, 162);
+            this.RM_login_name_label.Name = "RM_login_name_label";
+            this.RM_login_name_label.Size = new System.Drawing.Size(218, 62);
             this.RM_login_name_label.Font = new System.Drawing.Font("Agency FB", 30F, System.Drawing.FontStyle.Bold);
             this.RM_login_name_label.Location = new System.Drawing.Point(10, 174);
             this.RM_login_name_label.Name = "RM_login_name_label";
             this.RM_login_name_label.Size = new System.Drawing.Size(105, 50);
             this.RM_login_name_label.TabIndex = 4;
-            this.RM_login_name_label.Text = "Name:";
+            this.RM_login_name_label.Text = "Username:";
             this.RM_login_name_label.Click += new System.EventHandler(this.label1_Click);
             // 
             // RM_login_password_label
             // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Agency FB", 38.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(16, 242);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(212, 62);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Password:";
             this.RM_login_password_label.AutoSize = true;
             this.RM_login_password_label.Font = new System.Drawing.Font("Agency FB", 30F, System.Drawing.FontStyle.Bold);
             this.RM_login_password_label.Location = new System.Drawing.Point(12, 250);
@@ -100,6 +115,7 @@ namespace aru_software_eng_UI
             // RM_login_manager
             // 
             this.RM_login_manager.BackColor = System.Drawing.SystemColors.Highlight;
+            this.RM_login_manager.Font = new System.Drawing.Font("Agency FB", 38.25F, System.Drawing.FontStyle.Bold);
             this.RM_login_manager.Font = new System.Drawing.Font("Agency FB", 20.25F);
             this.RM_login_manager.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.RM_login_manager.Location = new System.Drawing.Point(21, 349);

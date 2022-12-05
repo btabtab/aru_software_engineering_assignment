@@ -15,9 +15,13 @@ namespace aru_software_eng_UI
 		string email;
 		bool is_relationship_manager;
 
+
+		/**/
 		public DataBaseLoginEntry()
 		{
 		}
+
+		/**/
 		public DataBaseLoginEntry(int n_ID, string n_username, string n_password, string n_email, bool n_is_relationship_manager)
 		{
 			ID = n_ID;
@@ -27,6 +31,7 @@ namespace aru_software_eng_UI
 			is_relationship_manager = n_is_relationship_manager;
 		}
 
+		/**/
 		public DataBaseLoginEntry(string n_username, string n_password, string n_email, bool n_is_relationship_manager)
 		{
 			username = n_username;
@@ -52,7 +57,7 @@ namespace aru_software_eng_UI
 		public string getAsLabelString()
         {
 			return (
-				"ID: " + this.ID + "\n" +
+				"UserID: " + this.ID + "\n" +
 				"Username: " + this.username + "\n" +
 				"Email: " + this.email + "\n" +
 				"Password: " + this.password + "\n" +

@@ -8,11 +8,13 @@ namespace aru_software_eng_UI
 {
 	public class BackendController
 	{
-		DatabaseHandler database_handler;
+		LoginDatabaseHandler			login_handler;
+		InvestmentIdeaDatabaseHandler	investment_idea_handler;
 
 		private BackendController()
 		{
-			database_handler = DatabaseHandler.getInstance();
+			login_handler			= LoginDatabaseHandler.getInstance();
+			investment_idea_handler = InvestmentIdeaDatabaseHandler.getInstance();
 		}
 
 		static BackendController singleton_instance;
@@ -25,11 +27,14 @@ namespace aru_software_eng_UI
 			return singleton_instance;
 		}
 
+
+
+
 		public DataBaseLoginEntry randomEntry()
 		{
 			int random_num = new Random().Next(256);
 			DataBaseLoginEntry ret = new DataBaseLoginEntry();
-			ret.setID(random_num);
+			ret.setID(getHighestUserIDEntry().getID());
 			ret.setUsername("username_" + random_num);
 			ret.setPassword("password");
 			ret.setEmail("email_" + random_num + "@mail.net");
@@ -37,33 +42,52 @@ namespace aru_software_eng_UI
 			ret.setIsRelationshipManager((random_num % 2) == 0);
 			return ret;
 		}
-
+		public DataBaseLoginEntry loginSearchID(int ID)
+        {
+			return login_handler.getLoginEntryFromID(ID);
+        }
 		public DataBaseLoginEntry loginSearchEmail(string search)
         {
-			return database_handler.searchForEntryBasedOnEmail(search);
-        }
+			return login_handler.getLoginEntryFromEmail(search);
+		}
 		public DataBaseLoginEntry loginSearchUsername(string search)
         {
-			return database_handler.searchForEntryBasedOnUsername(search);
-        }
+			return login_handler.getLoginEntryFromUsername(search);
+		}
 		//this writes a new login into the database. -J
-		public void writeDatabaseEntry(DataBaseLoginEntry n_database_login_entry)
+		public void writeLoginDatabaseEntry(DataBaseLoginEntry n_database_login_entry)
         {
-			database_handler.addNewLogin(n_database_login_entry);
+			login_handler.addNewLogin(n_database_login_entry);
         }
 		public void deleteUserFromLoginTable(string username)
         {
-			database_handler.deleteLoginRowX(database_handler.searchForEntryBasedOnUsername(username).getID());
+			login_handler.deleteLoginRowX(login_handler.getLoginEntryFromUsername(username).getID());
         }
 
 		public int getLoginTableRowCount()
         {
-			return database_handler.getRowCount("LoginEntries");
+			return login_handler.getRowCount(DatabaseWrapper.LoginEntries);
         }
-
+		public DataBaseLoginEntry getHighestUserIDEntry()
+        {
+			return login_handler.getLoginEntryFromID(login_handler.getHighestID(DatabaseWrapper.LoginEntries));
+		}
 		public void deleteHighestLoginID()
         {
-			database_handler.deleteLoginRowX(database_handler.getHighestID("LoginEntries"));
+			login_handler.deleteLoginRowX(login_handler.getHighestID(DatabaseWrapper.LoginEntries));
         }
+		public void writeLoginDatabaseEntry(InvestmentIdea n_investment_idea)
+        {
+			investment_idea_handler.writeInvestmentIdea(n_investment_idea);
+        }
+		public InvestmentIdea getInvestmentIdeaFromID(int i)
+        {
+			return investment_idea_handler.getInvestmentIdeaFromID(i);
+        }
+		public void generateRandomInvestmentIdea()
+        {
+			investment_idea_handler.writeInvestmentIdea(new InvestmentIdea(2, LoginDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.LoginEntries)));
+        }
+
 	}
 }

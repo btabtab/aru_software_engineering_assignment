@@ -20,8 +20,12 @@ namespace aru_software_eng_UI
 	 * get implemented into the main form classes.
 	-JE oct-26.0
 	*/
-	class DatabaseWrapper
+	public class DatabaseWrapper
 	{
+
+		/**/
+		public const string LoginEntries = "LoginEntries", InvestmentIdeas = "InvestmentIdeas";
+
 		//This provides the connection to the database (big shock I know).
 		private SqlConnection connection_to_database;
 
@@ -74,7 +78,7 @@ namespace aru_software_eng_UI
 		 *	
 		 *	-JE oct-26.0
 		 */
-		private string searchDatabaseForString(string column_to_search, string target_table, string search_condition, string search_string)
+		public string searchDatabaseForString(string column_to_search, string target_table, string search_condition, string search_string)
 		{
 			string ret = null;
 
@@ -96,9 +100,11 @@ namespace aru_software_eng_UI
 			}
 			//kills the connection to the database. -JE oct-26.0
 			connection_to_database.Close();
-			return ret; 
+			return ret;
 		}
-		private int searchDataBaseForInt(string column_to_search, string target_table, string search_condition, string search_string)
+
+		/**/
+		public int searchDataBaseForInt(string column_to_search, string target_table, string search_condition, string search_string)
         {
 			int ret = 0;
 
@@ -123,12 +129,38 @@ namespace aru_software_eng_UI
 			return ret;
 
 		}
-		private bool searchDatabaseForBool(string column_to_search, string target_table, string search_condition, string search_string)
+
+		/**/
+		public bool searchDatabaseForBool(string column_to_search, string target_table, string search_condition, string search_string)
 		{
 			//creates a boolean array, and uses ☆ index magic ☆ to return true / false.
 			return (new bool[2] { false, true })[searchDataBaseForInt(column_to_search, target_table, search_condition, search_string)];
 		}
 
+		/**/
+		public DateTime searchDatabaseForDateTime(string column_to_search, string target_table, string search_condition, string search_string)
+        {
+			DateTime ret = new DateTime();
+			/*
+			 * Assembles an SQL query from the paramaters, makes the process of
+			 * writing the query itself much neater and easier to understand.
+			 */
+			string query_string = "Select " + column_to_search + " FROM " + target_table + " WHERE " + search_condition + "'" + search_string + "'";
+			SqlCommand oCmd = runSQLQuery(query_string);
+
+			SqlDataReader oReader = oCmd.ExecuteReader();
+
+			//Cycles through the rows of the database -JE oct-26.0
+			int index = 0;
+			while (oReader.Read())
+			{
+				ret = oReader.GetDateTime(index);
+				index++;
+			}
+			//kills the connection to the database. -JE oct-26.0
+			connection_to_database.Close();
+			return ret;
+        }
 		//opens the connection and begins the process. -JE oct-26.0
 		private SqlCommand runSQLQuery(string query)
         {
@@ -136,37 +168,13 @@ namespace aru_software_eng_UI
 			connection_to_database.Open();
 			connection_to_database.BeginTransaction().Commit();
 			return ret;
-        }
+		}
+
+		/**/
 		private void closeConnection()
         {
 			connection_to_database.Close();
         }
-		public DataBaseLoginEntry getLoginEntryFromUsername(string username)
-        {
-			string login_table = "LoginEntries";
-			DataBaseLoginEntry ret = new DataBaseLoginEntry(
-																searchDataBaseForInt("ID", login_table, "Username=", username),
-																searchDatabaseForString("Username", login_table, "Username=", username),
-																searchDatabaseForString("Password", login_table, "Username=", username),
-																searchDatabaseForString("Email",	login_table, "Username=", username),
-																searchDatabaseForBool("Is_RelationshipManager", login_table, "Username=", username)
-																);
-			return ret;
-        }
-		public DataBaseLoginEntry getLoginEntryFromEmail(string email)
-		{
-			string login_table = "LoginEntries";
-			DataBaseLoginEntry ret = new DataBaseLoginEntry(
-																searchDataBaseForInt("ID", login_table, "Email=", email),
-																searchDatabaseForString("Username", login_table, "Email=", email),
-																searchDatabaseForString("Password", login_table, "Email=", email),
-																searchDatabaseForString("Email",	login_table, "Email=", email),
-																searchDatabaseForBool("Is_RelationshipManager", login_table, "Email=", email)
-																);
-			return ret;
-		}
-
-
 		/*For the following functions I will need to implement a set of fixes,
 		 *comments and documentation as well as refactoring due to the code
 		 *being a bit messy.
@@ -205,7 +213,7 @@ namespace aru_software_eng_UI
 			return ret;
         }
 		//inserts a new entry into a table based around columns and values. -JE oct-30.0
-		private void insertNewEntryIntoDatabase(string target_table, List<string> columns_list, List<string> values_list)
+		public void insertNewEntryIntoDatabase(string target_table, List<string> columns_list, List<string> values_list)
 		{
 			string column_string = compileListIntoFormattedString(columns_list, false), values_string = compileListIntoFormattedString(values_list, true);
 
@@ -219,60 +227,24 @@ namespace aru_software_eng_UI
 			connection_to_database.Close();
 
 		}
-		//converts bool from LoginEntryClass to string for the table input. -JE oct-30.0
-		string rmStatusToString(bool is_rm_manager)
-        {
-			string ret = "0";
-
-			if(is_rm_manager)
-            {
-				ret = "1";
-            }
-			return ret;
-		}
-		//writes the entry into the logindatabase -JE oct-30.0
-		public void writeNewLoginDataEntry(DataBaseLoginEntry n_entry)
-		{
-			List<string> columns = new List<string>(), values = new List<string>();
-
-			//if (getRowCount("LoginEntries") < 1)
-			{
-				columns.Add("ID");
-				values.Add("" + (getHighestIDNumber("LoginEntries")+1));
-			}
-
-			columns.Add("Username");
-			columns.Add("Email");
-			columns.Add("Password");
-			columns.Add("Is_RelationshipManager");
-
-			values.Add(n_entry.getUsername());
-			values.Add(n_entry.getEmail());
-			values.Add(n_entry.getPassword());
-			values.Add(rmStatusToString(n_entry.getIsRelationshipManager()));
-
-
-			insertNewEntryIntoDatabase("LoginEntries", columns, values);
-		}
-		
 		//gets the amount of rows in the database. -JE oct-31.0
 		public int getRowCount(string target_table)
-        {
+		{
 			//SELECT COUNT(*) FROM tablename
 			SqlCommand oCmd = runSQLQuery("SELECT COUNT(*) FROM " + target_table);
 			int ret = (int)(Int32)oCmd.ExecuteScalar();
 			closeConnection();
 			return ret;
-        }
+		}
 		//deletes the targeted row. -JE oct-31.0
 		public void deleteRowX(string target_table, int row_num)
-        {
-            {
-				row_num = getHighestIDNumber(target_table);
-            }
+		{
+			{
+				row_num = getHighestIDNumber(target_table, "UserID");
+			}
 			// DELETE FROM table WHERE column = 'value';
 
-			string query_string = "DELETE FROM " + target_table + " WHERE ID=" + row_num;
+			string query_string = "DELETE FROM " + target_table + " WHERE UserID=" + row_num;
 			Console.WriteLine(query_string);
 			SqlCommand oCmd = runSQLQuery(query_string);
 			oCmd.ExecuteReader();
@@ -280,19 +252,22 @@ namespace aru_software_eng_UI
 			connection_to_database.Close();
 
 		}
-		public Int32 getHighestIDNumber(string target_table)
+
+		/**/
+		public Int32 getHighestIDNumber(string target_table, string ID_column_name)
 		{
-			if(getRowCount(target_table) == 0)
-            {
+			if (getRowCount(target_table) == 0)
+			{
 				return 0;
-            }
+			}
 			//SELECT COUNT(*) FROM tablename
-			SqlCommand oCmd = runSQLQuery("SELECT MAX(ID) FROM " + target_table);
+			SqlCommand oCmd = runSQLQuery("SELECT MAX(" + ID_column_name + ") FROM " + target_table);
 			int ret = (int)(Int32)oCmd.ExecuteScalar().GetHashCode();
 			closeConnection();
 			Console.Out.WriteLine("::: " + ret + " ::: @ >>> !");
 			return ret;
 		}
-
+		//converts bool from LoginEntryClass to string for the table input. -JE oct-30.0
+		
 	}
 }
