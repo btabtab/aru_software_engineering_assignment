@@ -171,7 +171,7 @@ namespace aru_software_eng_UI
 		}
 
 		/**/
-		private void closeConnection()
+		public void closeConnection()
         {
 			connection_to_database.Close();
         }

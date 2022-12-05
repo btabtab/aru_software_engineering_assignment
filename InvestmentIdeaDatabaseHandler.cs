@@ -51,12 +51,14 @@ namespace aru_software_eng_UI
 			catch(Exception e)
             {
 				Console.Write("!!!!\n\nMissing user in table.\n\n(" + e.Message + ")\n\n!!!!");
+				database_wrapper.closeConnection();
             }
-
+			InvestmentIdeaDatabaseHandler.getInstance().loadInvestmentIdeasFromDatabaseToList();
 		}
-	/**/
+		/**/
 		public InvestmentIdea getInvestmentIDFromDatabase(int ID)
 		{
+            InvestmentIdeaDatabaseHandler.getInstance().loadInvestmentIdeasFromDatabaseToList();
 			InvestmentIdea ret = new InvestmentIdea(
 															database_wrapper.searchDatabaseForDateTime("Date", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
 															database_wrapper.searchDatabaseForString("Name", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
@@ -85,9 +87,9 @@ namespace aru_software_eng_UI
 		}
 
 		/**/
-		void loadInvestmentIdeasFromDatabaseToList()
+		public void loadInvestmentIdeasFromDatabaseToList()
         {
-			for (int i = 0; i != getHighestID(DatabaseWrapper.InvestmentIdeas); i++)
+			for (int i = 0; i != getHighestID(DatabaseWrapper.InvestmentIdeas, "ID"); i++)
 			{
 				current_investment_ideas.Add(getInvestmentIDFromDatabase(i));
 			}
@@ -96,12 +98,14 @@ namespace aru_software_eng_UI
 		/**/
 		public InvestmentIdea getInvestmentIdeaFromID(int ID)
         {
+            InvestmentIdeaDatabaseHandler.getInstance().loadInvestmentIdeasFromDatabaseToList();
             return current_investment_ideas[ID];
 		}
 
 		/**/
 		public List<InvestmentIdea> getFilteredList(Filters filters)
         {
+            InvestmentIdeaDatabaseHandler.getInstance().loadInvestmentIdeasFromDatabaseToList();
 			return InvestmentIdeaFiltering.getFilterList(current_investment_ideas, filters);
 		}
 
