@@ -29,13 +29,16 @@ namespace aru_software_eng_UI
         private void updateSearchButton()
         {
             //The data from all four sliders is pulled and dsiplayed on the "search" button - L
-            SearchButton.Text = "   Min Risk: " + MinRiskTrackBar.Value.ToString() + "" +            "                                      SEARCH                               " +            "Min Cost: £" + MinCostTrackBar.Value.ToString() + "\n   Max Risk: " + MaxRiskTrackBar.Value.ToString() + "" +            "                                                                                 " +            "Max Cost: £" + MaxCostTrackBar.Value.ToString();
+            SearchButton.Text = "   Min Risk: " + MinRiskTrackBar.Value.ToString() + "" +
+            "                                      SEARCH                               " +
+            "Min Cost: £" + MinCostTrackBar.Value.ToString() + 
+            "\n   Max Risk: " + MaxRiskTrackBar.Value.ToString() + "" +
+            "                                                                                 " + 
+            "Max Cost: £" + MaxCostTrackBar.Value.ToString();
         }
 
 
-        private void RelationshipManagerView_Load(object sender, EventArgs e)
-        {
-        }
+
 
         //This function shows a single idea. The RM can select the idea by entering its ID number - L
         private void singleIdeaDisplay() 
@@ -90,40 +93,35 @@ namespace aru_software_eng_UI
         {
 
         }
-
         private void ExpireDateLabel_Click(object sender, EventArgs e)
         {
 
         }
-
         private void IndustryInputTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void IndustryLabel_Click(object sender, EventArgs e)
         {
 
         }
-
         private void manualSearchInput_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void MaxRiskLabel_Click(object sender, EventArgs e)
         {
         }
-
         private void MinRiskLabel_Click(object sender, EventArgs e)
         {
         }
-
         private void MinCostLabel_Click(object sender, EventArgs e)
         {
         }
-
         private void MaxCostLabel_Click(object sender, EventArgs e)
+        {
+        }
+        private void RelationshipManagerView_Load(object sender, EventArgs e)
         {
         }
     }

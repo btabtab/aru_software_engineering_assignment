@@ -45,6 +45,7 @@ namespace aru_software_eng_UI
             this.PageTitle = new System.Windows.Forms.Label();
             this.manualSearchInput = new System.Windows.Forms.TextBox();
             this.manualSearchLabel = new System.Windows.Forms.Label();
+            this.singleSearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MinRiskTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxRiskTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinCostTrackBar)).BeginInit();
@@ -54,10 +55,10 @@ namespace aru_software_eng_UI
             // MinRiskLabel
             // 
             this.MinRiskLabel.AutoSize = true;
-            this.MinRiskLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.MinRiskLabel.Location = new System.Drawing.Point(12, 93);
+            this.MinRiskLabel.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold);
+            this.MinRiskLabel.Location = new System.Drawing.Point(22, 96);
             this.MinRiskLabel.Name = "MinRiskLabel";
-            this.MinRiskLabel.Size = new System.Drawing.Size(176, 29);
+            this.MinRiskLabel.Size = new System.Drawing.Size(158, 39);
             this.MinRiskLabel.TabIndex = 1;
             this.MinRiskLabel.Text = "Minimum Risk";
             this.MinRiskLabel.Click += new System.EventHandler(this.MinRiskLabel_Click);
@@ -65,7 +66,7 @@ namespace aru_software_eng_UI
             // SearchButton
             // 
             this.SearchButton.BackColor = System.Drawing.SystemColors.Highlight;
-            this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.SearchButton.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold);
             this.SearchButton.ForeColor = System.Drawing.Color.Black;
             this.SearchButton.Location = new System.Drawing.Point(25, 260);
             this.SearchButton.Name = "SearchButton";
@@ -79,10 +80,10 @@ namespace aru_software_eng_UI
             // MaxRiskLabel
             // 
             this.MaxRiskLabel.AutoSize = true;
-            this.MaxRiskLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.MaxRiskLabel.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold);
             this.MaxRiskLabel.Location = new System.Drawing.Point(16, 156);
             this.MaxRiskLabel.Name = "MaxRiskLabel";
-            this.MaxRiskLabel.Size = new System.Drawing.Size(181, 29);
+            this.MaxRiskLabel.Size = new System.Drawing.Size(164, 39);
             this.MaxRiskLabel.TabIndex = 10;
             this.MaxRiskLabel.Text = "Maximum Risk";
             this.MaxRiskLabel.Click += new System.EventHandler(this.MaxRiskLabel_Click);
@@ -90,10 +91,10 @@ namespace aru_software_eng_UI
             // MinCostLabel
             // 
             this.MinCostLabel.AutoSize = true;
-            this.MinCostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.MinCostLabel.Location = new System.Drawing.Point(430, 90);
+            this.MinCostLabel.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold);
+            this.MinCostLabel.Location = new System.Drawing.Point(437, 90);
             this.MinCostLabel.Name = "MinCostLabel";
-            this.MinCostLabel.Size = new System.Drawing.Size(178, 29);
+            this.MinCostLabel.Size = new System.Drawing.Size(159, 39);
             this.MinCostLabel.TabIndex = 11;
             this.MinCostLabel.Text = "Minimum Cost";
             this.MinCostLabel.Click += new System.EventHandler(this.MinCostLabel_Click);
@@ -101,16 +102,17 @@ namespace aru_software_eng_UI
             // MaxCostLabel
             // 
             this.MaxCostLabel.AutoSize = true;
-            this.MaxCostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.MaxCostLabel.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold);
             this.MaxCostLabel.Location = new System.Drawing.Point(431, 154);
             this.MaxCostLabel.Name = "MaxCostLabel";
-            this.MaxCostLabel.Size = new System.Drawing.Size(183, 29);
+            this.MaxCostLabel.Size = new System.Drawing.Size(165, 39);
             this.MaxCostLabel.TabIndex = 12;
             this.MaxCostLabel.Text = "Maximum Cost";
             this.MaxCostLabel.Click += new System.EventHandler(this.MaxCostLabel_Click);
             // 
             // MinRiskTrackBar
             // 
+            this.MinRiskTrackBar.LargeChange = 1;
             this.MinRiskTrackBar.Location = new System.Drawing.Point(196, 96);
             this.MinRiskTrackBar.Maximum = 5;
             this.MinRiskTrackBar.Minimum = 1;
@@ -122,6 +124,7 @@ namespace aru_software_eng_UI
             // 
             // MaxRiskTrackBar
             // 
+            this.MaxRiskTrackBar.LargeChange = 1;
             this.MaxRiskTrackBar.Location = new System.Drawing.Point(207, 159);
             this.MaxRiskTrackBar.Maximum = 5;
             this.MaxRiskTrackBar.Minimum = 1;
@@ -156,10 +159,10 @@ namespace aru_software_eng_UI
             // IndustryLabel
             // 
             this.IndustryLabel.AutoSize = true;
-            this.IndustryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.IndustryLabel.Location = new System.Drawing.Point(80, 211);
+            this.IndustryLabel.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold);
+            this.IndustryLabel.Location = new System.Drawing.Point(79, 211);
             this.IndustryLabel.Name = "IndustryLabel";
-            this.IndustryLabel.Size = new System.Drawing.Size(104, 29);
+            this.IndustryLabel.Size = new System.Drawing.Size(101, 39);
             this.IndustryLabel.TabIndex = 17;
             this.IndustryLabel.Text = "Industry";
             this.IndustryLabel.Click += new System.EventHandler(this.IndustryLabel_Click);
@@ -176,10 +179,10 @@ namespace aru_software_eng_UI
             // ExpireDateLabel
             // 
             this.ExpireDateLabel.AutoSize = true;
-            this.ExpireDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.ExpireDateLabel.Location = new System.Drawing.Point(462, 214);
+            this.ExpireDateLabel.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold);
+            this.ExpireDateLabel.Location = new System.Drawing.Point(461, 211);
             this.ExpireDateLabel.Name = "ExpireDateLabel";
-            this.ExpireDateLabel.Size = new System.Drawing.Size(146, 29);
+            this.ExpireDateLabel.Size = new System.Drawing.Size(135, 39);
             this.ExpireDateLabel.TabIndex = 19;
             this.ExpireDateLabel.Text = "Expiry Date";
             this.ExpireDateLabel.Click += new System.EventHandler(this.ExpireDateLabel_Click);
@@ -197,17 +200,17 @@ namespace aru_software_eng_UI
             // PageTitle
             // 
             this.PageTitle.AutoSize = true;
-            this.PageTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PageTitle.Location = new System.Drawing.Point(12, 9);
+            this.PageTitle.Font = new System.Drawing.Font("Agency FB", 64F, System.Drawing.FontStyle.Bold);
+            this.PageTitle.Location = new System.Drawing.Point(316, -9);
             this.PageTitle.Name = "PageTitle";
-            this.PageTitle.Size = new System.Drawing.Size(725, 73);
+            this.PageTitle.Size = new System.Drawing.Size(234, 102);
             this.PageTitle.TabIndex = 21;
-            this.PageTitle.Text = "Enter your requirments:";
+            this.PageTitle.Text = "Filters";
             // 
             // manualSearchInput
             // 
             this.manualSearchInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manualSearchInput.Location = new System.Drawing.Point(406, 390);
+            this.manualSearchInput.Location = new System.Drawing.Point(342, 390);
             this.manualSearchInput.Name = "manualSearchInput";
             this.manualSearchInput.Size = new System.Drawing.Size(208, 38);
             this.manualSearchInput.TabIndex = 22;
@@ -216,18 +219,31 @@ namespace aru_software_eng_UI
             // manualSearchLabel
             // 
             this.manualSearchLabel.AutoSize = true;
-            this.manualSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.manualSearchLabel.Location = new System.Drawing.Point(40, 396);
+            this.manualSearchLabel.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold);
+            this.manualSearchLabel.Location = new System.Drawing.Point(22, 387);
             this.manualSearchLabel.Name = "manualSearchLabel";
-            this.manualSearchLabel.Size = new System.Drawing.Size(343, 29);
+            this.manualSearchLabel.Size = new System.Drawing.Size(311, 39);
             this.manualSearchLabel.TabIndex = 23;
             this.manualSearchLabel.Text = "Search for an idea manually:";
+            // 
+            // singleSearchButton
+            // 
+            this.singleSearchButton.BackColor = System.Drawing.SystemColors.Highlight;
+            this.singleSearchButton.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold);
+            this.singleSearchButton.ForeColor = System.Drawing.Color.Black;
+            this.singleSearchButton.Location = new System.Drawing.Point(571, 367);
+            this.singleSearchButton.Name = "singleSearchButton";
+            this.singleSearchButton.Size = new System.Drawing.Size(251, 82);
+            this.singleSearchButton.TabIndex = 24;
+            this.singleSearchButton.Text = "Search manually";
+            this.singleSearchButton.UseVisualStyleBackColor = false;
             // 
             // FilterWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.singleSearchButton);
             this.Controls.Add(this.manualSearchLabel);
             this.Controls.Add(this.manualSearchInput);
             this.Controls.Add(this.PageTitle);
@@ -273,5 +289,6 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label PageTitle;
         private System.Windows.Forms.TextBox manualSearchInput;
         private System.Windows.Forms.Label manualSearchLabel;
+        private System.Windows.Forms.Button singleSearchButton;
     }
 }

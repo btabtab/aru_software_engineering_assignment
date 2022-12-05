@@ -56,7 +56,7 @@ namespace aru_software_eng_UI
             this.RM_backButton.Location = new System.Drawing.Point(694, 12);
             this.RM_backButton.Name = "RM_backButton";
             this.RM_backButton.Size = new System.Drawing.Size(128, 64);
-            this.RM_backButton.TabIndex = 1;
+            this.RM_backButton.TabIndex = 5;
             this.RM_backButton.UseVisualStyleBackColor = true;
             this.RM_backButton.Click += new System.EventHandler(this.RM_backButton_Click);
             // 
@@ -66,7 +66,7 @@ namespace aru_software_eng_UI
             this.RM_login_name_entry.Location = new System.Drawing.Point(294, 171);
             this.RM_login_name_entry.Name = "RM_login_name_entry";
             this.RM_login_name_entry.Size = new System.Drawing.Size(502, 53);
-            this.RM_login_name_entry.TabIndex = 2;
+            this.RM_login_name_entry.TabIndex = 1;
             // 
             // RM_login_password_entry
             // 
@@ -75,7 +75,7 @@ namespace aru_software_eng_UI
             this.RM_login_password_entry.Name = "RM_login_password_entry";
             this.RM_login_password_entry.PasswordChar = '*';
             this.RM_login_password_entry.Size = new System.Drawing.Size(502, 53);
-            this.RM_login_password_entry.TabIndex = 3;
+            this.RM_login_password_entry.TabIndex = 2;
             // 
             // RM_login_name_label
             // 
