@@ -60,7 +60,7 @@ namespace aru_software_eng_UI
             this.SignUpButton.Margin = new System.Windows.Forms.Padding(2);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(106, 44);
-            this.SignUpButton.TabIndex = 0;
+            this.SignUpButton.TabIndex = 7;
             this.SignUpButton.Text = "Sign Up";
             this.SignUpButton.UseVisualStyleBackColor = false;
             this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
@@ -83,7 +83,7 @@ namespace aru_software_eng_UI
             this.RulesCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.RulesCheckBox.Name = "RulesCheckBox";
             this.RulesCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.RulesCheckBox.TabIndex = 2;
+            this.RulesCheckBox.TabIndex = 6;
             this.RulesCheckBox.UseVisualStyleBackColor = true;
             this.RulesCheckBox.CheckedChanged += new System.EventHandler(this.RulesCheckBox_CheckedChanged);
             // 
@@ -95,7 +95,7 @@ namespace aru_software_eng_UI
             this.LoginGetter.MaxLength = 20;
             this.LoginGetter.Name = "LoginGetter";
             this.LoginGetter.Size = new System.Drawing.Size(482, 38);
-            this.LoginGetter.TabIndex = 3;
+            this.LoginGetter.TabIndex = 1;
             this.LoginGetter.TextChanged += new System.EventHandler(this.LoginGetter_TextChanged);
             // 
             // RulesText
@@ -129,7 +129,7 @@ namespace aru_software_eng_UI
             this.EmailGetter.Margin = new System.Windows.Forms.Padding(2);
             this.EmailGetter.Name = "EmailGetter";
             this.EmailGetter.Size = new System.Drawing.Size(482, 38);
-            this.EmailGetter.TabIndex = 6;
+            this.EmailGetter.TabIndex = 2;
             this.EmailGetter.TextChanged += new System.EventHandler(this.EmailGetter_TextChanged);
             // 
             // EmailLabel
@@ -153,7 +153,7 @@ namespace aru_software_eng_UI
             this.PasswordGetter1.Name = "PasswordGetter1";
             this.PasswordGetter1.PasswordChar = '*';
             this.PasswordGetter1.Size = new System.Drawing.Size(482, 38);
-            this.PasswordGetter1.TabIndex = 8;
+            this.PasswordGetter1.TabIndex = 3;
             this.PasswordGetter1.UseSystemPasswordChar = true;
             this.PasswordGetter1.TextChanged += new System.EventHandler(this.PasswordGetter1_TextChanged);
             // 
@@ -190,7 +190,7 @@ namespace aru_software_eng_UI
             this.PasswordGetter2.Name = "PasswordGetter2";
             this.PasswordGetter2.PasswordChar = '*';
             this.PasswordGetter2.Size = new System.Drawing.Size(482, 38);
-            this.PasswordGetter2.TabIndex = 11;
+            this.PasswordGetter2.TabIndex = 4;
             this.PasswordGetter2.UseSystemPasswordChar = true;
             // 
             // GoBackButton
@@ -273,7 +273,7 @@ namespace aru_software_eng_UI
             this.IsRMCheckBox.Location = new System.Drawing.Point(320, 301);
             this.IsRMCheckBox.Name = "IsRMCheckBox";
             this.IsRMCheckBox.Size = new System.Drawing.Size(243, 30);
-            this.IsRMCheckBox.TabIndex = 22;
+            this.IsRMCheckBox.TabIndex = 5;
             this.IsRMCheckBox.Text = " Relationship Manager Account";
             this.IsRMCheckBox.UseVisualStyleBackColor = true;
             this.IsRMCheckBox.CheckedChanged += new System.EventHandler(this.IsRMCheckBox_CheckedChanged);
