@@ -133,8 +133,8 @@ namespace aru_software_eng_UI
 		{
 			//Calculates a buttons size based of values inputted from the database, and the filters previously selected - L
 			int size_of_button = buttonSizeCalcualtor(temp_min_cost, temp_max_cost, temp_min_risk, temp_max_risk, temp_db_cost, temp_db_risk);//
-			
 
+			
 
 			//Finds a buttons location based off of it's size - L
 			Point location_of_button = findPosition(size_of_button);

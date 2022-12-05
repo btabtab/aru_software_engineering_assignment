@@ -239,6 +239,7 @@ namespace aru_software_eng_UI
             this.singleSearchButton.TabIndex = 24;
             this.singleSearchButton.Text = "Search manually";
             this.singleSearchButton.UseVisualStyleBackColor = false;
+            this.singleSearchButton.Click += new System.EventHandler(this.singleSearchButton_Click);
             // 
             // divide_line
             // 
