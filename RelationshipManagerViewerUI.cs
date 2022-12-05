@@ -12,7 +12,6 @@ namespace aru_software_eng_UI
 {
 	public partial class RelationshipManagerViewerUI : Form
 	{
-		IdeaSubmitterForm submitterForm;
 		FormManager manager;
 		private int slot_counter = 0; //Keeps track of how many slots are use by buttons, globally - L
 		private int button_base_size = 175; //Allows us to easily change the base size of a button - L
@@ -30,9 +29,6 @@ namespace aru_software_eng_UI
 		}
 		List<InvestmentIdea> idea_list;
 
-
-
-
 		//Some temporary values for testing, mimicking the values being imported from the filter page - L
 		int temp_min_cost = 50;
 		int temp_max_cost = 150;
@@ -41,80 +37,11 @@ namespace aru_software_eng_UI
 
 		int temp_db_cost = 100;
 		int temp_db_risk = 3;
-		int db_amount_of_entries;
+
+		int db_amount_of_entries = 17;
 
 
 
-		//idea = Pull all ideas from idea DB
-
-		//This function filters all of the ideas from the database that fall outside of prefered range - L
-		private void databasePreferenceFilter(int min_cost, int max_cost, int min_risk, int max_risk, string industy, DateTime expire_date, int RM_level) 
-		{
-			//for(i=0; i < idea_db_length; i++)
-			//{
-			//	if(idea[i].cost < min_cost || idea[i].cost > max_cost || idea[i].risk < min_risk || idea[i].risk > max_risk || idea[i].industry != industry || idea[i].date > expire_date || idea[i].RM_level < RM_level)
-				//{ 
-					//delete idea[i] from database;
-				//}
-			//}
-
-
-
-			//db_amount_of_entries == length(idea);
-
-
-
-			//for(i=0; i < db_amount_of_entries; i++)
-			//{
-				//spawnButton(i, min_cost, max_cost, min_risk, max_risk, industy, expire_date, RM_level, idea[i].cost, idea[i].risk)
-			//}
-		}
-
-
-
-
-		//A function that spawns in a button - L
-		private void spawnButton(int button_index_from_list, int min_cost, int max_cost, int min_risk, int max_risk, string industy, DateTime expire_date, int RM_level, int database_cost, int database_risk) 
-		{
-			//Calculates a buttons size based of values inputted from the database, and the filters previously selected - L
-			int size_of_button = buttonSizeCalcualtor(min_cost, max_cost, min_risk, max_risk, database_cost, database_risk);
-
-			
-
-			//Finds a buttons location based off of it's size - L
-			Point location_of_button = findPosition(size_of_button);
-            FancyDisplayBubbleTracker.instanceAddBubble(new Button(), idea_list[button_index_from_list]);
-
-            this.Controls.Add(FancyDisplayBubbleTracker.instanceGetLastBubble().getButton()); //Add controlls to the recently created button - L
-			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Text = idea_list[button_index_from_list].getName(); //Sets the text of the button - L
-			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Location = location_of_button; //Sets the location of the button - L
-			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Size = new Size(size_of_button, size_of_button); //Sets the size of button to the default size - L
-			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Font = new Font("Agency FB", size_of_button / 6, FontStyle.Bold);
-		}
-
-		//If the left button is pressed, clear all bubbles and update the page and add the new bubbles - L
-        private void page_left_button_Click(object sender, EventArgs e)
-        {
-			if (page_number > 1) 
-			{
-				page_number--;
-				pageClearer();
-				pageLoader();
-			}
-			
-		}
-
-		//If the left button is pressed, clear all bubbles and update the page and add the new bubbles - L
-		private void page_right_button_Click(object sender, EventArgs e)
-        {
-			if (page_number < total_page_count)
-			{
-				page_number++;
-				pageClearer();
-				pageLoader();
-			}
-
-		}
 
 		//A function that sets some basic things up, only ran once at the start - L
 		private void firstTimeRun()
@@ -200,10 +127,62 @@ namespace aru_software_eng_UI
 			return (int)final_suitability;
 		}
 
+		//A function that spawns in a button - L
+		private void spawnButton(int button_index_from_list)
+		{
+			//Calculates a buttons size based of values inputted from the database, and the filters previously selected - L
+			int size_of_button = buttonSizeCalcualtor(temp_min_cost, temp_max_cost, temp_min_risk, temp_max_risk, temp_db_cost, temp_db_risk);//
+
+			//Finds a buttons location based off of it's size - L
+			Point location_of_button = findPosition(size_of_button);
+
+			FancyDisplayBubbleTracker.instanceAddBubble(new Button(), idea_list[button_index_from_list]);
+			this.Controls.Add(FancyDisplayBubbleTracker.instanceGetLastBubble().getButton()); //Add controlls to the recently created button - L
+			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Text = idea_list[button_index_from_list].getName(); //Sets the text of the button - L
+			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Location = location_of_button; //Sets the location of the button - L
+			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Size = new Size(size_of_button, size_of_button); //Sets the size of button to the default size - L
+			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Font = new Font("Agency FB", size_of_button / 6, FontStyle.Bold);
+		}
+
+		//If the left button is pressed, clear all bubbles and update the page and add the new bubbles - L
+		private void page_left_button_Click(object sender, EventArgs e)
+		{
+			if (page_number > 1)
+			{
+				page_number--;
+				pageClearer();
+				pageLoader();
+			}
+
+		}
+
+		//If the left button is pressed, clear all bubbles and update the page and add the new bubbles - L
+		private void page_right_button_Click(object sender, EventArgs e)
+		{
+			if (page_number < total_page_count)
+			{
+				page_number++;
+				pageClearer();
+				pageLoader();
+			}
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
 		//Ignore the below functions... - L
 		private void page_number_label_Click(object sender, EventArgs e)
-        {
-        }
+		{
+		}
 		private void RelationshipManagerViewerUI_Load(object sender, EventArgs e)
 		{
 		}
@@ -213,9 +192,9 @@ namespace aru_software_eng_UI
 		private void cost_label_Click(object sender, EventArgs e)
 		{
 		}
-        private void divide_line_Click(object sender, EventArgs e)
-        {
+		private void divide_line_Click(object sender, EventArgs e)
+		{
 
-        }
-    }
+		}
+	}
 }
