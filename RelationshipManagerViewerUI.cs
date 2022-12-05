@@ -12,6 +12,7 @@ namespace aru_software_eng_UI
 {
 	public partial class RelationshipManagerViewerUI : Form
 	{
+		IdeaSubmitterForm submitterForm;
 		FormManager manager;
 		private int slot_counter = 0; //Keeps track of how many slots are use by buttons, globally - L
 		private int button_base_size = 175; //Allows us to easily change the base size of a button - L
