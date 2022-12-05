@@ -46,6 +46,7 @@ namespace aru_software_eng_UI
             this.manualSearchInput = new System.Windows.Forms.TextBox();
             this.manualSearchLabel = new System.Windows.Forms.Label();
             this.singleSearchButton = new System.Windows.Forms.Button();
+            this.divide_line = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.MinRiskTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxRiskTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinCostTrackBar)).BeginInit();
@@ -92,7 +93,7 @@ namespace aru_software_eng_UI
             // 
             this.MinCostLabel.AutoSize = true;
             this.MinCostLabel.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold);
-            this.MinCostLabel.Location = new System.Drawing.Point(437, 90);
+            this.MinCostLabel.Location = new System.Drawing.Point(437, 96);
             this.MinCostLabel.Name = "MinCostLabel";
             this.MinCostLabel.Size = new System.Drawing.Size(159, 39);
             this.MinCostLabel.TabIndex = 11;
@@ -137,7 +138,7 @@ namespace aru_software_eng_UI
             // MinCostTrackBar
             // 
             this.MinCostTrackBar.LargeChange = 5000;
-            this.MinCostTrackBar.Location = new System.Drawing.Point(614, 90);
+            this.MinCostTrackBar.Location = new System.Drawing.Point(614, 96);
             this.MinCostTrackBar.Maximum = 100000;
             this.MinCostTrackBar.Name = "MinCostTrackBar";
             this.MinCostTrackBar.Size = new System.Drawing.Size(208, 45);
@@ -206,11 +207,12 @@ namespace aru_software_eng_UI
             this.PageTitle.Size = new System.Drawing.Size(234, 102);
             this.PageTitle.TabIndex = 21;
             this.PageTitle.Text = "Filters";
+            this.PageTitle.Click += new System.EventHandler(this.PageTitle_Click);
             // 
             // manualSearchInput
             // 
             this.manualSearchInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manualSearchInput.Location = new System.Drawing.Point(342, 390);
+            this.manualSearchInput.Location = new System.Drawing.Point(243, 389);
             this.manualSearchInput.Name = "manualSearchInput";
             this.manualSearchInput.Size = new System.Drawing.Size(208, 38);
             this.manualSearchInput.TabIndex = 22;
@@ -220,29 +222,43 @@ namespace aru_software_eng_UI
             // 
             this.manualSearchLabel.AutoSize = true;
             this.manualSearchLabel.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold);
-            this.manualSearchLabel.Location = new System.Drawing.Point(22, 387);
+            this.manualSearchLabel.Location = new System.Drawing.Point(83, 389);
             this.manualSearchLabel.Name = "manualSearchLabel";
-            this.manualSearchLabel.Size = new System.Drawing.Size(311, 39);
+            this.manualSearchLabel.Size = new System.Drawing.Size(154, 39);
             this.manualSearchLabel.TabIndex = 23;
-            this.manualSearchLabel.Text = "Search for an idea manually:";
+            this.manualSearchLabel.Text = "Enter Idea ID:";
             // 
             // singleSearchButton
             // 
             this.singleSearchButton.BackColor = System.Drawing.SystemColors.Highlight;
             this.singleSearchButton.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold);
             this.singleSearchButton.ForeColor = System.Drawing.Color.Black;
-            this.singleSearchButton.Location = new System.Drawing.Point(571, 367);
+            this.singleSearchButton.Location = new System.Drawing.Point(480, 378);
             this.singleSearchButton.Name = "singleSearchButton";
-            this.singleSearchButton.Size = new System.Drawing.Size(251, 82);
+            this.singleSearchButton.Size = new System.Drawing.Size(251, 60);
             this.singleSearchButton.TabIndex = 24;
             this.singleSearchButton.Text = "Search manually";
             this.singleSearchButton.UseVisualStyleBackColor = false;
+            // 
+            // divide_line
+            // 
+            this.divide_line.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.divide_line.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.divide_line.Location = new System.Drawing.Point(4, 352);
+            this.divide_line.Minimum = 100;
+            this.divide_line.Name = "divide_line";
+            this.divide_line.Size = new System.Drawing.Size(824, 3);
+            this.divide_line.Step = 100;
+            this.divide_line.TabIndex = 25;
+            this.divide_line.Value = 100;
+            this.divide_line.Click += new System.EventHandler(this.divide_line_Click);
             // 
             // FilterWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.divide_line);
             this.Controls.Add(this.singleSearchButton);
             this.Controls.Add(this.manualSearchLabel);
             this.Controls.Add(this.manualSearchInput);
@@ -290,5 +306,6 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.TextBox manualSearchInput;
         private System.Windows.Forms.Label manualSearchLabel;
         private System.Windows.Forms.Button singleSearchButton;
+        private System.Windows.Forms.ProgressBar divide_line;
     }
 }

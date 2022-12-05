@@ -124,5 +124,15 @@ namespace aru_software_eng_UI
         private void RelationshipManagerView_Load(object sender, EventArgs e)
         {
         }
+
+        private void divide_line_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PageTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

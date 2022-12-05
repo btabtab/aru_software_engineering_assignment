@@ -132,12 +132,14 @@ namespace aru_software_eng_UI
 		{
 			//Calculates a buttons size based of values inputted from the database, and the filters previously selected - L
 			int size_of_button = buttonSizeCalcualtor(temp_min_cost, temp_max_cost, temp_min_risk, temp_max_risk, temp_db_cost, temp_db_risk);//
+			
+
 
 			//Finds a buttons location based off of it's size - L
-			Point location_of_button = findPosition(size_of_button); 
+			Point location_of_button = findPosition(size_of_button);
+            FancyDisplayBubbleTracker.instanceAddBubble(new Button(), idea_list[button_index_from_list]);
 
-			FancyDisplayBubbleTracker.instanceAddBubble(new Button(), idea_list[button_index_from_list]);
-			this.Controls.Add(FancyDisplayBubbleTracker.instanceGetLastBubble().getButton()); //Add controlls to the recently created button - L
+            this.Controls.Add(FancyDisplayBubbleTracker.instanceGetLastBubble().getButton()); //Add controlls to the recently created button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Text = idea_list[button_index_from_list].getName(); //Sets the text of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Location = location_of_button; //Sets the location of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Size = new Size(size_of_button, size_of_button); //Sets the size of button to the default size - L
