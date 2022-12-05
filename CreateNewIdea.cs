@@ -41,7 +41,7 @@ namespace aru_software_eng_UI
 
         private void CostTextBox_TextChanged(object sender, EventArgs e)
         {
-
+          
         }
 
         private void IS_back_button_Click(object sender, EventArgs e)
