@@ -28,7 +28,12 @@ namespace aru_software_eng_UI
         //When ran, updates the button to show the correct information - L
         private void updateSearchButton()
         {
-            SearchButton.Text = "   Min Risk: " + MinRiskTrackBar.Value.ToString() + "                                      SEARCH                               Min Cost: £" + MinCostTrackBar.Value.ToString() + "\n   Max Risk: " + MaxRiskTrackBar.Value.ToString() + "                                                                                 Max Cost: £" + MaxCostTrackBar.Value.ToString();
+            //The data from all four sliders is pulled and dsiplayed on the "search" button - L
+            SearchButton.Text = "   Min Risk: " + MinRiskTrackBar.Value.ToString() + "" +
+            "                                      SEARCH                               " +
+            "Min Cost: £" + MinCostTrackBar.Value.ToString() + "\n   Max Risk: " + MaxRiskTrackBar.Value.ToString() + "" +
+            "                                                                                 " +
+            "Max Cost: £" + MaxCostTrackBar.Value.ToString();
         }
 
 
@@ -41,38 +46,28 @@ namespace aru_software_eng_UI
         {
             //Convert the inputted numbers into a int - L
             int ID_to_search = Int32.Parse(manualSearchInput.Text);
-            backend_controller.getInvestmentIDFromDatabase(ID_to_search)
 
-
-
+            //This should print the row that contains the investment idea?? - L
+            Console.WriteLine(backend_controller.getInvestmentIdeaFromID(ID_to_search));
         }
 
        
-
+        //When the search button is pressed, the stored values are passed
+        //through to the next page ready to be processed and displayed
         private void SearchButton_Click(object sender, EventArgs e)
         {
+            //Create an instance of the filter class and fill it with the appropriate information
             Filters pass_through = new Filters(MinCostTrackBar.Value, MaxCostTrackBar.Value, MinRiskTrackBar.Value, MaxRiskTrackBar.Value, user_login.getIsRelationshipManager(), ExpireDatePicker.Value);
             Console.WriteLine(pass_through.asString() + "\n");
             Console.WriteLine(pass_through.ToString() + "\n");
+
+            //Load the page to sort the information and display the bubbles, pass through the infomration the user has entered 
             new RelationshipManagerViewerUI(this, InvestmentIdeaDatabaseHandler.getInstance().getFilteredList(pass_through));
         }
 
-        private void MaxRiskLabel_Click(object sender, EventArgs e)
-        {
-        }
 
-        private void MinRiskLabel_Click(object sender, EventArgs e)
-        {
-        }
 
-        private void MinCostLabel_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void MaxCostLabel_Click(object sender, EventArgs e)
-        {
-        }
-
+//Whenever a change is made to any of the four sliders, the button search button is updated - L
         private void MinRiskTrackBar_Scroll(object sender, EventArgs e)
         {
             updateSearchButton();
@@ -92,6 +87,8 @@ namespace aru_software_eng_UI
         {
             updateSearchButton();
         }
+
+
 
         private void ExpireDatePicker_ValueChanged(object sender, EventArgs e)
         {
@@ -116,6 +113,22 @@ namespace aru_software_eng_UI
         private void manualSearchInput_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void MaxRiskLabel_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void MinRiskLabel_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void MinCostLabel_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void MaxCostLabel_Click(object sender, EventArgs e)
+        {
         }
     }
 }
