@@ -27,11 +27,14 @@ namespace aru_software_eng_UI
 			return singleton_instance;
 		}
 
+
+
+
 		public DataBaseLoginEntry randomEntry()
 		{
 			int random_num = new Random().Next(256);
 			DataBaseLoginEntry ret = new DataBaseLoginEntry();
-			ret.setID(random_num);
+			ret.setID(getHighestUserIDEntry().getID());
 			ret.setUsername("username_" + random_num);
 			ret.setPassword("password");
 			ret.setEmail("email_" + random_num + "@mail.net");
@@ -45,11 +48,11 @@ namespace aru_software_eng_UI
         }
 		public DataBaseLoginEntry loginSearchEmail(string search)
         {
-			return login_handler.getLoginEntryFromUsername(search);
+			return login_handler.getLoginEntryFromEmail(search);
 		}
 		public DataBaseLoginEntry loginSearchUsername(string search)
         {
-			return login_handler.getLoginEntryFromEmail(search);
+			return login_handler.getLoginEntryFromUsername(search);
 		}
 		//this writes a new login into the database. -J
 		public void writeLoginDatabaseEntry(DataBaseLoginEntry n_database_login_entry)
@@ -67,11 +70,24 @@ namespace aru_software_eng_UI
         }
 		public DataBaseLoginEntry getHighestUserIDEntry()
         {
-			return login_handler.getLoginEntryFromID(login_handler.getHighestID(DatabaseWrapper.LoginEntries));
+			return login_handler.getLoginEntryFromID(login_handler.getHighestID(DatabaseWrapper.LoginEntries, "UserID"));
 		}
 		public void deleteHighestLoginID()
         {
-			login_handler.deleteLoginRowX(login_handler.getHighestID(DatabaseWrapper.LoginEntries));
+			login_handler.deleteLoginRowX(login_handler.getHighestID(DatabaseWrapper.LoginEntries, "UserID"));
         }
+		public void writeLoginDatabaseEntry(InvestmentIdea n_investment_idea)
+        {
+			investment_idea_handler.writeInvestmentIdea(n_investment_idea);
+        }
+		public InvestmentIdea getInvestmentIdeaFromID(int i)
+        {
+			return investment_idea_handler.getInvestmentIdeaFromID(i);
+        }
+		public void generateRandomInvestmentIdea()
+        {
+			investment_idea_handler.writeInvestmentIdea(new InvestmentIdea(2, LoginDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.LoginEntries, "UserID")));
+        }
+
 	}
 }

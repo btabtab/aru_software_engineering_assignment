@@ -13,6 +13,7 @@ namespace aru_software_eng_UI
     public partial class IdeaGeneratorLogin : Form
     {
         FormManager manager;
+        Form next_window;
         BackendController backend_controller;
         public IdeaGeneratorLogin(Form n_previous_window)
         {
@@ -45,7 +46,7 @@ namespace aru_software_eng_UI
            if ((loginEntry.getEmail() == username || loginEntry.getUsername() == username) && loginEntry.getPassword() == password)
             {
                 // redirect to Idea Submitter page
-                //next_window = new Idea_Submitter(this, backend_controller);
+                next_window = new IdeaSubmitterForm(this, backend_controller);
             }
         }
     }

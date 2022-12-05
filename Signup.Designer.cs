@@ -56,11 +56,11 @@ namespace aru_software_eng_UI
             this.SignUpButton.BackColor = System.Drawing.SystemColors.Highlight;
             this.SignUpButton.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SignUpButton.Location = new System.Drawing.Point(366, 369);
+            this.SignUpButton.Location = new System.Drawing.Point(393, 369);
             this.SignUpButton.Margin = new System.Windows.Forms.Padding(2);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(106, 44);
-            this.SignUpButton.TabIndex = 0;
+            this.SignUpButton.TabIndex = 7;
             this.SignUpButton.Text = "Sign Up";
             this.SignUpButton.UseVisualStyleBackColor = false;
             this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
@@ -79,11 +79,11 @@ namespace aru_software_eng_UI
             // RulesCheckBox
             // 
             this.RulesCheckBox.AutoSize = true;
-            this.RulesCheckBox.Location = new System.Drawing.Point(297, 349);
+            this.RulesCheckBox.Location = new System.Drawing.Point(316, 348);
             this.RulesCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.RulesCheckBox.Name = "RulesCheckBox";
             this.RulesCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.RulesCheckBox.TabIndex = 2;
+            this.RulesCheckBox.TabIndex = 6;
             this.RulesCheckBox.UseVisualStyleBackColor = true;
             this.RulesCheckBox.CheckedChanged += new System.EventHandler(this.RulesCheckBox_CheckedChanged);
             // 
@@ -95,20 +95,21 @@ namespace aru_software_eng_UI
             this.LoginGetter.MaxLength = 20;
             this.LoginGetter.Name = "LoginGetter";
             this.LoginGetter.Size = new System.Drawing.Size(482, 38);
-            this.LoginGetter.TabIndex = 3;
+            this.LoginGetter.TabIndex = 1;
             this.LoginGetter.TextChanged += new System.EventHandler(this.LoginGetter_TextChanged);
             // 
             // RulesText
             // 
             this.RulesText.AutoSize = true;
             this.RulesText.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RulesText.Location = new System.Drawing.Point(316, 344);
+            this.RulesText.Location = new System.Drawing.Point(335, 343);
             this.RulesText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RulesText.Name = "RulesText";
             this.RulesText.Size = new System.Drawing.Size(228, 20);
             this.RulesText.TabIndex = 4;
             this.RulesText.TabStop = true;
             this.RulesText.Text = "I confirm I have read the rules and privacy policies";
+            this.RulesText.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RulesText_LinkClicked);
             // 
             // LoginLabel
             // 
@@ -128,7 +129,7 @@ namespace aru_software_eng_UI
             this.EmailGetter.Margin = new System.Windows.Forms.Padding(2);
             this.EmailGetter.Name = "EmailGetter";
             this.EmailGetter.Size = new System.Drawing.Size(482, 38);
-            this.EmailGetter.TabIndex = 6;
+            this.EmailGetter.TabIndex = 2;
             this.EmailGetter.TextChanged += new System.EventHandler(this.EmailGetter_TextChanged);
             // 
             // EmailLabel
@@ -152,7 +153,7 @@ namespace aru_software_eng_UI
             this.PasswordGetter1.Name = "PasswordGetter1";
             this.PasswordGetter1.PasswordChar = '*';
             this.PasswordGetter1.Size = new System.Drawing.Size(482, 38);
-            this.PasswordGetter1.TabIndex = 8;
+            this.PasswordGetter1.TabIndex = 3;
             this.PasswordGetter1.UseSystemPasswordChar = true;
             this.PasswordGetter1.TextChanged += new System.EventHandler(this.PasswordGetter1_TextChanged);
             // 
@@ -189,14 +190,14 @@ namespace aru_software_eng_UI
             this.PasswordGetter2.Name = "PasswordGetter2";
             this.PasswordGetter2.PasswordChar = '*';
             this.PasswordGetter2.Size = new System.Drawing.Size(482, 38);
-            this.PasswordGetter2.TabIndex = 11;
+            this.PasswordGetter2.TabIndex = 4;
             this.PasswordGetter2.UseSystemPasswordChar = true;
             // 
             // GoBackButton
             // 
             this.GoBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoBackButton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.GoBackButton.Location = new System.Drawing.Point(380, 417);
+            this.GoBackButton.Location = new System.Drawing.Point(403, 417);
             this.GoBackButton.Margin = new System.Windows.Forms.Padding(2);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(82, 28);
@@ -268,13 +269,14 @@ namespace aru_software_eng_UI
             // IsRMCheckBox
             // 
             this.IsRMCheckBox.AutoSize = true;
-            this.IsRMCheckBox.Font = new System.Drawing.Font("Agency FB", 14F, System.Drawing.FontStyle.Bold);
+            this.IsRMCheckBox.Font = new System.Drawing.Font("Agency FB", 16F, System.Drawing.FontStyle.Bold);
             this.IsRMCheckBox.Location = new System.Drawing.Point(320, 301);
             this.IsRMCheckBox.Name = "IsRMCheckBox";
-            this.IsRMCheckBox.Size = new System.Drawing.Size(215, 28);
-            this.IsRMCheckBox.TabIndex = 22;
-            this.IsRMCheckBox.Text = " Are you Relationship Manager?";
+            this.IsRMCheckBox.Size = new System.Drawing.Size(243, 30);
+            this.IsRMCheckBox.TabIndex = 5;
+            this.IsRMCheckBox.Text = " Relationship Manager Account";
             this.IsRMCheckBox.UseVisualStyleBackColor = true;
+            this.IsRMCheckBox.CheckedChanged += new System.EventHandler(this.IsRMCheckBox_CheckedChanged);
             // 
             // Signup
             // 
