@@ -22,6 +22,8 @@ namespace aru_software_eng_UI
 	*/
 	public class DatabaseWrapper
 	{
+
+		/**/
 		public const string LoginEntries = "LoginEntries", InvestmentIdeas = "InvestmentIdeas";
 
 		//This provides the connection to the database (big shock I know).
@@ -98,8 +100,10 @@ namespace aru_software_eng_UI
 			}
 			//kills the connection to the database. -JE oct-26.0
 			connection_to_database.Close();
-			return ret; 
+			return ret;
 		}
+
+		/**/
 		public int searchDataBaseForInt(string column_to_search, string target_table, string search_condition, string search_string)
         {
 			int ret = 0;
@@ -125,12 +129,38 @@ namespace aru_software_eng_UI
 			return ret;
 
 		}
+
+		/**/
 		public bool searchDatabaseForBool(string column_to_search, string target_table, string search_condition, string search_string)
 		{
 			//creates a boolean array, and uses ☆ index magic ☆ to return true / false.
 			return (new bool[2] { false, true })[searchDataBaseForInt(column_to_search, target_table, search_condition, search_string)];
 		}
 
+		/**/
+		public DateTime searchDatabaseForDateTime(string column_to_search, string target_table, string search_condition, string search_string)
+        {
+			DateTime ret = new DateTime();
+			/*
+			 * Assembles an SQL query from the paramaters, makes the process of
+			 * writing the query itself much neater and easier to understand.
+			 */
+			string query_string = "Select " + column_to_search + " FROM " + target_table + " WHERE " + search_condition + "'" + search_string + "'";
+			SqlCommand oCmd = runSQLQuery(query_string);
+
+			SqlDataReader oReader = oCmd.ExecuteReader();
+
+			//Cycles through the rows of the database -JE oct-26.0
+			int index = 0;
+			while (oReader.Read())
+			{
+				ret = oReader.GetDateTime(index);
+				index++;
+			}
+			//kills the connection to the database. -JE oct-26.0
+			connection_to_database.Close();
+			return ret;
+        }
 		//opens the connection and begins the process. -JE oct-26.0
 		private SqlCommand runSQLQuery(string query)
         {
@@ -138,7 +168,9 @@ namespace aru_software_eng_UI
 			connection_to_database.Open();
 			connection_to_database.BeginTransaction().Commit();
 			return ret;
-        }
+		}
+
+		/**/
 		private void closeConnection()
         {
 			connection_to_database.Close();
@@ -208,11 +240,11 @@ namespace aru_software_eng_UI
 		public void deleteRowX(string target_table, int row_num)
 		{
 			{
-				row_num = getHighestIDNumber(target_table);
+				row_num = getHighestIDNumber(target_table, "UserID");
 			}
 			// DELETE FROM table WHERE column = 'value';
 
-			string query_string = "DELETE FROM " + target_table + " WHERE ID=" + row_num;
+			string query_string = "DELETE FROM " + target_table + " WHERE UserID=" + row_num;
 			Console.WriteLine(query_string);
 			SqlCommand oCmd = runSQLQuery(query_string);
 			oCmd.ExecuteReader();
@@ -220,43 +252,22 @@ namespace aru_software_eng_UI
 			connection_to_database.Close();
 
 		}
-		public Int32 getHighestIDNumber(string target_table)
+
+		/**/
+		public Int32 getHighestIDNumber(string target_table, string ID_column_name)
 		{
 			if (getRowCount(target_table) == 0)
 			{
 				return 0;
 			}
 			//SELECT COUNT(*) FROM tablename
-			SqlCommand oCmd = runSQLQuery("SELECT MAX(ID) FROM " + target_table);
+			SqlCommand oCmd = runSQLQuery("SELECT MAX(" + ID_column_name + ") FROM " + target_table);
 			int ret = (int)(Int32)oCmd.ExecuteScalar().GetHashCode();
 			closeConnection();
 			Console.Out.WriteLine("::: " + ret + " ::: @ >>> !");
 			return ret;
 		}
 		//converts bool from LoginEntryClass to string for the table input. -JE oct-30.0
-		public void writeInvestmentIdea(InvestmentIdea n_idea)
-        {
-			List<string> columns = new List<string>(), values = new List<string>();
-
-
-			columns.Add("ID");
-			columns.Add("UserID");
-			columns.Add("Name");
-			columns.Add("Description");
-			columns.Add("RiskLevel");
-			columns.Add("Date");
-			columns.Add("Cost");
-
-			values.Add((getHighestIDNumber("")+1).ToString());
-			values.Add(n_idea.getUserID().ToString());
-			values.Add(n_idea.getName());
-			values.Add(n_idea.getDescription());
-			values.Add(n_idea.getRiskLevel().ToString());
-			values.Add(n_idea.getCost().ToString());
-			values.Add(n_idea.getDate().ToString());
-
-			insertNewEntryIntoDatabase(DatabaseWrapper.InvestmentIdeas, columns, values);
-
-        }
+		
 	}
 }
