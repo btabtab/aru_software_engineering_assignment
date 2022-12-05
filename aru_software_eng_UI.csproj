@@ -88,12 +88,6 @@
     <Compile Include="FancyDisplayBubble.cs" />
     <Compile Include="FancyDisplayBubbleTracker.cs" />
     <Compile Include="Filters.cs" />
-    <Compile Include="Idea_Submitter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Idea_Submitter.Designer.cs">
-      <DependentUpon>Idea_Submitter.cs</DependentUpon>
-    </Compile>
     <Compile Include="InvestmentIdeaDatabaseHandler.cs" />
     <Compile Include="InvestmentIdeaFiltering.cs" />
     <Compile Include="LoginDatabaseHandler.cs" />
@@ -156,9 +150,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FilterWindow.resx">
       <DependentUpon>FilterWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Idea_Submitter.resx">
-      <DependentUpon>Idea_Submitter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManager.resx">
       <DependentUpon>FormManager.cs</DependentUpon>
