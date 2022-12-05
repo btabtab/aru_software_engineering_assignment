@@ -65,7 +65,7 @@ namespace aru_software_eng_UI
             // SearchButton
             // 
             this.SearchButton.BackColor = System.Drawing.SystemColors.Highlight;
-            this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.SearchButton.ForeColor = System.Drawing.Color.Black;
             this.SearchButton.Location = new System.Drawing.Point(25, 260);
             this.SearchButton.Name = "SearchButton";

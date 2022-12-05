@@ -29,11 +29,7 @@ namespace aru_software_eng_UI
         private void updateSearchButton()
         {
             //The data from all four sliders is pulled and dsiplayed on the "search" button - L
-            SearchButton.Text = "   Min Risk: " + MinRiskTrackBar.Value.ToString() + "" +
-            "                                      SEARCH                               " +
-            "Min Cost: £" + MinCostTrackBar.Value.ToString() + "\n   Max Risk: " + MaxRiskTrackBar.Value.ToString() + "" +
-            "                                                                                 " +
-            "Max Cost: £" + MaxCostTrackBar.Value.ToString();
+            SearchButton.Text = "   Min Risk: " + MinRiskTrackBar.Value.ToString() + "" +            "                                      SEARCH                               " +            "Min Cost: £" + MinCostTrackBar.Value.ToString() + "\n   Max Risk: " + MaxRiskTrackBar.Value.ToString() + "" +            "                                                                                 " +            "Max Cost: £" + MaxCostTrackBar.Value.ToString();
         }
 
 

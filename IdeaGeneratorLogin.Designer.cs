@@ -54,6 +54,7 @@ namespace aru_software_eng_UI
             this.IG_password_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IG_password_textbox.Location = new System.Drawing.Point(294, 251);
             this.IG_password_textbox.Name = "IG_password_textbox";
+            this.IG_password_textbox.PasswordChar = '*';
             this.IG_password_textbox.Size = new System.Drawing.Size(502, 53);
             this.IG_password_textbox.TabIndex = 14;
             // 
@@ -88,7 +89,7 @@ namespace aru_software_eng_UI
             // IG_login_button
             // 
             this.IG_login_button.BackColor = System.Drawing.SystemColors.Highlight;
-            this.IG_login_button.Font = new System.Drawing.Font("Agency FB", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IG_login_button.Font = new System.Drawing.Font("Agency FB", 38.25F, System.Drawing.FontStyle.Bold);
             this.IG_login_button.ForeColor = System.Drawing.SystemColors.Control;
             this.IG_login_button.Location = new System.Drawing.Point(21, 349);
             this.IG_login_button.Name = "IG_login_button";
