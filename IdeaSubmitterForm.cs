@@ -57,5 +57,10 @@ namespace aru_software_eng_UI
         {
 
         }
+
+        private void New_Idea_Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
