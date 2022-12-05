@@ -97,13 +97,6 @@ namespace aru_software_eng_UI
             // 
             // RM_login_password_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Agency FB", 38.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(16, 242);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 62);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Password:";
             this.RM_login_password_label.AutoSize = true;
             this.RM_login_password_label.Font = new System.Drawing.Font("Agency FB", 30F, System.Drawing.FontStyle.Bold);
             this.RM_login_password_label.Location = new System.Drawing.Point(12, 250);

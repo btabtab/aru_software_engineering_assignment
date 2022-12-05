@@ -15,7 +15,6 @@ namespace aru_software_eng_UI
         FormManager manager;
         Form next_window;
         BackendController backend_controller;
-        Form next_window;
         public RelationshipManagerLogin(Form n_previous_window)
         {
             InitializeComponent();

@@ -64,16 +64,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackendController.cs" />
+    <Compile Include="CoreDataBaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CreateNewIdea.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateNewIdea.Designer.cs">
       <DependentUpon>CreateNewIdea.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CoreDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="DatabaseLoginEntry.cs" />
