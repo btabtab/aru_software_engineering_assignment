@@ -56,7 +56,8 @@ namespace aru_software_eng_UI
         private void SearchButton_Click(object sender, EventArgs e)
         {
             //Create an instance of the filter class and fill it with the appropriate information
-            Filters pass_through = new Filters(MinCostTrackBar.Value, MaxCostTrackBar.Value, MinRiskTrackBar.Value, MaxRiskTrackBar.Value, user_login.getIsRelationshipManager(), ExpireDatePicker.Value);
+            Filters pass_through = new Filters(MinCostTrackBar.Value, MaxCostTrackBar.Value, MinRiskTrackBar.Value,
+                                               MaxRiskTrackBar.Value, user_login.getIsRelationshipManager(), ExpireDatePicker.Value);
             Console.WriteLine(pass_through.asString() + "\n");
             Console.WriteLine(pass_through.ToString() + "\n");
 

@@ -10,7 +10,8 @@ namespace aru_software_eng_UI
 	{
 
 		/**/
-		public Filters(int n_min_cost, int n_max_cost, int n_min_risk, int n_max_risk, bool n_is_rm, DateTime n_expiry_date)
+		public Filters(int n_min_cost, int n_max_cost, int n_min_risk, 
+					   int n_max_risk, bool n_is_rm, DateTime n_expiry_date)
 		{
 			min_cost = n_min_cost;
 			max_cost = n_max_cost;
@@ -32,8 +33,6 @@ namespace aru_software_eng_UI
 		public bool		getPermissionLevel()	{ return is_rm;			}
 		public DateTime getDate()				{ return expiry_date;	}
 
-
-		/**/
 		public string asString()
         {
 			return (
