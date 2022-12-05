@@ -1,4 +1,3 @@
-﻿
 namespace aru_software_eng_UI
 {
     partial class RelationshipManagerLogin
@@ -35,7 +34,7 @@ namespace aru_software_eng_UI
             this.RM_login_name_entry = new System.Windows.Forms.TextBox();
             this.RM_login_password_entry = new System.Windows.Forms.TextBox();
             this.RM_login_name_label = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.RM_login_password_label = new System.Windows.Forms.Label();
             this.RM_login_manager = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -46,6 +45,10 @@ namespace aru_software_eng_UI
             this.RMlabel.Location = new System.Drawing.Point(8, 9);
             this.RMlabel.Name = "RMlabel";
             this.RMlabel.Size = new System.Drawing.Size(507, 62);
+            this.RMlabel.Font = new System.Drawing.Font("Agency FB", 50.25F, System.Drawing.FontStyle.Bold);
+            this.RMlabel.Location = new System.Drawing.Point(0, 0);
+            this.RMlabel.Name = "RMlabel";
+            this.RMlabel.Size = new System.Drawing.Size(656, 80);
             this.RMlabel.TabIndex = 0;
             this.RMlabel.Text = "Relationship Manager Login";
             this.RMlabel.Click += new System.EventHandler(this.RMlogin_Click);
@@ -84,11 +87,15 @@ namespace aru_software_eng_UI
             this.RM_login_name_label.Location = new System.Drawing.Point(10, 162);
             this.RM_login_name_label.Name = "RM_login_name_label";
             this.RM_login_name_label.Size = new System.Drawing.Size(218, 62);
+            this.RM_login_name_label.Font = new System.Drawing.Font("Agency FB", 30F, System.Drawing.FontStyle.Bold);
+            this.RM_login_name_label.Location = new System.Drawing.Point(10, 174);
+            this.RM_login_name_label.Name = "RM_login_name_label";
+            this.RM_login_name_label.Size = new System.Drawing.Size(105, 50);
             this.RM_login_name_label.TabIndex = 4;
             this.RM_login_name_label.Text = "Username:";
             this.RM_login_name_label.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label1
+            // RM_login_password_label
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 38.25F, System.Drawing.FontStyle.Bold);
@@ -97,11 +104,19 @@ namespace aru_software_eng_UI
             this.label1.Size = new System.Drawing.Size(212, 62);
             this.label1.TabIndex = 5;
             this.label1.Text = "Password:";
+            this.RM_login_password_label.AutoSize = true;
+            this.RM_login_password_label.Font = new System.Drawing.Font("Agency FB", 30F, System.Drawing.FontStyle.Bold);
+            this.RM_login_password_label.Location = new System.Drawing.Point(12, 250);
+            this.RM_login_password_label.Name = "RM_login_password_label";
+            this.RM_login_password_label.Size = new System.Drawing.Size(163, 50);
+            this.RM_login_password_label.TabIndex = 5;
+            this.RM_login_password_label.Text = "Password:";
             // 
             // RM_login_manager
             // 
             this.RM_login_manager.BackColor = System.Drawing.SystemColors.Highlight;
             this.RM_login_manager.Font = new System.Drawing.Font("Agency FB", 38.25F, System.Drawing.FontStyle.Bold);
+            this.RM_login_manager.Font = new System.Drawing.Font("Agency FB", 20.25F);
             this.RM_login_manager.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.RM_login_manager.Location = new System.Drawing.Point(21, 349);
             this.RM_login_manager.Name = "RM_login_manager";
@@ -117,7 +132,7 @@ namespace aru_software_eng_UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 461);
             this.Controls.Add(this.RM_login_manager);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.RM_login_password_label);
             this.Controls.Add(this.RM_login_name_label);
             this.Controls.Add(this.RM_login_password_entry);
             this.Controls.Add(this.RM_login_name_entry);
@@ -138,7 +153,7 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.TextBox RM_login_name_entry;
         private System.Windows.Forms.TextBox RM_login_password_entry;
         private System.Windows.Forms.Label RM_login_name_label;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label RM_login_password_label;
         private System.Windows.Forms.Button RM_login_manager;
     }
 }

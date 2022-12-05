@@ -64,7 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackendController.cs" />
-    <Compile Include="CoreDataBaseDataSet.Designer.cs">
+    <Compile Include="CreateNewIdea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewIdea.Designer.cs">
+      <DependentUpon>CreateNewIdea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoreDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
@@ -142,6 +148,9 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CreateNewIdea.resx">
+      <DependentUpon>CreateNewIdea.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DatabaseWindow.resx">
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
     </EmbeddedResource>
