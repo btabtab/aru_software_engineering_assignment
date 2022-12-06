@@ -52,8 +52,21 @@ namespace aru_software_eng_UI
             if ((login_entry.getEmail() == username || login_entry.getUsername() == username) && login_entry.getPassword() == password)
             {
                 // redirect to Idea Submitter page
-                next_window = new FilterWindow(this, login_entry);
+                next_window = new IdeaSubmitterForm(this, backend_controller);
             }
+
+            else if (backend_controller.loginSearchUsername(username).getUsername() != username) ;
+
+            {
+
+                MessageBox.Show("Please enter a valid username", "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show(RM_login_name_entry.Text, "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         private void RM_backButton_Click(object sender, EventArgs e)
@@ -64,6 +77,22 @@ namespace aru_software_eng_UI
         private void RelationshipManagerLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void RM_login_name_entry_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(RM_login_name_entry.Text))
+            {
+                e.Cancel = true;
+                RM_login_name_entry.Focus();
+                errorProvider1.SetError(RM_login_name_entry, "Please enter your username: ");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(RM_login_name_entry, null);
+
+            }
         }
     }
 }

@@ -21,6 +21,8 @@ namespace aru_software_eng_UI
             manager = new FormManager(previous_form, this);
         }
 
+
+
         private void CreateNewIdea_Load(object sender, EventArgs e)
         {
 
@@ -73,6 +75,16 @@ namespace aru_software_eng_UI
         private void IS_back_button_Click_2(object sender, EventArgs e)
         {
             manager.back();
+
+        }
+
+        private void IS_risk_combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
 
         }
     }

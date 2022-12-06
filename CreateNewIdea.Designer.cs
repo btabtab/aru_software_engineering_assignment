@@ -44,6 +44,7 @@ namespace aru_software_eng_UI
             this.IS_rmrating_label = new System.Windows.Forms.Label();
             this.IS_rmrating_combobox = new System.Windows.Forms.ComboBox();
             this.IS_back_button = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // IS_save_button
@@ -124,6 +125,7 @@ namespace aru_software_eng_UI
             this.IS_risk_combobox.Name = "IS_risk_combobox";
             this.IS_risk_combobox.Size = new System.Drawing.Size(596, 71);
             this.IS_risk_combobox.TabIndex = 22;
+            this.IS_risk_combobox.SelectedIndexChanged += new System.EventHandler(this.IS_risk_combobox_SelectedIndexChanged);
             // 
             // IS_cost_textbox
             // 
@@ -228,11 +230,21 @@ namespace aru_software_eng_UI
             this.IS_back_button.UseVisualStyleBackColor = true;
             this.IS_back_button.Click += new System.EventHandler(this.IS_back_button_Click_2);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(570, 219);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // CreateNewIdeaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1138, 944);
+            this.ClientSize = new System.Drawing.Size(607, 510);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.IS_back_button);
             this.Controls.Add(this.IS_rmrating_label);
             this.Controls.Add(this.IS_rmrating_combobox);
@@ -274,5 +286,6 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label IS_rmrating_label;
         private System.Windows.Forms.ComboBox IS_rmrating_combobox;
         private System.Windows.Forms.Button IS_back_button;
+        private System.Windows.Forms.Label label1;
     }
 }

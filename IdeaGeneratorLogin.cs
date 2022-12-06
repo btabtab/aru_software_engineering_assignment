@@ -43,10 +43,43 @@ namespace aru_software_eng_UI
             // Get password
             string password = IG_password_textbox.Text;
             DataBaseLoginEntry loginEntry = backend_controller.loginSearchUsername(username);
-           if ((loginEntry.getEmail() == username || loginEntry.getUsername() == username) && loginEntry.getPassword() == password)
+            if ((loginEntry.getEmail() == username || loginEntry.getUsername() == username) && loginEntry.getPassword() == password)
             {
                 // redirect to Idea Submitter page
                 next_window = new IdeaSubmitterForm(this, backend_controller);
+            }
+            else if (backend_controller.loginSearchUsername(username).getUsername() != username);
+
+            {
+
+                MessageBox.Show("Please enter a valid username", "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show(IG_login_textbox.Text, "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void IG_login_textbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IG_login_textbox_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(IG_login_textbox.Text))
+            {
+                e.Cancel = true;
+                IG_login_textbox.Focus();
+                errorProvider1.SetError(IG_login_textbox, "Please enter your username: ");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(IG_login_textbox, null);
+
             }
         }
     }
