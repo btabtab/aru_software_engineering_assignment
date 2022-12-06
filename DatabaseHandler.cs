@@ -37,13 +37,13 @@ namespace aru_software_eng_UI
 		/**/
 		public void deleteLoginRowX(int target_row)
         {
-			database_wrapper.deleteRowX(DatabaseWrapper.LoginEntries, target_row);
+			database_wrapper.deleteRowX(DatabaseWrapper.LoginEntries, "UserID", target_row);
 		}
 
 		/**/
 		public void deleteInvestmentIdeaRowX(int target_row)
         {
-			database_wrapper.deleteRowX(DatabaseWrapper.InvestmentIdeas, target_row);
+			database_wrapper.deleteRowX(DatabaseWrapper.InvestmentIdeas, "ID", target_row);
 		}
 
 		/**/

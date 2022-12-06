@@ -35,6 +35,8 @@ namespace aru_software_eng_UI
 			columns.Add("RiskLevel");
 			columns.Add("Cost");
 			columns.Add("Date");
+			columns.Add("ProductTag");
+			columns.Add("RequiredPermissions");
 
 			values.Add((database_wrapper.getHighestIDNumber(DatabaseWrapper.InvestmentIdeas, "ID") + 1).ToString());
 			values.Add(n_idea.getUserID().ToString());
@@ -43,6 +45,8 @@ namespace aru_software_eng_UI
 			values.Add(n_idea.getRiskLevel().ToString());
 			values.Add(n_idea.getCost().ToString());
 			values.Add(n_idea.getDate().ToString());
+			values.Add(n_idea.getProductTag().ToString());
+			values.Add(n_idea.getRMPermissionLevel().ToString());
 
 			try
 			{
@@ -52,23 +56,21 @@ namespace aru_software_eng_UI
             {
 				Console.Write("!!!!\n\nMissing user in table.\n\n(" + e.Message + ")\n\n!!!!");
 				database_wrapper.closeConnection();
-            }
-			InvestmentIdeaDatabaseHandler.getInstance().loadInvestmentIdeasFromDatabaseToList();
+			}
 		}
 		/**/
-		public InvestmentIdea getInvestmentIDFromDatabase(int ID)
+		public InvestmentIdea getInvestmentIdeaFromDatabase(int ID)
 		{
-            InvestmentIdeaDatabaseHandler.getInstance().loadInvestmentIdeasFromDatabaseToList();
 			InvestmentIdea ret = new InvestmentIdea(
-															database_wrapper.searchDatabaseForDateTime("Date", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
-															database_wrapper.searchDatabaseForString("Name", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
-															database_wrapper.searchDatabaseForString("Description", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
-															database_wrapper.searchDataBaseForInt("ID", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
-															database_wrapper.searchDataBaseForInt("UserID", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
-															database_wrapper.searchDataBaseForInt("RiskLevel", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
-															database_wrapper.searchDataBaseForInt("Cost", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
-															database_wrapper.searchDatabaseForString("ProductTag", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
-															database_wrapper.searchDataBaseForInt("AdminLevel", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString())
+															database_wrapper.searchDatabaseForDateTime(	"Date", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDatabaseForString(	"Name", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDatabaseForString(	"Description", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDataBaseForInt(		"ID", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDataBaseForInt(		"User_ID", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDataBaseForInt(		"RiskLevel", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDataBaseForFloat(	"Cost", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDatabaseForString(	"ProductTag", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
+															database_wrapper.searchDataBaseForInt(		"RequiredPermissions", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString())
 															);
 			return ret;
 		}
@@ -89,9 +91,11 @@ namespace aru_software_eng_UI
 		/**/
 		public void loadInvestmentIdeasFromDatabaseToList()
         {
+			current_investment_ideas.Clear();
 			for (int i = 0; i != getHighestID(DatabaseWrapper.InvestmentIdeas, "ID"); i++)
 			{
-				current_investment_ideas.Add(getInvestmentIDFromDatabase(i));
+				// Console.WriteLine("Highest ID = " + getHighestID(DatabaseWrapper.InvestmentIdeas, "ID") + " / " + i);
+				current_investment_ideas.Add(getInvestmentIdeaFromDatabase(i));
 			}
 		}
 
@@ -106,8 +110,7 @@ namespace aru_software_eng_UI
 		public List<InvestmentIdea> getFilteredList(Filters filters)
         {
             InvestmentIdeaDatabaseHandler.getInstance().loadInvestmentIdeasFromDatabaseToList();
-			return InvestmentIdeaFiltering.getFilterList(current_investment_ideas, filters);
+			return current_investment_ideas;
 		}
-
 	}
 }

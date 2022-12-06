@@ -12,7 +12,6 @@ namespace aru_software_eng_UI
 {
     public partial class IdeaSubmitterForm : Form
     {
-        Form next_window;
         FormManager manager;
         BackendController backend_controller;
         public IdeaSubmitterForm(Form n_previous_window, BackendController n_backend_controller)
