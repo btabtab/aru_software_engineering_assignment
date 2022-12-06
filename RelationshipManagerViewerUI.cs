@@ -12,13 +12,13 @@ namespace aru_software_eng_UI
 {
 	public partial class RelationshipManagerViewerUI : Form
 	{
-		IdeaSubmitterForm submitterForm;
 		FormManager manager;
 		private int slot_counter = 0; //Keeps track of how many slots are use by buttons, globally - L
 		private int button_base_size = 175; //Allows us to easily change the base size of a button - L
 		private int button_spacing = 20; //Allows us to easily dicate how far apart buttons are form each other - L
 		private int page_number = 1; //Keeps track of the page number
 		int total_page_count; //Keeps track of the total amount of pages allowed - L
+		List<InvestmentIdea> idea_list;
 
 		public RelationshipManagerViewerUI(Form n_previous_window, List<InvestmentIdea> n_idea_list)
 		{
@@ -28,7 +28,6 @@ namespace aru_software_eng_UI
 			FancyDisplayBubbleTracker.getBubbleTracker().setLabel(DataOutputLabel);
 			firstTimeRun();
 		}
-		List<InvestmentIdea> idea_list;
 
 		//Some temporary values for testing, mimicking the values being imported from the filter page - L
 		int temp_min_cost = 50;
@@ -50,10 +49,11 @@ namespace aru_software_eng_UI
 			pageLoader();
 			//Finds the maximum number of pages - L
 			total_page_count = ((db_amount_of_entries - 1) / 5) + 1;
+			InvestmentIdeaDatabaseHandler.getInstance().loadInvestmentIdeasFromDatabaseToList();
 		}
 
 		//A function that clears the page - L
-		private void pageClearer() 
+		private void pageClearer()
 		{
 			//Display the page number to the user - L
 			page_number_label.Text = page_number.ToString();
@@ -62,21 +62,21 @@ namespace aru_software_eng_UI
 			FancyDisplayBubbleTracker.deleteAllBubbles(this);
 
 			//resets the slot counter to allow for properly displayed buttons on the next page - L
-			slot_counter = 0; 
+			slot_counter = 0;
 		}
 
 		//A function that loads the page - L
 		private void pageLoader()
 		{
 			//For each page, find the appropraite starting value (e.g. if you are on page 3, start with index 11 as 5 bubbles per page) - L
-			for (int i = (1+((page_number-1)*5)); i < (6 + ((page_number - 1) * 5)); i++) 
+			for (int i = (1 + ((page_number - 1) * 5)); i < (6 + ((page_number - 1) * 5)); i++)
 			{
 				spawnButton(i);
 			}
 		}
 
 		//A function that finds the appropriate position for a given bubble - L
-		private Point findPosition(int size) 
+		private Point findPosition(int size)
 		{
 			//Create a new point called ret - L
 			Point ret = new Point();
@@ -92,7 +92,7 @@ namespace aru_software_eng_UI
 
 			//Read the X and accompanying Y coordinate from the list
 			ret.X = position_list[slot_counter];
-			ret.Y = position_list[slot_counter+1];
+			ret.Y = position_list[slot_counter + 1];
 
 			//Incriment the slot counter twice so we know how many bubbles are on the page - L
 			//We do this twice so we can get the X and Y pos from the list - L
@@ -100,11 +100,11 @@ namespace aru_software_eng_UI
 			slot_counter++;
 
 			//return the position of the bubble - L
-			return ret; 
+			return ret;
 		}
 
 		//A function that takes the filter results from the previous page and compares them to the inputted results from the database to result in a level of suitability from 0 - 100 - L
-		private int buttonSizeCalcualtor(int min_cost_filter, int max_cost_filter, int min_risk_filter, int max_risk_filter, int db_cost, int db_risk) 
+		private int buttonSizeCalcualtor(int min_cost_filter, int max_cost_filter, int min_risk_filter, int max_risk_filter, int db_cost, int db_risk)
 		{
 			//Find the middle point of the toggles to use in the suitability calculations - L
 			float av_cost_filter = min_cost_filter * max_cost_filter / 2;
@@ -129,18 +129,21 @@ namespace aru_software_eng_UI
 		}
 
 		//A function that spawns in a button - L
-		private void spawnButton(int button_index_from_list) 
+		private void spawnButton(int button_index_from_list)
 		{
+			if(InvestmentIdeaDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.InvestmentIdeas, "ID") < button_index_from_list)
+            {
+				Console.WriteLine("error, index out of bounds, evading.");
+				return;
+            }
 			//Calculates a buttons size based of values inputted from the database, and the filters previously selected - L
 			int size_of_button = buttonSizeCalcualtor(temp_min_cost, temp_max_cost, temp_min_risk, temp_max_risk, temp_db_cost, temp_db_risk);//
 
-			
-
 			//Finds a buttons location based off of it's size - L
 			Point location_of_button = findPosition(size_of_button);
-            FancyDisplayBubbleTracker.instanceAddBubble(new Button(), idea_list[button_index_from_list]);
 
-            this.Controls.Add(FancyDisplayBubbleTracker.instanceGetLastBubble().getButton()); //Add controlls to the recently created button - L
+			FancyDisplayBubbleTracker.instanceAddBubble(new Button(), idea_list[button_index_from_list]);
+			this.Controls.Add(FancyDisplayBubbleTracker.instanceGetLastBubble().getButton()); //Add controls to the recently created button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Text = idea_list[button_index_from_list].getName(); //Sets the text of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Location = location_of_button; //Sets the location of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Size = new Size(size_of_button, size_of_button); //Sets the size of button to the default size - L
@@ -148,20 +151,20 @@ namespace aru_software_eng_UI
 		}
 
 		//If the left button is pressed, clear all bubbles and update the page and add the new bubbles - L
-        private void page_left_button_Click(object sender, EventArgs e)
-        {
-			if (page_number > 1) 
+		private void page_left_button_Click(object sender, EventArgs e)
+		{
+			if (page_number > 1)
 			{
 				page_number--;
 				pageClearer();
 				pageLoader();
 			}
-			
+
 		}
 
 		//If the left button is pressed, clear all bubbles and update the page and add the new bubbles - L
 		private void page_right_button_Click(object sender, EventArgs e)
-        {
+		{
 			if (page_number < total_page_count)
 			{
 				page_number++;
@@ -183,9 +186,9 @@ namespace aru_software_eng_UI
 
 
 		//Ignore the below functions... - L
-        private void page_number_label_Click(object sender, EventArgs e)
-        {
-        }
+		private void page_number_label_Click(object sender, EventArgs e)
+		{
+		}
 		private void RelationshipManagerViewerUI_Load(object sender, EventArgs e)
 		{
 		}
@@ -195,9 +198,9 @@ namespace aru_software_eng_UI
 		private void cost_label_Click(object sender, EventArgs e)
 		{
 		}
-        private void divide_line_Click(object sender, EventArgs e)
-        {
+		private void divide_line_Click(object sender, EventArgs e)
+		{
 
-        }
-    }
+		}
+	}
 }

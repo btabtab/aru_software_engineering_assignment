@@ -19,7 +19,7 @@ namespace aru_software_eng_UI
         public FilterWindow(Form previous_window, DataBaseLoginEntry n_user_login)
         {
             InitializeComponent();
-            this.Text += " USER: " + n_user_login.getUsername();
+            this.Text += "[ USER: " + n_user_login.getUsername() + " ]";
             user_login = n_user_login;
             form_manager = new FormManager(previous_window, this);
             updateSearchButton();
@@ -56,12 +56,14 @@ namespace aru_software_eng_UI
         private void SearchButton_Click(object sender, EventArgs e)
         {
             //Create an instance of the filter class and fill it with the appropriate information
-            Filters pass_through = new Filters(MinCostTrackBar.Value, MaxCostTrackBar.Value, MinRiskTrackBar.Value, MaxRiskTrackBar.Value, user_login.getIsRelationshipManager(), ExpireDatePicker.Value);
+            Filters pass_through = new Filters(MinCostTrackBar.Value, MaxCostTrackBar.Value, MinRiskTrackBar.Value,
+                                               MaxRiskTrackBar.Value, user_login.getIsRelationshipManager(), ExpireDatePicker.Value);
             Console.WriteLine(pass_through.asString() + "\n");
             Console.WriteLine(pass_through.ToString() + "\n");
 
             //Load the page to sort the information and display the bubbles, pass through the infomration the user has entered 
-            new RelationshipManagerViewerUI(this, InvestmentIdeaDatabaseHandler.getInstance().getFilteredList(pass_through));
+            List<InvestmentIdea> a =InvestmentIdeaDatabaseHandler.getInstance().getFilteredList(pass_through);
+            new RelationshipManagerViewerUI(this, a);
         }
 
 

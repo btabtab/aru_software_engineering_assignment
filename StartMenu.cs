@@ -42,14 +42,20 @@ namespace aru_software_eng_UI
 
         private void showRMTEST_Click(object sender, EventArgs e)
         {
-//            List<InvestmentIdea> test_list = new List<InvestmentIdea>();
-//            for(int i = 0; i != 30; i++)
-//            {
-//                DataBaseLoginEntry ins = new DataBaseLoginEntry();
-//                LoginDatabaseHandler.getInstance().addNewLogin(ins);
-//                test_list.Add(new InvestmentIdea(i, ins.getID()));
-//            }
-            next_window = new FilterWindow(this, BackendController.getInstance().randomEntry());
+            BackendController.getInstance().writeRandomLoginEntry();
+            BackendController.getInstance().getHighestUserIDEntry().setRMPermissionLevel(5);
+
+            for(int i = 0; i != 35; i++)
+            {
+                BackendController.getInstance().writeRandomInvestmentIdea();
+            }
+            next_window = new FilterWindow(this, BackendController.getInstance().getHighestUserIDEntry());
+        }
+
+        private void TestSorting_Click(object sender, EventArgs e)
+        {
+            Sorting test = new Sorting();
+            test.mergeSortTest();
         }
     }
 }

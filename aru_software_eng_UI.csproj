@@ -85,6 +85,7 @@
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseWrapper.cs" />
+    <Compile Include="DatabaseWrapperDefunct.cs" />
     <Compile Include="DummyFunctions.cs" />
     <Compile Include="FancyDisplayBubble.cs" />
     <Compile Include="FancyDisplayBubbleTracker.cs" />
@@ -123,6 +124,7 @@
       <DependentUpon>IdeaSubmitterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InvestmentIdea.cs" />
+    <Compile Include="SortingAlgorithm.cs" />
     <Compile Include="StartMenu.cs">
       <SubType>Form</SubType>
     </Compile>

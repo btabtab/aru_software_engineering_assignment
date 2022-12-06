@@ -71,7 +71,7 @@ namespace aru_software_eng_UI
 
         private void RM_backButton_Click(object sender, EventArgs e)
         {
-            manager.back(); 
+            manager.back();
         }
 
         private void RelationshipManagerLogin_Load(object sender, EventArgs e)

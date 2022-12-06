@@ -37,13 +37,13 @@ namespace aru_software_eng_UI
 		/**/
 		public void deleteLoginRowX(int target_row)
         {
-			database_wrapper.deleteRowX(DatabaseWrapper.LoginEntries, target_row);
+			database_wrapper.deleteRowX(DatabaseWrapper.LoginEntries, "UserID", target_row);
 		}
 
 		/**/
 		public void deleteInvestmentIdeaRowX(int target_row)
         {
-			database_wrapper.deleteRowX(DatabaseWrapper.InvestmentIdeas, target_row);
+			database_wrapper.deleteRowX(DatabaseWrapper.InvestmentIdeas, "ID", target_row);
 		}
 
 		/**/
@@ -53,9 +53,9 @@ namespace aru_software_eng_UI
 		}
 
 		/**/
-		public int getHighestID(string target_table)
+		public int getHighestID(string target_table, string name_of_ID_column)
         {
-			return database_wrapper.getHighestIDNumber(target_table, "UserID");
+			return database_wrapper.getHighestIDNumber(target_table, name_of_ID_column);
         }
 	}
 }

@@ -30,17 +30,9 @@ namespace aru_software_eng_UI
 
 
 
-		public DataBaseLoginEntry randomEntry()
+		public void writeRandomLoginEntry()
 		{
-			int random_num = new Random().Next(256);
-			DataBaseLoginEntry ret = new DataBaseLoginEntry();
-			ret.setID(getHighestUserIDEntry().getID());
-			ret.setUsername("username_" + random_num);
-			ret.setPassword("password");
-			ret.setEmail("email_" + random_num + "@mail.net");
-			//if the row_num is a multiple of 2 the dummy account will be an RM.
-			ret.setIsRelationshipManager((random_num % 2) == 0);
-			return ret;
+			LoginDatabaseHandler.getInstance().writeNewLoginDataEntry(new DataBaseLoginEntry(LoginDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.LoginEntries, "UserID")));
 		}
 		public DataBaseLoginEntry loginSearchID(int ID)
         {
@@ -70,12 +62,15 @@ namespace aru_software_eng_UI
         }
 		public DataBaseLoginEntry getHighestUserIDEntry()
         {
-			return login_handler.getLoginEntryFromID(login_handler.getHighestID(DatabaseWrapper.LoginEntries));
+			return login_handler.getLoginEntryFromID(login_handler.getHighestID(DatabaseWrapper.LoginEntries, "UserID"));
 		}
 		public void deleteHighestLoginID()
         {
-			login_handler.deleteLoginRowX(login_handler.getHighestID(DatabaseWrapper.LoginEntries));
+			login_handler.deleteLoginRowX(login_handler.getHighestID(DatabaseWrapper.LoginEntries, "UserID"));
         }
+		public void generateRandomLoginEntry()
+		{
+		}
 		public void writeLoginDatabaseEntry(InvestmentIdea n_investment_idea)
         {
 			investment_idea_handler.writeInvestmentIdea(n_investment_idea);
@@ -84,10 +79,14 @@ namespace aru_software_eng_UI
         {
 			return investment_idea_handler.getInvestmentIdeaFromID(i);
         }
-		public void generateRandomInvestmentIdea()
+		public void writeRandomInvestmentIdea()
         {
-			investment_idea_handler.writeInvestmentIdea(new InvestmentIdea(2, LoginDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.LoginEntries)));
+			investment_idea_handler.writeInvestmentIdea(new InvestmentIdea(LoginDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.LoginEntries, "UserID")));
         }
+		public void deleteHighestInvestmentIdeaID()
+		{
+			investment_idea_handler.deleteInvestmentIdeaRowX(investment_idea_handler.getHighestID(DatabaseWrapper.InvestmentIdeas, "ID"));
+		}
 
 	}
 }

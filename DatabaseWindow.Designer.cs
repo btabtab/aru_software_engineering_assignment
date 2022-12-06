@@ -87,20 +87,23 @@ namespace aru_software_eng_UI
             this.coreDataBaseDataSet = new aru_software_eng_UI.CoreDataBaseDataSet();
             this.loginEntriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loginEntriesTableAdapter = new aru_software_eng_UI.CoreDataBaseDataSetTableAdapters.LoginEntriesTableAdapter();
+            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isRelationshipManagerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.permissionlevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.investmentIdeasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.investmentIdeasTableAdapter = new aru_software_eng_UI.CoreDataBaseDataSetTableAdapters.InvestmentIdeasTableAdapter();
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.riskLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Is_RelationshipManager = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productTagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.requiredPermissionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ControlTabs.SuspendLayout();
             this.login_controls.SuspendLayout();
@@ -468,11 +471,12 @@ namespace aru_software_eng_UI
             this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Username,
-            this.Password,
-            this.Email,
-            this.Is_RelationshipManager});
+            this.userIDDataGridViewTextBoxColumn,
+            this.usernameDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn1,
+            this.isRelationshipManagerDataGridViewTextBoxColumn1,
+            this.permissionlevelDataGridViewTextBoxColumn});
             this.dataGridView3.DataSource = this.loginEntriesBindingSource;
             this.dataGridView3.Location = new System.Drawing.Point(579, 45);
             this.dataGridView3.Name = "dataGridView3";
@@ -511,12 +515,14 @@ namespace aru_software_eng_UI
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn1,
-            this.userIDDataGridViewTextBoxColumn,
+            this.userIDDataGridViewTextBoxColumn1,
             this.nameDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
             this.riskLevelDataGridViewTextBoxColumn,
             this.costDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn});
+            this.dateDataGridViewTextBoxColumn,
+            this.productTagDataGridViewTextBoxColumn,
+            this.requiredPermissionsDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.investmentIdeasBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(579, 45);
             this.dataGridView2.Name = "dataGridView2";
@@ -534,6 +540,7 @@ namespace aru_software_eng_UI
             this.button7.TabIndex = 22;
             this.button7.Text = "Master test (add, delete and search";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // tabControl2
             // 
@@ -568,7 +575,7 @@ namespace aru_software_eng_UI
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(550, 497);
             this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Login generator";
+            this.tabPage4.Text = "Idea generator";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -713,6 +720,54 @@ namespace aru_software_eng_UI
             // 
             this.loginEntriesTableAdapter.ClearBeforeFill = true;
             // 
+            // userIDDataGridViewTextBoxColumn
+            // 
+            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
+            this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
+            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            this.userIDDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // emailDataGridViewTextBoxColumn1
+            // 
+            this.emailDataGridViewTextBoxColumn1.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn1.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn1.MinimumWidth = 10;
+            this.emailDataGridViewTextBoxColumn1.Name = "emailDataGridViewTextBoxColumn1";
+            this.emailDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // isRelationshipManagerDataGridViewTextBoxColumn1
+            // 
+            this.isRelationshipManagerDataGridViewTextBoxColumn1.DataPropertyName = "Is_RelationshipManager";
+            this.isRelationshipManagerDataGridViewTextBoxColumn1.HeaderText = "Is_RelationshipManager";
+            this.isRelationshipManagerDataGridViewTextBoxColumn1.MinimumWidth = 10;
+            this.isRelationshipManagerDataGridViewTextBoxColumn1.Name = "isRelationshipManagerDataGridViewTextBoxColumn1";
+            this.isRelationshipManagerDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // permissionlevelDataGridViewTextBoxColumn
+            // 
+            this.permissionlevelDataGridViewTextBoxColumn.DataPropertyName = "Permission_level";
+            this.permissionlevelDataGridViewTextBoxColumn.HeaderText = "Permission_level";
+            this.permissionlevelDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.permissionlevelDataGridViewTextBoxColumn.Name = "permissionlevelDataGridViewTextBoxColumn";
+            this.permissionlevelDataGridViewTextBoxColumn.Width = 200;
+            // 
             // investmentIdeasBindingSource
             // 
             this.investmentIdeasBindingSource.DataMember = "InvestmentIdeas";
@@ -730,13 +785,13 @@ namespace aru_software_eng_UI
             this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
             this.iDDataGridViewTextBoxColumn1.Width = 200;
             // 
-            // userIDDataGridViewTextBoxColumn
+            // userIDDataGridViewTextBoxColumn1
             // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.Width = 200;
+            this.userIDDataGridViewTextBoxColumn1.DataPropertyName = "User_ID";
+            this.userIDDataGridViewTextBoxColumn1.HeaderText = "User_ID";
+            this.userIDDataGridViewTextBoxColumn1.MinimumWidth = 10;
+            this.userIDDataGridViewTextBoxColumn1.Name = "userIDDataGridViewTextBoxColumn1";
+            this.userIDDataGridViewTextBoxColumn1.Width = 200;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -778,45 +833,21 @@ namespace aru_software_eng_UI
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             this.dateDataGridViewTextBoxColumn.Width = 200;
             // 
-            // Column1
+            // productTagDataGridViewTextBoxColumn
             // 
-            this.Column1.DataPropertyName = "UserID";
-            this.Column1.HeaderText = "Column1";
-            this.Column1.MinimumWidth = 10;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
+            this.productTagDataGridViewTextBoxColumn.DataPropertyName = "ProductTag";
+            this.productTagDataGridViewTextBoxColumn.HeaderText = "ProductTag";
+            this.productTagDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.productTagDataGridViewTextBoxColumn.Name = "productTagDataGridViewTextBoxColumn";
+            this.productTagDataGridViewTextBoxColumn.Width = 200;
             // 
-            // Username
+            // requiredPermissionsDataGridViewTextBoxColumn
             // 
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "Username";
-            this.Username.MinimumWidth = 10;
-            this.Username.Name = "Username";
-            this.Username.Width = 200;
-            // 
-            // Password
-            // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.MinimumWidth = 10;
-            this.Password.Name = "Password";
-            this.Password.Width = 200;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 10;
-            this.Email.Name = "Email";
-            this.Email.Width = 200;
-            // 
-            // Is_RelationshipManager
-            // 
-            this.Is_RelationshipManager.DataPropertyName = "Is_RelationshipManager";
-            this.Is_RelationshipManager.HeaderText = "Is_RelationshipManager";
-            this.Is_RelationshipManager.MinimumWidth = 10;
-            this.Is_RelationshipManager.Name = "Is_RelationshipManager";
-            this.Is_RelationshipManager.Width = 200;
+            this.requiredPermissionsDataGridViewTextBoxColumn.DataPropertyName = "RequiredPermissions";
+            this.requiredPermissionsDataGridViewTextBoxColumn.HeaderText = "RequiredPermissions";
+            this.requiredPermissionsDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.requiredPermissionsDataGridViewTextBoxColumn.Name = "requiredPermissionsDataGridViewTextBoxColumn";
+            this.requiredPermissionsDataGridViewTextBoxColumn.Width = 200;
             // 
             // DatabaseWindow
             // 
@@ -916,19 +947,22 @@ namespace aru_software_eng_UI
         private CoreDataBaseDataSet coreDataBaseDataSet;
         private System.Windows.Forms.BindingSource loginEntriesBindingSource;
         private CoreDataBaseDataSetTableAdapters.LoginEntriesTableAdapter loginEntriesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isRelationshipManagerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn permissionlevelDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource investmentIdeasBindingSource;
         private CoreDataBaseDataSetTableAdapters.InvestmentIdeasTableAdapter investmentIdeasTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Is_RelationshipManager;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn riskLevelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productTagDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn requiredPermissionsDataGridViewTextBoxColumn;
     }
 }
