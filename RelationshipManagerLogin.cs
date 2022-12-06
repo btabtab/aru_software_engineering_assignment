@@ -48,17 +48,17 @@ namespace aru_software_eng_UI
             string username = RM_login_name_entry.Text;
             // Get password
             string password = RM_login_password_entry.Text;
-            DataBaseLoginEntry loginEntry = backend_controller.loginSearchUsername(username);
-            if ((loginEntry.getEmail() == username || loginEntry.getUsername() == username) && loginEntry.getPassword() == password)
+            DataBaseLoginEntry login_entry = backend_controller.loginSearchUsername(username);
+            if ((login_entry.getEmail() == username || login_entry.getUsername() == username) && login_entry.getPassword() == password)
             {
                 // redirect to Idea Submitter page
-                //next_window = new RelationshipManagerViewerUI(this, backend_controller);
+                next_window = new FilterWindow(this, login_entry);
             }
         }
 
         private void RM_backButton_Click(object sender, EventArgs e)
         {
-            manager.back(); 
+            manager.back();
         }
 
         private void RelationshipManagerLogin_Load(object sender, EventArgs e)
