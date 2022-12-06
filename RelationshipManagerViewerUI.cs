@@ -131,6 +131,11 @@ namespace aru_software_eng_UI
 		//A function that spawns in a button - L
 		private void spawnButton(int button_index_from_list)
 		{
+			if(InvestmentIdeaDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.InvestmentIdeas, "ID") < button_index_from_list)
+            {
+				Console.WriteLine("error, index out of bounds, evading.");
+				return;
+            }
 			//Calculates a buttons size based of values inputted from the database, and the filters previously selected - L
 			int size_of_button = buttonSizeCalcualtor(temp_min_cost, temp_max_cost, temp_min_risk, temp_max_risk, temp_db_cost, temp_db_risk);//
 
