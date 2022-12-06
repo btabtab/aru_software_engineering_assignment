@@ -43,7 +43,8 @@ namespace aru_software_eng_UI
 																			username_entrybx.Text,
 																			password_entrybx.Text,
 																			email_entrybx.Text,
-																			is_rm_manager_chckbx.Checked
+																			is_rm_manager_chckbx.Checked,
+																			rm_level.Value
 																			)
 													);
 			updateTable();
@@ -131,5 +132,17 @@ namespace aru_software_eng_UI
             }
 				
 		}
-	}
+
+        private void TestGenerator_Click(object sender, EventArgs e)
+        {
+			backend_controller.writeLoginDatabaseEntry(new DataBaseLoginEntry("u@mail.net", "u@mail.net", "u@mail.net", true,	4));
+			backend_controller.writeLoginDatabaseEntry(new DataBaseLoginEntry("M@mail.net", "M@mail.net", "M@mail.net", false,	0));
+			updateTable();
+
+			for (int i = 0; i != 17; i++)
+			{
+				backend_controller.writeRandomInvestmentIdea();
+			}
+		}
+    }
 }

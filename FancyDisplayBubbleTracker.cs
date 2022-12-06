@@ -125,8 +125,7 @@ namespace aru_software_eng_UI
 		/**/
 		void deleteButton(object sender, EventArgs e)
 		{
-			Button target = (Button)sender;
-			target.Dispose();
+			((Button)sender).Dispose();
 		}
 
 		/**/

@@ -131,7 +131,7 @@ namespace aru_software_eng_UI
                     backend_controller.loginSearchUsername(username).getUsername() != username)
                 {
                     //Creates a new database entry with all the correct credentials in - L
-                    backend_controller.writeLoginDatabaseEntry(new DataBaseLoginEntry(username, PasswordGetter1.Text, email, IsRMCheckBox.Checked));
+                    backend_controller.writeLoginDatabaseEntry(new DataBaseLoginEntry(username, PasswordGetter1.Text, email, IsRMCheckBox.Checked, rm_level_slider.Value));
                     return true;
                 }
             }
@@ -198,6 +198,11 @@ namespace aru_software_eng_UI
 
         private void RulesText_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+        }
+
+        private void rm_level_slider_Scroll(object sender, EventArgs e)
+        {
+            rm_level_slider_label.Text = "RM level: " + rm_level_slider.Value;
         }
     }
 }

@@ -49,17 +49,20 @@ namespace aru_software_eng_UI
             this.errorOutputLabel = new System.Windows.Forms.Label();
             this.usernameWrongSymbol = new System.Windows.Forms.Label();
             this.IsRMCheckBox = new System.Windows.Forms.CheckBox();
+            this.rm_level_slider = new System.Windows.Forms.TrackBar();
+            this.rm_level_slider_label = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.rm_level_slider)).BeginInit();
             this.SuspendLayout();
             // 
             // SignUpButton
             // 
             this.SignUpButton.BackColor = System.Drawing.SystemColors.Highlight;
-            this.SignUpButton.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SignUpButton.Location = new System.Drawing.Point(393, 369);
-            this.SignUpButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SignUpButton.Location = new System.Drawing.Point(786, 710);
+            this.SignUpButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SignUpButton.Name = "SignUpButton";
-            this.SignUpButton.Size = new System.Drawing.Size(106, 44);
+            this.SignUpButton.Size = new System.Drawing.Size(212, 85);
             this.SignUpButton.TabIndex = 7;
             this.SignUpButton.Text = "Sign Up";
             this.SignUpButton.UseVisualStyleBackColor = false;
@@ -68,21 +71,21 @@ namespace aru_software_eng_UI
             // SignUpLabel
             // 
             this.SignUpLabel.AutoSize = true;
-            this.SignUpLabel.Font = new System.Drawing.Font("Agency FB", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignUpLabel.Location = new System.Drawing.Point(-8, -5);
-            this.SignUpLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SignUpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUpLabel.Location = new System.Drawing.Point(-16, -10);
+            this.SignUpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SignUpLabel.Name = "SignUpLabel";
-            this.SignUpLabel.Size = new System.Drawing.Size(451, 80);
+            this.SignUpLabel.Size = new System.Drawing.Size(1179, 153);
             this.SignUpLabel.TabIndex = 1;
             this.SignUpLabel.Text = "Create an account";
             // 
             // RulesCheckBox
             // 
             this.RulesCheckBox.AutoSize = true;
-            this.RulesCheckBox.Location = new System.Drawing.Point(316, 348);
-            this.RulesCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RulesCheckBox.Location = new System.Drawing.Point(632, 669);
+            this.RulesCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RulesCheckBox.Name = "RulesCheckBox";
-            this.RulesCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.RulesCheckBox.Size = new System.Drawing.Size(28, 27);
             this.RulesCheckBox.TabIndex = 6;
             this.RulesCheckBox.UseVisualStyleBackColor = true;
             this.RulesCheckBox.CheckedChanged += new System.EventHandler(this.RulesCheckBox_CheckedChanged);
@@ -90,22 +93,22 @@ namespace aru_software_eng_UI
             // LoginGetter
             // 
             this.LoginGetter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.LoginGetter.Location = new System.Drawing.Point(247, 114);
-            this.LoginGetter.Margin = new System.Windows.Forms.Padding(2);
+            this.LoginGetter.Location = new System.Drawing.Point(509, 143);
+            this.LoginGetter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LoginGetter.MaxLength = 20;
             this.LoginGetter.Name = "LoginGetter";
-            this.LoginGetter.Size = new System.Drawing.Size(482, 38);
+            this.LoginGetter.Size = new System.Drawing.Size(960, 68);
             this.LoginGetter.TabIndex = 1;
             this.LoginGetter.TextChanged += new System.EventHandler(this.LoginGetter_TextChanged);
             // 
             // RulesText
             // 
             this.RulesText.AutoSize = true;
-            this.RulesText.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RulesText.Location = new System.Drawing.Point(335, 343);
-            this.RulesText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.RulesText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RulesText.Location = new System.Drawing.Point(670, 660);
+            this.RulesText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RulesText.Name = "RulesText";
-            this.RulesText.Size = new System.Drawing.Size(228, 20);
+            this.RulesText.Size = new System.Drawing.Size(725, 37);
             this.RulesText.TabIndex = 4;
             this.RulesText.TabStop = true;
             this.RulesText.Text = "I confirm I have read the rules and privacy policies";
@@ -114,32 +117,32 @@ namespace aru_software_eng_UI
             // LoginLabel
             // 
             this.LoginLabel.AutoSize = true;
-            this.LoginLabel.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold);
-            this.LoginLabel.Location = new System.Drawing.Point(128, 114);
-            this.LoginLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.LoginLabel.Location = new System.Drawing.Point(13, 143);
+            this.LoginLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(106, 34);
+            this.LoginLabel.Size = new System.Drawing.Size(300, 63);
             this.LoginLabel.TabIndex = 5;
             this.LoginLabel.Text = "Username:";
             // 
             // EmailGetter
             // 
             this.EmailGetter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailGetter.Location = new System.Drawing.Point(247, 155);
-            this.EmailGetter.Margin = new System.Windows.Forms.Padding(2);
+            this.EmailGetter.Location = new System.Drawing.Point(509, 222);
+            this.EmailGetter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EmailGetter.Name = "EmailGetter";
-            this.EmailGetter.Size = new System.Drawing.Size(482, 38);
+            this.EmailGetter.Size = new System.Drawing.Size(960, 69);
             this.EmailGetter.TabIndex = 2;
             this.EmailGetter.TextChanged += new System.EventHandler(this.EmailGetter_TextChanged);
             // 
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold);
-            this.EmailLabel.Location = new System.Drawing.Point(170, 156);
-            this.EmailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.EmailLabel.Location = new System.Drawing.Point(13, 222);
+            this.EmailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(64, 34);
+            this.EmailLabel.Size = new System.Drawing.Size(185, 63);
             this.EmailLabel.TabIndex = 7;
             this.EmailLabel.Text = "Email:";
             // 
@@ -147,12 +150,12 @@ namespace aru_software_eng_UI
             // 
             this.PasswordGetter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordGetter1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.PasswordGetter1.Location = new System.Drawing.Point(247, 198);
-            this.PasswordGetter1.Margin = new System.Windows.Forms.Padding(2);
+            this.PasswordGetter1.Location = new System.Drawing.Point(509, 305);
+            this.PasswordGetter1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PasswordGetter1.MaxLength = 14;
             this.PasswordGetter1.Name = "PasswordGetter1";
             this.PasswordGetter1.PasswordChar = '*';
-            this.PasswordGetter1.Size = new System.Drawing.Size(482, 38);
+            this.PasswordGetter1.Size = new System.Drawing.Size(960, 69);
             this.PasswordGetter1.TabIndex = 3;
             this.PasswordGetter1.UseSystemPasswordChar = true;
             this.PasswordGetter1.TextChanged += new System.EventHandler(this.PasswordGetter1_TextChanged);
@@ -160,11 +163,11 @@ namespace aru_software_eng_UI
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold);
-            this.PasswordLabel.Location = new System.Drawing.Point(128, 198);
-            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.PasswordLabel.Location = new System.Drawing.Point(13, 305);
+            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(106, 34);
+            this.PasswordLabel.Size = new System.Drawing.Size(288, 63);
             this.PasswordLabel.TabIndex = 9;
             this.PasswordLabel.Text = "Password:";
             this.PasswordLabel.Click += new System.EventHandler(this.PasswordLabel_Click);
@@ -172,11 +175,11 @@ namespace aru_software_eng_UI
             // AgainPasswordLabel
             // 
             this.AgainPasswordLabel.AutoSize = true;
-            this.AgainPasswordLabel.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold);
-            this.AgainPasswordLabel.Location = new System.Drawing.Point(66, 241);
-            this.AgainPasswordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AgainPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.AgainPasswordLabel.Location = new System.Drawing.Point(13, 378);
+            this.AgainPasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AgainPasswordLabel.Name = "AgainPasswordLabel";
-            this.AgainPasswordLabel.Size = new System.Drawing.Size(168, 34);
+            this.AgainPasswordLabel.Size = new System.Drawing.Size(477, 63);
             this.AgainPasswordLabel.TabIndex = 10;
             this.AgainPasswordLabel.Text = "Repeat password:";
             // 
@@ -184,12 +187,12 @@ namespace aru_software_eng_UI
             // 
             this.PasswordGetter2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordGetter2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.PasswordGetter2.Location = new System.Drawing.Point(247, 244);
-            this.PasswordGetter2.Margin = new System.Windows.Forms.Padding(2);
+            this.PasswordGetter2.Location = new System.Drawing.Point(509, 383);
+            this.PasswordGetter2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PasswordGetter2.MaxLength = 14;
             this.PasswordGetter2.Name = "PasswordGetter2";
             this.PasswordGetter2.PasswordChar = '*';
-            this.PasswordGetter2.Size = new System.Drawing.Size(482, 38);
+            this.PasswordGetter2.Size = new System.Drawing.Size(960, 69);
             this.PasswordGetter2.TabIndex = 4;
             this.PasswordGetter2.UseSystemPasswordChar = true;
             // 
@@ -197,10 +200,10 @@ namespace aru_software_eng_UI
             // 
             this.GoBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoBackButton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.GoBackButton.Location = new System.Drawing.Point(403, 417);
-            this.GoBackButton.Margin = new System.Windows.Forms.Padding(2);
+            this.GoBackButton.Location = new System.Drawing.Point(806, 802);
+            this.GoBackButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GoBackButton.Name = "GoBackButton";
-            this.GoBackButton.Size = new System.Drawing.Size(82, 28);
+            this.GoBackButton.Size = new System.Drawing.Size(164, 54);
             this.GoBackButton.TabIndex = 12;
             this.GoBackButton.Text = "Go back";
             this.GoBackButton.UseVisualStyleBackColor = true;
@@ -211,9 +214,10 @@ namespace aru_software_eng_UI
             this.wrongPassSymbol1.AutoSize = true;
             this.wrongPassSymbol1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.wrongPassSymbol1.ForeColor = System.Drawing.Color.Red;
-            this.wrongPassSymbol1.Location = new System.Drawing.Point(674, 202);
+            this.wrongPassSymbol1.Location = new System.Drawing.Point(1246, 316);
+            this.wrongPassSymbol1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.wrongPassSymbol1.Name = "wrongPassSymbol1";
-            this.wrongPassSymbol1.Size = new System.Drawing.Size(0, 31);
+            this.wrongPassSymbol1.Size = new System.Drawing.Size(0, 63);
             this.wrongPassSymbol1.TabIndex = 17;
             // 
             // wrongPassSymbol2
@@ -221,9 +225,10 @@ namespace aru_software_eng_UI
             this.wrongPassSymbol2.AutoSize = true;
             this.wrongPassSymbol2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.wrongPassSymbol2.ForeColor = System.Drawing.Color.Red;
-            this.wrongPassSymbol2.Location = new System.Drawing.Point(674, 248);
+            this.wrongPassSymbol2.Location = new System.Drawing.Point(1246, 405);
+            this.wrongPassSymbol2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.wrongPassSymbol2.Name = "wrongPassSymbol2";
-            this.wrongPassSymbol2.Size = new System.Drawing.Size(0, 31);
+            this.wrongPassSymbol2.Size = new System.Drawing.Size(0, 63);
             this.wrongPassSymbol2.TabIndex = 18;
             // 
             // wrongEmailSymbol
@@ -231,9 +236,10 @@ namespace aru_software_eng_UI
             this.wrongEmailSymbol.AutoSize = true;
             this.wrongEmailSymbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.wrongEmailSymbol.ForeColor = System.Drawing.Color.Red;
-            this.wrongEmailSymbol.Location = new System.Drawing.Point(674, 159);
+            this.wrongEmailSymbol.Location = new System.Drawing.Point(1246, 234);
+            this.wrongEmailSymbol.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.wrongEmailSymbol.Name = "wrongEmailSymbol";
-            this.wrongEmailSymbol.Size = new System.Drawing.Size(0, 31);
+            this.wrongEmailSymbol.Size = new System.Drawing.Size(0, 63);
             this.wrongEmailSymbol.TabIndex = 19;
             // 
             // wrongUserSymbol
@@ -241,9 +247,10 @@ namespace aru_software_eng_UI
             this.wrongUserSymbol.AutoSize = true;
             this.wrongUserSymbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.wrongUserSymbol.ForeColor = System.Drawing.Color.Red;
-            this.wrongUserSymbol.Location = new System.Drawing.Point(674, 118);
+            this.wrongUserSymbol.Location = new System.Drawing.Point(1246, 155);
+            this.wrongUserSymbol.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.wrongUserSymbol.Name = "wrongUserSymbol";
-            this.wrongUserSymbol.Size = new System.Drawing.Size(0, 31);
+            this.wrongUserSymbol.Size = new System.Drawing.Size(0, 63);
             this.wrongUserSymbol.TabIndex = 20;
             // 
             // errorOutputLabel
@@ -251,38 +258,63 @@ namespace aru_software_eng_UI
             this.errorOutputLabel.AutoSize = true;
             this.errorOutputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.errorOutputLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorOutputLabel.Location = new System.Drawing.Point(285, 301);
+            this.errorOutputLabel.Location = new System.Drawing.Point(570, 579);
+            this.errorOutputLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.errorOutputLabel.Name = "errorOutputLabel";
-            this.errorOutputLabel.Size = new System.Drawing.Size(0, 31);
+            this.errorOutputLabel.Size = new System.Drawing.Size(0, 63);
             this.errorOutputLabel.TabIndex = 16;
             // 
             // usernameWrongSymbol
             // 
             this.usernameWrongSymbol.AutoSize = true;
-            this.usernameWrongSymbol.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold);
+            this.usernameWrongSymbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.usernameWrongSymbol.ForeColor = System.Drawing.Color.Red;
-            this.usernameWrongSymbol.Location = new System.Drawing.Point(674, 118);
+            this.usernameWrongSymbol.Location = new System.Drawing.Point(1246, 155);
+            this.usernameWrongSymbol.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.usernameWrongSymbol.Name = "usernameWrongSymbol";
-            this.usernameWrongSymbol.Size = new System.Drawing.Size(0, 34);
+            this.usernameWrongSymbol.Size = new System.Drawing.Size(0, 63);
             this.usernameWrongSymbol.TabIndex = 21;
             // 
             // IsRMCheckBox
             // 
             this.IsRMCheckBox.AutoSize = true;
-            this.IsRMCheckBox.Font = new System.Drawing.Font("Agency FB", 16F, System.Drawing.FontStyle.Bold);
-            this.IsRMCheckBox.Location = new System.Drawing.Point(320, 301);
+            this.IsRMCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.IsRMCheckBox.Location = new System.Drawing.Point(640, 579);
+            this.IsRMCheckBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.IsRMCheckBox.Name = "IsRMCheckBox";
-            this.IsRMCheckBox.Size = new System.Drawing.Size(243, 30);
+            this.IsRMCheckBox.Size = new System.Drawing.Size(682, 55);
             this.IsRMCheckBox.TabIndex = 5;
             this.IsRMCheckBox.Text = " Relationship Manager Account";
             this.IsRMCheckBox.UseVisualStyleBackColor = true;
             this.IsRMCheckBox.CheckedChanged += new System.EventHandler(this.IsRMCheckBox_CheckedChanged);
             // 
+            // rm_level_slider
+            // 
+            this.rm_level_slider.Location = new System.Drawing.Point(509, 459);
+            this.rm_level_slider.Maximum = 5;
+            this.rm_level_slider.Name = "rm_level_slider";
+            this.rm_level_slider.Size = new System.Drawing.Size(960, 90);
+            this.rm_level_slider.TabIndex = 22;
+            this.rm_level_slider.Scroll += new System.EventHandler(this.rm_level_slider_Scroll);
+            // 
+            // rm_level_slider_label
+            // 
+            this.rm_level_slider_label.AutoSize = true;
+            this.rm_level_slider_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.rm_level_slider_label.Location = new System.Drawing.Point(13, 459);
+            this.rm_level_slider_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.rm_level_slider_label.Name = "rm_level_slider_label";
+            this.rm_level_slider_label.Size = new System.Drawing.Size(279, 63);
+            this.rm_level_slider_label.TabIndex = 23;
+            this.rm_level_slider_label.Text = "RM Level:";
+            // 
             // Signup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 461);
+            this.ClientSize = new System.Drawing.Size(1668, 887);
+            this.Controls.Add(this.rm_level_slider_label);
+            this.Controls.Add(this.rm_level_slider);
             this.Controls.Add(this.IsRMCheckBox);
             this.Controls.Add(this.usernameWrongSymbol);
             this.Controls.Add(this.wrongUserSymbol);
@@ -303,9 +335,11 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.RulesCheckBox);
             this.Controls.Add(this.SignUpLabel);
             this.Controls.Add(this.SignUpButton);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Signup";
             this.Text = "Signup";
             this.Load += new System.EventHandler(this.Signup_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.rm_level_slider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +367,7 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label errorOutputLabel;
         private System.Windows.Forms.Label usernameWrongSymbol;
         private System.Windows.Forms.CheckBox IsRMCheckBox;
+        private System.Windows.Forms.TrackBar rm_level_slider;
+        private System.Windows.Forms.Label rm_level_slider_label;
     }
 }

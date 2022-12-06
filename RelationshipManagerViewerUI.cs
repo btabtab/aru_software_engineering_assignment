@@ -71,7 +71,10 @@ namespace aru_software_eng_UI
 			//For each page, find the appropraite starting value (e.g. if you are on page 3, start with index 11 as 5 bubbles per page) - L
 			for (int i = (1 + ((page_number - 1) * 5)); i < (6 + ((page_number - 1) * 5)); i++)
 			{
-				spawnButton(i);
+				if(spawnButton(i))
+                {
+					return;
+                }
 			}
 		}
 
@@ -128,13 +131,15 @@ namespace aru_software_eng_UI
 			return (int)final_suitability;
 		}
 
-		//A function that spawns in a button - L
-		private void spawnButton(int button_index_from_list)
+		/*A function that spawns in a button - L
+		Returns true if more buttons should keep being made.
+		 */
+		private bool spawnButton(int button_index_from_list)
 		{
 			if(InvestmentIdeaDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.InvestmentIdeas, "ID") < button_index_from_list)
             {
-				Console.WriteLine("error, index out of bounds, evading.");
-				return;
+				Console.WriteLine("error, index out of bounds, " + button_index_from_list + "evading.");
+				return false;
             }
 			//Calculates a buttons size based of values inputted from the database, and the filters previously selected - L
 			int size_of_button = buttonSizeCalcualtor(temp_min_cost, temp_max_cost, temp_min_risk, temp_max_risk, temp_db_cost, temp_db_risk);//
@@ -142,12 +147,20 @@ namespace aru_software_eng_UI
 			//Finds a buttons location based off of it's size - L
 			Point location_of_button = findPosition(size_of_button);
 
+			//safeguard againes OOB exceptions.
+			if(idea_list.Count <= button_index_from_list)
+            {
+				Console.WriteLine("idea_list.Count <= button_index_from_list");
+				return true;
+            }
 			FancyDisplayBubbleTracker.instanceAddBubble(new Button(), idea_list[button_index_from_list]);
 			this.Controls.Add(FancyDisplayBubbleTracker.instanceGetLastBubble().getButton()); //Add controls to the recently created button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Text = idea_list[button_index_from_list].getName(); //Sets the text of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Location = location_of_button; //Sets the location of the button - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Size = new Size(size_of_button, size_of_button); //Sets the size of button to the default size - L
 			FancyDisplayBubbleTracker.instanceGetLastBubble().getButton().Font = new Font("Agency FB", size_of_button / 6, FontStyle.Bold);
+			
+			return false;
 		}
 
 		//If the left button is pressed, clear all bubbles and update the page and add the new bubbles - L

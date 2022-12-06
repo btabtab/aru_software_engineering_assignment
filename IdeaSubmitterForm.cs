@@ -14,15 +14,16 @@ namespace aru_software_eng_UI
     {
         FormManager manager;
         BackendController backend_controller;
-        public IdeaSubmitterForm(Form n_previous_window, BackendController n_backend_controller)
+        DataBaseLoginEntry user;
+        public IdeaSubmitterForm(Form n_previous_window, DataBaseLoginEntry n_user)
         {
             InitializeComponent();
             manager = new FormManager(n_previous_window, this);
-            backend_controller = n_backend_controller;
+            user = n_user;
         }
         private void New_Idea_Button_Click(object sender, EventArgs e)
         {
-            CreateNewIdeaForm newIdeaForm = new CreateNewIdeaForm(this);
+            CreateNewIdeaForm newIdeaForm = new CreateNewIdeaForm(this, user);
             newIdeaForm.Show();
         }
 

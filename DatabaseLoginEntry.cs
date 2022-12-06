@@ -32,22 +32,24 @@ namespace aru_software_eng_UI
 		}
 
 		/**/
-		public DataBaseLoginEntry(int n_ID, string n_username, string n_password, string n_email, bool n_is_relationship_manager)
+		public DataBaseLoginEntry(int n_ID, string n_username, string n_password, string n_email, bool n_is_relationship_manager, int n_rm_level)
 		{
 			ID = n_ID;
 			username = n_username;
 			password = n_password;
 			email = n_email;
 			is_relationship_manager = n_is_relationship_manager;
+			rm_permission_level = n_rm_level;
 		}
 
 		/**/
-		public DataBaseLoginEntry(string n_username, string n_password, string n_email, bool n_is_relationship_manager)
+		public DataBaseLoginEntry(string n_username, string n_password, string n_email, bool n_is_relationship_manager, int n_rm_level)
 		{
 			username = n_username;
 			password = n_password;
 			email = n_email;
 			is_relationship_manager = n_is_relationship_manager;
+			rm_permission_level = n_rm_level;
 		}
 
 		//These are the getters and setters to the login entry. -John 24/10/2022

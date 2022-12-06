@@ -13,7 +13,6 @@ namespace aru_software_eng_UI
     public partial class RelationshipManagerLogin : Form
     {
         FormManager manager;
-        Form next_window;
         BackendController backend_controller;
         public RelationshipManagerLogin(Form n_previous_window)
         {
@@ -43,28 +42,31 @@ namespace aru_software_eng_UI
 
         private void RM_login_manager_Click(object sender, EventArgs e)
         {
-            next_window = new FilterWindow(this, backend_controller.loginSearchUsername(RM_login_name_entry.Text));
             // Get username  
             string username = RM_login_name_entry.Text;
             // Get password
             string password = RM_login_password_entry.Text;
             DataBaseLoginEntry login_entry = backend_controller.loginSearchUsername(username);
-            if (login_entry.getUsername().Equals(username) && login_entry.getPassword().Equals(password))
+            if(login_entry.getUsername() != null || login_entry.getPassword() != null)
             {
-                // redirect to Idea Submitter page
-                next_window = new IdeaSubmitterForm(this, backend_controller);
+                if(!login_entry.getIsRelationshipManager())
+                {
+                    MessageBox.Show("Not a relationship manager", "Not an RM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (login_entry.getUsername().Equals(username) && login_entry.getPassword().Equals(password))
+                {
+                    new FilterWindow(this, backend_controller.loginSearchUsername(RM_login_name_entry.Text));
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid Username / Password", "Invalid Username / Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else if (backend_controller.loginSearchUsername(username).getUsername() != username)
+            else
             {
-
-                MessageBox.Show("Please enter a valid username", "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("Username / Password is NULL", "Invalid Username / Password as they are NULL (possibly doesn't exist?)", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
-                MessageBox.Show(RM_login_name_entry.Text, "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
         }
 
         private void RM_backButton_Click(object sender, EventArgs e)
