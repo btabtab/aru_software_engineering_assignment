@@ -49,7 +49,7 @@ namespace aru_software_eng_UI
             // Get password
             string password = RM_login_password_entry.Text;
             DataBaseLoginEntry login_entry = backend_controller.loginSearchUsername(username);
-            if ((login_entry.getEmail() == username || login_entry.getUsername() == username) && login_entry.getPassword() == password)
+            if (login_entry.getUsername().Equals(username) && login_entry.getPassword().Equals(password))
             {
                 // redirect to Idea Submitter page
                 next_window = new IdeaSubmitterForm(this, backend_controller);
