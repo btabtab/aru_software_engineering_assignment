@@ -37,6 +37,7 @@ namespace aru_software_eng_UI
             this.IG_login_label = new System.Windows.Forms.Label();
             this.IG_login_button = new System.Windows.Forms.Button();
             this.IG_text = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // IG_back_button
@@ -109,11 +110,20 @@ namespace aru_software_eng_UI
             this.IG_text.TabIndex = 10;
             this.IG_text.Text = "Idea Generator";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(802, 189);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 16;
+            // 
             // IdeaGeneratorLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.IG_back_button);
             this.Controls.Add(this.IG_password_textbox);
             this.Controls.Add(this.IG_login_textbox);
@@ -137,5 +147,6 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label IG_login_label;
         private System.Windows.Forms.Button IG_login_button;
         private System.Windows.Forms.Label IG_text;
+        private System.Windows.Forms.Label label1;
     }
 }

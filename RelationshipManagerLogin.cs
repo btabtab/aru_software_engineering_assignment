@@ -52,8 +52,10 @@ namespace aru_software_eng_UI
             if ((login_entry.getEmail() == username || login_entry.getUsername() == username) && login_entry.getPassword() == password)
             {
                 // redirect to Idea Submitter page
-                next_window = new FilterWindow(this, login_entry);
+                next_window = new IdeaSubmitterForm(this, backend_controller);
             }
+
+
         }
 
         private void RM_backButton_Click(object sender, EventArgs e)

@@ -43,10 +43,17 @@ namespace aru_software_eng_UI
             // Get password
             string password = IG_password_textbox.Text;
             DataBaseLoginEntry loginEntry = backend_controller.loginSearchUsername(username);
-           if ((loginEntry.getEmail() == username || loginEntry.getUsername() == username) && loginEntry.getPassword() == password)
+            if ((loginEntry.getEmail() == username || loginEntry.getUsername() == username) && loginEntry.getPassword() == password)
             {
                 // redirect to Idea Submitter page
                 next_window = new IdeaSubmitterForm(this, backend_controller);
+            }
+            else if (backend_controller.loginSearchUsername(username).getUsername() != username);
+
+            {
+
+                label1.Text = "Username invalid";
+
             }
         }
     }
