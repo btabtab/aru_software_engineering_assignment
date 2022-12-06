@@ -29,6 +29,7 @@ namespace aru_software_eng_UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IdeaGeneratorLogin));
             this.IG_back_button = new System.Windows.Forms.Button();
             this.IG_password_textbox = new System.Windows.Forms.TextBox();
@@ -38,12 +39,14 @@ namespace aru_software_eng_UI
             this.IG_login_button = new System.Windows.Forms.Button();
             this.IG_text = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // IG_back_button
             // 
             this.IG_back_button.Image = ((System.Drawing.Image)(resources.GetObject("IG_back_button.Image")));
-            this.IG_back_button.Location = new System.Drawing.Point(702, 12);
+            this.IG_back_button.Location = new System.Drawing.Point(694, 12);
             this.IG_back_button.Name = "IG_back_button";
             this.IG_back_button.Size = new System.Drawing.Size(128, 64);
             this.IG_back_button.TabIndex = 15;
@@ -66,6 +69,8 @@ namespace aru_software_eng_UI
             this.IG_login_textbox.Name = "IG_login_textbox";
             this.IG_login_textbox.Size = new System.Drawing.Size(502, 53);
             this.IG_login_textbox.TabIndex = 13;
+            this.IG_login_textbox.TextChanged += new System.EventHandler(this.IG_login_textbox_TextChanged);
+            this.IG_login_textbox.Validating += new System.ComponentModel.CancelEventHandler(this.IG_login_textbox_Validating);
             // 
             // IG_password_label
             // 
@@ -118,6 +123,10 @@ namespace aru_software_eng_UI
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 16;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // IdeaGeneratorLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,6 +142,7 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.IG_login_button);
             this.Name = "IdeaGeneratorLogin";
             this.Text = "IdeaGeneratorLoginLabel";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +158,6 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Button IG_login_button;
         private System.Windows.Forms.Label IG_text;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -52,7 +52,33 @@ namespace aru_software_eng_UI
 
             {
 
-                label1.Text = "Username invalid";
+                MessageBox.Show("Please enter a valid username", "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show(IG_login_textbox.Text, "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void IG_login_textbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IG_login_textbox_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(IG_login_textbox.Text))
+            {
+                e.Cancel = true;
+                IG_login_textbox.Focus();
+                errorProvider1.SetError(IG_login_textbox, "Please enter your username: ");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(IG_login_textbox, null);
 
             }
         }
