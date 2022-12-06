@@ -28,6 +28,7 @@ namespace aru_software_eng_UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelationshipManagerLogin));
             this.RMlabel = new System.Windows.Forms.Label();
             this.RM_backButton = new System.Windows.Forms.Button();
@@ -36,15 +37,13 @@ namespace aru_software_eng_UI
             this.RM_login_name_label = new System.Windows.Forms.Label();
             this.RM_login_password_label = new System.Windows.Forms.Label();
             this.RM_login_manager = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // RMlabel
             // 
             this.RMlabel.AutoSize = true;
-            this.RMlabel.Font = new System.Drawing.Font("Agency FB", 38.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RMlabel.Location = new System.Drawing.Point(8, 9);
-            this.RMlabel.Name = "RMlabel";
-            this.RMlabel.Size = new System.Drawing.Size(507, 62);
             this.RMlabel.Font = new System.Drawing.Font("Agency FB", 50.25F, System.Drawing.FontStyle.Bold);
             this.RMlabel.Location = new System.Drawing.Point(0, 0);
             this.RMlabel.Name = "RMlabel";
@@ -70,6 +69,7 @@ namespace aru_software_eng_UI
             this.RM_login_name_entry.Name = "RM_login_name_entry";
             this.RM_login_name_entry.Size = new System.Drawing.Size(502, 53);
             this.RM_login_name_entry.TabIndex = 1;
+            this.RM_login_name_entry.Validating += new System.ComponentModel.CancelEventHandler(this.RM_login_name_entry_Validating);
             // 
             // RM_login_password_entry
             // 
@@ -83,14 +83,10 @@ namespace aru_software_eng_UI
             // RM_login_name_label
             // 
             this.RM_login_name_label.AutoSize = true;
-            this.RM_login_name_label.Font = new System.Drawing.Font("Agency FB", 38.25F, System.Drawing.FontStyle.Bold);
-            this.RM_login_name_label.Location = new System.Drawing.Point(10, 162);
-            this.RM_login_name_label.Name = "RM_login_name_label";
-            this.RM_login_name_label.Size = new System.Drawing.Size(218, 62);
             this.RM_login_name_label.Font = new System.Drawing.Font("Agency FB", 30F, System.Drawing.FontStyle.Bold);
             this.RM_login_name_label.Location = new System.Drawing.Point(10, 174);
             this.RM_login_name_label.Name = "RM_login_name_label";
-            this.RM_login_name_label.Size = new System.Drawing.Size(105, 50);
+            this.RM_login_name_label.Size = new System.Drawing.Size(167, 50);
             this.RM_login_name_label.TabIndex = 4;
             this.RM_login_name_label.Text = "Username:";
             this.RM_login_name_label.Click += new System.EventHandler(this.label1_Click);
@@ -108,7 +104,6 @@ namespace aru_software_eng_UI
             // RM_login_manager
             // 
             this.RM_login_manager.BackColor = System.Drawing.SystemColors.Highlight;
-            this.RM_login_manager.Font = new System.Drawing.Font("Agency FB", 38.25F, System.Drawing.FontStyle.Bold);
             this.RM_login_manager.Font = new System.Drawing.Font("Agency FB", 20.25F);
             this.RM_login_manager.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.RM_login_manager.Location = new System.Drawing.Point(21, 349);
@@ -118,6 +113,10 @@ namespace aru_software_eng_UI
             this.RM_login_manager.Text = "Login";
             this.RM_login_manager.UseVisualStyleBackColor = false;
             this.RM_login_manager.Click += new System.EventHandler(this.RM_login_manager_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // RelationshipManagerLogin
             // 
@@ -134,6 +133,7 @@ namespace aru_software_eng_UI
             this.Name = "RelationshipManagerLogin";
             this.Text = "RelationshipManagerLogin";
             this.Load += new System.EventHandler(this.RelationshipManagerLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +148,6 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label RM_login_name_label;
         private System.Windows.Forms.Label RM_login_password_label;
         private System.Windows.Forms.Button RM_login_manager;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

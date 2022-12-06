@@ -20,20 +20,25 @@ namespace aru_software_eng_UI
 		{
 			button = n_button;
 			investment_idea = n_investment_idea;
+			clicked = false;
 
+			button.Click += new EventHandler(setToClicked);
 			button.Click += new EventHandler(function); //When button is clicked, run the "showButtonInfo" function - L
 		}
 
 		bool clicked;
 		public bool isClicked()
         {
-			clicked = !clicked;
 			return clicked;
         }
-		public void resetClickFlag()
-        {
-			clicked = false;
-        }
+		public void setClickFlag(bool n_clicked)
+		{
+			clicked = n_clicked;
+		}
+		void setToClicked(object sender, EventArgs e)
+		{
+			clicked = true;
+		}
 		//Encapuslation commands to get the bubbles information - L  
 		public Button getButton()   
 		{

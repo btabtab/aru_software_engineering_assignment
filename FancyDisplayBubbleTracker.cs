@@ -39,22 +39,30 @@ namespace aru_software_eng_UI
 				{
 					Console.WriteLine("clicked " + i);
 					last_pressed_bubble = i;
-					return i - 1;
+					return i;
 				}
-				bubbles[i].resetClickFlag();
 			}
 			return -1;
 		}
 
-		/**/
+		/*
+		This function runs internally within each button when it gets clicked.
+		*/
 		void showButtonInfo(object sender, EventArgs e)
 		{
+
 			scanForPressedBubble();
+
 			Console.WriteLine("i = " + FancyDisplayBubbleTracker.getBubbleTracker().getLastPressedBubbleID());
 
 			if (FancyDisplayBubbleTracker.getBubbleTracker().getLastPressedBubbleID() != -1)
 			{
 				target_output_label.Text = bubbles[(FancyDisplayBubbleTracker.getBubbleTracker().getLastPressedBubbleID())].getInvestmentIdea().getAsLabelString();
+			}
+			
+			for (int i = 0; i != bubbles.Count; i++)
+			{
+				bubbles[i].setClickFlag(false);
 			}
 		}
 
@@ -77,11 +85,6 @@ namespace aru_software_eng_UI
 		/**/
 		FancyDisplayBubble getBubble(int index)
 		{
-			index--;
-			if(index < 0)
-            {
-				index = 0;
-            }
 			return bubbles.ElementAt(index);
 		}
 
@@ -116,7 +119,7 @@ namespace aru_software_eng_UI
 		/**/
 		public static FancyDisplayBubble instanceGetLastBubble()
 		{
-			return getBubbleTracker().getBubble(instance.getBubbleCount());
+			return getBubbleTracker().getBubble(instance.getBubbleCount() - 1);
 		}
 
 		/**/
