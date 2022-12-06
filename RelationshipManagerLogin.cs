@@ -54,9 +54,7 @@ namespace aru_software_eng_UI
                 // redirect to Idea Submitter page
                 next_window = new IdeaSubmitterForm(this, backend_controller);
             }
-
-            else if (backend_controller.loginSearchUsername(username).getUsername() != username) ;
-
+            else if (backend_controller.loginSearchUsername(username).getUsername() != username)
             {
 
                 MessageBox.Show("Please enter a valid username", "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
