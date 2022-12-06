@@ -51,5 +51,11 @@ namespace aru_software_eng_UI
 //            }
             next_window = new FilterWindow(this, BackendController.getInstance().randomEntry());
         }
+
+        private void TestSorting_Click(object sender, EventArgs e)
+        {
+            Sorting test = new Sorting();
+            test.mergeSortTest();
+        }
     }
 }
