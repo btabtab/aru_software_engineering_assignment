@@ -77,6 +77,11 @@ namespace aru_software_eng_UI
 		/**/
 		FancyDisplayBubble getBubble(int index)
 		{
+			index--;
+			if(index < 0)
+            {
+				index = 0;
+            }
 			return bubbles.ElementAt(index);
 		}
 
@@ -111,7 +116,7 @@ namespace aru_software_eng_UI
 		/**/
 		public static FancyDisplayBubble instanceGetLastBubble()
 		{
-			return getBubbleTracker().getBubble(instance.getBubbleCount() - 1);
+			return getBubbleTracker().getBubble(instance.getBubbleCount());
 		}
 
 		/**/

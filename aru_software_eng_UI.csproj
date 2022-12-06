@@ -84,6 +84,7 @@
       <DependentUpon>DatabaseWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseWrapper.cs" />
+    <Compile Include="DatabaseWrapperDefunct.cs" />
     <Compile Include="DummyFunctions.cs" />
     <Compile Include="FancyDisplayBubble.cs" />
     <Compile Include="FancyDisplayBubbleTracker.cs" />

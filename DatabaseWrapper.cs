@@ -23,21 +23,31 @@ namespace aru_software_eng_UI
 	public class DatabaseWrapper
 	{
 
-		/**/
+		/*
+		 * Constants to help aid in accessing the databases.
+		 * 
+		 * -[ John | SID: 2118490 ]
+		 */
 		public const string LoginEntries = "LoginEntries", InvestmentIdeas = "InvestmentIdeas";
 
-		//This provides the connection to the database (big shock I know).
 		private SqlConnection connection_to_database;
 
-		//A private constructor to stop numerous instances being created.
+		/*
+		 * A private constructor to stop numerous instances being created.
+		 * 
+		 * -[ John | SID: 2118490 ]
+		 */
 		private DatabaseWrapper()
 		{
 			connection_to_database = new SqlConnection(Properties.Settings.Default.database_connection_string);
 		}
 
 		static DatabaseWrapper singleton_instance;
-		//singleton design pattern, done so as to prevent (bad) redundant copies.
-		//	-JE oct-26.0
+		/*
+		 * singleton design pattern, done so as to prevent (bad) redundant copies.
+		 * 
+		 * -[ John | SID: 2118490 ]
+		 */
 		public static DatabaseWrapper getDatabaseWrapperInstance()
 		{
 			if(singleton_instance == null)
@@ -46,37 +56,70 @@ namespace aru_software_eng_UI
 			}
 			return singleton_instance;
 		}
+
 		/*
-		 * This function will generate an SQL query for the database to find the
-		 * contents of a row.
+		 * Handles opening and closing the connection to the database.
 		 * 
-		 * Private because it only needs to be called in the class,
-		 * there are much prettier, neater and simpler to use functions
-		 * that are public and will be connected into the main parts of
-		 * the program.
+		 * -[ John | SID: 2118490 ]
+		 */
+		public void openConnection()
+		{
+			try
+			{
+				connection_to_database.Open();
+			}
+			catch(Exception e)
+			{
+			}
+
+		}
+
+		public void closeConnection()
+		{
+			try
+			{
+				connection_to_database.Close();
+			}
+			catch (Exception e)
+			{
+				Console.Write("\t!!!\n" + "Database already closed.\n (" + e.Message + ")\n\t!!!");
+			}
+		}
+		/*
+		 * This function will make sure that the connection is opened / closed responsibly.
+		 * If the connection is open then it will close it, if the connection is closed
+		 * then it will open it.
+		 * should save time writing try / catches elsewhere.
 		 * 
-		 * variables:
-		 *		target_table:
-		 *			This is the table being targeted, IE: LoginEntries.
-		 *			
-		 *		column_to_search:
-		 *			this is the desired column that will be scanned through,
-		 *			for example "Username".
-		 *			
-		 *		search_condition:
-		 *			What is the goal of the search (for example string equality).
-		 *			
-		 *		search_string:
-		 *			The string that you are searching for.
-		 *			
-		 *	Example:
-		 *		searchDatabaseForString(string column_to_search, string target_table, string search_condition, string search_string)
-		 *		searches the [column_to_search] column in [target_table] on the row that has the [search_condition] that matches the search_string.
-		 *		
-		 *		searchDatabaseForString("Password", login_table, "Username=", search)
-		 *		searches the "Password" column in "login_table" on the row that has the "Username=" to the "search".
-		 *	
-		 *	-JE oct-26.0
+		 * -[ John | SID: 2118490 ]
+		 */
+
+
+		/*
+		 * opens the connection and begins the process.
+		 * 
+		 * -[ John | SID: 2118490 ]
+		 */
+		private SqlCommand runSQLQuery(string query)
+		{
+			openConnection();
+			SqlCommand ret = new SqlCommand(query, connection_to_database);
+			connection_to_database.BeginTransaction().Commit();
+			return ret;
+		}
+
+		/*
+		 * This will stitch together a set of parameters into a single search query.
+		 */
+		string generateSearchQuery(string column_to_search, string target_table, string search_condition, string search_string)
+		{
+			return "SELECT " + column_to_search + " FROM " + target_table + " WHERE " + search_condition + "'" + search_string + "'";
+		}
+		/*
+		 * This will search the database for a string matching the
+		 * conditions.
+		 * 
+		 * -[ John | SID: 2118490 ]
 		 */
 		public string searchDatabaseForString(string column_to_search, string target_table, string search_condition, string search_string)
 		{
@@ -86,10 +129,9 @@ namespace aru_software_eng_UI
 			 * Assembles an SQL query from the paramaters, makes the process of
 			 * writing the query itself much neater and easier to understand.
 			 */
-			string query_string = "Select " + column_to_search + " FROM " + target_table + " WHERE " + search_condition + "'" + search_string + "'";
-			SqlCommand oCmd = runSQLQuery(query_string);
+			string query = generateSearchQuery(column_to_search, target_table, search_condition, search_string);
 
-			SqlDataReader oReader = oCmd.ExecuteReader();
+			SqlDataReader oReader = runSQLQuery(query).ExecuteReader();
 
 			//Cycles through the rows of the database -JE oct-26.0
 			int index = 0;
@@ -99,11 +141,10 @@ namespace aru_software_eng_UI
 				index++;
 			}
 			//kills the connection to the database. -JE oct-26.0
-			connection_to_database.Close();
+			closeConnection();
 			return ret;
 		}
 
-		/**/
 		public int searchDataBaseForInt(string column_to_search, string target_table, string search_condition, string search_string)
         {
 			int ret = 0;
@@ -125,19 +166,54 @@ namespace aru_software_eng_UI
 				index++;
 			}
 			//kills the connection to the database. -JE oct-26.0
-			connection_to_database.Close();
+			closeConnection();
+			return ret;
+
+		}
+		public float searchDataBaseForFloat(string column_to_search, string target_table, string search_condition, string search_string)
+		{
+			float ret = 0;
+
+			/*
+			 * Assembles an SQL query from the paramaters, makes the process of
+			 * writing the query itself much neater and easier to understand.
+			 */
+			string query_string = "Select " + column_to_search + " FROM " + target_table + " WHERE " + search_condition + "'" + search_string + "'";
+			SqlCommand oCmd = runSQLQuery(query_string);
+
+			SqlDataReader oReader = oCmd.ExecuteReader();
+
+			//Cycles through the rows of the database -JE oct-26.0
+			int index = 0;
+			while (oReader.Read())
+			{
+				ret = (float)oReader.GetDouble(index);
+				index++;
+			}
+			//kills the connection to the database. -JE oct-26.0
+			closeConnection();
 			return ret;
 
 		}
 
-		/**/
+
 		public bool searchDatabaseForBool(string column_to_search, string target_table, string search_condition, string search_string)
 		{
 			//creates a boolean array, and uses ☆ index magic ☆ to return true / false.
-			return (new bool[2] { false, true })[searchDataBaseForInt(column_to_search, target_table, search_condition, search_string)];
+			int access_index = searchDataBaseForInt(column_to_search, target_table, search_condition, search_string);
+			if(1 < access_index)
+			{
+				Console.WriteLine("\nWarning:\n\tDatabase entry for boolean has a number that is higher than 1, this is an issue and should be resolved ASAP\n");
+				access_index = 1;
+			}
+			if(access_index < 0)
+			{
+				Console.WriteLine("\nWarning:\n\tDatabase entry for boolean has a number that is lower than 0, this is an issue and should be resolved ASAP\n");
+				access_index = 0;
+			}
+			return (new bool[2] { false, true })[access_index];
 		}
 
-		/**/
 		public DateTime searchDatabaseForDateTime(string column_to_search, string target_table, string search_condition, string search_string)
         {
 			DateTime ret = new DateTime();
@@ -158,35 +234,9 @@ namespace aru_software_eng_UI
 				index++;
 			}
 			//kills the connection to the database. -JE oct-26.0
-			connection_to_database.Close();
+			closeConnection();
 			return ret;
         }
-		//opens the connection and begins the process. -JE oct-26.0
-		private SqlCommand runSQLQuery(string query)
-        {
-			SqlCommand ret = new SqlCommand(query, connection_to_database);
-			connection_to_database.Open();
-			connection_to_database.BeginTransaction().Commit();
-			return ret;
-		}
-
-		/**/
-		public void closeConnection()
-        {
-			connection_to_database.Close();
-        }
-		/*For the following functions I will need to implement a set of fixes,
-		 *comments and documentation as well as refactoring due to the code
-		 *being a bit messy.
-		 *
-		 *	-JE oct-30.0
-		 */
-
-		/*compiles the set of values / columns into a string for the SQL query.
-		 *if it is compiling a set of values into a string then "is_value_table" needs to be true.
-		 *
-		 *	-JE oct-30.0
-		 */
 		private string compileListIntoFormattedString(List<string> target, bool mark_with_apostrophe)
         {
 			string ret = "";
@@ -212,7 +262,7 @@ namespace aru_software_eng_UI
 			}
 			return ret;
         }
-		//inserts a new entry into a table based around columns and values. -JE oct-30.0
+
 		public void insertNewEntryIntoDatabase(string target_table, List<string> columns_list, List<string> values_list)
 		{
 			string column_string = compileListIntoFormattedString(columns_list, false), values_string = compileListIntoFormattedString(values_list, true);
@@ -224,10 +274,9 @@ namespace aru_software_eng_UI
 			SqlCommand oCmd = runSQLQuery(query_string);
 
 			oCmd.ExecuteReader();
-			connection_to_database.Close();
-
+			closeConnection();
 		}
-		//gets the amount of rows in the database. -JE oct-31.0
+
 		public int getRowCount(string target_table)
 		{
 			//SELECT COUNT(*) FROM tablename
@@ -236,38 +285,35 @@ namespace aru_software_eng_UI
 			closeConnection();
 			return ret;
 		}
-		//deletes the targeted row. -JE oct-31.0
-		public void deleteRowX(string target_table, int row_num)
-		{
-			{
-				row_num = getHighestIDNumber(target_table, "UserID");
-			}
-			// DELETE FROM table WHERE column = 'value';
-
-			string query_string = "DELETE FROM " + target_table + " WHERE UserID=" + row_num;
-			Console.WriteLine(query_string);
-			SqlCommand oCmd = runSQLQuery(query_string);
-			oCmd.ExecuteReader();
-
-			connection_to_database.Close();
-
-		}
-
-		/**/
 		public Int32 getHighestIDNumber(string target_table, string ID_column_name)
 		{
 			if (getRowCount(target_table) == 0)
 			{
 				return 0;
 			}
+			openConnection();
 			//SELECT COUNT(*) FROM tablename
 			SqlCommand oCmd = runSQLQuery("SELECT MAX(" + ID_column_name + ") FROM " + target_table);
 			int ret = (int)(Int32)oCmd.ExecuteScalar().GetHashCode();
 			closeConnection();
-			Console.Out.WriteLine("::: " + ret + " ::: @ >>> !");
+			Console.Out.WriteLine("::: highest ID in table " + target_table + " in column: " + ID_column_name + " = " + ret + " ::: @ >>> !");
 			return ret;
 		}
-		//converts bool from LoginEntryClass to string for the table input. -JE oct-30.0
-		
+
+		public void deleteRowX(string target_table, string target_column_name, int row_num)
+		{
+			{
+				row_num = getHighestIDNumber(target_table, target_column_name);
+			}
+			// DELETE FROM table WHERE column = 'value';
+
+			string query_string = "DELETE FROM " + target_table + " WHERE " + target_column_name + "=" + row_num;
+			Console.WriteLine(query_string);
+			SqlCommand oCmd = runSQLQuery(query_string);
+			oCmd.ExecuteReader();
+			
+			closeConnection();
+
+		}
 	}
 }

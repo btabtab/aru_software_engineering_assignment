@@ -19,7 +19,7 @@ namespace aru_software_eng_UI
         public FilterWindow(Form previous_window, DataBaseLoginEntry n_user_login)
         {
             InitializeComponent();
-            this.Text += " USER: " + n_user_login.getUsername();
+            this.Text += "[ USER: " + n_user_login.getUsername() + " ]";
             user_login = n_user_login;
             form_manager = new FormManager(previous_window, this);
             updateSearchButton();
@@ -62,7 +62,8 @@ namespace aru_software_eng_UI
             Console.WriteLine(pass_through.ToString() + "\n");
 
             //Load the page to sort the information and display the bubbles, pass through the infomration the user has entered 
-            new RelationshipManagerViewerUI(this, InvestmentIdeaDatabaseHandler.getInstance().getFilteredList(pass_through));
+            List<InvestmentIdea> a =InvestmentIdeaDatabaseHandler.getInstance().getFilteredList(pass_through);
+            new RelationshipManagerViewerUI(this, a);
         }
 
 

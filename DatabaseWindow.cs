@@ -13,9 +13,6 @@ using System.Runtime.InteropServices;
 
 namespace aru_software_eng_UI
 {
-	/*TODO:
-	 * Update controls on the interface
-	 */
 	public partial class DatabaseWindow : Form
 	{
 		FormManager manager;
@@ -60,19 +57,23 @@ namespace aru_software_eng_UI
 
 		private void login_generator_btn_Click(object sender, EventArgs e)
 		{
-			DataBaseLoginEntry r_entry = backend_controller.randomEntry();
-			
-			//figures out the character to display if the account is a relationship manager account.
+			backend_controller.writeRandomLoginEntry();
 
-			generated_user_entry_display.Text = r_entry.getAsLabelString();
-
-			//UPDATE naming for r_entry.
-			backend_controller.writeLoginDatabaseEntry(r_entry);
 			updateTable();
 		}
 
 		private void DatabaseWindow_Load(object sender, EventArgs e)
 		{
+            // TODO: This line of code loads data into the 'coreDataBaseDataSet.InvestmentIdeas' table. You can move, or remove it, as needed.
+            this.investmentIdeasTableAdapter.Fill(this.coreDataBaseDataSet.InvestmentIdeas);
+            // TODO: This line of code loads data into the 'coreDataBaseDataSet.LoginEntries' table. You can move, or remove it, as needed.
+            this.loginEntriesTableAdapter.Fill(this.coreDataBaseDataSet.LoginEntries);
+            // TODO: This line of code loads data into the 'coreDataBaseDataSet.LoginEntries' table. You can move, or remove it, as needed.
+            this.loginEntriesTableAdapter.Fill(this.coreDataBaseDataSet.LoginEntries);
+            // TODO: This line of code loads data into the 'coreDataBaseDataSet.InvestmentIdeas' table. You can move, or remove it, as needed.
+            this.investmentIdeasTableAdapter.Fill(this.coreDataBaseDataSet.InvestmentIdeas);
+            // TODO: This line of code loads data into the 'coreDataBaseDataSet.LoginEntries' table. You can move, or remove it, as needed.
+            this.loginEntriesTableAdapter.Fill(this.coreDataBaseDataSet.LoginEntries);
             updateTable();
 		}
 
@@ -96,12 +97,14 @@ namespace aru_software_eng_UI
 
         private void login_master_button_Click(object sender, EventArgs e)
         {
-			backend_controller.writeLoginDatabaseEntry(backend_controller.randomEntry());
-			
-			updateTable();
+			//makes random entry. -[ John | SID: 2118490 ]
+			backend_controller.writeRandomLoginEntry();
 
+			updateTable();
+			//gets the highest ID in the table (the entry just made) and displays it on the button. -[ John | SID: 2118490 ]
 			login_master_button.Text = backend_controller.getHighestUserIDEntry().getAsLabelString();
 
+			//delets the highest login (being the just made entry). -[ John | SID: 2118490 ]
 			backend_controller.deleteHighestLoginID();
 
 			updateTable();
@@ -109,8 +112,24 @@ namespace aru_software_eng_UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-			backend_controller.generateRandomInvestmentIdea();
+			backend_controller.writeRandomInvestmentIdea();
 			updateTable();
         }
-    }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+			backend_controller.writeRandomLoginEntry();
+			updateTable();
+
+			for(int i = 0; i != 10; i++)
+            {
+				backend_controller.writeRandomInvestmentIdea();
+            }
+			for(int i = 0; i != 10; i++)
+            {
+				backend_controller.deleteHighestInvestmentIdeaID();
+            }
+				
+		}
+	}
 }
