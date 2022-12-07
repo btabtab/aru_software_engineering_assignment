@@ -72,6 +72,7 @@ namespace aru_software_eng_UI
         private void IS_save_button_Click(object sender, EventArgs e)
         {
             InvestmentIdeaDatabaseHandler.getInstance().writeInvestmentIdea(new InvestmentIdea(date_picker.Value, name.Text, desc.Text, InvestmentIdeaDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.InvestmentIdeas, "ID"), user.getID(), Risk.Value, Cost.Value, product_tag.Text, user.getRMPermissionLevel()));
+            manager.back();
         }
 
         private void IS_back_button_Click_2(object sender, EventArgs e)
