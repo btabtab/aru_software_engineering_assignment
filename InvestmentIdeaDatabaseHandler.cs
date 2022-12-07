@@ -58,10 +58,24 @@ namespace aru_software_eng_UI
 				database_wrapper.closeConnection();
 			}
 		}
+		public InvestmentIdea getErrorHandler(string errorname)
+        {
+			return new InvestmentIdea(
+										DateTime.Now,
+										"Error",
+										errorname,
+										0,
+										0,
+										0,
+										0,
+										"",
+										0
+										);
+		}
 		/**/
 		public InvestmentIdea getInvestmentIdeaFromDatabase(int ID)
 		{
-			InvestmentIdea ret = new InvestmentIdea(
+			return new InvestmentIdea(
 															database_wrapper.searchDatabaseForDateTime(	"Date", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
 															database_wrapper.searchDatabaseForString(	"Name", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
 															database_wrapper.searchDatabaseForString(	"Description", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
@@ -72,7 +86,6 @@ namespace aru_software_eng_UI
 															database_wrapper.searchDatabaseForString(	"ProductTag", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString()),
 															database_wrapper.searchDataBaseForInt(		"RequiredPermissions", DatabaseWrapper.InvestmentIdeas, "ID=", ID.ToString())
 															);
-			return ret;
 		}
 
 		/**/
@@ -100,10 +113,16 @@ namespace aru_software_eng_UI
 		}
 
 		/**/
-		public InvestmentIdea getInvestmentIdeaFromID(int ID)
+		public InvestmentIdea getInvestmentIdeaFromID(int target_ID)
         {
             InvestmentIdeaDatabaseHandler.getInstance().loadInvestmentIdeasFromDatabaseToList();
-            return current_investment_ideas[ID];
+			if (target_ID < 0 || InvestmentIdeaDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.InvestmentIdeas, "ID") < target_ID)
+            {
+				Console.WriteLine("target_ID is too high, instead returning Error handler.");
+				return InvestmentIdeaDatabaseHandler.getInstance().getErrorHandler("target_ID is too high.\nThe highest ID is: " + InvestmentIdeaDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.InvestmentIdeas, "ID") + "\nThe ID you entered is:" + target_ID);
+
+			}
+            return current_investment_ideas[target_ID];
 		}
 
 		/**/

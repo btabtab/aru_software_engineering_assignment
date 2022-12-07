@@ -29,6 +29,7 @@ namespace aru_software_eng_UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FilterWindow));
             this.MinRiskLabel = new System.Windows.Forms.Label();
             this.SearchButton = new System.Windows.Forms.Button();
             this.MaxRiskLabel = new System.Windows.Forms.Label();
@@ -47,10 +48,14 @@ namespace aru_software_eng_UI
             this.manualSearchLabel = new System.Windows.Forms.Label();
             this.singleSearchButton = new System.Windows.Forms.Button();
             this.divide_line = new System.Windows.Forms.ProgressBar();
+            this.singleIdeaPanel = new System.Windows.Forms.Panel();
+            this.panelBackButton = new System.Windows.Forms.Button();
+            this.panelLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MinRiskTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxRiskTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinCostTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxCostTrackBar)).BeginInit();
+            this.singleIdeaPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MinRiskLabel
@@ -254,11 +259,45 @@ namespace aru_software_eng_UI
             this.divide_line.Value = 100;
             this.divide_line.Click += new System.EventHandler(this.divide_line_Click);
             // 
+            // singleIdeaPanel
+            // 
+            this.singleIdeaPanel.Controls.Add(this.panelLabel);
+            this.singleIdeaPanel.Controls.Add(this.panelBackButton);
+            this.singleIdeaPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.singleIdeaPanel.Location = new System.Drawing.Point(4, 1);
+            this.singleIdeaPanel.Name = "singleIdeaPanel";
+            this.singleIdeaPanel.Size = new System.Drawing.Size(840, 470);
+            this.singleIdeaPanel.TabIndex = 26;
+            this.singleIdeaPanel.Visible = false;
+            // 
+            // panelBackButton
+            // 
+            this.panelBackButton.Image = ((System.Drawing.Image)(resources.GetObject("panelBackButton.Image")));
+            this.panelBackButton.Location = new System.Drawing.Point(694, 402);
+            this.panelBackButton.Name = "panelBackButton";
+            this.panelBackButton.Size = new System.Drawing.Size(132, 59);
+            this.panelBackButton.TabIndex = 0;
+            this.panelBackButton.UseVisualStyleBackColor = true;
+            this.panelBackButton.Click += new System.EventHandler(this.panelBackButton_Click);
+            // 
+            // panelLabel
+            // 
+            this.panelLabel.AutoSize = true;
+            this.panelLabel.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelLabel.Location = new System.Drawing.Point(3, 8);
+            this.panelLabel.Name = "panelLabel";
+            this.panelLabel.Size = new System.Drawing.Size(92, 434);
+            this.panelLabel.TabIndex = 1;
+            this.panelLabel.Text = "panelLabel\r\npanelLabel\r\npanelLabel\r\npanelLabel\r\npanelLabel\r\npanelLabel\r\npanelLabe" +
+    "l\r\npanelLabel\r\npanelLabel\r\npanelLabel\r\npanelLabel\r\npanelLabel\r\npanelLabel\r\npanel" +
+    "Label";
+            // 
             // FilterWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.singleIdeaPanel);
             this.Controls.Add(this.divide_line);
             this.Controls.Add(this.singleSearchButton);
             this.Controls.Add(this.manualSearchLabel);
@@ -284,6 +323,8 @@ namespace aru_software_eng_UI
             ((System.ComponentModel.ISupportInitialize)(this.MaxRiskTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinCostTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxCostTrackBar)).EndInit();
+            this.singleIdeaPanel.ResumeLayout(false);
+            this.singleIdeaPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,5 +349,8 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label manualSearchLabel;
         private System.Windows.Forms.Button singleSearchButton;
         private System.Windows.Forms.ProgressBar divide_line;
+        private System.Windows.Forms.Panel singleIdeaPanel;
+        private System.Windows.Forms.Button panelBackButton;
+        private System.Windows.Forms.Label panelLabel;
     }
 }
