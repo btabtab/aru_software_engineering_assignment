@@ -39,7 +39,7 @@ namespace aru_software_eng_UI
 
         private void Idea_Submitter_Table_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            this.Idea_Submitter_Table.Rows[e.RowIndex].Cells["Column1"].Value = (e.RowIndex + 1).ToString();
+            Idea_Submitter_Table.Update();
         }
 
         private void Delete_Idea_Button_Click(object sender, EventArgs e)
@@ -50,11 +50,15 @@ namespace aru_software_eng_UI
 
             }
             int rowIndex = Idea_Submitter_Table.CurrentCell.RowIndex;
-            Idea_Submitter_Table.Rows.RemoveAt(rowIndex);
+
+            InvestmentIdeaDatabaseHandler.getInstance().deleteInvestmentIdeaRowX(rowIndex);
+            Idea_Submitter_Table.Update();
         }
 
         private void IdeaSubmitterForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'coreDataBaseDataSet.InvestmentIdeas' table. You can move, or remove it, as needed.
+            this.investmentIdeasTableAdapter.Fill(this.coreDataBaseDataSet.InvestmentIdeas);
 
         }
     }

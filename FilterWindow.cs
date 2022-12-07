@@ -57,7 +57,7 @@ namespace aru_software_eng_UI
         {
             //Create an instance of the filter class and fill it with the appropriate information
             Filters pass_through = new Filters(MinCostTrackBar.Value, MaxCostTrackBar.Value, MinRiskTrackBar.Value,
-                                               MaxRiskTrackBar.Value, user_login.getIsRelationshipManager(), ExpireDatePicker.Value);
+                                               MaxRiskTrackBar.Value, user_login.getRMPermissionLevel(), ExpireDatePicker.Value);
             Console.WriteLine(pass_through.asString() + "\n");
             Console.WriteLine(pass_through.ToString() + "\n");
 

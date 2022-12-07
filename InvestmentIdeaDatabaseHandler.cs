@@ -110,6 +110,22 @@ namespace aru_software_eng_UI
 		public List<InvestmentIdea> getFilteredList(Filters filters)
         {
             InvestmentIdeaDatabaseHandler.getInstance().loadInvestmentIdeasFromDatabaseToList();
+
+			List<InvestmentIdea> ret = new List<InvestmentIdea>();
+
+			for (int i = 0; i != current_investment_ideas.Count(); i++)
+            {
+				if(filters.getMinCost() < current_investment_ideas[i].getCost() && current_investment_ideas[i].getCost() < filters.getMaxCost())
+                {
+					if(filters.getMinRisk() < current_investment_ideas[i].getRiskLevel() && current_investment_ideas[i].getRiskLevel() < filters.getMaxRisk())
+					{
+						if (current_investment_ideas[i].getRMPermissionLevel() <= filters.getPermissionLevel())
+						{
+							ret.Add(current_investment_ideas[i]);
+						}
+					}
+                }
+			}
 			return current_investment_ideas;
 		}
 	}
