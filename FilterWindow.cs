@@ -140,6 +140,15 @@ namespace aru_software_eng_UI
         private void singleSearchButton_Click(object sender, EventArgs e)
         {
 
+            singleIdeaPanel.Visible = true;
+            panelLabel.Text = InvestmentIdeaDatabaseHandler.getInstance().getInvestmentIdeaFromID(Int32.Parse(manualSearchInput.Text)).getAsLabelString();
         }
+
+        private void panelBackButton_Click(object sender, EventArgs e)
+        {
+            singleIdeaPanel.Visible = false;
+        }
+
+
     }
 }
