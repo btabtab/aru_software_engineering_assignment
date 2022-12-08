@@ -55,9 +55,8 @@ namespace aru_software_eng_UI
             this.debugShow.AutoSize = true;
             this.debugShow.Location = new System.Drawing.Point(774, 489);
             this.debugShow.Name = "debugShow";
-            this.debugShow.Size = new System.Drawing.Size(67, 13);
+            this.debugShow.Size = new System.Drawing.Size(0, 13);
             this.debugShow.TabIndex = 12;
-            this.debugShow.Text = "debugoutput";
             this.debugShow.Click += new System.EventHandler(this.debugShow_Click);
             // 
             // page_right_button
