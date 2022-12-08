@@ -69,7 +69,6 @@ namespace aru_software_eng_UI
             this.IG_login_textbox.Name = "IG_login_textbox";
             this.IG_login_textbox.Size = new System.Drawing.Size(502, 53);
             this.IG_login_textbox.TabIndex = 13;
-            this.IG_login_textbox.TextChanged += new System.EventHandler(this.IG_login_textbox_TextChanged);
             this.IG_login_textbox.Validating += new System.ComponentModel.CancelEventHandler(this.IG_login_textbox_Validating);
             // 
             // IG_password_label

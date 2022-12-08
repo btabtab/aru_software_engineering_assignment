@@ -186,34 +186,5 @@ namespace aru_software_eng_UI
 			}
 
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-		//Ignore the below functions... - L
-		private void page_number_label_Click(object sender, EventArgs e)
-		{
-		}
-		private void RelationshipManagerViewerUI_Load(object sender, EventArgs e)
-		{
-		}
-		private void debugShow_Click(object sender, EventArgs e)
-		{
-		}
-		private void cost_label_Click(object sender, EventArgs e)
-		{
-		}
-		private void divide_line_Click(object sender, EventArgs e)
-		{
-
-		}
 	}
 }

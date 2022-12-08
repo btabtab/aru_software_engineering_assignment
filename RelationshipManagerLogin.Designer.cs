@@ -50,7 +50,6 @@ namespace aru_software_eng_UI
             this.RMlabel.Size = new System.Drawing.Size(656, 80);
             this.RMlabel.TabIndex = 0;
             this.RMlabel.Text = "Relationship Manager Login";
-            this.RMlabel.Click += new System.EventHandler(this.RMlogin_Click);
             // 
             // RM_backButton
             // 
@@ -89,7 +88,6 @@ namespace aru_software_eng_UI
             this.RM_login_name_label.Size = new System.Drawing.Size(167, 50);
             this.RM_login_name_label.TabIndex = 4;
             this.RM_login_name_label.Text = "Username:";
-            this.RM_login_name_label.Click += new System.EventHandler(this.label1_Click);
             // 
             // RM_login_password_label
             // 
@@ -132,7 +130,6 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.RMlabel);
             this.Name = "RelationshipManagerLogin";
             this.Text = "RelationshipManagerLogin";
-            this.Load += new System.EventHandler(this.RelationshipManagerLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

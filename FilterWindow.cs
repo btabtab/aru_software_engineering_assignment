@@ -62,8 +62,7 @@ namespace aru_software_eng_UI
             Console.WriteLine(pass_through.ToString() + "\n");
 
             //Load the page to sort the information and display the bubbles, pass through the infomration the user has entered 
-            List<InvestmentIdea> a =InvestmentIdeaDatabaseHandler.getInstance().getFilteredList(pass_through);
-            new RelationshipManagerViewerUI(this, a);
+            new RelationshipManagerViewerUI(this, InvestmentIdeaDatabaseHandler.getInstance().getFilteredList(pass_through));
         }
 
 
@@ -87,54 +86,6 @@ namespace aru_software_eng_UI
         private void MaxCostTrackBar_Scroll(object sender, EventArgs e)
         {
             updateSearchButton();
-        }
-
-
-
-        private void ExpireDatePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void ExpireDateLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void IndustryInputTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void IndustryLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void manualSearchInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void MaxRiskLabel_Click(object sender, EventArgs e)
-        {
-        }
-        private void MinRiskLabel_Click(object sender, EventArgs e)
-        {
-        }
-        private void MinCostLabel_Click(object sender, EventArgs e)
-        {
-        }
-        private void MaxCostLabel_Click(object sender, EventArgs e)
-        {
-        }
-        private void RelationshipManagerView_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void divide_line_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PageTitle_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void singleSearchButton_Click(object sender, EventArgs e)

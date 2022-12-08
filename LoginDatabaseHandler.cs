@@ -14,6 +14,7 @@ namespace aru_software_eng_UI
         private LoginDatabaseHandler() : base()
 		{
 			database_wrapper = DatabaseWrapper.getDatabaseWrapperInstance();
+			table_name = DatabaseWrapper.LoginEntries;
 		}
 
 

@@ -20,26 +20,6 @@ namespace aru_software_eng_UI
             manager = new FormManager(n_previous_window, this);
             backend_controller = BackendController.getInstance();
         }
-
-        private void richTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RMlogin_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RM_login_backbutton_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void RM_login_manager_Click(object sender, EventArgs e)
         {
             // Get username  
@@ -73,12 +53,6 @@ namespace aru_software_eng_UI
         {
             manager.back();
         }
-
-        private void RelationshipManagerLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void RM_login_name_entry_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(RM_login_name_entry.Text))

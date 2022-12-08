@@ -39,13 +39,13 @@ namespace aru_software_eng_UI
             this.label6 = new System.Windows.Forms.Label();
             this.desc = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
-            this.Risk = new System.Windows.Forms.TrackBar();
             this.Cost = new System.Windows.Forms.TrackBar();
+            this.Risk = new System.Windows.Forms.TrackBar();
             this.date_picker = new System.Windows.Forms.DateTimePicker();
             this.product_tag = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Risk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cost)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Risk)).BeginInit();
             this.SuspendLayout();
             // 
             // IS_save_button
@@ -153,28 +153,28 @@ namespace aru_software_eng_UI
             this.name.Size = new System.Drawing.Size(667, 31);
             this.name.TabIndex = 38;
             // 
-            // Risk
-            // 
-            this.Risk.LargeChange = 5000;
-            this.Risk.Location = new System.Drawing.Point(361, 490);
-            this.Risk.Margin = new System.Windows.Forms.Padding(6);
-            this.Risk.Maximum = 100000;
-            this.Risk.Name = "Risk";
-            this.Risk.Size = new System.Drawing.Size(416, 90);
-            this.Risk.TabIndex = 40;
-            this.Risk.Value = 10000;
-            // 
             // Cost
             // 
-            this.Cost.LargeChange = 1;
+            this.Cost.LargeChange = 5000;
             this.Cost.Location = new System.Drawing.Point(361, 402);
             this.Cost.Margin = new System.Windows.Forms.Padding(6);
-            this.Cost.Maximum = 5;
-            this.Cost.Minimum = 1;
+            this.Cost.Maximum = 100000;
             this.Cost.Name = "Cost";
             this.Cost.Size = new System.Drawing.Size(416, 90);
-            this.Cost.TabIndex = 39;
-            this.Cost.Value = 2;
+            this.Cost.TabIndex = 40;
+            this.Cost.Value = 10000;
+            // 
+            // Risk
+            // 
+            this.Risk.LargeChange = 1;
+            this.Risk.Location = new System.Drawing.Point(361, 490);
+            this.Risk.Margin = new System.Windows.Forms.Padding(6);
+            this.Risk.Maximum = 5;
+            this.Risk.Minimum = 1;
+            this.Risk.Name = "Risk";
+            this.Risk.Size = new System.Drawing.Size(416, 90);
+            this.Risk.TabIndex = 39;
+            this.Risk.Value = 2;
             // 
             // date_picker
             // 
@@ -209,8 +209,8 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.label5);
             this.Controls.Add(this.product_tag);
             this.Controls.Add(this.date_picker);
-            this.Controls.Add(this.Risk);
             this.Controls.Add(this.Cost);
+            this.Controls.Add(this.Risk);
             this.Controls.Add(this.name);
             this.Controls.Add(this.desc);
             this.Controls.Add(this.label6);
@@ -224,9 +224,8 @@ namespace aru_software_eng_UI
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "CreateNewIdeaForm";
             this.Text = "CreateNewIdea";
-            this.Load += new System.EventHandler(this.CreateNewIdea_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Risk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cost)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Risk)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,8 +243,8 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox desc;
         private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.TrackBar Risk;
         private System.Windows.Forms.TrackBar Cost;
+        private System.Windows.Forms.TrackBar Risk;
         private System.Windows.Forms.DateTimePicker date_picker;
         private System.Windows.Forms.TextBox product_tag;
         private System.Windows.Forms.Label label5;
