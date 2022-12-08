@@ -45,9 +45,6 @@ namespace aru_software_eng_UI
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RequiredPermissions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.investmentIdeasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.coreDataBaseDataSet = new aru_software_eng_UI.CoreDataBaseDataSet();
-            this.investmentIdeasTableAdapter = new aru_software_eng_UI.CoreDataBaseDataSetTableAdapters.InvestmentIdeasTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +54,9 @@ namespace aru_software_eng_UI
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productTagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.requiredPermissionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.investmentIdeasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.coreDataBaseDataSet = new aru_software_eng_UI.CoreDataBaseDataSet();
+            this.investmentIdeasTableAdapter = new aru_software_eng_UI.CoreDataBaseDataSetTableAdapters.InvestmentIdeasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.Idea_Submitter_Table)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.investmentIdeasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coreDataBaseDataSet)).BeginInit();
@@ -104,7 +104,7 @@ namespace aru_software_eng_UI
             // IS_Back_Button
             // 
             this.IS_Back_Button.Image = ((System.Drawing.Image)(resources.GetObject("IS_Back_Button.Image")));
-            this.IS_Back_Button.Location = new System.Drawing.Point(2650, 48);
+            this.IS_Back_Button.Location = new System.Drawing.Point(2104, 128);
             this.IS_Back_Button.Margin = new System.Windows.Forms.Padding(6);
             this.IS_Back_Button.Name = "IS_Back_Button";
             this.IS_Back_Button.Size = new System.Drawing.Size(256, 123);
@@ -207,20 +207,6 @@ namespace aru_software_eng_UI
             this.RequiredPermissions.MinimumWidth = 10;
             this.RequiredPermissions.Name = "RequiredPermissions";
             // 
-            // investmentIdeasBindingSource
-            // 
-            this.investmentIdeasBindingSource.DataMember = "InvestmentIdeas";
-            this.investmentIdeasBindingSource.DataSource = this.coreDataBaseDataSet;
-            // 
-            // coreDataBaseDataSet
-            // 
-            this.coreDataBaseDataSet.DataSetName = "CoreDataBaseDataSet";
-            this.coreDataBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // investmentIdeasTableAdapter
-            // 
-            this.investmentIdeasTableAdapter.ClearBeforeFill = true;
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -283,6 +269,20 @@ namespace aru_software_eng_UI
             this.requiredPermissionsDataGridViewTextBoxColumn.HeaderText = "RequiredPermissions";
             this.requiredPermissionsDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.requiredPermissionsDataGridViewTextBoxColumn.Name = "requiredPermissionsDataGridViewTextBoxColumn";
+            // 
+            // investmentIdeasBindingSource
+            // 
+            this.investmentIdeasBindingSource.DataMember = "InvestmentIdeas";
+            this.investmentIdeasBindingSource.DataSource = this.coreDataBaseDataSet;
+            // 
+            // coreDataBaseDataSet
+            // 
+            this.coreDataBaseDataSet.DataSetName = "CoreDataBaseDataSet";
+            this.coreDataBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // investmentIdeasTableAdapter
+            // 
+            this.investmentIdeasTableAdapter.ClearBeforeFill = true;
             // 
             // IdeaSubmitterForm
             // 

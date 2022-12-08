@@ -180,6 +180,7 @@
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="CoreDataBaseDataSet.xsc">
       <DependentUpon>CoreDataBaseDataSet.xsd</DependentUpon>
     </None>

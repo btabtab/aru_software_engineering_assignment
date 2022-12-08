@@ -15,12 +15,12 @@ namespace aru_software_eng_UI
 		List<InvestmentIdea> current_investment_ideas;
 
 		/**/
-		private InvestmentIdeaDatabaseHandler()
+		private InvestmentIdeaDatabaseHandler() : base()
 		{
 			database_wrapper = DatabaseWrapper.getDatabaseWrapperInstance();
 			current_investment_ideas = new List<InvestmentIdea>();
-			loadInvestmentIdeasFromDatabaseToList();
 			table_name = DatabaseWrapper.InvestmentIdeas;
+			loadInvestmentIdeasFromDatabaseToList();
 		}
 
 		/**/
@@ -59,6 +59,8 @@ namespace aru_software_eng_UI
 				database_wrapper.closeConnection();
 			}
 		}
+
+
 		public InvestmentIdea getErrorHandler(string errorname)
         {
 			return new InvestmentIdea(
@@ -106,7 +108,7 @@ namespace aru_software_eng_UI
 		public void loadInvestmentIdeasFromDatabaseToList()
         {
 			current_investment_ideas.Clear();
-			for (int i = 0; i != getHighestID(DatabaseWrapper.InvestmentIdeas, "ID"); i++)
+			for (int i = 0; i != getHighestID("ID"); i++)
 			{
 				// Console.WriteLine("Highest ID = " + getHighestID(DatabaseWrapper.InvestmentIdeas, "ID") + " / " + i);
 				current_investment_ideas.Add(getInvestmentIdeaFromDatabase(i));
@@ -117,10 +119,10 @@ namespace aru_software_eng_UI
 		public InvestmentIdea getInvestmentIdeaFromID(int target_ID)
         {
             InvestmentIdeaDatabaseHandler.getInstance().loadInvestmentIdeasFromDatabaseToList();
-			if (target_ID < 0 || InvestmentIdeaDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.InvestmentIdeas, "ID") < target_ID)
+			if (target_ID < 0 || InvestmentIdeaDatabaseHandler.getInstance().getHighestID("ID") < target_ID)
             {
 				Console.WriteLine("target_ID is too high, instead returning Error handler.");
-				return InvestmentIdeaDatabaseHandler.getInstance().getErrorHandler("target_ID is too high.\nThe highest ID is: " + InvestmentIdeaDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.InvestmentIdeas, "ID") + "\nThe ID you entered is:" + target_ID);
+				return InvestmentIdeaDatabaseHandler.getInstance().getErrorHandler("target_ID is too high.\nThe highest ID is: " + InvestmentIdeaDatabaseHandler.getInstance().getHighestID("ID") + "\nThe ID you entered is:" + target_ID);
 
 			}
             return current_investment_ideas[target_ID];
@@ -135,18 +137,12 @@ namespace aru_software_eng_UI
 
 			for (int i = 0; i != current_investment_ideas.Count(); i++)
             {
-				if(filters.getMinCost() < current_investment_ideas[i].getCost() && current_investment_ideas[i].getCost() < filters.getMaxCost())
+				if(filters.getMinCost() < current_investment_ideas[i].getCost() || current_investment_ideas[i].getCost() < filters.getMaxCost() && filters.getMinRisk() < current_investment_ideas[i].getRiskLevel() || current_investment_ideas[i].getRiskLevel() < filters.getMaxRisk() || current_investment_ideas[i].getRMPermissionLevel() <= filters.getPermissionLevel() || current_investment_ideas[i].getDate().Ticks < filters.getDate().Ticks)
                 {
-					if(filters.getMinRisk() < current_investment_ideas[i].getRiskLevel() && current_investment_ideas[i].getRiskLevel() < filters.getMaxRisk())
-					{
-						if (current_investment_ideas[i].getRMPermissionLevel() <= filters.getPermissionLevel())
-						{
-							ret.Add(current_investment_ideas[i]);
-						}
-					}
+					ret.Add(current_investment_ideas[i]);
                 }
 			}
-			return current_investment_ideas;
+			return ret;
 		}
 	}
 }

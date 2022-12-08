@@ -29,12 +29,14 @@ namespace aru_software_eng_UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelationshipManagerViewerUI));
             this.divide_line = new System.Windows.Forms.ProgressBar();
             this.debugShow = new System.Windows.Forms.Label();
             this.page_right_button = new System.Windows.Forms.Button();
             this.page_left_button = new System.Windows.Forms.Button();
             this.page_number_label = new System.Windows.Forms.Label();
             this.DataOutputLabel = new System.Windows.Forms.Label();
+            this.IS_Back_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // divide_line
@@ -53,7 +55,7 @@ namespace aru_software_eng_UI
             // debugShow
             // 
             this.debugShow.AutoSize = true;
-            this.debugShow.Location = new System.Drawing.Point(1546, 41);
+            this.debugShow.Location = new System.Drawing.Point(1546, 101);
             this.debugShow.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.debugShow.Name = "debugShow";
             this.debugShow.Size = new System.Drawing.Size(132, 25);
@@ -63,7 +65,7 @@ namespace aru_software_eng_UI
             // page_right_button
             // 
             this.page_right_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.page_right_button.Location = new System.Drawing.Point(1720, 78);
+            this.page_right_button.Location = new System.Drawing.Point(1720, 138);
             this.page_right_button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.page_right_button.Name = "page_right_button";
             this.page_right_button.Size = new System.Drawing.Size(178, 75);
@@ -75,7 +77,7 @@ namespace aru_software_eng_UI
             // page_left_button
             // 
             this.page_left_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.page_left_button.Location = new System.Drawing.Point(1304, 78);
+            this.page_left_button.Location = new System.Drawing.Point(1304, 138);
             this.page_left_button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.page_left_button.Name = "page_left_button";
             this.page_left_button.Size = new System.Drawing.Size(178, 75);
@@ -88,7 +90,7 @@ namespace aru_software_eng_UI
             // 
             this.page_number_label.AutoSize = true;
             this.page_number_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.page_number_label.Location = new System.Drawing.Point(1588, 91);
+            this.page_number_label.Location = new System.Drawing.Point(1588, 151);
             this.page_number_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.page_number_label.Name = "page_number_label";
             this.page_number_label.Size = new System.Drawing.Size(44, 48);
@@ -99,18 +101,31 @@ namespace aru_software_eng_UI
             // 
             this.DataOutputLabel.AutoSize = true;
             this.DataOutputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.DataOutputLabel.Location = new System.Drawing.Point(1302, 159);
+            this.DataOutputLabel.Location = new System.Drawing.Point(1302, 219);
             this.DataOutputLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DataOutputLabel.Name = "DataOutputLabel";
             this.DataOutputLabel.Size = new System.Drawing.Size(271, 48);
             this.DataOutputLabel.TabIndex = 16;
             this.DataOutputLabel.Text = "Output Label";
             // 
+            // IS_Back_Button
+            // 
+            this.IS_Back_Button.Image = ((System.Drawing.Image)(resources.GetObject("IS_Back_Button.Image")));
+            this.IS_Back_Button.Location = new System.Drawing.Point(1310, 15);
+            this.IS_Back_Button.Margin = new System.Windows.Forms.Padding(6);
+            this.IS_Back_Button.Name = "IS_Back_Button";
+            this.IS_Back_Button.Size = new System.Drawing.Size(132, 57);
+            this.IS_Back_Button.TabIndex = 20;
+            this.IS_Back_Button.Text = "Go back";
+            this.IS_Back_Button.UseVisualStyleBackColor = true;
+            this.IS_Back_Button.Click += new System.EventHandler(this.IS_Back_Button_Click);
+            // 
             // RelationshipManagerViewerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1062);
+            this.Controls.Add(this.IS_Back_Button);
             this.Controls.Add(this.DataOutputLabel);
             this.Controls.Add(this.page_number_label);
             this.Controls.Add(this.page_left_button);
@@ -132,5 +147,6 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Button page_left_button;
         private System.Windows.Forms.Label page_number_label;
         private System.Windows.Forms.Label DataOutputLabel;
+        private System.Windows.Forms.Button IS_Back_Button;
     }
 }

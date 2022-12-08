@@ -80,6 +80,11 @@ namespace aru_software_eng_UI
 		/**/
 		public string getAsLabelString()
 		{
+			if (this.description == null)
+            {
+				Console.WriteLine("Null InvIdea.\n");
+				return "";
+            }
 			return (
 				"ID: " + ID +
 				"\nUserID" + user_ID +
@@ -90,7 +95,7 @@ namespace aru_software_eng_UI
 				"\n:Date: " + expiry_date.ToString() +
 				"\n:investment type: " + product_tag.ToString() +
 				"\n:permission level: " + admin_level
-				);
+					);
 		}
 	}
 }

@@ -58,11 +58,6 @@ namespace aru_software_eng_UI
             test.mergeSortTest();
         }
 
-        private void StartMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void test_data_button_Click(object sender, EventArgs e)
         {
             BackendController.getInstance().writeLoginDatabaseEntry(new DataBaseLoginEntry("u@mail.net", "u@mail.net", "u@mail.net", true, 4));

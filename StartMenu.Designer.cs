@@ -34,6 +34,7 @@ namespace aru_software_eng_UI
             this.LoginTitleLabel = new System.Windows.Forms.Label();
             this.test_data_button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.CreateAccountBTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // IdeaGenBTN
@@ -42,7 +43,7 @@ namespace aru_software_eng_UI
             this.IdeaGenBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold);
             this.IdeaGenBTN.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.IdeaGenBTN.Location = new System.Drawing.Point(24, 394);
-            this.IdeaGenBTN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.IdeaGenBTN.Margin = new System.Windows.Forms.Padding(6);
             this.IdeaGenBTN.Name = "IdeaGenBTN";
             this.IdeaGenBTN.Size = new System.Drawing.Size(752, 189);
             this.IdeaGenBTN.TabIndex = 0;
@@ -56,7 +57,7 @@ namespace aru_software_eng_UI
             this.RelationshipManagerBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold);
             this.RelationshipManagerBTN.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.RelationshipManagerBTN.Location = new System.Drawing.Point(824, 394);
-            this.RelationshipManagerBTN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.RelationshipManagerBTN.Margin = new System.Windows.Forms.Padding(6);
             this.RelationshipManagerBTN.Name = "RelationshipManagerBTN";
             this.RelationshipManagerBTN.Size = new System.Drawing.Size(752, 189);
             this.RelationshipManagerBTN.TabIndex = 1;
@@ -87,28 +88,41 @@ namespace aru_software_eng_UI
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1057, 705);
+            this.button1.Location = new System.Drawing.Point(24, 785);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(170, 69);
             this.button1.TabIndex = 6;
-            this.button1.Text = "DBWindow";
+            this.button1.Text = "Admin window";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // CreateAccountBTN
+            // 
+            this.CreateAccountBTN.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.CreateAccountBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.CreateAccountBTN.Location = new System.Drawing.Point(24, 595);
+            this.CreateAccountBTN.Margin = new System.Windows.Forms.Padding(6);
+            this.CreateAccountBTN.Name = "CreateAccountBTN";
+            this.CreateAccountBTN.Size = new System.Drawing.Size(1552, 77);
+            this.CreateAccountBTN.TabIndex = 7;
+            this.CreateAccountBTN.Text = "Create an Account";
+            this.CreateAccountBTN.UseVisualStyleBackColor = true;
+            this.CreateAccountBTN.Click += new System.EventHandler(this.CreateAccountBTN_Click);
             // 
             // StartMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 866);
+            this.Controls.Add(this.CreateAccountBTN);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.test_data_button);
             this.Controls.Add(this.LoginTitleLabel);
             this.Controls.Add(this.RelationshipManagerBTN);
             this.Controls.Add(this.IdeaGenBTN);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "StartMenu";
             this.Text = "LoginPage";
-            this.Load += new System.EventHandler(this.StartMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,6 +135,7 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label LoginTitleLabel;
         private System.Windows.Forms.Button test_data_button;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CreateAccountBTN;
     }
 }
 
