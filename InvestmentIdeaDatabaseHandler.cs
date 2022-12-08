@@ -15,12 +15,12 @@ namespace aru_software_eng_UI
 		List<InvestmentIdea> current_investment_ideas;
 
 		/**/
-		private InvestmentIdeaDatabaseHandler()
+		private InvestmentIdeaDatabaseHandler() : base()
 		{
 			database_wrapper = DatabaseWrapper.getDatabaseWrapperInstance();
 			current_investment_ideas = new List<InvestmentIdea>();
-			loadInvestmentIdeasFromDatabaseToList();
 			table_name = DatabaseWrapper.InvestmentIdeas;
+			loadInvestmentIdeasFromDatabaseToList();
 		}
 
 		/**/
