@@ -16,11 +16,11 @@ namespace aru_software_eng_UI
         public StartMenu()
         {
             InitializeComponent();
+            if(0 < LoginDatabaseHandler.getInstance().getRowCount())
+            {
+                test_data_button.Hide();
+            }
         }
-        private void LoginPage_Load(object sender, EventArgs e)
-        {
-        }
-
         private void IdeaGenBTN_Click(object sender, EventArgs e)
         {
             next_window = new IdeaGeneratorLogin(this);
@@ -56,6 +56,28 @@ namespace aru_software_eng_UI
         {
             Sorting test = new Sorting();
             test.mergeSortTest();
+        }
+
+        private void StartMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void test_data_button_Click(object sender, EventArgs e)
+        {
+            BackendController.getInstance().writeLoginDatabaseEntry(new DataBaseLoginEntry("u@mail.net", "u@mail.net", "u@mail.net", true, 4));
+            BackendController.getInstance().writeLoginDatabaseEntry(new DataBaseLoginEntry("M@mail.net", "M@mail.net", "M@mail.net", false, 0));
+            
+            for (int i = 0; i != 17; i++)
+            {
+                BackendController.getInstance().writeRandomInvestmentIdea();
+            }
+            test_data_button.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new DatabaseWindow(this);
         }
     }
 }

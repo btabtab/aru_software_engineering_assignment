@@ -58,7 +58,7 @@ namespace aru_software_eng_UI
 
 		public int getLoginTableRowCount()
         {
-			return login_handler.getRowCount(DatabaseWrapper.LoginEntries);
+			return login_handler.getRowCount();
         }
 		public DataBaseLoginEntry getHighestUserIDEntry()
         {

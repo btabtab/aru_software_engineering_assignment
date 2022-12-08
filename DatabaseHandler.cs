@@ -8,7 +8,7 @@ namespace aru_software_eng_UI
 {
 	public class DatabaseHandler
 	{
-
+		protected string table_name;
 		/**/
 		protected DatabaseWrapper database_wrapper;
 		
@@ -47,9 +47,9 @@ namespace aru_software_eng_UI
 		}
 
 		/**/
-		public int getRowCount(string table)
+		public int getRowCount()
         {
-			return database_wrapper.getRowCount(table);
+			return database_wrapper.getRowCount(table_name);
 		}
 
 		/**/

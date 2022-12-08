@@ -1,37 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="aru_software_eng_UI.StartMenu">
-    <Position X="17" Y="10" Width="1.5" />
+    <Position X="15.25" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AADAQAgIACAACAAAAACAAAACAAISACAAAAAAAAAYAAQ=</HashCode>
+      <HashCode>AACAQAAIACAACAAAAACAABACAAISAAAAAAAAAAAYAAA=</HashCode>
       <FileName>StartMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="aru_software_eng_UI.RelationshipManagerFilterView">
-    <Position X="15.25" Y="8.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AgIAAAoAoCAAAAAAAACAgAgCAAAAAAAAAIAAAIAgACA=</HashCode>
-      <FileName>RelationshipManagerFilterView.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="aru_software_eng_UI.RelationshipManagerLogin">
-    <Position X="15.25" Y="13.5" Width="1.5" />
+    <Position X="15.25" Y="14" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AECAIAQAACAAABEAIACAgABWBAAAAAEAAAAAAAgBAQA=</HashCode>
+      <HashCode>AgAAIAAAACAAAAAAIAGAgAAWACAAAAEAAAAAAAgBAQA=</HashCode>
       <FileName>RelationshipManagerLogin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="aru_software_eng_UI.RelationshipManagerViewerUI">
-    <Position X="13.5" Y="8.75" Width="1.5" />
+    <Position X="11.75" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>GAAywgAAACAAAwCAAIqEABMOCIAEABgAIAAAAAIA8AA=</HashCode>
+      <HashCode>EAAywgAAACAAAwCAAIiAABMOCIAEABAAIAAAAAIA8AA=</HashCode>
       <FileName>RelationshipManagerViewerUI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="aru_software_eng_UI.Signup">
-    <Position X="17" Y="0.5" Width="1.5" />
+    <Position X="15.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>yBBAYAQgiGBEBABIOBCAACAGCAAAAAGAAAAgCAgAKAI=</HashCode>
+      <HashCode>yBBAYAQAiGBEhABIOACAAAAWCAAAAACAAAAgAAgAIAI=</HashCode>
       <FileName>Signup.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -45,47 +38,47 @@
   <Class Name="aru_software_eng_UI.Filters">
     <Position X="6" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAACEAAAAEACAAIAAAIQAAAAABIAAAAAQAEIAA=</HashCode>
+      <HashCode>AAAAAQAACEAAAIEACAAIAAAIQAAAAABAAAAAAQAEIAA=</HashCode>
       <FileName>Filters.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="aru_software_eng_UI.FilterWindow">
-    <Position X="13.5" Y="0.5" Width="1.5" />
+    <Position X="11.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AoIIAhAAIKIAggAIAADAAAQKAWIAAAAAJqQAAgCkAEA=</HashCode>
+      <HashCode>AsIIAkAAICIIggAYIADAAAQCAUAEAAAAFLACAgClAEg=</HashCode>
       <FileName>FilterWindow.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="aru_software_eng_UI.IdeaGeneratorLogin">
-    <Position X="15.25" Y="0.5" Width="1.5" />
+    <Position X="13.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAQAACAQAAAIKACAAFAGAgBkAAAAAAEAAAAAAAA=</HashCode>
+      <HashCode>AgCAAAAAICAQABAIKACAAFAGAgBgAAAAAAEAAAAAAAA=</HashCode>
       <FileName>IdeaGeneratorLogin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="aru_software_eng_UI.IdeaSubmitterForm">
-    <Position X="15.25" Y="5.25" Width="1.5" />
+    <Position X="13.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAASAAAAAEAADAgAACAAAAAAAAhAAAAAAAAAA=</HashCode>
+      <HashCode>gQEAAAggATAgiAMEIACAgBQWCAEABAAFjAAAAAwAiQA=</HashCode>
       <FileName>IdeaSubmitterForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="aru_software_eng_UI.InvestmentIdea">
-    <Position X="0.5" Y="11.25" Width="2.75" />
+    <Position X="0.5" Y="11" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>EHAAAQFAAADggALAIQAAAgAAAAAcAABAgAAcAQAACAA=</HashCode>
+      <HashCode>EHAAAUFABADggALAIAAAABAAAQAUAABAgAAMAQBACAA=</HashCode>
       <FileName>InvestmentIdea.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="aru_software_eng_UI.InvestmentIdeaDatabaseHandler">
     <Position X="0.5" Y="3.75" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAABABAAAAEAAQQACAAAAAAAAAAAAAQAEAAAAAAAAAA=</HashCode>
+      <HashCode>ACABABAAABEAAQAACAAAAAAAAAAAAAQAEAAAAAAAAAA=</HashCode>
       <FileName>InvestmentIdeaDatabaseHandler.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="aru_software_eng_UI.InvestmentIdeaFiltering">
-    <Position X="0.5" Y="9.5" Width="2.75" />
+    <Position X="0.5" Y="9.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACAAAAGAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
       <FileName>InvestmentIdeaFiltering.cs</FileName>
@@ -101,28 +94,28 @@
   <Class Name="aru_software_eng_UI.FancyDisplayBubble">
     <Position X="6" Y="9.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AABAAABAAAAAAAgAAAIAQAEAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <HashCode>AABAAABAEAAAAAgAAAIAQAAAAAAAAQAAAAAgAAAAAAA=</HashCode>
       <FileName>FancyDisplayBubble.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="aru_software_eng_UI.DatabaseWrapper">
     <Position X="8.5" Y="0.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>BgQAgBQAAAAAAAAEAAAAgAgAAAEwgAEAAAgAAAAAAAA=</HashCode>
+      <HashCode>BgQAgBUAAAAAAAAEAAABgAgAAAE4gAEAAAgAAAAAAAA=</HashCode>
       <FileName>DatabaseWrapper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="aru_software_eng_UI.DatabaseWindow">
-    <Position X="11.75" Y="0.5" Width="1.5" />
+    <Position X="17" Y="0.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>gCOASAJgATgiQJCIIQHRoMAXKPg7FEAGKGAIgAwhhAA=</HashCode>
+      <HashCode>kCOASCJgAbgiQJKIKAHRoPAXKPg7FEIGKGAJgEwhhAA=</HashCode>
       <FileName>DatabaseWindow.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="aru_software_eng_UI.DataBaseLoginEntry">
-    <Position X="8.5" Y="9.25" Width="3" />
+    <Position X="8.5" Y="10.25" Width="3" />
     <TypeIdentifier>
-      <HashCode>AEAAAAEAAAAAgAioAAAIAAEQAAAAAAAAAIAAAgQACIA=</HashCode>
+      <HashCode>AEAAAEEABAAAgAioAAAIAAEQAAAAAAAAAIAAAgRACIA=</HashCode>
       <FileName>DatabaseLoginEntry.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -134,9 +127,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="aru_software_eng_UI.BackendController">
-    <Position X="8.5" Y="5" Width="3" />
+    <Position X="8.5" Y="5.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAABABiAAAAACAEAAAAAIIACAAAAIAQoAAAAAAAAJAA=</HashCode>
+      <HashCode>AAABABiAAAAACAAAAAAAIAACAAAEIAQ4AAAAAAAgJAA=</HashCode>
       <FileName>BackendController.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -155,7 +148,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="UIBackendInterface">
-    <Position X="3.5" Y="7.25" Width="2.25" />
+    <Position X="3.5" Y="7" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAgAA=</HashCode>
       <FileName>DummyFunctions.cs</FileName>

@@ -13,18 +13,23 @@ namespace aru_software_eng_UI
     public partial class IdeaSubmitterForm : Form
     {
         FormManager manager;
-        BackendController backend_controller;
         DataBaseLoginEntry user;
         public IdeaSubmitterForm(Form n_previous_window, DataBaseLoginEntry n_user)
         {
             InitializeComponent();
             manager = new FormManager(n_previous_window, this);
             user = n_user;
+            updateTable();
         }
+        void updateTable()
+        {
+            investmentIdeasTableAdapter.Fill(this.coreDataBaseDataSet.InvestmentIdeas);
+        }
+
         private void New_Idea_Button_Click(object sender, EventArgs e)
         {
             CreateNewIdeaForm newIdeaForm = new CreateNewIdeaForm(this, user);
-            newIdeaForm.Show();
+            updateTable();
         }
 
         private void IS_Back_Button_Click(object sender, EventArgs e)
@@ -32,34 +37,23 @@ namespace aru_software_eng_UI
             manager.back();
         }
 
-        private void Idea_Submitter_Table_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void Idea_Submitter_Table_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            Idea_Submitter_Table.Update();
-        }
-
         private void Delete_Idea_Button_Click(object sender, EventArgs e)
         {
-            if (Idea_Submitter_Table.CurrentRow.IsNewRow)
+            int row_index = 0;
+            try
             {
-                return;
-
+                if (Idea_Submitter_Table.CurrentRow.IsNewRow)
+                {
+                    return;
+                }
+                row_index = Idea_Submitter_Table.SelectedRows[0].Index;
             }
-            int rowIndex = Idea_Submitter_Table.CurrentCell.RowIndex;
-
-            InvestmentIdeaDatabaseHandler.getInstance().deleteInvestmentIdeaRowX(rowIndex);
-            Idea_Submitter_Table.Update();
-        }
-
-        private void IdeaSubmitterForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'coreDataBaseDataSet.InvestmentIdeas' table. You can move, or remove it, as needed.
-            this.investmentIdeasTableAdapter.Fill(this.coreDataBaseDataSet.InvestmentIdeas);
-
+            catch(Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
+            InvestmentIdeaDatabaseHandler.getInstance().deleteInvestmentIdeaRowX(row_index);
+            updateTable();
         }
     }
 }

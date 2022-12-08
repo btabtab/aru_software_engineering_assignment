@@ -53,6 +53,7 @@ namespace aru_software_eng_UI
 		private void DeleteLastLoginButton_Click(object sender, EventArgs e)
 		{
 			backend_controller.deleteHighestLoginID();
+			backend_controller.deleteHighestInvestmentIdeaID();
 			updateTable();
 		}
 
