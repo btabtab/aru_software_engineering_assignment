@@ -53,9 +53,9 @@ namespace aru_software_eng_UI
 		}
 
 		/**/
-		public int getHighestID(string target_table, string name_of_ID_column)
+		public int getHighestID(string name_of_ID_column)
         {
-			return database_wrapper.getHighestIDNumber(target_table, name_of_ID_column);
+			return database_wrapper.getHighestIDNumber(table_name, name_of_ID_column);
         }
 	}
 }

@@ -59,6 +59,11 @@ namespace aru_software_eng_UI
 				database_wrapper.closeConnection();
 			}
 		}
+		public void refreshDataBase()
+		{
+			getHighestID()
+		}
+
 		public InvestmentIdea getErrorHandler(string errorname)
         {
 			return new InvestmentIdea(
@@ -135,18 +140,12 @@ namespace aru_software_eng_UI
 
 			for (int i = 0; i != current_investment_ideas.Count(); i++)
             {
-				if(filters.getMinCost() < current_investment_ideas[i].getCost() && current_investment_ideas[i].getCost() < filters.getMaxCost())
+				if(filters.getMinCost() < current_investment_ideas[i].getCost() || current_investment_ideas[i].getCost() < filters.getMaxCost() && filters.getMinRisk() < current_investment_ideas[i].getRiskLevel() || current_investment_ideas[i].getRiskLevel() < filters.getMaxRisk() || current_investment_ideas[i].getRMPermissionLevel() <= filters.getPermissionLevel() || current_investment_ideas[i].getDate().Ticks < filters.getDate().Ticks)
                 {
-					if(filters.getMinRisk() < current_investment_ideas[i].getRiskLevel() && current_investment_ideas[i].getRiskLevel() < filters.getMaxRisk())
-					{
-						if (current_investment_ideas[i].getRMPermissionLevel() <= filters.getPermissionLevel())
-						{
-							ret.Add(current_investment_ideas[i]);
-						}
-					}
+					ret.Add(current_investment_ideas[i]);
                 }
 			}
-			return current_investment_ideas;
+			return ret;
 		}
 	}
 }

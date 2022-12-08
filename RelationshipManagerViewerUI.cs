@@ -186,5 +186,10 @@ namespace aru_software_eng_UI
 			}
 
 		}
-	}
+
+        private void IS_Back_Button_Click(object sender, EventArgs e)
+        {
+			manager.back();
+        }
+    }
 }

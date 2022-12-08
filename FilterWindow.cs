@@ -66,7 +66,7 @@ namespace aru_software_eng_UI
 
 
 
-//Whenever a change is made to any of the four sliders, the button search button is updated - L
+        //Whenever a change is made to any of the four sliders, the button search button is updated - L
         private void MinRiskTrackBar_Scroll(object sender, EventArgs e)
         {
             updateSearchButton();
