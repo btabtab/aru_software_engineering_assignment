@@ -32,7 +32,7 @@ namespace aru_software_eng_UI
 
         private void IS_save_button_Click(object sender, EventArgs e)
         {
-            InvestmentIdeaDatabaseHandler.getInstance().writeInvestmentIdea(new InvestmentIdea(date_picker.Value, name.Text, desc.Text, InvestmentIdeaDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.InvestmentIdeas, "ID"), user.getID(), Cost.Value, Risk.Value, product_tag.Text, user.getRMPermissionLevel()));
+            InvestmentIdeaDatabaseHandler.getInstance().writeInvestmentIdea(new InvestmentIdea(date_picker.Value, name.Text, desc.Text, InvestmentIdeaDatabaseHandler.getInstance().getHighestID("ID"), user.getID(), Cost.Value, Risk.Value, product_tag.Text, user.getRMPermissionLevel()));
             manager.back();
         }
 

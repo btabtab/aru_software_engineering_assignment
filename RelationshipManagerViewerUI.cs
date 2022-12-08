@@ -136,7 +136,7 @@ namespace aru_software_eng_UI
 		 */
 		private bool spawnButton(int button_index_from_list)
 		{
-			if(InvestmentIdeaDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.InvestmentIdeas, "ID") < button_index_from_list)
+			if(InvestmentIdeaDatabaseHandler.getInstance().getHighestID("ID") < button_index_from_list)
             {
 				Console.WriteLine("error, index out of bounds, " + button_index_from_list + "evading.");
 				return false;

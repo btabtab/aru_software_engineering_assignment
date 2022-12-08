@@ -32,7 +32,7 @@ namespace aru_software_eng_UI
 
 		public void writeRandomLoginEntry()
 		{
-			LoginDatabaseHandler.getInstance().writeNewLoginDataEntry(new DataBaseLoginEntry(LoginDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.LoginEntries, "UserID")));
+			LoginDatabaseHandler.getInstance().writeNewLoginDataEntry(new DataBaseLoginEntry(LoginDatabaseHandler.getInstance().getHighestID("UserID")));
 		}
 		public DataBaseLoginEntry loginSearchID(int ID)
         {
@@ -62,11 +62,11 @@ namespace aru_software_eng_UI
         }
 		public DataBaseLoginEntry getHighestUserIDEntry()
         {
-			return login_handler.getLoginEntryFromID(login_handler.getHighestID(DatabaseWrapper.LoginEntries, "UserID"));
+			return login_handler.getLoginEntryFromID(login_handler.getHighestID("UserID"));
 		}
 		public void deleteHighestLoginID()
         {
-			login_handler.deleteLoginRowX(login_handler.getHighestID(DatabaseWrapper.LoginEntries, "UserID"));
+			login_handler.deleteLoginRowX(login_handler.getHighestID("UserID"));
         }
 		public void generateRandomLoginEntry()
 		{
@@ -81,11 +81,11 @@ namespace aru_software_eng_UI
         }
 		public void writeRandomInvestmentIdea()
         {
-			investment_idea_handler.writeInvestmentIdea(new InvestmentIdea(LoginDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.LoginEntries, "UserID")));
+			investment_idea_handler.writeInvestmentIdea(new InvestmentIdea(LoginDatabaseHandler.getInstance().getHighestID("UserID")));
         }
 		public void deleteHighestInvestmentIdeaID()
 		{
-			investment_idea_handler.deleteInvestmentIdeaRowX(investment_idea_handler.getHighestID(DatabaseWrapper.InvestmentIdeas, "ID"));
+			investment_idea_handler.deleteInvestmentIdeaRowX(investment_idea_handler.getHighestID("ID"));
 		}
 
 	}

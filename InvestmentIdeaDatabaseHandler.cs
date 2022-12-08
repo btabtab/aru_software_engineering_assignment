@@ -59,10 +59,7 @@ namespace aru_software_eng_UI
 				database_wrapper.closeConnection();
 			}
 		}
-		public void refreshDataBase()
-		{
-			getHighestID()
-		}
+
 
 		public InvestmentIdea getErrorHandler(string errorname)
         {
@@ -111,7 +108,7 @@ namespace aru_software_eng_UI
 		public void loadInvestmentIdeasFromDatabaseToList()
         {
 			current_investment_ideas.Clear();
-			for (int i = 0; i != getHighestID(DatabaseWrapper.InvestmentIdeas, "ID"); i++)
+			for (int i = 0; i != getHighestID("ID"); i++)
 			{
 				// Console.WriteLine("Highest ID = " + getHighestID(DatabaseWrapper.InvestmentIdeas, "ID") + " / " + i);
 				current_investment_ideas.Add(getInvestmentIdeaFromDatabase(i));
@@ -122,10 +119,10 @@ namespace aru_software_eng_UI
 		public InvestmentIdea getInvestmentIdeaFromID(int target_ID)
         {
             InvestmentIdeaDatabaseHandler.getInstance().loadInvestmentIdeasFromDatabaseToList();
-			if (target_ID < 0 || InvestmentIdeaDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.InvestmentIdeas, "ID") < target_ID)
+			if (target_ID < 0 || InvestmentIdeaDatabaseHandler.getInstance().getHighestID("ID") < target_ID)
             {
 				Console.WriteLine("target_ID is too high, instead returning Error handler.");
-				return InvestmentIdeaDatabaseHandler.getInstance().getErrorHandler("target_ID is too high.\nThe highest ID is: " + InvestmentIdeaDatabaseHandler.getInstance().getHighestID(DatabaseWrapper.InvestmentIdeas, "ID") + "\nThe ID you entered is:" + target_ID);
+				return InvestmentIdeaDatabaseHandler.getInstance().getErrorHandler("target_ID is too high.\nThe highest ID is: " + InvestmentIdeaDatabaseHandler.getInstance().getHighestID("ID") + "\nThe ID you entered is:" + target_ID);
 
 			}
             return current_investment_ideas[target_ID];
