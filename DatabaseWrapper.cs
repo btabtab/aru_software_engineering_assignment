@@ -70,6 +70,7 @@ namespace aru_software_eng_UI
 			}
 			catch(Exception e)
 			{
+				Console.WriteLine(e.Message);
 			}
 
 		}
@@ -302,9 +303,6 @@ namespace aru_software_eng_UI
 
 		public void deleteRowX(string target_table, string target_column_name, int row_num)
 		{
-			{
-				row_num = getHighestIDNumber(target_table, target_column_name);
-			}
 			// DELETE FROM table WHERE column = 'value';
 
 			string query_string = "DELETE FROM " + target_table + " WHERE " + target_column_name + "=" + row_num;
