@@ -46,7 +46,7 @@ namespace aru_software_eng_UI
                 {
                     return;
                 }
-                row_index = Idea_Submitter_Table.SelectedRows[0].Index;
+                row_index = int.Parse(Idea_Submitter_Table.SelectedRows[0].Cells[0].Value.ToString());
             }
             catch(Exception exc)
             {

@@ -14,7 +14,6 @@ namespace aru_software_eng_UI
     {
         FormManager form_manager;
         DataBaseLoginEntry user_login;
-        BackendController backend_controller;
 
         public FilterWindow(Form previous_window, DataBaseLoginEntry n_user_login)
         {
@@ -47,7 +46,7 @@ namespace aru_software_eng_UI
             int ID_to_search = Int32.Parse(manualSearchInput.Text);
 
             //This should print the row that contains the investment idea?? - L
-            Console.WriteLine(backend_controller.getInvestmentIdeaFromID(ID_to_search));
+            Console.WriteLine(BackendController.getInstance().getInvestmentIdeaFromID(ID_to_search));
         }
 
        
