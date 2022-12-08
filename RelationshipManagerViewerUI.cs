@@ -30,14 +30,12 @@ namespace aru_software_eng_UI
 		}
 
 		//Some temporary values for testing, mimicking the values being imported from the filter page - L
-		int temp_min_cost = 50;
-		int temp_max_cost = 150;
-		int temp_min_risk = 2;
-		int temp_max_risk = 4;
+		int temp_min_cost = 2000;
+		int temp_max_cost = 3000;
+		int temp_min_risk = 10;
+		int temp_max_risk = 400;
 
-		int temp_db_cost = 100;
-		int temp_db_risk = 3;
-
+		
 		int db_amount_of_entries = 17;
 
 
@@ -142,8 +140,12 @@ namespace aru_software_eng_UI
 				return false;
             }
 			//Calculates a buttons size based of values inputted from the database, and the filters previously selected - L
-			int size_of_button = buttonSizeCalcualtor(temp_min_cost, temp_max_cost, temp_min_risk, temp_max_risk, temp_db_cost, temp_db_risk);//
 
+			int getCost = (int)idea_list[button_index_from_list].getCost();
+			int getRisk = idea_list[button_index_from_list].getRiskLevel()
+
+			int size_of_button = buttonSizeCalcualtor(temp_min_cost, temp_max_cost, temp_min_risk, temp_max_risk, getCost, getRisk);
+			
 			//Finds a buttons location based off of it's size - L
 			Point location_of_button = findPosition(size_of_button);
 
