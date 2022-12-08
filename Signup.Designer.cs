@@ -88,7 +88,6 @@ namespace aru_software_eng_UI
             this.RulesCheckBox.Size = new System.Drawing.Size(15, 14);
             this.RulesCheckBox.TabIndex = 6;
             this.RulesCheckBox.UseVisualStyleBackColor = true;
-            this.RulesCheckBox.CheckedChanged += new System.EventHandler(this.RulesCheckBox_CheckedChanged);
             // 
             // LoginGetter
             // 
@@ -99,7 +98,6 @@ namespace aru_software_eng_UI
             this.LoginGetter.Name = "LoginGetter";
             this.LoginGetter.Size = new System.Drawing.Size(482, 38);
             this.LoginGetter.TabIndex = 1;
-            this.LoginGetter.TextChanged += new System.EventHandler(this.LoginGetter_TextChanged);
             // 
             // RulesText
             // 
@@ -112,7 +110,6 @@ namespace aru_software_eng_UI
             this.RulesText.TabIndex = 4;
             this.RulesText.TabStop = true;
             this.RulesText.Text = "I confirm I have read the rules and privacy policies";
-            this.RulesText.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RulesText_LinkClicked);
             // 
             // LoginLabel
             // 
@@ -133,7 +130,6 @@ namespace aru_software_eng_UI
             this.EmailGetter.Name = "EmailGetter";
             this.EmailGetter.Size = new System.Drawing.Size(482, 38);
             this.EmailGetter.TabIndex = 2;
-            this.EmailGetter.TextChanged += new System.EventHandler(this.EmailGetter_TextChanged);
             // 
             // EmailLabel
             // 
@@ -158,7 +154,6 @@ namespace aru_software_eng_UI
             this.PasswordGetter1.Size = new System.Drawing.Size(482, 38);
             this.PasswordGetter1.TabIndex = 3;
             this.PasswordGetter1.UseSystemPasswordChar = true;
-            this.PasswordGetter1.TextChanged += new System.EventHandler(this.PasswordGetter1_TextChanged);
             // 
             // PasswordLabel
             // 
@@ -170,7 +165,6 @@ namespace aru_software_eng_UI
             this.PasswordLabel.Size = new System.Drawing.Size(151, 31);
             this.PasswordLabel.TabIndex = 9;
             this.PasswordLabel.Text = "Password:";
-            this.PasswordLabel.Click += new System.EventHandler(this.PasswordLabel_Click);
             // 
             // AgainPasswordLabel
             // 
@@ -279,7 +273,6 @@ namespace aru_software_eng_UI
             this.IsRMCheckBox.TabIndex = 5;
             this.IsRMCheckBox.Text = " Relationship Manager Account";
             this.IsRMCheckBox.UseVisualStyleBackColor = true;
-            this.IsRMCheckBox.CheckedChanged += new System.EventHandler(this.IsRMCheckBox_CheckedChanged);
             // 
             // rm_level_slider
             // 
@@ -332,7 +325,6 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.SignUpButton);
             this.Name = "Signup";
             this.Text = "Signup";
-            this.Load += new System.EventHandler(this.Signup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rm_level_slider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

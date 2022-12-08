@@ -67,7 +67,6 @@ namespace aru_software_eng_UI
             this.MinRiskLabel.Size = new System.Drawing.Size(158, 39);
             this.MinRiskLabel.TabIndex = 1;
             this.MinRiskLabel.Text = "Minimum Risk";
-            this.MinRiskLabel.Click += new System.EventHandler(this.MinRiskLabel_Click);
             // 
             // SearchButton
             // 
@@ -92,7 +91,6 @@ namespace aru_software_eng_UI
             this.MaxRiskLabel.Size = new System.Drawing.Size(164, 39);
             this.MaxRiskLabel.TabIndex = 10;
             this.MaxRiskLabel.Text = "Maximum Risk";
-            this.MaxRiskLabel.Click += new System.EventHandler(this.MaxRiskLabel_Click);
             // 
             // MinCostLabel
             // 
@@ -103,7 +101,6 @@ namespace aru_software_eng_UI
             this.MinCostLabel.Size = new System.Drawing.Size(159, 39);
             this.MinCostLabel.TabIndex = 11;
             this.MinCostLabel.Text = "Minimum Cost";
-            this.MinCostLabel.Click += new System.EventHandler(this.MinCostLabel_Click);
             // 
             // MaxCostLabel
             // 
@@ -114,7 +111,6 @@ namespace aru_software_eng_UI
             this.MaxCostLabel.Size = new System.Drawing.Size(165, 39);
             this.MaxCostLabel.TabIndex = 12;
             this.MaxCostLabel.Text = "Maximum Cost";
-            this.MaxCostLabel.Click += new System.EventHandler(this.MaxCostLabel_Click);
             // 
             // MinRiskTrackBar
             // 
@@ -171,7 +167,6 @@ namespace aru_software_eng_UI
             this.IndustryLabel.Size = new System.Drawing.Size(101, 39);
             this.IndustryLabel.TabIndex = 17;
             this.IndustryLabel.Text = "Industry";
-            this.IndustryLabel.Click += new System.EventHandler(this.IndustryLabel_Click);
             // 
             // IndustryInputTextBox
             // 
@@ -180,7 +175,6 @@ namespace aru_software_eng_UI
             this.IndustryInputTextBox.Name = "IndustryInputTextBox";
             this.IndustryInputTextBox.Size = new System.Drawing.Size(208, 38);
             this.IndustryInputTextBox.TabIndex = 18;
-            this.IndustryInputTextBox.TextChanged += new System.EventHandler(this.IndustryInputTextBox_TextChanged);
             // 
             // ExpireDateLabel
             // 
@@ -191,7 +185,6 @@ namespace aru_software_eng_UI
             this.ExpireDateLabel.Size = new System.Drawing.Size(135, 39);
             this.ExpireDateLabel.TabIndex = 19;
             this.ExpireDateLabel.Text = "Expiry Date";
-            this.ExpireDateLabel.Click += new System.EventHandler(this.ExpireDateLabel_Click);
             // 
             // ExpireDatePicker
             // 
@@ -201,7 +194,6 @@ namespace aru_software_eng_UI
             this.ExpireDatePicker.Name = "ExpireDatePicker";
             this.ExpireDatePicker.Size = new System.Drawing.Size(202, 34);
             this.ExpireDatePicker.TabIndex = 20;
-            this.ExpireDatePicker.ValueChanged += new System.EventHandler(this.ExpireDatePicker_ValueChanged);
             // 
             // PageTitle
             // 
@@ -212,7 +204,6 @@ namespace aru_software_eng_UI
             this.PageTitle.Size = new System.Drawing.Size(234, 102);
             this.PageTitle.TabIndex = 21;
             this.PageTitle.Text = "Filters";
-            this.PageTitle.Click += new System.EventHandler(this.PageTitle_Click);
             // 
             // manualSearchInput
             // 
@@ -221,7 +212,6 @@ namespace aru_software_eng_UI
             this.manualSearchInput.Name = "manualSearchInput";
             this.manualSearchInput.Size = new System.Drawing.Size(208, 38);
             this.manualSearchInput.TabIndex = 22;
-            this.manualSearchInput.TextChanged += new System.EventHandler(this.manualSearchInput_TextChanged);
             // 
             // manualSearchLabel
             // 
@@ -257,7 +247,6 @@ namespace aru_software_eng_UI
             this.divide_line.Step = 100;
             this.divide_line.TabIndex = 25;
             this.divide_line.Value = 100;
-            this.divide_line.Click += new System.EventHandler(this.divide_line_Click);
             // 
             // singleIdeaPanel
             // 
@@ -318,7 +307,6 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.MinRiskLabel);
             this.Name = "FilterWindow";
             this.Text = "RM Filter page";
-            this.Load += new System.EventHandler(this.RelationshipManagerView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MinRiskTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxRiskTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinCostTrackBar)).EndInit();

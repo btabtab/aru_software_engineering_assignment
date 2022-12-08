@@ -21,17 +21,6 @@ namespace aru_software_eng_UI
             manager = new FormManager(n_previous_window, this);
             backend_controller = BackendController.getInstance();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void IG_Back_Button_Click(object sender, EventArgs e)
         {
             manager.back();
@@ -53,12 +42,6 @@ namespace aru_software_eng_UI
                 MessageBox.Show("Incorrect login, please try again");
             }
         }
-
-        private void IG_login_textbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void IG_login_textbox_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(IG_login_textbox.Text))
@@ -71,7 +54,6 @@ namespace aru_software_eng_UI
             {
                 e.Cancel = false;
                 errorProvider1.SetError(IG_login_textbox, null);
-
             }
         }
     }

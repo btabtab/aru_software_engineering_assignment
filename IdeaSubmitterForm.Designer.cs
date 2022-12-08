@@ -143,8 +143,6 @@ namespace aru_software_eng_UI
             this.Idea_Submitter_Table.RowHeadersWidth = 82;
             this.Idea_Submitter_Table.Size = new System.Drawing.Size(2334, 781);
             this.Idea_Submitter_Table.TabIndex = 20;
-            this.Idea_Submitter_Table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Idea_Submitter_Table_CellContentClick);
-            this.Idea_Submitter_Table.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Idea_Submitter_Table_RowPostPaint);
             // 
             // ID
             // 
@@ -298,7 +296,6 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.Idea_Submitter_label);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Text = "IdeaSubmitterForm";
-            this.Load += new System.EventHandler(this.IdeaSubmitterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Idea_Submitter_Table)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.investmentIdeasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coreDataBaseDataSet)).EndInit();
@@ -318,7 +315,7 @@ namespace aru_software_eng_UI
         private CoreDataBaseDataSetTableAdapters.InvestmentIdeasTableAdapter investmentIdeasTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn User_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn RiskLevel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;

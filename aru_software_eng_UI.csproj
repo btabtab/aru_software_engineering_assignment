@@ -222,10 +222,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CoreDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="CoreDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>CoreDatabase.mdf</DependentUpon>
     </Content>
   </ItemGroup>

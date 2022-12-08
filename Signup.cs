@@ -155,51 +155,6 @@ namespace aru_software_eng_UI
         {
             manager.back();
         }
-
-
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void EmailGetter_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void PasswordGetter1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void RulesCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void LoginGetter_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void PasswordLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void Signup_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void IsRMCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RulesText_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-        }
-
         private void rm_level_slider_Scroll(object sender, EventArgs e)
         {
             rm_level_slider_label.Text = "RM level: " + rm_level_slider.Value;
