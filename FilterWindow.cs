@@ -49,7 +49,6 @@ namespace aru_software_eng_UI
             Console.WriteLine(BackendController.getInstance().getInvestmentIdeaFromID(ID_to_search));
         }
 
-       
         //When the search button is pressed, the stored values are passed
         //through to the next page ready to be processed and displayed
         private void SearchButton_Click(object sender, EventArgs e)
@@ -98,7 +97,6 @@ namespace aru_software_eng_UI
         {
             singleIdeaPanel.Visible = false;
         }
-
 
     }
 }

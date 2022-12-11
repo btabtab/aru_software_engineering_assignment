@@ -145,5 +145,21 @@ namespace aru_software_eng_UI
 				backend_controller.writeRandomInvestmentIdea();
 			}
 		}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+			InvestmentIdeaDatabaseHandler.getInstance().writeInvestmentIdea(new InvestmentIdea(
+																								date_input.Value,
+																								name_input.Text,
+																								description_input.Text,
+																								InvestmentIdeaDatabaseHandler.getInstance().getHighestID("ID"),
+																								LoginDatabaseHandler.getInstance().getHighestID("UserID"),
+																								(int)RiskPicker.Value,
+																								(int)CostPicker.Value,
+																								tag_picker.Text,
+																								(int)rm_level_picker.Value
+																								));
+			updateTable();
+        }
     }
 }

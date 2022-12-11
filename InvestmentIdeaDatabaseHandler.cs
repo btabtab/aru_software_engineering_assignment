@@ -133,14 +133,21 @@ namespace aru_software_eng_UI
         {
             InvestmentIdeaDatabaseHandler.getInstance().loadInvestmentIdeasFromDatabaseToList();
 
-			List<InvestmentIdea> ret = new List<InvestmentIdea>();
+			List<InvestmentIdea> ret = new List<InvestmentIdea>(current_investment_ideas);
 
 			for (int i = 0; i != current_investment_ideas.Count(); i++)
             {
-				if(filters.getMinCost() < current_investment_ideas[i].getCost() || current_investment_ideas[i].getCost() < filters.getMaxCost() && filters.getMinRisk() < current_investment_ideas[i].getRiskLevel() || current_investment_ideas[i].getRiskLevel() < filters.getMaxRisk() || current_investment_ideas[i].getRMPermissionLevel() <= filters.getPermissionLevel() || current_investment_ideas[i].getDate().Ticks < filters.getDate().Ticks)
+				if(filters.getMinCost() <= current_investment_ideas[i].getCost() || current_investment_ideas[i].getCost() <= filters.getMaxCost() && filters.getMinRisk()
+					<= current_investment_ideas[i].getRiskLevel() || current_investment_ideas[i].getRiskLevel() <= filters.getMaxRisk() || 
+					current_investment_ideas[i].getRMPermissionLevel() <= filters.getPermissionLevel() ||
+					current_investment_ideas[i].getDate().Ticks <= filters.getDate().Ticks)
                 {
-					ret.Add(current_investment_ideas[i]);
                 }
+				else
+                {
+					ret.RemoveAt(i);
+                }
+
 			}
 			return ret;
 		}
