@@ -144,7 +144,7 @@ namespace aru_software_eng_UI
 			//Calculates a buttons size based of values inputted from the database, and the filters previously selected - L
 
 			int getCost = (int)idea_list[button_index_from_list].getCost();
-			int getRisk = idea_list[button_index_from_list].getRiskLevel()
+			int getRisk = idea_list[button_index_from_list].getRiskLevel();
 
 			int size_of_button = buttonSizeCalcualtor(temp_min_cost, temp_max_cost, temp_min_risk, temp_max_risk, getCost, getRisk);
 			
