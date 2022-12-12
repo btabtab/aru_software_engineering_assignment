@@ -36,7 +36,9 @@ namespace aru_software_eng_UI
             this.Delete_Idea_Button = new System.Windows.Forms.Button();
             this.IS_Back_Button = new System.Windows.Forms.Button();
             this.Idea_Submitter_Table = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.investmentIdeasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.coreDataBaseDataSet = new aru_software_eng_UI.CoreDataBaseDataSet();
+            this.investmentIdeasTableAdapter = new aru_software_eng_UI.CoreDataBaseDataSetTableAdapters.InvestmentIdeasTableAdapter();
             this.User_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,18 +47,6 @@ namespace aru_software_eng_UI
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RequiredPermissions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.riskLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productTagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.requiredPermissionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.investmentIdeasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.coreDataBaseDataSet = new aru_software_eng_UI.CoreDataBaseDataSet();
-            this.investmentIdeasTableAdapter = new aru_software_eng_UI.CoreDataBaseDataSetTableAdapters.InvestmentIdeasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.Idea_Submitter_Table)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.investmentIdeasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coreDataBaseDataSet)).BeginInit();
@@ -118,7 +108,6 @@ namespace aru_software_eng_UI
             this.Idea_Submitter_Table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Idea_Submitter_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Idea_Submitter_Table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
             this.User_ID,
             this.Name,
             this.Description,
@@ -126,16 +115,7 @@ namespace aru_software_eng_UI
             this.Cost,
             this.Date,
             this.ProductTag,
-            this.RequiredPermissions,
-            this.iDDataGridViewTextBoxColumn,
-            this.userIDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.riskLevelDataGridViewTextBoxColumn,
-            this.costDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
-            this.productTagDataGridViewTextBoxColumn,
-            this.requiredPermissionsDataGridViewTextBoxColumn});
+            this.RequiredPermissions});
             this.Idea_Submitter_Table.DataSource = this.investmentIdeasBindingSource;
             this.Idea_Submitter_Table.Location = new System.Drawing.Point(26, 398);
             this.Idea_Submitter_Table.Margin = new System.Windows.Forms.Padding(6);
@@ -144,12 +124,19 @@ namespace aru_software_eng_UI
             this.Idea_Submitter_Table.Size = new System.Drawing.Size(2334, 781);
             this.Idea_Submitter_Table.TabIndex = 20;
             // 
-            // ID
+            // investmentIdeasBindingSource
             // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 10;
-            this.ID.Name = "ID";
+            this.investmentIdeasBindingSource.DataMember = "InvestmentIdeas";
+            this.investmentIdeasBindingSource.DataSource = this.coreDataBaseDataSet;
+            // 
+            // coreDataBaseDataSet
+            // 
+            this.coreDataBaseDataSet.DataSetName = "CoreDataBaseDataSet";
+            this.coreDataBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // investmentIdeasTableAdapter
+            // 
+            this.investmentIdeasTableAdapter.ClearBeforeFill = true;
             // 
             // User_ID
             // 
@@ -207,83 +194,6 @@ namespace aru_software_eng_UI
             this.RequiredPermissions.MinimumWidth = 10;
             this.RequiredPermissions.Name = "RequiredPermissions";
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // riskLevelDataGridViewTextBoxColumn
-            // 
-            this.riskLevelDataGridViewTextBoxColumn.DataPropertyName = "RiskLevel";
-            this.riskLevelDataGridViewTextBoxColumn.HeaderText = "RiskLevel";
-            this.riskLevelDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.riskLevelDataGridViewTextBoxColumn.Name = "riskLevelDataGridViewTextBoxColumn";
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
-            this.costDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            // 
-            // productTagDataGridViewTextBoxColumn
-            // 
-            this.productTagDataGridViewTextBoxColumn.DataPropertyName = "ProductTag";
-            this.productTagDataGridViewTextBoxColumn.HeaderText = "ProductTag";
-            this.productTagDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.productTagDataGridViewTextBoxColumn.Name = "productTagDataGridViewTextBoxColumn";
-            // 
-            // requiredPermissionsDataGridViewTextBoxColumn
-            // 
-            this.requiredPermissionsDataGridViewTextBoxColumn.DataPropertyName = "RequiredPermissions";
-            this.requiredPermissionsDataGridViewTextBoxColumn.HeaderText = "RequiredPermissions";
-            this.requiredPermissionsDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.requiredPermissionsDataGridViewTextBoxColumn.Name = "requiredPermissionsDataGridViewTextBoxColumn";
-            // 
-            // investmentIdeasBindingSource
-            // 
-            this.investmentIdeasBindingSource.DataMember = "InvestmentIdeas";
-            this.investmentIdeasBindingSource.DataSource = this.coreDataBaseDataSet;
-            // 
-            // coreDataBaseDataSet
-            // 
-            this.coreDataBaseDataSet.DataSetName = "CoreDataBaseDataSet";
-            this.coreDataBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // investmentIdeasTableAdapter
-            // 
-            this.investmentIdeasTableAdapter.ClearBeforeFill = true;
-            // 
             // IdeaSubmitterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -313,23 +223,13 @@ namespace aru_software_eng_UI
         private CoreDataBaseDataSet coreDataBaseDataSet;
         private System.Windows.Forms.BindingSource investmentIdeasBindingSource;
         private CoreDataBaseDataSetTableAdapters.InvestmentIdeasTableAdapter investmentIdeasTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn User_ID;
-        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn RiskLevel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductTag;
         private System.Windows.Forms.DataGridViewTextBoxColumn RequiredPermissions;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn riskLevelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productTagDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn requiredPermissionsDataGridViewTextBoxColumn;
     }
 }

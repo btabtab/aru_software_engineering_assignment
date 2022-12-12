@@ -73,7 +73,7 @@ namespace aru_software_eng_UI
             this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.SearchButton.ForeColor = System.Drawing.Color.Black;
             this.SearchButton.Location = new System.Drawing.Point(50, 500);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(6);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(1594, 158);
             this.SearchButton.TabIndex = 9;
@@ -119,7 +119,7 @@ namespace aru_software_eng_UI
             // 
             this.MinRiskTrackBar.LargeChange = 1;
             this.MinRiskTrackBar.Location = new System.Drawing.Point(392, 185);
-            this.MinRiskTrackBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MinRiskTrackBar.Margin = new System.Windows.Forms.Padding(6);
             this.MinRiskTrackBar.Maximum = 5;
             this.MinRiskTrackBar.Minimum = 1;
             this.MinRiskTrackBar.Name = "MinRiskTrackBar";
@@ -132,7 +132,7 @@ namespace aru_software_eng_UI
             // 
             this.MaxRiskTrackBar.LargeChange = 1;
             this.MaxRiskTrackBar.Location = new System.Drawing.Point(414, 306);
-            this.MaxRiskTrackBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaxRiskTrackBar.Margin = new System.Windows.Forms.Padding(6);
             this.MaxRiskTrackBar.Maximum = 5;
             this.MaxRiskTrackBar.Minimum = 1;
             this.MaxRiskTrackBar.Name = "MaxRiskTrackBar";
@@ -145,7 +145,7 @@ namespace aru_software_eng_UI
             // 
             this.MinCostTrackBar.LargeChange = 5000;
             this.MinCostTrackBar.Location = new System.Drawing.Point(1228, 185);
-            this.MinCostTrackBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MinCostTrackBar.Margin = new System.Windows.Forms.Padding(6);
             this.MinCostTrackBar.Maximum = 100000;
             this.MinCostTrackBar.Name = "MinCostTrackBar";
             this.MinCostTrackBar.Size = new System.Drawing.Size(416, 90);
@@ -157,7 +157,7 @@ namespace aru_software_eng_UI
             // 
             this.MaxCostTrackBar.LargeChange = 5000;
             this.MaxCostTrackBar.Location = new System.Drawing.Point(1256, 296);
-            this.MaxCostTrackBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaxCostTrackBar.Margin = new System.Windows.Forms.Padding(6);
             this.MaxCostTrackBar.Maximum = 100000;
             this.MaxCostTrackBar.Name = "MaxCostTrackBar";
             this.MaxCostTrackBar.Size = new System.Drawing.Size(388, 90);
@@ -181,7 +181,7 @@ namespace aru_software_eng_UI
             this.ExpireDatePicker.CalendarFont = new System.Drawing.Font("Calibri", 16.25F, System.Drawing.FontStyle.Bold);
             this.ExpireDatePicker.Font = new System.Drawing.Font("Calibri", 16.25F, System.Drawing.FontStyle.Bold);
             this.ExpireDatePicker.Location = new System.Drawing.Point(1256, 404);
-            this.ExpireDatePicker.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ExpireDatePicker.Margin = new System.Windows.Forms.Padding(6);
             this.ExpireDatePicker.Name = "ExpireDatePicker";
             this.ExpireDatePicker.Size = new System.Drawing.Size(400, 60);
             this.ExpireDatePicker.TabIndex = 20;
@@ -201,7 +201,7 @@ namespace aru_software_eng_UI
             // 
             this.manualSearchInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manualSearchInput.Location = new System.Drawing.Point(486, 748);
-            this.manualSearchInput.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.manualSearchInput.Margin = new System.Windows.Forms.Padding(6);
             this.manualSearchInput.Name = "manualSearchInput";
             this.manualSearchInput.Size = new System.Drawing.Size(412, 69);
             this.manualSearchInput.TabIndex = 22;
@@ -223,7 +223,7 @@ namespace aru_software_eng_UI
             this.singleSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
             this.singleSearchButton.ForeColor = System.Drawing.Color.Black;
             this.singleSearchButton.Location = new System.Drawing.Point(960, 727);
-            this.singleSearchButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.singleSearchButton.Margin = new System.Windows.Forms.Padding(6);
             this.singleSearchButton.Name = "singleSearchButton";
             this.singleSearchButton.Size = new System.Drawing.Size(502, 115);
             this.singleSearchButton.TabIndex = 24;
@@ -236,7 +236,7 @@ namespace aru_software_eng_UI
             this.divide_line.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.divide_line.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.divide_line.Location = new System.Drawing.Point(8, 677);
-            this.divide_line.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.divide_line.Margin = new System.Windows.Forms.Padding(6);
             this.divide_line.Minimum = 100;
             this.divide_line.Name = "divide_line";
             this.divide_line.Size = new System.Drawing.Size(1648, 6);
@@ -250,7 +250,7 @@ namespace aru_software_eng_UI
             this.singleIdeaPanel.Controls.Add(this.panelBackButton);
             this.singleIdeaPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.singleIdeaPanel.Location = new System.Drawing.Point(8, 2);
-            this.singleIdeaPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.singleIdeaPanel.Margin = new System.Windows.Forms.Padding(6);
             this.singleIdeaPanel.Name = "singleIdeaPanel";
             this.singleIdeaPanel.Size = new System.Drawing.Size(1680, 904);
             this.singleIdeaPanel.TabIndex = 26;
@@ -273,7 +273,7 @@ namespace aru_software_eng_UI
             // 
             this.panelBackButton.Image = ((System.Drawing.Image)(resources.GetObject("panelBackButton.Image")));
             this.panelBackButton.Location = new System.Drawing.Point(1388, 773);
-            this.panelBackButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelBackButton.Margin = new System.Windows.Forms.Padding(6);
             this.panelBackButton.Name = "panelBackButton";
             this.panelBackButton.Size = new System.Drawing.Size(264, 113);
             this.panelBackButton.TabIndex = 0;
@@ -302,7 +302,7 @@ namespace aru_software_eng_UI
             this.Controls.Add(this.MaxRiskLabel);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.MinRiskLabel);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FilterWindow";
             this.Text = "RM Filter page";
             ((System.ComponentModel.ISupportInitialize)(this.MinRiskTrackBar)).EndInit();

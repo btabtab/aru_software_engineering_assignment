@@ -65,7 +65,7 @@ namespace aru_software_eng_UI
 		public int		getUserID()				{ return user_ID;				}
 		public int		getRiskLevel()			{ return risk_level;			}
 		public float	getCost()				{ return cost;					}
-		public string	getProductTag()		{ return product_tag;			}
+		public string	getProductTag()			{ return product_tag;			}
 		public int getRMPermissionLevel() 		{ return rm_permission_level; 	}
 
 		public void setDate(DateTime n_date)						{ expiry_date		= n_date;					}

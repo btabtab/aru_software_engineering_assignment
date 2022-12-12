@@ -53,6 +53,9 @@ namespace aru_software_eng_UI
             this.username_delete_search_txtbox = new System.Windows.Forms.TextBox();
             this.ControlTabs = new System.Windows.Forms.TabControl();
             this.login_controls = new System.Windows.Forms.TabPage();
+            this.TestGenerator = new System.Windows.Forms.Button();
+            this.rm_slider_label = new System.Windows.Forms.Label();
+            this.rm_level = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -104,12 +107,25 @@ namespace aru_software_eng_UI
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.loginEntriesTableAdapter = new aru_software_eng_UI.CoreDataBaseDataSetTableAdapters.LoginEntriesTableAdapter();
             this.investmentIdeasTableAdapter = new aru_software_eng_UI.CoreDataBaseDataSetTableAdapters.InvestmentIdeasTableAdapter();
-            this.rm_level = new System.Windows.Forms.TrackBar();
-            this.rm_slider_label = new System.Windows.Forms.Label();
-            this.TestGenerator = new System.Windows.Forms.Button();
+            this.name_input = new System.Windows.Forms.TextBox();
+            this.description_input = new System.Windows.Forms.TextBox();
+            this.date_input = new System.Windows.Forms.DateTimePicker();
+            this.RiskPicker = new System.Windows.Forms.NumericUpDown();
+            this.CostPicker = new System.Windows.Forms.NumericUpDown();
+            this.tag_picker = new System.Windows.Forms.TextBox();
+            this.rm_level_picker = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ControlTabs.SuspendLayout();
             this.login_controls.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rm_level)).BeginInit();
             this.login_generator.SuspendLayout();
             this.search.SuspendLayout();
             this.deletion.SuspendLayout();
@@ -122,10 +138,13 @@ namespace aru_software_eng_UI
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.investmentIdeasBindingSource)).BeginInit();
             this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rm_level)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RiskPicker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostPicker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rm_level_picker)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -364,6 +383,34 @@ namespace aru_software_eng_UI
             this.login_controls.TabIndex = 0;
             this.login_controls.Text = "Login control";
             this.login_controls.UseVisualStyleBackColor = true;
+            // 
+            // TestGenerator
+            // 
+            this.TestGenerator.Location = new System.Drawing.Point(15, 393);
+            this.TestGenerator.Margin = new System.Windows.Forms.Padding(6);
+            this.TestGenerator.Name = "TestGenerator";
+            this.TestGenerator.Size = new System.Drawing.Size(526, 95);
+            this.TestGenerator.TabIndex = 17;
+            this.TestGenerator.Text = "GenerateDataToTestWith";
+            this.TestGenerator.UseVisualStyleBackColor = true;
+            this.TestGenerator.Click += new System.EventHandler(this.TestGenerator_Click);
+            // 
+            // rm_slider_label
+            // 
+            this.rm_slider_label.AutoSize = true;
+            this.rm_slider_label.Location = new System.Drawing.Point(10, 175);
+            this.rm_slider_label.Name = "rm_slider_label";
+            this.rm_slider_label.Size = new System.Drawing.Size(102, 25);
+            this.rm_slider_label.TabIndex = 16;
+            this.rm_slider_label.Text = "RM level:";
+            // 
+            // rm_level
+            // 
+            this.rm_level.Location = new System.Drawing.Point(131, 175);
+            this.rm_level.Maximum = 5;
+            this.rm_level.Name = "rm_level";
+            this.rm_level.Size = new System.Drawing.Size(324, 90);
+            this.rm_level.TabIndex = 15;
             // 
             // label3
             // 
@@ -699,6 +746,21 @@ namespace aru_software_eng_UI
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.label4);
+            this.tabPage3.Controls.Add(this.rm_level_picker);
+            this.tabPage3.Controls.Add(this.tag_picker);
+            this.tabPage3.Controls.Add(this.CostPicker);
+            this.tabPage3.Controls.Add(this.RiskPicker);
+            this.tabPage3.Controls.Add(this.date_input);
+            this.tabPage3.Controls.Add(this.description_input);
+            this.tabPage3.Controls.Add(this.name_input);
             this.tabPage3.Location = new System.Drawing.Point(8, 39);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -856,33 +918,169 @@ namespace aru_software_eng_UI
             // 
             this.investmentIdeasTableAdapter.ClearBeforeFill = true;
             // 
-            // rm_level
+            // name_input
             // 
-            this.rm_level.Location = new System.Drawing.Point(131, 175);
-            this.rm_level.Maximum = 5;
-            this.rm_level.Name = "rm_level";
-            this.rm_level.Size = new System.Drawing.Size(324, 90);
-            this.rm_level.TabIndex = 15;
+            this.name_input.Location = new System.Drawing.Point(224, 110);
+            this.name_input.Name = "name_input";
+            this.name_input.Size = new System.Drawing.Size(200, 31);
+            this.name_input.TabIndex = 2;
             // 
-            // rm_slider_label
+            // description_input
             // 
-            this.rm_slider_label.AutoSize = true;
-            this.rm_slider_label.Location = new System.Drawing.Point(10, 175);
-            this.rm_slider_label.Name = "rm_slider_label";
-            this.rm_slider_label.Size = new System.Drawing.Size(102, 25);
-            this.rm_slider_label.TabIndex = 16;
-            this.rm_slider_label.Text = "RM level:";
+            this.description_input.Location = new System.Drawing.Point(224, 147);
+            this.description_input.Multiline = true;
+            this.description_input.Name = "description_input";
+            this.description_input.Size = new System.Drawing.Size(200, 68);
+            this.description_input.TabIndex = 3;
             // 
-            // TestGenerator
+            // date_input
             // 
-            this.TestGenerator.Location = new System.Drawing.Point(15, 393);
-            this.TestGenerator.Margin = new System.Windows.Forms.Padding(6);
-            this.TestGenerator.Name = "TestGenerator";
-            this.TestGenerator.Size = new System.Drawing.Size(526, 95);
-            this.TestGenerator.TabIndex = 17;
-            this.TestGenerator.Text = "GenerateDataToTestWith";
-            this.TestGenerator.UseVisualStyleBackColor = true;
-            this.TestGenerator.Click += new System.EventHandler(this.TestGenerator_Click);
+            this.date_input.Location = new System.Drawing.Point(224, 73);
+            this.date_input.Name = "date_input";
+            this.date_input.Size = new System.Drawing.Size(200, 31);
+            this.date_input.TabIndex = 5;
+            // 
+            // RiskPicker
+            // 
+            this.RiskPicker.Location = new System.Drawing.Point(224, 221);
+            this.RiskPicker.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.RiskPicker.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.RiskPicker.Name = "RiskPicker";
+            this.RiskPicker.Size = new System.Drawing.Size(120, 31);
+            this.RiskPicker.TabIndex = 6;
+            this.RiskPicker.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // CostPicker
+            // 
+            this.CostPicker.Location = new System.Drawing.Point(224, 258);
+            this.CostPicker.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.CostPicker.Name = "CostPicker";
+            this.CostPicker.Size = new System.Drawing.Size(120, 31);
+            this.CostPicker.TabIndex = 7;
+            this.CostPicker.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // tag_picker
+            // 
+            this.tag_picker.Location = new System.Drawing.Point(224, 295);
+            this.tag_picker.Multiline = true;
+            this.tag_picker.Name = "tag_picker";
+            this.tag_picker.Size = new System.Drawing.Size(200, 31);
+            this.tag_picker.TabIndex = 8;
+            // 
+            // rm_level_picker
+            // 
+            this.rm_level_picker.Location = new System.Drawing.Point(224, 332);
+            this.rm_level_picker.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.rm_level_picker.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.rm_level_picker.Name = "rm_level_picker";
+            this.rm_level_picker.Size = new System.Drawing.Size(120, 31);
+            this.rm_level_picker.TabIndex = 9;
+            this.rm_level_picker.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(45, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 25);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Date";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(45, 110);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 25);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Name";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(45, 147);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 25);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Description";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(45, 221);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(114, 25);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "RiskPicker";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(45, 258);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(116, 25);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "CostPicker";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(45, 295);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(126, 25);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Tags Picker";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(45, 332);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(163, 25);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "RM perm picker";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(50, 388);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(374, 103);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Create new Idea";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DatabaseWindow
             // 
@@ -898,6 +1096,7 @@ namespace aru_software_eng_UI
             this.ControlTabs.ResumeLayout(false);
             this.login_controls.ResumeLayout(false);
             this.login_controls.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rm_level)).EndInit();
             this.login_generator.ResumeLayout(false);
             this.login_generator.PerformLayout();
             this.search.ResumeLayout(false);
@@ -913,13 +1112,17 @@ namespace aru_software_eng_UI
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.investmentIdeasBindingSource)).EndInit();
             this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rm_level)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RiskPicker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostPicker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rm_level_picker)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1003,5 +1206,20 @@ namespace aru_software_eng_UI
         private System.Windows.Forms.Label rm_slider_label;
         private System.Windows.Forms.TrackBar rm_level;
         private System.Windows.Forms.Button TestGenerator;
+        private System.Windows.Forms.TextBox description_input;
+        private System.Windows.Forms.TextBox name_input;
+        private System.Windows.Forms.NumericUpDown RiskPicker;
+        private System.Windows.Forms.DateTimePicker date_input;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown rm_level_picker;
+        private System.Windows.Forms.TextBox tag_picker;
+        private System.Windows.Forms.NumericUpDown CostPicker;
     }
 }

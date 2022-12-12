@@ -25,7 +25,7 @@ namespace aru_software_eng_UI
 			InitializeComponent();
 			manager = new FormManager(n_previous_window, this);
 			idea_list = n_idea_list;
-			FancyDisplayBubbleTracker.getBubbleTracker().setLabel(DataOutputLabel);
+			FancyDisplayBubbleTracker.getBubbleTracker().setLabel(DataOutputLabel2);
 			firstTimeRun();
 		}
 
@@ -104,8 +104,10 @@ namespace aru_software_eng_UI
 			return ret;
 		}
 
-		//A function that takes the filter results from the previous page and compares them to the inputted results from the database to result in a level of suitability from 0 - 100 - L
-		private int buttonSizeCalcualtor(int min_cost_filter, int max_cost_filter, int min_risk_filter, int max_risk_filter, int db_cost, int db_risk)
+		//A function that takes the filter results from the previous page and compares them
+		//to the inputted results from the database to result in a level of suitability from 0 - 100 - L
+		private int buttonSizeCalcualtor(int min_cost_filter, int max_cost_filter, int min_risk_filter, 
+			int max_risk_filter, int db_cost, int db_risk)
 		{
 			//Find the middle point of the toggles to use in the suitability calculations - L
 			float av_cost_filter = min_cost_filter * max_cost_filter / 2;
@@ -192,6 +194,16 @@ namespace aru_software_eng_UI
         private void IS_Back_Button_Click(object sender, EventArgs e)
         {
 			manager.back();
+        }
+
+        private void DataOutputLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RelationshipManagerViewerUI_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
